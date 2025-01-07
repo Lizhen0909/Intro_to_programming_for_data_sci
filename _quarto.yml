@@ -6,8 +6,8 @@ project:
 book:
   title: "Introduction to programming for data science"
   subtitle: "STAT 201"
-  author: "Arvind Krishna"
-  date: "9/20/2022"
+  #author: "Arvind Krishna"
+  date: "1/7/2025"
   
   sidebar:
     search: true
@@ -16,6 +16,9 @@ book:
     
   chapters:
     - index.qmd
+    - part: "Getting started: Coding environment"
+      chapters:
+        - venv_setup.ipynb
     - part: "Python"
       chapters:
         - Introduction to Jupyter Notebooks and programming in python.ipynb
