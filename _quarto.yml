@@ -21,7 +21,7 @@ book:
         - venv_setup.ipynb
     - part: "Python"
       chapters:
-        - Introduction to Jupyter Notebooks and programming in python.ipynb
+        #- Introduction to Jupyter Notebooks and programming in python.ipynb
         - Variable_expressions_statements.ipynb
         - Control flow.ipynb
         - functions2.ipynb
