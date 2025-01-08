@@ -271,10 +271,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#rendering-notebook-as-html-using-quarto" id="toc-rendering-notebook-as-html-using-quarto" class="nav-link" data-scroll-target="#rendering-notebook-as-html-using-quarto"><span class="header-section-number">1.6</span> Rendering notebook as HTML using Quarto</a>
   <ul>
   <li><a href="#installing-and-verifying-quarto" id="toc-installing-and-verifying-quarto" class="nav-link" data-scroll-target="#installing-and-verifying-quarto"><span class="header-section-number">1.6.1</span> Installing and Verifying Quarto</a></li>
+  <li><a href="#converting-the-notebook-to-html" id="toc-converting-the-notebook-to-html" class="nav-link" data-scroll-target="#converting-the-notebook-to-html"><span class="header-section-number">1.6.2</span> Converting the Notebook to HTML</a></li>
   </ul></li>
-  <li><a href="#converting-the-notebook-to-html" id="toc-converting-the-notebook-to-html" class="nav-link" data-scroll-target="#converting-the-notebook-to-html"><span class="header-section-number">1.7</span> Converting the Notebook to HTML</a></li>
-  <li><a href="#in-class-exercise" id="toc-in-class-exercise" class="nav-link" data-scroll-target="#in-class-exercise"><span class="header-section-number">1.8</span> In-class exercise</a></li>
-  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference"><span class="header-section-number">1.9</span> Reference</a></li>
+  <li><a href="#in-class-exercise" id="toc-in-class-exercise" class="nav-link" data-scroll-target="#in-class-exercise"><span class="header-section-number">1.7</span> In-class exercise</a></li>
+  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference"><span class="header-section-number">1.8</span> Reference</a></li>
   </ul>
 </nav>
     </div>
@@ -523,12 +523,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Go to <code>Terminal</code> -&gt; <code>New Terminal</code>.</li>
 </ul></li>
-<li>Run the following command to verify that Quarto and its dependencies are correctly installed: ```bash quarto check install</li>
+<li>Run the following command to verify that Quarto and its dependencies are correctly installed: <code>quarto check install</code></li>
 </ul>
 </section>
-</section>
-<section id="converting-the-notebook-to-html" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="converting-the-notebook-to-html"><span class="header-section-number">1.7</span> Converting the Notebook to HTML</h2>
+<section id="converting-the-notebook-to-html" class="level3" data-number="1.6.2">
+<h3 data-number="1.6.2" class="anchored" data-anchor-id="converting-the-notebook-to-html"><span class="header-section-number">1.6.2</span> Converting the Notebook to HTML</h3>
 <p>Check the procedure for rendering a notebook as HTML <a href="https://quarto.org/docs/output-formats/html-basics.html">here</a>. You have several options to format the file. Here are some points to remember when using Quarto to render your notebook as HTML:</p>
 <ol type="1">
 <li><p>The <a href="https://nbsphinx.readthedocs.io/en/0.9.3/raw-cells.html"><code>Raw NBConvert</code></a> cell type is used to render different code formats into HTML or LaTeX. This information is stored in the notebook metadata and converted appropriately. <strong>Use this cell type to put the desired formatting settings for the HTML file.</strong></p></li>
@@ -536,8 +535,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p>Once you have entered the desired formatting setting in the <code>Raw NBConver</code> cell, you are ready to render the notebook to HTML. Open the terminal, navigate to the directory containing the notebook <em>(.ipynb file)</em>, and use the command: <code>quarto render filename.ipynb --to html</code>.</p>
 </section>
-<section id="in-class-exercise" class="level2" data-number="1.8">
-<h2 data-number="1.8" class="anchored" data-anchor-id="in-class-exercise"><span class="header-section-number">1.8</span> In-class exercise</h2>
+</section>
+<section id="in-class-exercise" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="in-class-exercise"><span class="header-section-number">1.7</span> In-class exercise</h2>
 <ol type="1">
 <li>Create a new notebook.</li>
 <li>Save the file as <code>In_class_exercise_1</code>.</li>
@@ -553,8 +553,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="reference" class="level2" data-number="1.9">
-<h2 data-number="1.9" class="anchored" data-anchor-id="reference"><span class="header-section-number">1.9</span> Reference</h2>
+<section id="reference" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="reference"><span class="header-section-number">1.8</span> Reference</h2>
 <ul>
 <li><a href="https://code.visualstudio.com/docs/getstarted/userinterface">Getting Started with VS Code</a></li>
 <li><a href="https://code.visualstudio.com/docs/datascience/jupyter-notebooks">Jupyter Notebooks in VS Code</a></li>
