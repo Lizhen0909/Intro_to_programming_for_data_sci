@@ -25,7 +25,7 @@
     "href": "venv_setup.html#learning-objectives",
     "title": "1  Setting up your environment with VS Code",
     "section": "",
-    "text": "Set up your Python coding environment with VS Code.\n\nCreate and manage Python virtual environments using both pip and conda.\n\nInstall and verify packages within these environments.\n\nExport and recreate environments using environment files.\n\nUse Jupyter Notebook for data science tasks in VS Code.",
+    "text": "Install and configure Visual Studio Code (VS Code) for Python programming.\nLeverage Jupyter Notebook within VS Code for your data science Python programming.\nUse Quarto to create HTML documents for your upcoming homework submissions.",
     "crumbs": [
       "Getting started: Coding environment",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Setting up your environment with VS Code</span>"
@@ -76,11 +76,22 @@
     ]
   },
   {
-    "objectID": "venv_setup.html#rendering-notebook-as-html",
-    "href": "venv_setup.html#rendering-notebook-as-html",
+    "objectID": "venv_setup.html#rendering-notebook-as-html-using-quarto",
+    "href": "venv_setup.html#rendering-notebook-as-html-using-quarto",
     "title": "1  Setting up your environment with VS Code",
-    "section": "1.6 Rendering notebook as HTML",
-    "text": "1.6 Rendering notebook as HTML\nWe’ll use Quarto to print the **.ipynb* file as HTML. Check the procedure for rendering a notebook as HTML here. You have several options to format the file. Here are some points to remember when using Quarto to render your notebook as HTML:\n\nThe Raw NBConvert cell type is used to render different code formats into HTML or LaTeX. This information is stored in the notebook metadata and converted appropriately. Use this cell type to put the desired formatting settings for the HTML file.\nIn the formatting settings, remember to use the setting embed-resources: true. This will ensure that the rendered HTML file is self-contained, and is not dependent on other files. This is especially important when you are sending the HTML file to someone, or uploading it somewhere. If the file is self-contained, then you can send the file by itself without having to attach the dependent files with it.\n\nOnce you have entered the desired formatting setting in the Raw NBConver cell, you are ready to render the notebook to HTML. Open the command prompt, navigate to the directory containing the notebook (.ipynb file), and use the command: quarto render filename.ipynb --to html.",
+    "section": "1.6 Rendering notebook as HTML using Quarto",
+    "text": "1.6 Rendering notebook as HTML using Quarto\nQuarto is designed for high-quality, customizable, and publishable outputs, making it suitable for reports, blogs, or presentations. We’ll use Quarto to print the **.ipynb* file as HTML for your assignment submission.\n\n1.6.1 Installing and Verifying Quarto\n\nDownload and install Quarto from the official website.\nFollow the installation instructions for your operating system.\nOpen your terminal within VS Code:\n\nGo to Terminal -&gt; New Terminal.\n\nRun the following command to verify that Quarto and its dependencies are correctly installed: ```bash quarto check install",
+    "crumbs": [
+      "Getting started: Coding environment",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Setting up your environment with VS Code</span>"
+    ]
+  },
+  {
+    "objectID": "venv_setup.html#converting-the-notebook-to-html",
+    "href": "venv_setup.html#converting-the-notebook-to-html",
+    "title": "1  Setting up your environment with VS Code",
+    "section": "1.7 Converting the Notebook to HTML",
+    "text": "1.7 Converting the Notebook to HTML\nCheck the procedure for rendering a notebook as HTML here. You have several options to format the file. Here are some points to remember when using Quarto to render your notebook as HTML:\n\nThe Raw NBConvert cell type is used to render different code formats into HTML or LaTeX. This information is stored in the notebook metadata and converted appropriately. Use this cell type to put the desired formatting settings for the HTML file.\nIn the formatting settings, remember to use the setting embed-resources: true. This will ensure that the rendered HTML file is self-contained, and is not dependent on other files. This is especially important when you are sending the HTML file to someone, or uploading it somewhere. If the file is self-contained, then you can send the file by itself without having to attach the dependent files with it.\n\nOnce you have entered the desired formatting setting in the Raw NBConver cell, you are ready to render the notebook to HTML. Open the terminal, navigate to the directory containing the notebook (.ipynb file), and use the command: quarto render filename.ipynb --to html.",
     "crumbs": [
       "Getting started: Coding environment",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Setting up your environment with VS Code</span>"
@@ -90,8 +101,8 @@
     "objectID": "venv_setup.html#in-class-exercise",
     "href": "venv_setup.html#in-class-exercise",
     "title": "1  Setting up your environment with VS Code",
-    "section": "1.7 In-class exercise",
-    "text": "1.7 In-class exercise\n\nCreate a new notebook.\nSave the file as In_class_exercise_1.\nGive a heading to the file - First HTML file.\nPrint Today is day 1 of my programming course.\nCompute and print the number of seconds in a day.\n\nThe HTML file should look like the picture below.",
+    "section": "1.8 In-class exercise",
+    "text": "1.8 In-class exercise\n\nCreate a new notebook.\nSave the file as In_class_exercise_1.\nGive a heading to the file - First HTML file.\nPrint Today is day 1 of my programming course.\nCompute and print the number of seconds in a day.\nGenerate html from the notebook using Quarto\n\nThe HTML file should look like the picture below.",
     "crumbs": [
       "Getting started: Coding environment",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Setting up your environment with VS Code</span>"
@@ -101,8 +112,8 @@
     "objectID": "venv_setup.html#reference",
     "href": "venv_setup.html#reference",
     "title": "1  Setting up your environment with VS Code",
-    "section": "1.8 Reference",
-    "text": "1.8 Reference\n\nGetting Started with VS Code\nJupyter Notebooks in VS Code",
+    "section": "1.9 Reference",
+    "text": "1.9 Reference\n\nGetting Started with VS Code\nJupyter Notebooks in VS Code\nQuarto",
     "crumbs": [
       "Getting started: Coding environment",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Setting up your environment with VS Code</span>"

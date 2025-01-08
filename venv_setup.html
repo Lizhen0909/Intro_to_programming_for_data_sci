@@ -268,9 +268,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#writing-and-executing-code" id="toc-writing-and-executing-code" class="nav-link" data-scroll-target="#writing-and-executing-code"><span class="header-section-number">1.5.1</span> Writing and executing code</a></li>
   <li><a href="#saving-and-loading-notebooks" id="toc-saving-and-loading-notebooks" class="nav-link" data-scroll-target="#saving-and-loading-notebooks"><span class="header-section-number">1.5.2</span> Saving and loading notebooks</a></li>
   </ul></li>
-  <li><a href="#rendering-notebook-as-html" id="toc-rendering-notebook-as-html" class="nav-link" data-scroll-target="#rendering-notebook-as-html"><span class="header-section-number">1.6</span> Rendering notebook as HTML</a></li>
-  <li><a href="#in-class-exercise" id="toc-in-class-exercise" class="nav-link" data-scroll-target="#in-class-exercise"><span class="header-section-number">1.7</span> In-class exercise</a></li>
-  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference"><span class="header-section-number">1.8</span> Reference</a></li>
+  <li><a href="#rendering-notebook-as-html-using-quarto" id="toc-rendering-notebook-as-html-using-quarto" class="nav-link" data-scroll-target="#rendering-notebook-as-html-using-quarto"><span class="header-section-number">1.6</span> Rendering notebook as HTML using Quarto</a>
+  <ul>
+  <li><a href="#installing-and-verifying-quarto" id="toc-installing-and-verifying-quarto" class="nav-link" data-scroll-target="#installing-and-verifying-quarto"><span class="header-section-number">1.6.1</span> Installing and Verifying Quarto</a></li>
+  </ul></li>
+  <li><a href="#converting-the-notebook-to-html" id="toc-converting-the-notebook-to-html" class="nav-link" data-scroll-target="#converting-the-notebook-to-html"><span class="header-section-number">1.7</span> Converting the Notebook to HTML</a></li>
+  <li><a href="#in-class-exercise" id="toc-in-class-exercise" class="nav-link" data-scroll-target="#in-class-exercise"><span class="header-section-number">1.8</span> In-class exercise</a></li>
+  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference"><span class="header-section-number">1.9</span> Reference</a></li>
   </ul>
 </nav>
     </div>
@@ -305,15 +309,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="1.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">1.1</span> Learning Objectives</h2>
 <p>By completing this lecture, you will be able to:</p>
 <ul>
-<li>Set up your Python coding environment with VS Code.<br>
-</li>
-<li>Create and manage Python virtual environments using both <code>pip</code> and <code>conda</code>.<br>
-</li>
-<li>Install and verify packages within these environments.<br>
-</li>
-<li>Export and recreate environments using environment files.<br>
-</li>
-<li>Use Jupyter Notebook for data science tasks in VS Code.</li>
+<li>Install and configure Visual Studio Code (VS Code) for Python programming.</li>
+<li>Leverage Jupyter Notebook within VS Code for your data science Python programming.</li>
+<li>Use Quarto to create HTML documents for your upcoming homework submissions.</li>
 </ul>
 </section>
 <section id="introduction-to-visual-studio-code-vs-code" class="level2" data-number="1.2">
@@ -513,36 +511,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>To open an existing Jupyter notebook with VS Code: 1. Navigate to the file in your system’s file explorer. 2. Right-click on the file. 3. Select <code>Open with VS Code</code>.</p>
 </section>
 </section>
-<section id="rendering-notebook-as-html" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="rendering-notebook-as-html"><span class="header-section-number">1.6</span> Rendering notebook as HTML</h2>
-<p>We’ll use Quarto to print the **.ipynb* file as HTML. Check the procedure for rendering a notebook as HTML <a href="https://quarto.org/docs/output-formats/html-basics.html">here</a>. You have several options to format the file. Here are some points to remember when using Quarto to render your notebook as HTML:</p>
+<section id="rendering-notebook-as-html-using-quarto" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="rendering-notebook-as-html-using-quarto"><span class="header-section-number">1.6</span> Rendering notebook as HTML using Quarto</h2>
+<p>Quarto is designed for high-quality, customizable, and publishable outputs, making it suitable for reports, blogs, or presentations. We’ll use Quarto to print the **.ipynb* file as HTML for your assignment submission.</p>
+<section id="installing-and-verifying-quarto" class="level3" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="installing-and-verifying-quarto"><span class="header-section-number">1.6.1</span> Installing and Verifying Quarto</h3>
+<ul>
+<li><a href="https://quarto.org/">Download and install Quarto from the official website</a>.</li>
+<li>Follow the installation instructions for your operating system.</li>
+<li>Open your terminal within VS Code:
+<ul>
+<li>Go to <code>Terminal</code> -&gt; <code>New Terminal</code>.</li>
+</ul></li>
+<li>Run the following command to verify that Quarto and its dependencies are correctly installed: ```bash quarto check install</li>
+</ul>
+</section>
+</section>
+<section id="converting-the-notebook-to-html" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="converting-the-notebook-to-html"><span class="header-section-number">1.7</span> Converting the Notebook to HTML</h2>
+<p>Check the procedure for rendering a notebook as HTML <a href="https://quarto.org/docs/output-formats/html-basics.html">here</a>. You have several options to format the file. Here are some points to remember when using Quarto to render your notebook as HTML:</p>
 <ol type="1">
 <li><p>The <a href="https://nbsphinx.readthedocs.io/en/0.9.3/raw-cells.html"><code>Raw NBConvert</code></a> cell type is used to render different code formats into HTML or LaTeX. This information is stored in the notebook metadata and converted appropriately. <strong>Use this cell type to put the desired formatting settings for the HTML file.</strong></p></li>
 <li><p>In the formatting settings, remember to use the setting <strong><a href="https://quarto.org/docs/output-formats/html-basics.html#self-contained"><code>embed-resources: true</code></a></strong>. This will ensure that the rendered HTML file is self-contained, and is not dependent on other files. This is especially important when you are sending the HTML file to someone, or uploading it somewhere. If the file is self-contained, then you can send the file by itself without having to attach the dependent files with it.</p></li>
 </ol>
-<p>Once you have entered the desired formatting setting in the <code>Raw NBConver</code> cell, you are ready to render the notebook to HTML. Open the command prompt, navigate to the directory containing the notebook <em>(.ipynb file)</em>, and use the command: <code>quarto render filename.ipynb --to html</code>.</p>
+<p>Once you have entered the desired formatting setting in the <code>Raw NBConver</code> cell, you are ready to render the notebook to HTML. Open the terminal, navigate to the directory containing the notebook <em>(.ipynb file)</em>, and use the command: <code>quarto render filename.ipynb --to html</code>.</p>
 </section>
-<section id="in-class-exercise" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="in-class-exercise"><span class="header-section-number">1.7</span> In-class exercise</h2>
+<section id="in-class-exercise" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="in-class-exercise"><span class="header-section-number">1.8</span> In-class exercise</h2>
 <ol type="1">
 <li>Create a new notebook.</li>
 <li>Save the file as <code>In_class_exercise_1</code>.</li>
 <li>Give a heading to the file - <code>First HTML file</code>.</li>
 <li>Print <code>Today is day 1 of my programming course</code>.</li>
 <li>Compute and print the number of seconds in a day.</li>
+<li>Generate html from the notebook using Quarto</li>
 </ol>
 <p>The HTML file should look like the picture below.</p>
-<div id="cell-22" class="cell">
+<div id="cell-23" class="cell">
 <div class="cell-output cell-output-display">
 <img src="./Datasets/snapshot.jpg" width="600">
 </div>
 </div>
 </section>
-<section id="reference" class="level2" data-number="1.8">
-<h2 data-number="1.8" class="anchored" data-anchor-id="reference"><span class="header-section-number">1.8</span> Reference</h2>
+<section id="reference" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="reference"><span class="header-section-number">1.9</span> Reference</h2>
 <ul>
 <li><a href="https://code.visualstudio.com/docs/getstarted/userinterface">Getting Started with VS Code</a></li>
 <li><a href="https://code.visualstudio.com/docs/datascience/jupyter-notebooks">Jupyter Notebooks in VS Code</a></li>
+<li><a href="https://quarto.org/">Quarto</a></li>
 </ul>
 
 
