@@ -386,19 +386,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This step-by-step guide will walk you through setting up your Python environment in Visual Studio Code from scratch using <code>venv</code>.</p>
 <section id="install-python" class="level3" data-number="1.4.1">
 <h3 data-number="1.4.1" class="anchored" data-anchor-id="install-python"><span class="header-section-number">1.4.1</span> Install Python</h3>
+<p>For this course, any version of Python 3 works. You don’t need to worry about having the latest version of Python, as long as you have Python 3 installed.</p>
+<p><em>If Python 3 is already installed on your computer, you can skip this step.</em></p>
 <ol type="1">
 <li><strong>Download Python:</strong>
 <ul>
 <li>Go to the <a href="https://www.python.org/downloads/">official Python website</a> and download the latest version of Python for your operating system.</li>
-<li>Ensure that you check the box <strong>“Add Python to PATH”</strong> during installation.</li>
+<li>Ensure that you check the box <strong>“Add Python to PATH”</strong> during installation if it exists.</li>
 </ul></li>
 <li><strong>Verify Python Installation:</strong>
 <ul>
 <li><p>Open a terminal (Command Prompt on Windows, Terminal on macOS/Linux) and type:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>You should see the installed Python version.</p></li>
+<li><p>You should see the installed Python version. If the command line doesn’t work, you might see an error message like:</p>
+<ul>
+<li><code>python is not recognized</code></li>
+<li><code>python command is not found</code></li>
+</ul>
+<p>This issue is often caused by Python not being added to the <strong>PATH</strong> environment variable. Please refer to <a href="https://realpython.com/add-python-to-path/">the instructions</a> to resolve this issue.</p></li>
 </ul></li>
 </ol>
+<p><strong>Note:</strong><br>
+Before moving forward, ensure that the command <code>python --version</code> successfully prints the version of your installed Python. If it does not, you may need to troubleshoot your Python installation or add it to the PATH environment variable.</p>
 </section>
 <section id="install-visual-studio-code-extensions" class="level3" data-number="1.4.2">
 <h3 data-number="1.4.2" class="anchored" data-anchor-id="install-visual-studio-code-extensions"><span class="header-section-number">1.4.2</span> Install Visual Studio Code Extensions</h3>
@@ -437,7 +446,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>In VS Code, go to <code>File &gt; New File</code> and select <code>Jupyter Notebook</code>. You should see a blank notebook named <code>Untitled-1.ipynb</code> as in the figure below. The <code>.ipynb</code> extension stands for IPython Notebook.</li>
 <li><img src="images/new_notebook.png" class="img-fluid">:</li>
 </ul>
-<p>Jupyter Notebook is an interactive platform that allows you to write code, add text, and create visualizations. You can also use Jupyter Notebook directly in VS Code.</p>
+<p>Jupyter Notebook is an <strong>interactive platform</strong> that allows you to write code, add text, and create visualizations. Data scientists love using Jupyter Notebooks as an alternative to working directly with Python files because of their interactivity and flexibility.</p>
 </section>
 <section id="create-a-python-environment-for-your-work---gui-method" class="level3" data-number="1.4.5">
 <h3 data-number="1.4.5" class="anchored" data-anchor-id="create-a-python-environment-for-your-work---gui-method"><span class="header-section-number">1.4.5</span> Create a Python environment for your work - GUI method</h3>
@@ -466,7 +475,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="1.4.7" class="anchored" data-anchor-id="installing-ipykernel-for-your-notebook"><span class="header-section-number">1.4.7</span> Installing <code>ipykernel</code> for your notebook</h3>
 <p>Create a code cell in the notebook and run it. The first time you run a code cell, you will run into</p>
 <p><img src="images/ipykernel.png" class="img-fluid"> - After installing <code>ipykernel</code>, you should be able to run the following cell.</p>
-<div id="cell-8" class="cell" data-execution_count="1">
+<div id="cell-9" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
@@ -487,7 +496,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Code cell:</strong> By default, a cell is of type <em>Code</em>, i.e., for typing code, as seen as the default choice in the dropdown menu below the <em>Widgets</em> tab. Try typing a line of python code (say, <code>2+3</code>) in an empty code cell and execute it by pressing <em>Shift+Enter</em>. This should execute the code, and create an new code cell. Pressing <em>Ctlr+Enter for Windows (or Cmd+Enter for Mac)</em> will execute the code without creating a new cell.</p>
 <p><strong>Commenting code in a code cell:</strong> Comments should be made while writing the code to explain the purpose of the code or a brief explanation of the tasks being performed by the code. A comment can be added in a code cell by preceding it with a # sign. For example, see the comment in the code below.</p>
 <p>Writing comments will help other users understand your code. It is also useful for the coder to keep track of the tasks being performed by their code.</p>
-<div id="cell-14" class="cell">
+<div id="cell-15" class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#This code adds 3 and 5</span></span>
@@ -497,7 +506,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>8</code></pre>
 </div>
 </div>
+<p>Please refer to the <a href="https://peps.python.org/pep-0008/">Style Guide for Python Code</a> to develop good coding habits from the start.</p>
 <p><strong>Markdown cell:</strong> Although a comment can be written in a code cell, a code cell cannot be used for writing headings/sub-headings, and is not appropriate for writing lengthy chunks of text. In such cases, change the cell type to <em>Markdown</em> from the dropdown menu below the <em>Widgets</em> tab. Use any markdown cheat sheet found online, for example, <a href="https://www.markdownguide.org/cheat-sheet/">this one</a> to format text in the markdown cells.</p>
+<p><strong>Jupyter Notebook shortcuts:</strong> Jupyter Notebook shortcuts are handy and quick. Here is a list of commonly used shortcuts for beginners:</p>
+<ul>
+<li><strong>Shift + Enter</strong>: Run the cell and move to the next one.</li>
+<li><strong>A</strong>: Insert a cell above.</li>
+<li><strong>B</strong>: Insert a cell below.</li>
+<li><strong>D, D</strong>: Delete the selected cell.</li>
+<li><strong>Y</strong>: Change the cell to Code type.</li>
+<li><strong>M</strong>: Change the cell to Markdown type.</li>
+</ul>
 </section>
 <section id="saving-and-loading-notebooks" class="level3" data-number="1.5.2">
 <h3 data-number="1.5.2" class="anchored" data-anchor-id="saving-and-loading-notebooks"><span class="header-section-number">1.5.2</span> Saving and loading notebooks</h3>
@@ -511,14 +530,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="installing-and-verifying-quarto" class="level3" data-number="1.6.1">
 <h3 data-number="1.6.1" class="anchored" data-anchor-id="installing-and-verifying-quarto"><span class="header-section-number">1.6.1</span> Installing and Verifying Quarto</h3>
 <ul>
-<li>Download and install Quarto from the <a href="https://quarto.org/">official website</a>.</li>
-<li>Follow the installation instructions for your operating system.</li>
-<li>Open your terminal within VS Code:
+<li><p>Download and install Quarto from the <a href="https://quarto.org/">official website</a>.</p></li>
+<li><p>Follow the installation instructions for your operating system.</p></li>
+<li><p>Open your terminal within VS Code:</p>
 <ul>
 <li>Go to <code>Terminal</code> -&gt; <code>New Terminal</code>.</li>
 </ul></li>
-<li>Run the following command to verify that Quarto and its dependencies are correctly installed: <code>quarto check install</code></li>
+<li><p>Run the following command to verify that Quarto and its dependencies are correctly installed: <code>quarto --version</code></p></li>
+<li><p>You should see the installed quarto version. If the command line doesn’t work, you might see an error message like:</p>
+<pre><code>- `quarto is not recognized`
+- `quarto command is not found` </code></pre>
+<p>This issue is often caused by Quarto not being added to the PATH environment variable. Similar to how you added the Python path to the environment variable above, you need to add the Quarto path to the system environment variable so that the command can be recognized by your operating system’s shell.</p>
+<p>On Windows, if you used the default installation path (without changing it), Quarto is installed in: <code>C:\Users\&lt;USER&gt;\AppData\Local\Programs\Quarto\bin</code></p></li>
 </ul>
+<p><strong>Note:</strong><br>
+Before moving forward, ensure that the command <code>quarto --version</code> successfully prints the version of your installed quarto. If it does not, you may need to troubleshoot your quarto installation or add it to the PATH environment variable.</p>
 </section>
 <section id="converting-the-notebook-to-html" class="level3" data-number="1.6.2">
 <h3 data-number="1.6.2" class="anchored" data-anchor-id="converting-the-notebook-to-html"><span class="header-section-number">1.6.2</span> Converting the Notebook to HTML</h3>
@@ -541,7 +567,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Generate html from the notebook using Quarto</li>
 </ol>
 <p>The HTML file should look like the picture below.</p>
-<div id="cell-23" class="cell">
+<div id="cell-26" class="cell">
 <div class="cell-output cell-output-display">
 <img src="./Datasets/snapshot.jpg" width="600">
 </div>
