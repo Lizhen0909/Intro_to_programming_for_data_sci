@@ -273,7 +273,8 @@ window.Quarto = {
   <li><a href="#print-function-in-python" id="toc-print-function-in-python" class="nav-link" data-scroll-target="#print-function-in-python"><span class="header-section-number">2.2</span> <code>print()</code> function in python</a>
   <ul class="collapse">
   <li><a href="#basic-examples" id="toc-basic-examples" class="nav-link" data-scroll-target="#basic-examples"><span class="header-section-number">2.2.1</span> Basic Examples</a></li>
-  <li><a href="#practice-exercise-2" id="toc-practice-exercise-2" class="nav-link" data-scroll-target="#practice-exercise-2"><span class="header-section-number">2.2.2</span> Practice exercise 2</a></li>
+  <li><a href="#python-f-strings-formatted-string-literals" id="toc-python-f-strings-formatted-string-literals" class="nav-link" data-scroll-target="#python-f-strings-formatted-string-literals"><span class="header-section-number">2.2.2</span> Python f-Strings (Formatted String Literals)</a></li>
+  <li><a href="#practice-exercise-2" id="toc-practice-exercise-2" class="nav-link" data-scroll-target="#practice-exercise-2"><span class="header-section-number">2.2.3</span> Practice exercise 2</a></li>
   </ul></li>
   <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types"><span class="header-section-number">2.3</span> Data types</a>
   <ul class="collapse">
@@ -282,10 +283,13 @@ window.Quarto = {
   </ul></li>
   <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables"><span class="header-section-number">2.4</span> Variables</a>
   <ul class="collapse">
-  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points"><span class="header-section-number">2.4.1</span> <strong>Key Points</strong></a></li>
-  <li><a href="#example-usage" id="toc-example-usage" class="nav-link" data-scroll-target="#example-usage"><span class="header-section-number">2.4.2</span> Example Usage</a></li>
-  <li><a href="#checking-variable-types" id="toc-checking-variable-types" class="nav-link" data-scroll-target="#checking-variable-types"><span class="header-section-number">2.4.3</span> Checking Variable Types</a></li>
-  <li><a href="#practice-exercise-4" id="toc-practice-exercise-4" class="nav-link" data-scroll-target="#practice-exercise-4"><span class="header-section-number">2.4.4</span> Practice exercise 4</a></li>
+  <li><a href="#variable-declaration" id="toc-variable-declaration" class="nav-link" data-scroll-target="#variable-declaration"><span class="header-section-number">2.4.1</span> Variable Declaration:</a></li>
+  <li><a href="#dynamic-typing" id="toc-dynamic-typing" class="nav-link" data-scroll-target="#dynamic-typing"><span class="header-section-number">2.4.2</span> <strong>Dynamic Typing</strong>:</a></li>
+  <li><a href="#variable-naming-rules" id="toc-variable-naming-rules" class="nav-link" data-scroll-target="#variable-naming-rules"><span class="header-section-number">2.4.3</span> <strong>Variable Naming Rules</strong>:</a></li>
+  <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices"><span class="header-section-number">2.4.4</span> <strong>Best Practices</strong>:</a></li>
+  <li><a href="#example-usage" id="toc-example-usage" class="nav-link" data-scroll-target="#example-usage"><span class="header-section-number">2.4.5</span> Example Usage</a></li>
+  <li><a href="#checking-variable-types" id="toc-checking-variable-types" class="nav-link" data-scroll-target="#checking-variable-types"><span class="header-section-number">2.4.6</span> Checking Variable Types</a></li>
+  <li><a href="#practice-exercise-4" id="toc-practice-exercise-4" class="nav-link" data-scroll-target="#practice-exercise-4"><span class="header-section-number">2.4.7</span> Practice exercise 4</a></li>
   </ul></li>
   <li><a href="#assignment-statements" id="toc-assignment-statements" class="nav-link" data-scroll-target="#assignment-statements"><span class="header-section-number">2.5</span> Assignment statements</a></li>
   <li><a href="#expressions" id="toc-expressions" class="nav-link" data-scroll-target="#expressions"><span class="header-section-number">2.6</span> Expressions</a>
@@ -399,9 +403,41 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="practice-exercise-2" class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" data-anchor-id="practice-exercise-2"><span class="header-section-number">2.2.2</span> Practice exercise 2</h3>
-<p>Use the <code>print()</code> function to: * Display your name, age, and favorite hobby. * Format the output neatly using f-strings.</p>
+<section id="python-f-strings-formatted-string-literals" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="python-f-strings-formatted-string-literals"><span class="header-section-number">2.2.2</span> Python f-Strings (Formatted String Literals)</h3>
+<p><strong>f-strings</strong> provide a concise way to embed expressions inside strings. Introduced in Python 3.6, they improve readability and efficiency.</p>
+<section id="syntax" class="level4" data-number="2.2.2.1">
+<h4 data-number="2.2.2.1" class="anchored" data-anchor-id="syntax"><span class="header-section-number">2.2.2.1</span> <strong>Syntax</strong></h4>
+<ul>
+<li>Use <code>f</code> or <code>F</code> before the string.</li>
+<li>Embed variables or expressions in <code>{}</code>.</li>
+</ul>
+<div id="d13c424d" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Alice"</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># use f-strings for formatted output</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> is </span><span class="sc">{</span>age<span class="sc">}</span><span class="ss"> years old."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Alice is 25 years old.</code></pre>
+</div>
+</div>
+<div id="d145f281" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> <span class="fl">12345.6789</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Rounded: </span><span class="sc">{</span>value<span class="sc">:.2f}</span><span class="ss">, With commas: </span><span class="sc">{</span>value<span class="sc">:,}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rounded: 12345.68, With commas: 12,345.6789</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="practice-exercise-2" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="practice-exercise-2"><span class="header-section-number">2.2.3</span> Practice exercise 2</h3>
+<p>Use the <code>print()</code> function to:</p>
+<ul>
+<li>Display your name, age, and favorite hobby.</li>
+<li>Format the output neatly using f-strings.</li>
+</ul>
 </section>
 </section>
 <section id="data-types" class="level2" data-number="2.3">
@@ -419,25 +455,25 @@ window.Quarto = {
 </ul>
 <p>The data type of the object can be identified using the in-built python function <code>type()</code>. For example, see the following objects and their types:</p>
 <div id="9ba52e1a" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>int</code></pre>
 </div>
 </div>
 <div id="240cc76c" class="cell" data-execution_count="36">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(<span class="fl">4.4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(<span class="fl">4.4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="36">
 <pre><code>float</code></pre>
 </div>
 </div>
 <div id="8bf2d5ac" class="cell" data-execution_count="37">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(<span class="st">'4'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(<span class="st">'4'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="37">
 <pre><code>str</code></pre>
 </div>
 </div>
 <div id="d92acd98" class="cell" data-execution_count="38">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(<span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(<span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="38">
 <pre><code>bool</code></pre>
 </div>
@@ -458,52 +494,47 @@ window.Quarto = {
 <section id="variables" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="variables"><span class="header-section-number">2.4</span> Variables</h2>
 <p>A <strong>variable</strong> is a container for storing data values. Variables in Python are dynamically typed, meaning you don’t need to specify their type when declaring them.</p>
-<section id="key-points" class="level3" data-number="2.4.1">
-<h3 data-number="2.4.1" class="anchored" data-anchor-id="key-points"><span class="header-section-number">2.4.1</span> <strong>Key Points</strong></h3>
-<ol type="1">
-<li><strong>Variable Declaration</strong>:
+<section id="variable-declaration" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="variable-declaration"><span class="header-section-number">2.4.1</span> Variable Declaration:</h3>
 <ul>
-<li><p>You can create a variable by assigning a value to it using the <code>=</code> operator.</p></li>
-<li><p>Example:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span>  <span class="co"># Integer</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Alice"</span>  <span class="co"># String</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>pi <span class="op">=</span> <span class="fl">3.14</span>  <span class="co"># Float</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>is_active <span class="op">=</span> <span class="va">True</span>  <span class="co"># Boolean</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ul></li>
-<li><strong>Dynamic Typing</strong>:
+<li>You can create a variable by assigning a value to it using the <code>=</code> operator.</li>
+<li>Example: <code>python      x = 10  # Integer      name = "Alice"  # String      pi = 3.14  # Float      is_active = True  # Boolean</code></li>
+</ul>
+</section>
+<section id="dynamic-typing" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="dynamic-typing"><span class="header-section-number">2.4.2</span> <strong>Dynamic Typing</strong>:</h3>
 <ul>
-<li><p>The type of a variable is determined by the value assigned to it.</p></li>
-<li><p>Example:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span>        <span class="co"># x is an integer</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="st">"Python"</span>  <span class="co"># x is now a string</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ul></li>
-<li><strong>Variable Naming Rules</strong>:
+<li>The type of a variable is determined by the value assigned to it.</li>
+<li>Example: <code>python      x = 10        # x is an integer      x = "Python"  # x is now a string</code></li>
+</ul>
+</section>
+<section id="variable-naming-rules" class="level3" data-number="2.4.3">
+<h3 data-number="2.4.3" class="anchored" data-anchor-id="variable-naming-rules"><span class="header-section-number">2.4.3</span> <strong>Variable Naming Rules</strong>:</h3>
 <ul>
 <li>Names must start with a letter (a-z, A-Z) or an underscore (_).</li>
 <li>Names can only contain letters, numbers (0-9), and underscores.</li>
 <li>Names are case-sensitive (<code>name</code> and <code>Name</code> are different variables).</li>
 <li>Reserved keywords (e.g., <code>if</code>, <code>for</code>, <code>while</code>) cannot be used as variable names.</li>
-</ul></li>
-</ol>
+</ul>
+<blockquote class="blockquote">
 <p>There are certain <em>reserved words</em> in python that have some meaning, and cannot be used as variable names. These reserved words are:</p>
+</blockquote>
 <div id="1ce20974" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display" data-execution_count="6">
 <img src="reserved_words.jpg" width="600">
 </div>
 </div>
-<ol start="4" type="1">
-<li><strong>Best Practices</strong>:
+</section>
+<section id="best-practices" class="level3" data-number="2.4.4">
+<h3 data-number="2.4.4" class="anchored" data-anchor-id="best-practices"><span class="header-section-number">2.4.4</span> <strong>Best Practices</strong>:</h3>
 <ul>
-<li><p>Use descriptive variable names:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>total_price <span class="op">=</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Use snake_case for multi-word names:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>user_age <span class="op">=</span> <span class="dv">25</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ul></li>
-</ol>
+<li>Use descriptive variable names: <code>python      total_price = 100</code></li>
+<li>Use snake_case for multi-word names: <code>python      user_age = 25</code></li>
+</ul>
 <p><a href="https://peps.python.org/pep-0008/">Python style guide</a>: Please refer to the python style guide for best coding practices, such as naming variables, using spaces, tabs, and styling the different components of your code.</p>
 </section>
-<section id="example-usage" class="level3" data-number="2.4.2">
-<h3 data-number="2.4.2" class="anchored" data-anchor-id="example-usage"><span class="header-section-number">2.4.2</span> Example Usage</h3>
+<section id="example-usage" class="level3" data-number="2.4.5">
+<h3 data-number="2.4.5" class="anchored" data-anchor-id="example-usage"><span class="header-section-number">2.4.5</span> Example Usage</h3>
 <div id="4fc4100f" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Variable assignments</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">5</span></span>
@@ -529,8 +560,8 @@ Hello, World!</code></pre>
 </div>
 </div>
 </section>
-<section id="checking-variable-types" class="level3" data-number="2.4.3">
-<h3 data-number="2.4.3" class="anchored" data-anchor-id="checking-variable-types"><span class="header-section-number">2.4.3</span> Checking Variable Types</h3>
+<section id="checking-variable-types" class="level3" data-number="2.4.6">
+<h3 data-number="2.4.6" class="anchored" data-anchor-id="checking-variable-types"><span class="header-section-number">2.4.6</span> Checking Variable Types</h3>
 <p>You can use the <code>type()</code> function to check the type of a variable.</p>
 <div id="96d75687" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
@@ -544,8 +575,8 @@ Hello, World!</code></pre>
 </div>
 </div>
 </section>
-<section id="practice-exercise-4" class="level3" data-number="2.4.4">
-<h3 data-number="2.4.4" class="anchored" data-anchor-id="practice-exercise-4"><span class="header-section-number">2.4.4</span> Practice exercise 4</h3>
+<section id="practice-exercise-4" class="level3" data-number="2.4.7">
+<h3 data-number="2.4.7" class="anchored" data-anchor-id="practice-exercise-4"><span class="header-section-number">2.4.7</span> Practice exercise 4</h3>
 <p>Which of the following variable names are valid?</p>
 <ol type="1">
 <li><p>var.name</p></li>
