@@ -304,13 +304,15 @@ window.Quarto = {
   <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">2.8.1</span> Examples</a></li>
   <li><a href="#practice-exercise-6" id="toc-practice-exercise-6" class="nav-link" data-scroll-target="#practice-exercise-6"><span class="header-section-number">2.8.2</span> Practice exercise 6</a></li>
   </ul></li>
-  <li><a href="#programming-errors" id="toc-programming-errors" class="nav-link" data-scroll-target="#programming-errors"><span class="header-section-number">2.9</span> Programming errors</a>
+  <li><a href="#errors-and-exceptions" id="toc-errors-and-exceptions" class="nav-link" data-scroll-target="#errors-and-exceptions"><span class="header-section-number">2.9</span> Errors and Exceptions</a>
   <ul class="collapse">
   <li><a href="#syntax-errors" id="toc-syntax-errors" class="nav-link" data-scroll-target="#syntax-errors"><span class="header-section-number">2.9.1</span> Syntax errors</a></li>
-  <li><a href="#run-time-errors" id="toc-run-time-errors" class="nav-link" data-scroll-target="#run-time-errors"><span class="header-section-number">2.9.2</span> Run-time errors</a></li>
-  <li><a href="#semantic-errors" id="toc-semantic-errors" class="nav-link" data-scroll-target="#semantic-errors"><span class="header-section-number">2.9.3</span> Semantic errors</a></li>
+  <li><a href="#exceptions" id="toc-exceptions" class="nav-link" data-scroll-target="#exceptions"><span class="header-section-number">2.9.2</span> Exceptions</a></li>
+  <li><a href="#exception-handling" id="toc-exception-handling" class="nav-link" data-scroll-target="#exception-handling"><span class="header-section-number">2.9.3</span> Exception Handling</a></li>
   <li><a href="#practice-exercise-7" id="toc-practice-exercise-7" class="nav-link" data-scroll-target="#practice-exercise-7"><span class="header-section-number">2.9.4</span> Practice exercise 7</a></li>
   <li><a href="#practice-exercise-8" id="toc-practice-exercise-8" class="nav-link" data-scroll-target="#practice-exercise-8"><span class="header-section-number">2.9.5</span> Practice exercise 8</a></li>
+  <li><a href="#semantic-errors-bugs" id="toc-semantic-errors-bugs" class="nav-link" data-scroll-target="#semantic-errors-bugs"><span class="header-section-number">2.9.6</span> Semantic errors (bugs)</a></li>
+  <li><a href="#practice-exercise-9" id="toc-practice-exercise-9" class="nav-link" data-scroll-target="#practice-exercise-9"><span class="header-section-number">2.9.7</span> Practice exercise 9</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -810,20 +812,27 @@ Hello, World!</code></pre>
 <p>Ask the user to input their year of birth, and print their age.</p>
 </section>
 </section>
-<section id="programming-errors" class="level2" data-number="2.9">
-<h2 data-number="2.9" class="anchored" data-anchor-id="programming-errors"><span class="header-section-number">2.9</span> Programming errors</h2>
-<p>There are 3 types of errors that can occur in a program - syntax errors, run-time errors, and semantic errors.</p>
+<section id="errors-and-exceptions" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="errors-and-exceptions"><span class="header-section-number">2.9</span> Errors and Exceptions</h2>
+<p>Errors and Exceptions are common while writing and executing Python code.</p>
 <section id="syntax-errors" class="level3" data-number="2.9.1">
 <h3 data-number="2.9.1" class="anchored" data-anchor-id="syntax-errors"><span class="header-section-number">2.9.1</span> Syntax errors</h3>
-<p>Syntax errors occur if the code is written in a way that it does not comply with the rules / standards / laws of the language (python in this case). For example, suppose a values is assigned to a variable as follows:</p>
+<p>Syntax errors occur if the code is written in a way that it does not comply with the rules / standards / laws of the language (python in this case). It occur when the Python parser encounters invalid syntax.</p>
+<p>For example, suppose a values is assigned to a variable as follows:</p>
 <div id="604b30cb" class="cell">
 <div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span><span class="er">value</span> <span class="op">=</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The above code when executed will indicate a syntax error as it violates the rule that a variable name must not start with a number.</p>
+<div id="374d4e6f" class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># another example</span></span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello World"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Solution: Fix the syntax issue by ensuring correct punctuation or structure.</p>
 </section>
-<section id="run-time-errors" class="level3" data-number="2.9.2">
-<h3 data-number="2.9.2" class="anchored" data-anchor-id="run-time-errors"><span class="header-section-number">2.9.2</span> Run-time errors</h3>
-<p>Run-time errors occur when a code is syntactically correct, but there are other issues with the code such as:</p>
+<section id="exceptions" class="level3" data-number="2.9.2">
+<h3 data-number="2.9.2" class="anchored" data-anchor-id="exceptions"><span class="header-section-number">2.9.2</span> Exceptions</h3>
+<p>Even if a statement or expression is syntactically correct, it may cause an error when an attempt is made to execute it. Errors detected during execution are called exceptions and are not unconditionally fatal:</p>
+<p>Exceptions come in different types, and the type is printed as part of the message: below are the common ones:</p>
 <ul>
 <li>Misspelled or incorrectly capitalized variable and function names</li>
 <li>Attempts to perform operations (such as math operations) on data of the wrong type (ex. attempting to subtract two variables that hold string values)</li>
@@ -831,44 +840,141 @@ Hello, World!</code></pre>
 <li>Attempts to use a type conversion function such as <code>int</code> on a value that can’t be converted to an <code>int</code></li>
 </ul>
 <p>For example, suppose a number is multipled as follws:</p>
-<div id="59bc01ed" class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>multiplication_result <span class="op">=</span> x <span class="op">*</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="59bc01ed" class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>multiplication_result <span class="op">=</span> misy <span class="op">*</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg ansi-bold">In[29], line 1</span>
+<span class="ansi-green-fg ansi-bold">----&gt; 1</span> multiplication_result <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">misy</span> <span style="color:rgb(98,98,98)">*</span> <span style="color:rgb(98,98,98)">4</span>
+
+<span class="ansi-red-fg ansi-bold">NameError</span>: name 'misy' is not defined</pre>
 </div>
-<p>The above code is syntactically correct. However, it will generate an error as the variable <code>x</code> has not been defined as a number.</p>
+</div>
+</div>
+<p>The above code is syntactically correct. However, it will generate an error as the variable <code>misy</code> has not been defined as a number.</p>
+<div id="3ca34dac" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>(<span class="st">"abc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg ansi-bold">ValueError</span>                                Traceback (most recent call last)
+Cell <span class="ansi-green-fg ansi-bold">In[25], line 1</span>
+<span class="ansi-green-fg ansi-bold">----&gt; 1</span> <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">int</span><span class="ansi-yellow-bg">(</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">abc</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span class="ansi-yellow-bg">)</span>
+
+<span class="ansi-red-fg ansi-bold">ValueError</span>: invalid literal for int() with base 10: 'abc'</pre>
+</div>
+</div>
+</div>
+<div id="fb60a952" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"2"</span> <span class="op">+</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg ansi-bold">TypeError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg ansi-bold">In[24], line 1</span>
+<span class="ansi-green-fg ansi-bold">----&gt; 1</span> <span style="color:rgb(0,135,0)">print</span>(<span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">2</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span class="ansi-yellow-bg"> </span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">+</span><span class="ansi-yellow-bg"> </span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">3</span>)
+
+<span class="ansi-red-fg ansi-bold">TypeError</span>: can only concatenate str (not "int") to str</pre>
+</div>
+</div>
+</div>
+<div id="f9e774d5" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">10</span> <span class="op">/</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg ansi-bold">ZeroDivisionError</span>                         Traceback (most recent call last)
+Cell <span class="ansi-green-fg ansi-bold">In[27], line 1</span>
+<span class="ansi-green-fg ansi-bold">----&gt; 1</span> <span style="color:rgb(0,135,0)">print</span>(<span style="color:rgb(98,98,98)" class="ansi-yellow-bg">10</span><span class="ansi-yellow-bg"> </span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">/</span><span class="ansi-yellow-bg"> </span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">0</span>)
+
+<span class="ansi-red-fg ansi-bold">ZeroDivisionError</span>: division by zero</pre>
+</div>
+</div>
+</div>
 </section>
-<section id="semantic-errors" class="level3" data-number="2.9.3">
-<h3 data-number="2.9.3" class="anchored" data-anchor-id="semantic-errors"><span class="header-section-number">2.9.3</span> Semantic errors</h3>
-<p>Semantic errors occur when the code executes without an error being indicated by the compiler. However, it does not work as inteded by the user. For example, consider the following code of mutiplying the number 6 by 3:</p>
-<div id="1b12a31d" class="cell" data-execution_count="34">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="st">'6'</span></span>
-<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">*</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="34">
-<pre><code>'666'</code></pre>
+<section id="exception-handling" class="level3" data-number="2.9.3">
+<h3 data-number="2.9.3" class="anchored" data-anchor-id="exception-handling"><span class="header-section-number">2.9.3</span> Exception Handling</h3>
+<p>When an error occurs, or exception as we call it, Python will normally stop and generate an error message.</p>
+<p>If we suspect that some lines of code may produce an error, we can put them in a <code>try</code> block, and if an error does occur, we can use the <code>except</code> block to instead execute an alternative piece of code. This way the program will not stop if an error occurs within the <code>try</code> block, and instead will be directed to execute the code within the <code>except</code> block.</p>
+<p>These exceptions can be handled Using the Try-Except Blocks</p>
+<div id="9c1e7278" class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="dv">10</span> <span class="op">/</span> <span class="dv">0</span>)</span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
+<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Cannot divide by zero!"</span>)</span>
+<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Cannot divide by zero!</code></pre>
 </div>
 </div>
-<p>If it was intended to multiply the number 6, then the variable <code>x</code> should have been defined as <code>x=6</code> so that <code>x</code> has a value of type <code>integer</code>. However, in the above code <code>6</code> is a <code>string</code> type value. When a <code>string</code> is multiplied by an integer, say <em>n</em>, it concatenates with itself <em>n</em> times.</p>
+<p>Since the try block raises an error, the except block will be executed. Without the try block, the program will crash and raise an error:</p>
+<p>The <code>finally</code> block, if specified, will be executed regardless if the try block raises an error or not.</p>
+<div id="369168d0" class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="dv">10</span> <span class="op">/</span> <span class="dv">0</span>)</span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Cannot divide by zero!"</span>)</span>
+<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a><span class="cf">finally</span>:</span>
+<span id="cb69-6"><a href="#cb69-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"This will always execute."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Cannot divide by zero!
+This will always execute.</code></pre>
+</div>
+</div>
 </section>
 <section id="practice-exercise-7" class="level3" data-number="2.9.4">
 <h3 data-number="2.9.4" class="anchored" data-anchor-id="practice-exercise-7"><span class="header-section-number">2.9.4</span> Practice exercise 7</h3>
 <p>Suppose we wish to compute tax using the income and the tax rate. Identify the type of error from amongst syntax error, semantic error and run-time error in the following pieces of code.</p>
 <div id="bb87a313" class="cell">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>income <span class="op">=</span> <span class="dv">2000</span></span>
-<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>tax <span class="op">=</span> <span class="fl">.08</span> <span class="op">*</span> Income</span>
-<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"tax on"</span>, income, <span class="st">"is:"</span>, tax)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>income <span class="op">=</span> <span class="dv">2000</span></span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>tax <span class="op">=</span> <span class="fl">.08</span> <span class="op">*</span> Income</span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"tax on"</span>, income, <span class="st">"is:"</span>, tax)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="54415517" class="cell">
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>income <span class="op">=</span> <span class="dv">2000</span></span>
-<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>tax <span class="op">=</span> <span class="fl">.08</span> x income</span>
-<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"tax on"</span>, income, <span class="st">"is:"</span>, tax)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>income <span class="op">=</span> <span class="dv">2000</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>tax <span class="op">=</span> <span class="fl">.08</span> x income</span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"tax on"</span>, income, <span class="st">"is:"</span>, tax)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="2231ae8f" class="cell">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>income <span class="op">=</span> <span class="dv">2000</span></span>
-<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>tax <span class="op">=</span> <span class="fl">.08</span> <span class="op">**</span> income</span>
-<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"tax on"</span>, income, <span class="st">"is:"</span>, tax)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>income <span class="op">=</span> <span class="dv">2000</span></span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>tax <span class="op">=</span> <span class="fl">.08</span> <span class="op">**</span> income</span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"tax on"</span>, income, <span class="st">"is:"</span>, tax)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="practice-exercise-8" class="level3" data-number="2.9.5">
 <h3 data-number="2.9.5" class="anchored" data-anchor-id="practice-exercise-8"><span class="header-section-number">2.9.5</span> Practice exercise 8</h3>
+<p>Input an integer from the user. If the user inputs a valid integer, print whether it is a multiple of 3. However, if the user does not input a valid integer, print a message saying that the input is invalid.</p>
+<div id="fc0619aa" class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>num <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter an integer:"</span>)</span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a><span class="co">#The code lines within the 'try' block will execute as long as they run without error  </span></span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Converting the input to integer, as user input is a string</span></span>
+<span id="cb74-6"><a href="#cb74-6" aria-hidden="true" tabindex="-1"></a>    num_int <span class="op">=</span> <span class="bu">int</span>(num)  </span>
+<span id="cb74-7"><a href="#cb74-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb74-8"><a href="#cb74-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">#checking if the integer is a multiple of 3</span></span>
+<span id="cb74-9"><a href="#cb74-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> num_int <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:            </span>
+<span id="cb74-10"><a href="#cb74-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Number is a multiple of 3"</span>)</span>
+<span id="cb74-11"><a href="#cb74-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb74-12"><a href="#cb74-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Number is not a multiple of 3"</span>)</span>
+<span id="cb74-13"><a href="#cb74-13" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb74-14"><a href="#cb74-14" aria-hidden="true" tabindex="-1"></a><span class="co">#The code lines within the 'except' block will execute only if the code lines within the 'try' block throw an error        </span></span>
+<span id="cb74-15"><a href="#cb74-15" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
+<span id="cb74-16"><a href="#cb74-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Input must be an integer"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Input must be an integer</code></pre>
+</div>
+</div>
+</section>
+<section id="semantic-errors-bugs" class="level3" data-number="2.9.6">
+<h3 data-number="2.9.6" class="anchored" data-anchor-id="semantic-errors-bugs"><span class="header-section-number">2.9.6</span> Semantic errors (bugs)</h3>
+<p>Semantic errors occur when the code executes without an error being indicated by the compiler. However, it does not work as inteded by the user. For example, consider the following code of mutiplying the number 6 by 3: x = ‘6’ x * 3 If it was intended to multiply the number 6, then the variable <code>x</code> should have been defined as <code>x=6</code> so that <code>x</code> has a value of type <code>integer</code>. However, in the above code <code>6</code> is a <code>string</code> type value. When a <code>string</code> is multiplied by an integer, say <em>n</em>, it concatenates with itself <em>n</em> times.</p>
+</section>
+<section id="practice-exercise-9" class="level3" data-number="2.9.7">
+<h3 data-number="2.9.7" class="anchored" data-anchor-id="practice-exercise-9"><span class="header-section-number">2.9.7</span> Practice exercise 9</h3>
 <p>The formula for computing final amount if one is earning compund interest is given by: <span class="math display">\[A = P\bigg(1+\frac{r}{n}\bigg)^{nt},\]</span></p>
 <p>where:<br>
 P = Principal amount (initial investment),<br>
