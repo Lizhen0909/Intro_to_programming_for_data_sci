@@ -1123,13 +1123,11 @@ e</code></pre>
 <p>The <code>enumerate()</code> function adds a counter to an iterable and returns it as an <strong>enumerate object</strong>, which can be iterated over to get both the <strong>index</strong> and the <strong>value</strong> of each element in the iterable.</p>
 <section id="syntax" class="level4" data-number="3.5.1.1">
 <h4 data-number="3.5.1.1" class="anchored" data-anchor-id="syntax"><span class="header-section-number">3.5.1.1</span> <strong>Syntax</strong></h4>
-<div class="sourceCode" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="bu">enumerate</span>(iterable, start<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>::: {<span class="co">#6a444237 .cell execution_count=23}</span></span>
-<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>``` {.python .cell<span class="op">-</span>code}</span>
-<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="co"># using enumerate</span></span>
-<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, char <span class="kw">in</span> <span class="bu">enumerate</span>(sentence):</span>
-<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(index, char)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>enumerate(iterable, start=0)</code></p>
+<div id="6a444237" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># using enumerate</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, char <span class="kw">in</span> <span class="bu">enumerate</span>(sentence):</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(index, char)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0 S
 1 h
@@ -1169,7 +1167,7 @@ e</code></pre>
 35 r
 36 e</code></pre>
 </div>
-<p>:::</p>
+</div>
 <p><strong>Slicing a string:</strong></p>
 <p>A part of the string can be sliced by passing the starting index (say <code>start</code>) and the stopping index (say <code>stop</code>) as <code>start</code>:<code>stop</code> to the index operator []. This is called slicing a string. For a string <code>S</code>, the characters starting from the index <code>start</code> upto the index <code>stop</code>, but not including <code>stop</code>, can be sliced as <code>S[start:stop]</code>.</p>
 <p>For example, the slice of the string <code>sentence</code> from index <code>4</code> to index <code>9</code>, but not including <code>9</code> is:</p>
