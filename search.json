@@ -472,14 +472,113 @@
     ]
   },
   {
+    "objectID": "template_A01_WI25.html",
+    "href": "template_A01_WI25.html",
+    "title": "Appendix A — Assignment 1",
+    "section": "",
+    "text": "A.0.1 Instructions",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Assignment 1</span>"
+    ]
+  },
+  {
+    "objectID": "template_A01_WI25.html#question-1-4-points",
+    "href": "template_A01_WI25.html#question-1-4-points",
+    "title": "Appendix A — Assignment 1",
+    "section": "A.1 Question 1 (4 points)",
+    "text": "A.1 Question 1 (4 points)\n\nCreate a a variable called var_float that contains a decimal number.\nStore a sentence as var_sent that reads exactly as follows: “The square of {} is {}.” Where the first {} is your var_float and the second {} is the square of that variable. Print your sentence.\nPrint the output of using the count method to determine how many spaces are in var_sent.\nRound your var_float to 0 decimal places and convert to an integer. Store this as var_int and print the type to verify this was done correctly.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Assignment 1</span>"
+    ]
+  },
+  {
+    "objectID": "template_A01_WI25.html#question-2-3-points",
+    "href": "template_A01_WI25.html#question-2-3-points",
+    "title": "Appendix A — Assignment 1",
+    "section": "A.2 Question 2 (3 points)",
+    "text": "A.2 Question 2 (3 points)\nHave a user input 2 Booleans (hint: must be type bool). In a single print line, using only and, or, not functions, have the output return True if both variables are the same, and False is they are different.\nClarification: 1) cannot use conditional if statements 2) this must be capable of printing the correct output for any possible booleans the user could enter, not just the one example that your html will show.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Assignment 1</span>"
+    ]
+  },
+  {
+    "objectID": "template_A01_WI25.html#question-3-3-points",
+    "href": "template_A01_WI25.html#question-3-3-points",
+    "title": "Appendix A — Assignment 1",
+    "section": "A.3 Question 3 (3 points)",
+    "text": "A.3 Question 3 (3 points)\nImport the random library of Python with the alias rm. Using the randint function in the library, create a random integer between 1 and 5, inclusive, and store as rand_int. Print your name that many times.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Assignment 1</span>"
+    ]
+  },
+  {
+    "objectID": "template_A01_WI25.html#question-4-3-points",
+    "href": "template_A01_WI25.html#question-4-3-points",
+    "title": "Appendix A — Assignment 1",
+    "section": "A.4 Question 4 (3 points)",
+    "text": "A.4 Question 4 (3 points)\nWrite a tip calculator program that asks the user for the price of the meal and the percent tip they want to leave. Then print a sentence that displays both the tip amount and total bill. Example if meal price is 25 dollars and tip is 15 percent:\n                               Your tip amount is $3.75 and your total bill is $28.75.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Assignment 1</span>"
+    ]
+  },
+  {
+    "objectID": "template_A01_WI25.html#question-5-3-points",
+    "href": "template_A01_WI25.html#question-5-3-points",
+    "title": "Appendix A — Assignment 1",
+    "section": "A.5 Question 5 (3 points)",
+    "text": "A.5 Question 5 (3 points)\nWrite a program that asks the user for a number of seconds and prints out how many minutes and seconds that is. Example:\n                                200 seconds is 3 minutes and 20 seconds.\n                                           \nUse only two lines of code for this question: one line for the input and one line for the print.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Assignment 1</span>"
+    ]
+  },
+  {
+    "objectID": "template_A01_WI25.html#question-6-4-points",
+    "href": "template_A01_WI25.html#question-6-4-points",
+    "title": "Appendix A — Assignment 1",
+    "section": "A.6 Question 6 (4 points)",
+    "text": "A.6 Question 6 (4 points)\nWrite a program that asks the user to enter two numbers. Have the program return one of the following messages depending on which criteria is met.\n“num1 is greater than num2”; “num 1 is less than num2”; “num1 is equal to num2”; where num1 and num2 are the user inputed values.\nShow the output of the program with any two numbers of your choice.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Assignment 1</span>"
+    ]
+  },
+  {
+    "objectID": "template_A01_WI25.html#question-7-4-points",
+    "href": "template_A01_WI25.html#question-7-4-points",
+    "title": "Appendix A — Assignment 1",
+    "section": "A.7 Question 7 (4 points)",
+    "text": "A.7 Question 7 (4 points)\n\nUse a single if-elif-else statement to print the smallest of 3 user defined numbers. Show the output of the program with any three numbers of your choice.\nUse a nested conditional statement to print the smallest of 3 user defined numbers. Show the output of the program with any three numbers of your choice.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Assignment 1</span>"
+    ]
+  },
+  {
+    "objectID": "template_A01_WI25.html#question-8-6-points",
+    "href": "template_A01_WI25.html#question-8-6-points",
+    "title": "Appendix A — Assignment 1",
+    "section": "A.8 Question 8 (6 points)",
+    "text": "A.8 Question 8 (6 points)\nWrite a program that asks the user to enter either rock, paper, or scissors. Use a conditional statement to determine if the user wins, loses, or ties the computer at the game “Rock, Paper, Scissors”. Note: rock beats scissors; scissors beats paper; paper beats rock\nPrint a meaningful sentence that includes the winner, the computer’s choice, and the user’s choice.\n\nHandle case sensitivity (example: if the user enters Rock, it will still run).\nIf the user enters a word other than one of the choices, print “Invalid choice.”.\nShow the output of the program when the user enters Rock (capitalized)\n\n\n# starter code to generate a random choice of rock, paper, scissors\nimport random as rm\ncomp_choice = rm.choice(['rock', 'paper', 'scissors'])\n\n# your solution in this code chunk below",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Assignment 1</span>"
+    ]
+  },
+  {
     "objectID": "Datasets.html",
     "href": "Datasets.html",
-    "title": "Appendix A — Assignment templates and Datasets",
+    "title": "Appendix B — Assignment templates and Datasets",
     "section": "",
     "text": "Assignment templates and datasets used in the book can be found here",
     "crumbs": [
       "Appendices",
-      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Assignment templates and Datasets</span>"
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Assignment templates and Datasets</span>"
     ]
   }
 ]
