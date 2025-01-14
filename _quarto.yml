@@ -31,10 +31,11 @@ book:
       #chapters:
         #- Variable_expressions_statements-R.qmd
         #- control_flow.qmd
-        #- control_flow2.qmd
+        #- control_flow2.qmd template_A01_WI25
         #- robjects.qmd
         #- recursion.qmd
   appendices: 
+    - template_A01_WI25.ipynb
     - Datasets.ipynb
 
 bibliography: references.bib
