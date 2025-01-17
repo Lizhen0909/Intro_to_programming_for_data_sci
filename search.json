@@ -571,6 +571,17 @@
     ]
   },
   {
+    "objectID": "template_A01_WI25.html#bonus-6-points",
+    "href": "template_A01_WI25.html#bonus-6-points",
+    "title": "Appendix A — Assignment 1",
+    "section": "A.9 Bonus (6 points)",
+    "text": "A.9 Bonus (6 points)\nFor all questions in this assignment that involve accepting user input:\n\nUse a try-except block to handle cases where the user enters invalid input.\nImplement a loop to repeatedly prompt the user for input until they provide a valid value, allowing the program to proceed.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Assignment 1</span>"
+    ]
+  },
+  {
     "objectID": "Datasets.html",
     "href": "Datasets.html",
     "title": "Appendix B — Assignment templates and Datasets",
