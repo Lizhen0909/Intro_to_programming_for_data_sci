@@ -505,11 +505,11 @@
     ]
   },
   {
-    "objectID": "template_A01_WI25.html#question-3-3-points",
-    "href": "template_A01_WI25.html#question-3-3-points",
+    "objectID": "template_A01_WI25.html#question-3-6-points",
+    "href": "template_A01_WI25.html#question-3-6-points",
     "title": "Appendix A — Assignment 1",
-    "section": "A.3 Question 3 (3 points)",
-    "text": "A.3 Question 3 (3 points)\nImport the random library of Python with the alias rm. Using the randint function in the library, create a random integer between 1 and 5, inclusive, and store as rand_int. Print your name that many times.",
+    "section": "A.3 Question 3 (6 points)",
+    "text": "A.3 Question 3 (6 points)\nAt Northwestern, email addresses are classified as follows:\n\nStudent email addresses end with @u.northwestern.edu.\nProfessor email addresses end with @northwestern.edu (but not @u.northwestern.edu).\n\nWrite a Python program that: 1. Asks the user how many email addresses they will enter. 2. Prompts the user to input each email address. 3. After all email addresses are entered: - Print all professor email addresses under the heading \"Professor Emails:\". - Print all student email addresses under the heading \"Student Emails:\". - If no professor or student emails were entered, print \"None\" under the respective heading.\n\nA.3.1 Requirements:\n\nDo not use lists or other advanced data structures, since we have not covered them yet.\nUse only basic string operations and loops.\nThe program must handle all cases, regardless of uppercase or lowercase in the email addresses.\nTrim any leading or trailing whitespace in the user input before classifying the email.\n\nExample Run:\nHow many email addresses will you be entering? 3  Enter an email address: lshi@northwestern.edu  Enter an email address: jackyu@u.northwestern.edu  Enter an email address: Alexa@u.northwestern.edu \nOutput:\nProfessor Emails:  lshi@northwestern.edu \nStudent Emails:  jackyu@u.northwestern.edu  alexa@u.northwestern.edu",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>Assignment 1</span>"

@@ -4885,7 +4885,10 @@ vertical-align: -.125em;
   <li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions"><span class="header-section-number">A.0.1</span> Instructions</a></li>
   <li><a href="#question-1-4-points" id="toc-question-1-4-points" class="nav-link" data-scroll-target="#question-1-4-points"><span class="header-section-number">A.1</span> Question 1 (4 points)</a></li>
   <li><a href="#question-2-3-points" id="toc-question-2-3-points" class="nav-link" data-scroll-target="#question-2-3-points"><span class="header-section-number">A.2</span> Question 2 (3 points)</a></li>
-  <li><a href="#question-3-3-points" id="toc-question-3-3-points" class="nav-link" data-scroll-target="#question-3-3-points"><span class="header-section-number">A.3</span> Question 3 (3 points)</a></li>
+  <li><a href="#question-3-6-points" id="toc-question-3-6-points" class="nav-link" data-scroll-target="#question-3-6-points"><span class="header-section-number">A.3</span> Question 3 (6 points)</a>
+  <ul class="collapse">
+  <li><a href="#requirements" id="toc-requirements" class="nav-link" data-scroll-target="#requirements"><span class="header-section-number">A.3.1</span> Requirements:</a></li>
+  </ul></li>
   <li><a href="#question-4-3-points" id="toc-question-4-3-points" class="nav-link" data-scroll-target="#question-4-3-points"><span class="header-section-number">A.4</span> Question 4 (3 points)</a></li>
   <li><a href="#question-5-3-points" id="toc-question-5-3-points" class="nav-link" data-scroll-target="#question-5-3-points"><span class="header-section-number">A.5</span> Question 5 (3 points)</a></li>
   <li><a href="#question-6-4-points" id="toc-question-6-4-points" class="nav-link" data-scroll-target="#question-6-4-points"><span class="header-section-number">A.6</span> Question 6 (4 points)</a></li>
@@ -4953,9 +4956,28 @@ vertical-align: -.125em;
 <p>Have a user input 2 Booleans (hint: must be type bool). In a <strong>single print line</strong>, using only <code>and</code>, <code>or</code>, <code>not</code> functions, have the output return True if both variables are the same, and False is they are different.</p>
 <p>Clarification: 1) cannot use conditional if statements 2) this must be capable of printing the correct output for any possible booleans the user could enter, not just the one example that your html will show.</p>
 </section>
-<section id="question-3-3-points" class="level2" data-number="A.3">
-<h2 data-number="A.3" class="anchored" data-anchor-id="question-3-3-points"><span class="header-section-number">A.3</span> Question 3 (3 points)</h2>
-<p>Import the <strong>random</strong> library of Python with the alias <strong>rm</strong>. Using the <strong>randint</strong> function in the library, create a random integer between 1 and 5, inclusive, and store as <code>rand_int</code>. Print your name that many times.</p>
+<section id="question-3-6-points" class="level2" data-number="A.3">
+<h2 data-number="A.3" class="anchored" data-anchor-id="question-3-6-points"><span class="header-section-number">A.3</span> Question 3 (6 points)</h2>
+<p>At Northwestern, email addresses are classified as follows:</p>
+<ul>
+<li><strong>Student email addresses</strong> end with <code>@u.northwestern.edu</code>.</li>
+<li><strong>Professor email addresses</strong> end with <code>@northwestern.edu</code> (but not <code>@u.northwestern.edu</code>).</li>
+</ul>
+<p>Write a Python program that: 1. Asks the user how many email addresses they will enter. 2. Prompts the user to input each email address. 3. After all email addresses are entered: - Print all professor email addresses under the heading <code>"Professor Emails:"</code>. - Print all student email addresses under the heading <code>"Student Emails:"</code>. - If no professor or student emails were entered, print <code>"None"</code> under the respective heading.</p>
+<section id="requirements" class="level3" data-number="A.3.1">
+<h3 data-number="A.3.1" class="anchored" data-anchor-id="requirements"><span class="header-section-number">A.3.1</span> Requirements:</h3>
+<ul>
+<li>Do not use lists or other advanced data structures, since we have not covered them yet.</li>
+<li>Use only basic string operations and loops.</li>
+<li><strong>The program must handle all cases</strong>, regardless of uppercase or lowercase in the email addresses.</li>
+<li><strong>Trim any leading or trailing whitespace</strong> in the user input before classifying the email.</li>
+</ul>
+<p><strong>Example Run:</strong></p>
+<p>How many email addresses will you be entering? 3 <br> Enter an email address: lshi@northwestern.edu <br> Enter an email address: jackyu@u.northwestern.edu <br> Enter an email address: Alexa@u.northwestern.edu <br></p>
+<p><strong>Output:</strong></p>
+<p>Professor Emails: <br> lshi@northwestern.edu <br></p>
+<p>Student Emails: <br> jackyu@u.northwestern.edu <br> alexa@u.northwestern.edu <br></p>
+</section>
 </section>
 <section id="question-4-3-points" class="level2" data-number="A.4">
 <h2 data-number="A.4" class="anchored" data-anchor-id="question-4-3-points"><span class="header-section-number">A.4</span> Question 4 (3 points)</h2>
