@@ -25,7 +25,7 @@ book:
         - Variable_expressions_statements.ipynb
         - Control flow.ipynb
         - functions2.ipynb
-        - data_structures-complete.ipynb
+        - data_structures.ipynb
         - classes.ipynb
     #- part: "R"
       #chapters:
