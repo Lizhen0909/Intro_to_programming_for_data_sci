@@ -261,9 +261,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#parameters-and-arguments-of-a-function" id="toc-parameters-and-arguments-of-a-function" class="nav-link" data-scroll-target="#parameters-and-arguments-of-a-function"><span class="header-section-number">4.4.3</span> Parameters and arguments of a function</a></li>
   <li><a href="#practice-exercise-3" id="toc-practice-exercise-3" class="nav-link" data-scroll-target="#practice-exercise-3"><span class="header-section-number">4.4.4</span> Practice exercise 3</a></li>
   <li><a href="#functions-that-return-objects" id="toc-functions-that-return-objects" class="nav-link" data-scroll-target="#functions-that-return-objects"><span class="header-section-number">4.4.5</span> Functions that return objects</a></li>
-  <li><a href="#global-and-local-variables-with-respect-to-a-function" id="toc-global-and-local-variables-with-respect-to-a-function" class="nav-link" data-scroll-target="#global-and-local-variables-with-respect-to-a-function"><span class="header-section-number">4.4.6</span> Global and local variables with respect to a function</a></li>
-  <li><a href="#practice-exercise-4-create-a-custom-calculator" id="toc-practice-exercise-4-create-a-custom-calculator" class="nav-link" data-scroll-target="#practice-exercise-4-create-a-custom-calculator"><span class="header-section-number">4.4.7</span> Practice exercise 4: Create a Custom Calculator</a></li>
-  <li><a href="#bonus-challenge-palindrome-checker" id="toc-bonus-challenge-palindrome-checker" class="nav-link" data-scroll-target="#bonus-challenge-palindrome-checker"><span class="header-section-number">4.4.8</span> Bonus Challenge: Palindrome Checker</a></li>
+  <li><a href="#practice-exercise-4-create-a-custom-calculator" id="toc-practice-exercise-4-create-a-custom-calculator" class="nav-link" data-scroll-target="#practice-exercise-4-create-a-custom-calculator"><span class="header-section-number">4.4.6</span> Practice exercise 4: Create a Custom Calculator</a></li>
+  <li><a href="#bonus-challenge-palindrome-checker" id="toc-bonus-challenge-palindrome-checker" class="nav-link" data-scroll-target="#bonus-challenge-palindrome-checker"><span class="header-section-number">4.4.7</span> Bonus Challenge: Palindrome Checker</a></li>
+  <li><a href="#global-and-local-variables-with-respect-to-a-function" id="toc-global-and-local-variables-with-respect-to-a-function" class="nav-link" data-scroll-target="#global-and-local-variables-with-respect-to-a-function"><span class="header-section-number">4.4.8</span> Global and local variables with respect to a function</a></li>
+  <li><a href="#practice-exercise-5" id="toc-practice-exercise-5" class="nav-link" data-scroll-target="#practice-exercise-5"><span class="header-section-number">4.4.9</span> Practice exercise 5</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -545,13 +546,8 @@ uniform(a, b) method of random.Random instance
 <section id="practice-exercise-2" class="level3" data-number="4.3.3">
 <h3 data-number="4.3.3" class="anchored" data-anchor-id="practice-exercise-2"><span class="header-section-number">4.3.3</span> Practice exercise 2</h3>
 <p>Generate a random number between [-5,5]. Do this 10,000 times. Find the mean of all the 10,000 random numbers generated.</p>
-<p><strong>Solution:</strong></p>
 <div id="0d67ebb1" class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random <span class="im">as</span> rm</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>counter <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000</span>):</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    counter <span class="op">=</span> counter <span class="op">+</span> rm.uniform(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>)</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mean is:"</span>, counter<span class="op">/</span><span class="dv">10000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Mean is: 0.061433810226516616</code></pre>
 </div>
@@ -708,24 +704,8 @@ Even</code></pre>
 <section id="practice-exercise-3" class="level3" data-number="4.4.4">
 <h3 data-number="4.4.4" class="anchored" data-anchor-id="practice-exercise-3"><span class="header-section-number">4.4.4</span> Practice exercise 3</h3>
 <p>Write a function that prints prime numbers between two real numbers - <code>a</code> and <code>b</code>, where <code>a</code> and <code>b</code> are the parameters of the function. Call the function and check the output with a = 60, b = 80.</p>
-<p><strong>Solution:</strong></p>
 <div id="1caf30b0" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> prime_numbers (a,b<span class="op">=</span><span class="dv">100</span>):</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    num_prime_nos <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Iterating over all numbers between a and b</span></span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(a,b):</span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>        num_divisors<span class="op">=</span><span class="dv">0</span></span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>        <span class="co">#Checking if the ith number has any factors</span></span>
-<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, i):</span>
-<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> i<span class="op">%</span>j <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>                num_divisors<span class="op">=</span><span class="dv">1</span><span class="op">;</span><span class="cf">break</span><span class="op">;</span></span>
-<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>                </span>
-<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>        <span class="co">#If there are no factors, then printing and counting the number as prime        </span></span>
-<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> num_divisors<span class="op">==</span><span class="dv">0</span>:</span>
-<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(i)</span>
-<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>prime_numbers(<span class="dv">60</span>,<span class="dv">80</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>61
 67
@@ -757,25 +737,8 @@ Even</code></pre>
 </div>
 <p>The variable <code>response</code> now refers to the object where the string “Odd” or “Even” is stored. Thus, the result of the computation is stored, and the variable can be used later on in the program. Note that the control flow exits the function as soon as the first <code>return</code> statement is executed.</p>
 </section>
-<section id="global-and-local-variables-with-respect-to-a-function" class="level3" data-number="4.4.6">
-<h3 data-number="4.4.6" class="anchored" data-anchor-id="global-and-local-variables-with-respect-to-a-function"><span class="header-section-number">4.4.6</span> Global and local variables with respect to a function</h3>
-<p>A variable defined within a function is local to that function, while a variable defined outside the function is global with respect to that function. In case a variable with the same name is defined both outside and inside a function, it will refer to its global value outside the function and local value within the function.</p>
-<p>The example below shows a variable with the name <code>var</code> referring to its local value when called within the function, and global value when called outside the function.</p>
-<div id="4b78cb31" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>var <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sample_function(var):    </span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Local value of 'var' within 'sample_function()'= "</span>,var)</span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>sample_function(<span class="dv">4</span>)</span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Global value of 'var' outside 'sample_function()' = "</span>,var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Local value of 'var' within 'sample_function()'=  4
-Global value of 'var' outside 'sample_function()' =  5</code></pre>
-</div>
-</div>
-</section>
-<section id="practice-exercise-4-create-a-custom-calculator" class="level3" data-number="4.4.7">
-<h3 data-number="4.4.7" class="anchored" data-anchor-id="practice-exercise-4-create-a-custom-calculator"><span class="header-section-number">4.4.7</span> Practice exercise 4: Create a Custom Calculator</h3>
+<section id="practice-exercise-4-create-a-custom-calculator" class="level3" data-number="4.4.6">
+<h3 data-number="4.4.6" class="anchored" data-anchor-id="practice-exercise-4-create-a-custom-calculator"><span class="header-section-number">4.4.6</span> Practice exercise 4: Create a Custom Calculator</h3>
 <p>Write a function calculator that performs basic arithmetic operations: addition, subtraction, multiplication, and division.</p>
 <p>Steps:</p>
 <ol type="1">
@@ -790,8 +753,8 @@ print(calculator(10, 5, 'subtract'))   # Output: 5
 print(calculator(10, 5, 'multiply'))   # Output: 50
 print(calculator(10, 5, 'divide'))     # Output: 2.0</code></pre>
 </section>
-<section id="bonus-challenge-palindrome-checker" class="level3" data-number="4.4.8">
-<h3 data-number="4.4.8" class="anchored" data-anchor-id="bonus-challenge-palindrome-checker"><span class="header-section-number">4.4.8</span> Bonus Challenge: Palindrome Checker</h3>
+<section id="bonus-challenge-palindrome-checker" class="level3" data-number="4.4.7">
+<h3 data-number="4.4.7" class="anchored" data-anchor-id="bonus-challenge-palindrome-checker"><span class="header-section-number">4.4.7</span> Bonus Challenge: Palindrome Checker</h3>
 <p>Write a function called <code>is_palindrome</code> that checks if a string is a palindrome (reads the same forward and backward).</p>
 <p>Steps:</p>
 <ol type="1">
@@ -803,6 +766,188 @@ print(calculator(10, 5, 'divide'))     # Output: 2.0</code></pre>
 <pre><code>print(is_palindrome("radar"))         # Output: True
 print(is_palindrome("hello"))         # Output: False
 print(is_palindrome("A man a plan a canal Panama"))  # Output: True</code></pre>
+</section>
+<section id="global-and-local-variables-with-respect-to-a-function" class="level3" data-number="4.4.8">
+<h3 data-number="4.4.8" class="anchored" data-anchor-id="global-and-local-variables-with-respect-to-a-function"><span class="header-section-number">4.4.8</span> Global and local variables with respect to a function</h3>
+<section id="local-variables" class="level4" data-number="4.4.8.1">
+<h4 data-number="4.4.8.1" class="anchored" data-anchor-id="local-variables"><span class="header-section-number">4.4.8.1</span> Local Variables</h4>
+<ul>
+<li><strong>Definition</strong>: A local variable is defined within a function (or a block of code) and can only be accessed within that function. Once the function finishes executing, local variables are discarded.</li>
+<li><strong>Scope</strong>: Limited to the function in which they are declared</li>
+</ul>
+<div id="381d5d08" class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> example_function():</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="dv">10</span>            <span class="co"># x is a local variable</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Inside function, x ="</span>, x)</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>example_function()</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Trying to print x outside the function will result in an error:</span></span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)  <span class="co"># This will result in an error</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Inside function, x = 10</code></pre>
+</div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg ansi-bold">In[19], line 7</span>
+<span class="ansi-green-fg">      5</span> example_function()
+<span class="ansi-green-fg">      6</span> <span style="font-style:italic;color:rgb(95,135,135)"># Trying to print x outside the function will result in an error:</span>
+<span class="ansi-green-fg ansi-bold">----&gt; 7</span> <span style="color:rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">x</span>)  <span style="font-style:italic;color:rgb(95,135,135)"># NameError: name 'x' is not defined</span>
+
+<span class="ansi-red-fg ansi-bold">NameError</span>: name 'x' is not defined</pre>
+</div>
+</div>
+</div>
+</section>
+<section id="global-variables" class="level4" data-number="4.4.8.2">
+<h4 data-number="4.4.8.2" class="anchored" data-anchor-id="global-variables"><span class="header-section-number">4.4.8.2</span> Global Variables</h4>
+<ul>
+<li><strong>Definition</strong>: A global variable is declared in the main body of the Python file (i.e., at the top level), making it accessible to any function or class in the same module, provided you do not shadow it with a local variable.</li>
+<li><strong>Scope</strong>: Accessible throughout the entire module (file) after declaration.</li>
+<li><strong>Best Practice</strong>: Use global variables sparingly, as they can make code harder to debug and maintain.</li>
+</ul>
+<div id="44935285" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>global_var <span class="op">=</span> <span class="dv">20</span>  <span class="co"># global variable</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> show_global_var():</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Inside function, global_var ="</span>, global_var)</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>show_global_var()</span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Outside function, global_var ="</span>, global_var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Inside function, global_var = 20
+Outside function, global_var = 20</code></pre>
+</div>
+</div>
+</section>
+<section id="using-a-global-variable-inside-a-function" class="level4" data-number="4.4.8.3">
+<h4 data-number="4.4.8.3" class="anchored" data-anchor-id="using-a-global-variable-inside-a-function"><span class="header-section-number">4.4.8.3</span> Using a Global Variable Inside a Function</h4>
+<p>By default, if you just read a global variable inside a function, Python will find it in the global scope. However, if you attempt to modify a global variable inside a function without explicitly declaring it <code>global</code>, Python will treat that variable as <code>local</code>, potentially leading to errors.</p>
+<div id="e646641a" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reading a global variable inside a function</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>global_var <span class="op">=</span> <span class="dv">20</span>  <span class="co"># global variable</span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> show_global_var():</span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Inside function, global_var ="</span>, global_var)</span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>show_global_var()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Inside function, global_var = 20</code></pre>
+</div>
+</div>
+<div id="5e68b989" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Changing a global variable inside a function</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>counter <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> increment_counter_wrong():</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>    counter <span class="op">=</span> counter <span class="op">+</span> <span class="dv">1</span>  <span class="co"># This will cause UnboundLocalError</span></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Counter is now"</span>, counter)</span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>increment_counter_wrong()  <span class="co"># UnboundLocalError: local variable 'counter' referenced before assignment</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg ansi-bold">UnboundLocalError</span>                         Traceback (most recent call last)
+Cell <span class="ansi-green-fg ansi-bold">In[22], line 8</span>
+<span class="ansi-green-fg">      5</span>     counter <span style="color:rgb(98,98,98)">=</span> counter <span style="color:rgb(98,98,98)">+</span> <span style="color:rgb(98,98,98)">1</span>  <span style="font-style:italic;color:rgb(95,135,135)"># This will cause UnboundLocalError</span>
+<span class="ansi-green-fg">      6</span>     <span style="color:rgb(0,135,0)">print</span>(<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Counter is now</span><span style="color:rgb(175,0,0)">"</span>, counter)
+<span class="ansi-green-fg ansi-bold">----&gt; 8</span> <span class="ansi-yellow-bg">increment_counter_wrong</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>  <span style="font-style:italic;color:rgb(95,135,135)"># UnboundLocalError: local variable 'counter' referenced before assignment</span>
+
+Cell <span class="ansi-green-fg ansi-bold">In[22], line 5</span>, in <span class="ansi-cyan-fg">increment_counter_wrong</span><span class="ansi-blue-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      4</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span><span style="color:rgb(188,188,188)"> </span><span style="color:rgb(0,0,255)">increment_counter_wrong</span>():
+<span class="ansi-green-fg ansi-bold">----&gt; 5</span>     counter <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">counter</span> <span style="color:rgb(98,98,98)">+</span> <span style="color:rgb(98,98,98)">1</span>  <span style="font-style:italic;color:rgb(95,135,135)"># This will cause UnboundLocalError</span>
+<span class="ansi-green-fg">      6</span>     <span style="color:rgb(0,135,0)">print</span>(<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Counter is now</span><span style="color:rgb(175,0,0)">"</span>, counter)
+
+<span class="ansi-red-fg ansi-bold">UnboundLocalError</span>: cannot access local variable 'counter' where it is not associated with a value</pre>
+</div>
+</div>
+</div>
+<p><strong>Why the Error?</strong> <br> Python sees <code>counter = counter + 1</code> as creating a new <strong>local variable</strong> <code>counter</code> on the left, while also trying to read an <strong>uninitialized</strong> local variable <code>counter</code> on the right.</p>
+</section>
+<section id="the-global-keyword" class="level4" data-number="4.4.8.4">
+<h4 data-number="4.4.8.4" class="anchored" data-anchor-id="the-global-keyword"><span class="header-section-number">4.4.8.4</span> The <code>global</code> keyword</h4>
+<p>To modify a global variable inside a function, you must use the <code>global</code> keyword:</p>
+<div id="54208588" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>counter <span class="op">=</span> <span class="dv">0</span>  <span class="co"># global variable</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> increment_counter():</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> counter  <span class="co"># Tell Python we want to use the global 'counter'</span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>    counter <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Counter is now"</span>, counter)</span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>increment_counter()  <span class="co"># Counter is now 1</span></span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>increment_counter()  <span class="co"># Counter is now 2</span></span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(counter)       <span class="co"># 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Counter is now 1
+Counter is now 2
+2</code></pre>
+</div>
+</div>
+<p><strong>When to Use global?</strong> <br> * <strong>Rarely</strong>. Global variables can create tightly coupled code that is prone to bugs. If needed, consider passing variables as arguments or using class-level variables for shared state.</p>
+</section>
+<section id="nested-functions-and-the-nonlocal-keyword" class="level4" data-number="4.4.8.5">
+<h4 data-number="4.4.8.5" class="anchored" data-anchor-id="nested-functions-and-the-nonlocal-keyword"><span class="header-section-number">4.4.8.5</span> Nested Functions and the <code>nonlocal</code> Keyword</h4>
+<p>In Python, you may have <strong>nested functions</strong>—a function defined inside another function. If the inner function needs to modify a variable in the outer (but still non-global) scope, you can use the <code>nonlocal</code> keyword.</p>
+<p>For example:</p>
+<div id="87fe10b7" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> outer_function():</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> inner_function():</span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">nonlocal</span> x</span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>        x <span class="op">+=</span> <span class="dv">5</span></span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Inner function, x ="</span>, x)</span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>    inner_function()</span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Outer function, x ="</span>, x)</span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>outer_function()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Inner function, x = 15
+Outer function, x = 15</code></pre>
+</div>
+</div>
+<p><code>nonlocal</code> x lets the inner function modify x in the outer_function’s scope, rather than creating a new local variable.</p>
+</section>
+</section>
+<section id="practice-exercise-5" class="level3" data-number="4.4.9">
+<h3 data-number="4.4.9" class="anchored" data-anchor-id="practice-exercise-5"><span class="header-section-number">4.4.9</span> Practice exercise 5</h3>
+<p>Read the following code and answer the following questions:</p>
+<ol type="1">
+<li>Will the program raise an error?</li>
+<li>If yes, fix the error and provide the corrected code.</li>
+<li>What will be the output of the corrected program?</li>
+</ol>
+<div id="548ddf07" class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>message <span class="op">=</span> <span class="st">"Global Message"</span>  <span class="co"># Global variable</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> outer():</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>    msg_outer <span class="op">=</span> <span class="st">"Outer Message"</span>  <span class="co"># Enclosed scope</span></span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> inner():</span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>        message       </span>
+<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a>        msg_outer   </span>
+<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a>        message <span class="op">=</span> <span class="st">"Changed Global Message"</span></span>
+<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a>        msg_outer <span class="op">=</span> <span class="st">"Changed Outer Message"</span></span>
+<span id="cb55-12"><a href="#cb55-12" aria-hidden="true" tabindex="-1"></a>        local_msg <span class="op">=</span> <span class="st">"Local to inner()"</span>  <span class="co"># Local variable</span></span>
+<span id="cb55-13"><a href="#cb55-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Inside inner()"</span>)</span>
+<span id="cb55-14"><a href="#cb55-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Global message ="</span>, message)</span>
+<span id="cb55-15"><a href="#cb55-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Enclosed msg_outer ="</span>, msg_outer)</span>
+<span id="cb55-16"><a href="#cb55-16" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Local local_msg ="</span>, local_msg)</span>
+<span id="cb55-17"><a href="#cb55-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-18"><a href="#cb55-18" aria-hidden="true" tabindex="-1"></a>    inner()</span>
+<span id="cb55-19"><a href="#cb55-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Inside outer() after inner() call:"</span>)</span>
+<span id="cb55-20"><a href="#cb55-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Global message ="</span>, message)</span>
+<span id="cb55-21"><a href="#cb55-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Enclosed msg_outer ="</span>, msg_outer)</span>
+<span id="cb55-22"><a href="#cb55-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-23"><a href="#cb55-23" aria-hidden="true" tabindex="-1"></a>outer()</span>
+<span id="cb55-24"><a href="#cb55-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-25"><a href="#cb55-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Outside all functions (global scope):"</span>)</span>
+<span id="cb55-26"><a href="#cb55-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Global message ="</span>, message)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 </section>
