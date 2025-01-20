@@ -233,8 +233,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./python_iterable.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Python Iterables</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./classes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Object-Oriented Programming</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Object-Oriented Programming</span></span></a>
   </div>
 </li>
       </ul>
@@ -308,8 +314,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#loops-with-strings" id="toc-loops-with-strings" class="nav-link" data-scroll-target="#loops-with-strings"><span class="header-section-number">3.5</span> Loops with strings</a>
   <ul class="collapse">
-  <li><a href="#the-enumerate-function-in-python" id="toc-the-enumerate-function-in-python" class="nav-link" data-scroll-target="#the-enumerate-function-in-python"><span class="header-section-number">3.5.1</span> The <code>enumerate()</code> Function in Python</a></li>
-  <li><a href="#practice-exercise-6" id="toc-practice-exercise-6" class="nav-link" data-scroll-target="#practice-exercise-6"><span class="header-section-number">3.5.2</span> Practice exercise 6</a></li>
+  <li><a href="#practice-exercise-6" id="toc-practice-exercise-6" class="nav-link" data-scroll-target="#practice-exercise-6"><span class="header-section-number">3.5.1</span> Practice exercise 6</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1098,25 +1103,11 @@ Processing 4</code></pre>
 <pre><code>S h e   s e l l s   s e a   s h e l l s   o n   t h e   s e a   s h o r e </code></pre>
 </div>
 </div>
-<section id="the-enumerate-function-in-python" class="level3" data-number="3.5.1">
-<h3 data-number="3.5.1" class="anchored" data-anchor-id="the-enumerate-function-in-python"><span class="header-section-number">3.5.1</span> The <code>enumerate()</code> Function in Python</h3>
-<p>The <code>enumerate()</code> function adds a counter to an iterable and returns it as an <strong>enumerate object</strong>, which can be iterated over to get both the <strong>index</strong> and the <strong>value</strong> of each element in the iterable.</p>
-<section id="syntax" class="level4" data-number="3.5.1.1">
-<h4 data-number="3.5.1.1" class="anchored" data-anchor-id="syntax"><span class="header-section-number">3.5.1.1</span> <strong>Syntax</strong></h4>
-<p><code>enumerate(iterable, start=0)</code></p>
-<div id="6a444237" class="cell" data-execution_count="35">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># using enumerate</span></span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, char <span class="kw">in</span> <span class="bu">enumerate</span>(sentence):</span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(index, char, sep<span class="op">=</span><span class="st">": "</span>, end<span class="op">=</span><span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>0: S 1: h 2: e 3:   4: s 5: e 6: l 7: l 8: s 9:   10: s 11: e 12: a 13:   14: s 15: h 16: e 17: l 18: l 19: s 20:   21: o 22: n 23:   24: t 25: h 26: e 27:   28: s 29: e 30: a 31:   32: s 33: h 34: o 35: r 36: e </code></pre>
-</div>
-</div>
 <p><strong>Slicing a string:</strong></p>
 <p>A part of the string can be sliced by passing the starting index (say <code>start</code>) and the stopping index (say <code>stop</code>) as <code>start</code>:<code>stop</code> to the index operator []. This is called slicing a string. For a string <code>S</code>, the characters starting from the index <code>start</code> upto the index <code>stop</code>, but not including <code>stop</code>, can be sliced as <code>S[start:stop]</code>.</p>
 <p>For example, the slice of the string <code>sentence</code> from index <code>4</code> to index <code>9</code>, but not including <code>9</code> is:</p>
 <div id="e2abe450" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>sentence[<span class="dv">4</span>:<span class="dv">9</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>sentence[<span class="dv">4</span>:<span class="dv">9</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>'sells'</code></pre>
 </div>
@@ -1124,60 +1115,58 @@ Processing 4</code></pre>
 <p><strong>Example:</strong> Counting characters</p>
 <p>Input a string, and count and print the number of “<em>t</em>”s.</p>
 <div id="912b0d70" class="cell" data-execution_count="37">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>str1 <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter a sentence:"</span>)</span>
-<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Initializing a variable 'count_t' which will store the number of 't's in the string</span></span>
-<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>count_t <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Iterating over the entire length of the string. </span></span>
-<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a><span class="co">#The length of the string is given by the len() function</span></span>
-<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(str1)):</span>
-<span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">#If the ith character of the string is 't', then we count it</span></span>
-<span id="cb60-11"><a href="#cb60-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> str1[i] <span class="op">==</span> <span class="st">'t'</span>:</span>
-<span id="cb60-12"><a href="#cb60-12" aria-hidden="true" tabindex="-1"></a>        count_t <span class="op">=</span> count_t <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb60-13"><a href="#cb60-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-14"><a href="#cb60-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Number of 't's in the str1 = "</span>, count_t)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>str1 <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter a sentence:"</span>)</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Initializing a variable 'count_t' which will store the number of 't's in the string</span></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>count_t <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Iterating over the entire length of the string. </span></span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a><span class="co">#The length of the string is given by the len() function</span></span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(str1)):</span>
+<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">#If the ith character of the string is 't', then we count it</span></span>
+<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> str1[i] <span class="op">==</span> <span class="st">'t'</span>:</span>
+<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a>        count_t <span class="op">=</span> count_t <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb58-13"><a href="#cb58-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-14"><a href="#cb58-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Number of 't's in the str1 = "</span>, count_t)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Number of 't's in the str1 =  2</code></pre>
 </div>
 </div>
 <p>Another way to achieve this is to use <code>count()</code></p>
 <div id="65584b11" class="cell" data-execution_count="39">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>str1.count(<span class="st">'t'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>str1.count(<span class="st">'t'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="39">
 <pre><code>2</code></pre>
 </div>
 </div>
-</section>
-</section>
-<section id="practice-exercise-6" class="level3" data-number="3.5.2">
-<h3 data-number="3.5.2" class="anchored" data-anchor-id="practice-exercise-6"><span class="header-section-number">3.5.2</span> Practice exercise 6</h3>
+<section id="practice-exercise-6" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="practice-exercise-6"><span class="header-section-number">3.5.1</span> Practice exercise 6</h3>
 <p>Checking for a Substring</p>
 <p>Write a program that asks the user to input a string, and print the number of “<em>the</em>”s in the string.</p>
 <div id="d6000790" class="cell" data-execution_count="40">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>str2 <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter a sentence:"</span>)</span>
-<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Defining a variable to store the count of the word 'the'</span></span>
-<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>count_the <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Looping through the entire length of the string except the last 3 letters.</span></span>
-<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a><span class="co">#As we are checking three letters at a time starting from the index 'i', the last 3 letters of the string will be checked when 'i' is len(string)-3</span></span>
-<span id="cb64-8"><a href="#cb64-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(str2) <span class="op">-</span> <span class="dv">3</span>):</span>
-<span id="cb64-9"><a href="#cb64-9" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb64-10"><a href="#cb64-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Slicing 3 letters of the string and checking if they are 'the'</span></span>
-<span id="cb64-11"><a href="#cb64-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> str2[i:(i<span class="op">+</span><span class="dv">3</span>)] <span class="op">==</span> <span class="st">'the'</span>:</span>
-<span id="cb64-12"><a href="#cb64-12" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb64-13"><a href="#cb64-13" aria-hidden="true" tabindex="-1"></a>        <span class="co">#Counting the words that are 'the'</span></span>
-<span id="cb64-14"><a href="#cb64-14" aria-hidden="true" tabindex="-1"></a>        count_the <span class="op">=</span> count_the <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb64-15"><a href="#cb64-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Number of 'the's in the str2 = "</span>, count_the)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>str2 <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter a sentence:"</span>)</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Defining a variable to store the count of the word 'the'</span></span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>count_the <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Looping through the entire length of the string except the last 3 letters.</span></span>
+<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a><span class="co">#As we are checking three letters at a time starting from the index 'i', the last 3 letters of the string will be checked when 'i' is len(string)-3</span></span>
+<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(str2) <span class="op">-</span> <span class="dv">3</span>):</span>
+<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Slicing 3 letters of the string and checking if they are 'the'</span></span>
+<span id="cb62-11"><a href="#cb62-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> str2[i:(i<span class="op">+</span><span class="dv">3</span>)] <span class="op">==</span> <span class="st">'the'</span>:</span>
+<span id="cb62-12"><a href="#cb62-12" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb62-13"><a href="#cb62-13" aria-hidden="true" tabindex="-1"></a>        <span class="co">#Counting the words that are 'the'</span></span>
+<span id="cb62-14"><a href="#cb62-14" aria-hidden="true" tabindex="-1"></a>        count_the <span class="op">=</span> count_the <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb62-15"><a href="#cb62-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Number of 'the's in the str2 = "</span>, count_the)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Number of 'the's in the str2 =  3</code></pre>
 </div>
 </div>
 <div id="ec041974" class="cell" data-execution_count="41">
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># using the count method</span></span>
-<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>str2.count(<span class="st">'the'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># using the count method</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>str2.count(<span class="st">'the'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="41">
 <pre><code>3</code></pre>
 </div>
