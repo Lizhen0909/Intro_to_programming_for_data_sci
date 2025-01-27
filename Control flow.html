@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Control flow statements – Introduction to programming for data science</title>
+<title>3&nbsp; Control flow tools – Introduction to programming for data science</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -147,7 +147,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Variable_expressions_statements.html">Python</a></li><li class="breadcrumb-item"><a href="./Control flow.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Control flow statements</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Variable_expressions_statements.html">Python</a></li><li class="breadcrumb-item"><a href="./Control flow.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Control flow tools</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -216,7 +216,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Control flow.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Control flow statements</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Control flow tools</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -286,9 +286,9 @@ window.Quarto = {
   <ul>
   <li><a href="#indentation-in-python" id="toc-indentation-in-python" class="nav-link active" data-scroll-target="#indentation-in-python"><span class="header-section-number">3.1</span> Indentation in Python</a>
   <ul class="collapse">
-  <li><a href="#what-is-indentation" id="toc-what-is-indentation" class="nav-link" data-scroll-target="#what-is-indentation"><span class="header-section-number">3.1.1</span> <strong>What is Indentation?</strong></a></li>
-  <li><a href="#rules-for-indentation" id="toc-rules-for-indentation" class="nav-link" data-scroll-target="#rules-for-indentation"><span class="header-section-number">3.1.2</span> <strong>Rules for Indentation</strong></a></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">3.1.3</span> <strong>Examples</strong></a></li>
+  <li><a href="#what-is-indentation" id="toc-what-is-indentation" class="nav-link" data-scroll-target="#what-is-indentation"><span class="header-section-number">3.1.1</span> What is Indentation?</a></li>
+  <li><a href="#rules-for-indentation" id="toc-rules-for-indentation" class="nav-link" data-scroll-target="#rules-for-indentation"><span class="header-section-number">3.1.2</span> Rules for Indentation</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">3.1.3</span> Examples</a></li>
   </ul></li>
   <li><a href="#conditonal-execution" id="toc-conditonal-execution" class="nav-link" data-scroll-target="#conditonal-execution"><span class="header-section-number">3.2</span> Conditonal execution</a>
   <ul class="collapse">
@@ -322,9 +322,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Variable_expressions_statements.html">Python</a></li><li class="breadcrumb-item"><a href="./Control flow.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Control flow statements</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Variable_expressions_statements.html">Python</a></li><li class="breadcrumb-item"><a href="./Control flow.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Control flow tools</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Control flow statements</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Control flow tools</span></h1>
 </div>
 
 
@@ -356,7 +356,7 @@ window.Quarto = {
 <h2 data-number="3.1" class="anchored" data-anchor-id="indentation-in-python"><span class="header-section-number">3.1</span> Indentation in Python</h2>
 <p><strong>Syntax:</strong> Python uses indentation to identify the code to be executed if a condition is true. All the code indented within a condition is executed if the condition is true.</p>
 <section id="what-is-indentation" class="level3" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="what-is-indentation"><span class="header-section-number">3.1.1</span> <strong>What is Indentation?</strong></h3>
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="what-is-indentation"><span class="header-section-number">3.1.1</span> What is Indentation?</h3>
 <ul>
 <li>Indentation refers to the spaces or tabs at the beginning of a line of code.</li>
 <li>In Python, indentation is <strong>mandatory</strong> and is used to define the structure of the code, such as blocks in loops, conditionals, functions, and classes.</li>
@@ -364,7 +364,7 @@ window.Quarto = {
 </ul>
 </section>
 <section id="rules-for-indentation" class="level3" data-number="3.1.2">
-<h3 data-number="3.1.2" class="anchored" data-anchor-id="rules-for-indentation"><span class="header-section-number">3.1.2</span> <strong>Rules for Indentation</strong></h3>
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="rules-for-indentation"><span class="header-section-number">3.1.2</span> Rules for Indentation</h3>
 <ol type="1">
 <li><strong>Consistency is Key</strong>:
 <ul>
@@ -383,7 +383,7 @@ window.Quarto = {
 </div>
 </section>
 <section id="examples" class="level3" data-number="3.1.3">
-<h3 data-number="3.1.3" class="anchored" data-anchor-id="examples"><span class="header-section-number">3.1.3</span> <strong>Examples</strong></h3>
+<h3 data-number="3.1.3" class="anchored" data-anchor-id="examples"><span class="header-section-number">3.1.3</span> Examples</h3>
 <div id="d01bd074" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example of proper indentation</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet(name):</span>
