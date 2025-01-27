@@ -379,20 +379,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="accessing-elements" class="level3" data-number="5.1.2">
 <h3 data-number="5.1.2" class="anchored" data-anchor-id="accessing-elements"><span class="header-section-number">5.1.2</span> Accessing Elements</h3>
+<p>Lists are ordered collections with unique indexes for each item. We can access/slice the items in the list using this index number. Python supports both positive and negative indexing, as shown below:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://pynative.com/wp-content/uploads/2021/02/positive-and-negative-indexing.jpg" class="img-fluid figure-img"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
 <ul>
-<li><strong>Indexing</strong>: Use <code>[index]</code> to access a specific item (starting from 0).</li>
+<li><strong>Indexing</strong>: Use <code>[index]</code> to access a specific item.</li>
 <li><strong>Slicing</strong>: Use <code>[start:end:step]</code> to get a sub-list.</li>
 </ul>
 <div id="57736a65" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>]</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_list[<span class="dv">0</span>])       <span class="co"># 10</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_list[<span class="dv">1</span>:<span class="dv">3</span>])     <span class="co"># [20, 30]</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_list[::<span class="dv">2</span>])     <span class="co"># [10, 30, 50] (step of 2)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_list[<span class="op">-</span><span class="dv">1</span>])       <span class="co"># 50</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_list[<span class="dv">1</span>:<span class="dv">3</span>])     <span class="co"># [20, 30]</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_list[<span class="dv">2</span>:])      <span class="co"># [30, 40, 50]</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_list[<span class="op">-</span><span class="dv">3</span>:<span class="op">-</span><span class="dv">1</span>])   <span class="co"># [30, 40]</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_list[::<span class="dv">2</span>])     <span class="co"># [10, 30, 50] (step of 2)</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_list[::<span class="op">-</span><span class="dv">1</span>])    <span class="co"># [50, 40, 30, 20, 10] (reverse)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>10
+50
 [20, 30]
-[10, 30, 50]</code></pre>
+[30, 40, 50]
+[30, 40]
+[10, 30, 50]
+[50, 40, 30, 20, 10]</code></pre>
 </div>
 </div>
 </section>
