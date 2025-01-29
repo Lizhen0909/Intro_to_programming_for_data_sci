@@ -38,6 +38,7 @@ book:
   appendices: 
     - template_A01_WI25.ipynb
     - template_A02_WI25.ipynb
+    - template_A03_WI25.ipynb
     - Datasets.ipynb
 
 bibliography: references.bib
