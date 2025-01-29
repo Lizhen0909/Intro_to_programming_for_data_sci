@@ -626,14 +626,102 @@
     ]
   },
   {
+    "objectID": "template_A03_WI25.html",
+    "href": "template_A03_WI25.html",
+    "title": "Appendix C — Assignment 3",
+    "section": "",
+    "text": "C.0.1 Instructions",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Assignment 3</span>"
+    ]
+  },
+  {
+    "objectID": "template_A03_WI25.html#question-1-5-points",
+    "href": "template_A03_WI25.html#question-1-5-points",
+    "title": "Appendix C — Assignment 3",
+    "section": "C.1 Question 1 (5 points)",
+    "text": "C.1 Question 1 (5 points)\n\nCreate a tuple called my_data that contains the following elements: 'dog', 9, True, 2, 8, 'cat', 3\nUnpack only the string elements in my_data. You can store these elements by any variable name of your choice. Print the variables.\nConvert my_data to a list object. Then use indexing in 2 different ways to print the second object in your list. Note: that means you will have the same object (9) being printed out twice.\nUse a loop to remove any elements in my_data that are NOT integers. Print my_data to prove you were successful.\n\nNote: This needs to be a loop that would work even if you changed the elements in my_data.\n\nWrite a function that takes a list of integers as an input and returns both the minimum and maximum value. Store the output of the function when it is run with my_data from part d. Print your stored variables in a sentence to prove you were successful. This sentence should be the only thing printed.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Assignment 3</span>"
+    ]
+  },
+  {
+    "objectID": "template_A03_WI25.html#question-2-2-points",
+    "href": "template_A03_WI25.html#question-2-2-points",
+    "title": "Appendix C — Assignment 3",
+    "section": "C.2 Question 2 (2 points)",
+    "text": "C.2 Question 2 (2 points)\nCreate a shopping list by asking the user for a grocery item to add to the list object.\nContinue asking the user for items until the user types “done”.\nOnly once the user is “done”, print the grocery list.\nRun your program with at least 3 items added to your list.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Assignment 3</span>"
+    ]
+  },
+  {
+    "objectID": "template_A03_WI25.html#question-3-2-points",
+    "href": "template_A03_WI25.html#question-3-2-points",
+    "title": "Appendix C — Assignment 3",
+    "section": "C.3 Question 3 (2 points)",
+    "text": "C.3 Question 3 (2 points)\nAsk the user for a grocery item and the price of the item (2 inputs).\nCreate a dictionary where the grocery item is the key and the price is the value.\nContinue asking the user for items and prices until the user types “done”.\nOnly once the user is “done”, print the object.\nRun your program with at least 3 entries.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Assignment 3</span>"
+    ]
+  },
+  {
+    "objectID": "template_A03_WI25.html#question-4-2-points",
+    "href": "template_A03_WI25.html#question-4-2-points",
+    "title": "Appendix C — Assignment 3",
+    "section": "C.4 Question 4 (2 points)",
+    "text": "C.4 Question 4 (2 points)\nGet a list of numbers as input from a user and calculate the sum of it 2 numbers are separated by a whitespace.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Assignment 3</span>"
+    ]
+  },
+  {
+    "objectID": "template_A03_WI25.html#question-5-4-points",
+    "href": "template_A03_WI25.html#question-5-4-points",
+    "title": "Appendix C — Assignment 3",
+    "section": "C.5 Question 5 (4 points)",
+    "text": "C.5 Question 5 (4 points)\nThe score list below contains the credit score for an individual at the end of the year and the year list contains the corresponding year. ie: at the end of 2010 the individual had a credit score of 680.\n\nscore = [680, 685, 695, 690, 715, 720, 710]\nyear = [2010, 2011, 2012, 2014, 2015, 2016, 2017]\n\n\nC.5.1 Part a (1 point)\nThe information for 2013 is missing. In year, insert the year 2013 between 2012 and 2014. In score, insert the credit score of 2013 as the average of the credit score of 2012 and 2014 (use indexing - never use fixed values if it can be avoided). Print year and score to prove you were successful.\n\n\nC.5.2 Part b (3 points)\nDetermine which year had the largest percentage increase in credit score. Round your percent to 2 decimal places (0.00%).\nFor example, the percent change in 2011 is equal to 100*(685 - 680)/680 = 0.74%.\nThere are MANY ways to accomplish this and you may do so using any techniques we have learned so long as you are using code.\nPrint only the sentence:\n                \"The individual had the largest increase in {year} of {change} percent.\"\n                \nFor example if the largest increase happened to be in 2011 (it didn’t):\n                \"The individual had the largest increase in 2011 of 0.74 percent.\"",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Assignment 3</span>"
+    ]
+  },
+  {
+    "objectID": "template_A03_WI25.html#question-6-4-points",
+    "href": "template_A03_WI25.html#question-6-4-points",
+    "title": "Appendix C — Assignment 3",
+    "section": "C.6 Question 6 (4 points)",
+    "text": "C.6 Question 6 (4 points)\nSuppose 4 individuals are trying to decide which toppings to put on a shared pizza.\nThe pizza dictionary below contains the names of the individuals and list of corresponding topping preferences.\n\npizza = {\n    'Ava': [\"sausage\", \"mushroom\", \"bacon\"],\n    'Billy': [\"pepperoni\", \"bacon\", \"sausage\", \"olives\"],\n    'Carol': [\"ham\", \"pineapple\", \"olives\", \"mushroom\"],\n    'David': [\"pepperoni\", \"bacon\", \"mushroom\", \"green pepper\", \"mushroom\"]\n}\n\nIf at least 3 individuals listed a topping it will be included on the shared pizza.\nCreate a list of the toppings that at least 3 individuals included as a preference. Print only this list object.\nThere are MANY ways to accomplish this and you may do so using any techniques we have learned so long as you are using code.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Assignment 3</span>"
+    ]
+  },
+  {
+    "objectID": "template_A03_WI25.html#question-7-11-points",
+    "href": "template_A03_WI25.html#question-7-11-points",
+    "title": "Appendix C — Assignment 3",
+    "section": "C.7 Question 7 (11 points)",
+    "text": "C.7 Question 7 (11 points)\n\nC.7.1 Part a (1 point)\nCreate a list called suits that contains the following elements: “hearts”, “spades”, “diamonds”, “clubs”\nCreate a list called numbers that contain the following elements: 2, 3, 4, 5, 6, 7, 8, 9, 10, “J”, “Q”, “K”, “A”\nNo need to print any output here.\n\n\nC.7.2 Part b (3 points)\nUse a nested loop to create a nested data structure called deck that is a list of dictionaries.\nThis data structure should contain every combination of suits and numbers created in Part a.\nClarification:\n\nThis list should contain 52 dictionaries each representing a card.\nEach dictionary will have a key for suit and value.\nExample: The first object in the list is {‘suit’: ‘hearts’, ‘value’: 2}\n\nPrint only your deck object.\n\n\nC.7.3 Part c (1 point)\nImport the random module and name the alias rm. Use the sample() function from this module to sample 2 cards from the deck you created in Part b. Assign the first object to player1 and the second object to player2.\nPrint player1 and player2’s cards to prove you were successful.\n\n\nC.7.4 Part d (4 points)\nWrite a function that takes 2 input values (each input will be a dictionary containing keys: “suit” and “value”). This function should only return the card (dictionary) that is the highest number. If both numbers are the same then the function should return the string “Tie”.\nStore the output of the function as winning_card when the function is run using player1 and player2 created in Part c.\nPrint winning_card.\nClarification:\n\n2 &lt; … &lt; 10 &lt; J &lt; Q &lt; K &lt; A\nAll suits are the same: 2 of spades = 2 of diamonds\nThe word input in a function does NOT refer to “user input”. Recall, a function takes any number of input objects and returns any number of output objects.\nThis function should not print or return anything other than what was specified above (ie: the winning card or the word “Tie”).\n\n\n\nC.7.5 Part e (2 points)\nWrite a conditional statement (using the objects created above) to print one of the following statements:\n- \"Player 1 wins.\"\n- \"Player 2 wins.\"\n- \"Player 1 and Player 2 tie.\"",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Assignment 3</span>"
+    ]
+  },
+  {
     "objectID": "Datasets.html",
     "href": "Datasets.html",
-    "title": "Appendix C — Assignment templates and Datasets",
+    "title": "Appendix D — Assignment templates and Datasets",
     "section": "",
     "text": "Assignment templates and datasets used in the book can be found here",
     "crumbs": [
       "Appendices",
-      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Assignment templates and Datasets</span>"
+      "<span class='chapter-number'>D</span>  <span class='chapter-title'>Assignment templates and Datasets</span>"
     ]
   }
 ]
