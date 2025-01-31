@@ -674,7 +674,7 @@
     "href": "template_A03_WI25.html#question-4-2-points",
     "title": "Appendix C — Assignment 3",
     "section": "C.4 Question 4 (2 points)",
-    "text": "C.4 Question 4 (2 points)\nGet a list of numbers as input from a user and calculate the sum of it 2 numbers are separated by a whitespace.",
+    "text": "C.4 Question 4 (2 points)\nTake a space-separated list of numbers as input from the user and calculate the sum of all the numbers",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>C</span>  <span class='chapter-title'>Assignment 3</span>"
