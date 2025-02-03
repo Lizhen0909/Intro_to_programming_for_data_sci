@@ -261,35 +261,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#what-are-python-iterables" id="toc-what-are-python-iterables" class="nav-link active" data-scroll-target="#what-are-python-iterables"><span class="header-section-number">6.1</span> What are Python Iterables</a>
   <ul>
   <li><a href="#what-makes-an-object-iterable" id="toc-what-makes-an-object-iterable" class="nav-link" data-scroll-target="#what-makes-an-object-iterable"><span class="header-section-number">6.1.1</span> What Makes an Object Iterable?</a></li>
-  <li><a href="#examples-of-common-iterables" id="toc-examples-of-common-iterables" class="nav-link" data-scroll-target="#examples-of-common-iterables"><span class="header-section-number">6.1.2</span> Examples of Common Iterables</a>
-  <ul class="collapse">
-  <li><a href="#strings-iterate-over-characters" id="toc-strings-iterate-over-characters" class="nav-link" data-scroll-target="#strings-iterate-over-characters"><span class="header-section-number">6.1.2.1</span> <strong>Strings</strong>: Iterate over characters</a></li>
-  <li><a href="#lists-iterate-over-elements." id="toc-lists-iterate-over-elements." class="nav-link" data-scroll-target="#lists-iterate-over-elements."><span class="header-section-number">6.1.2.2</span> <strong>Lists</strong>: Iterate over elements.</a></li>
-  <li><a href="#tuples-iterate-like-lists." id="toc-tuples-iterate-like-lists." class="nav-link" data-scroll-target="#tuples-iterate-like-lists."><span class="header-section-number">6.1.2.3</span> <strong>Tuples</strong>: Iterate like lists.</a></li>
-  <li><a href="#sets-iterate-over-unique-elements." id="toc-sets-iterate-over-unique-elements." class="nav-link" data-scroll-target="#sets-iterate-over-unique-elements."><span class="header-section-number">6.1.2.4</span> <strong>Sets</strong>: Iterate over unique elements.</a></li>
-  <li><a href="#dictionaries-iterate-over-keys-by-default." id="toc-dictionaries-iterate-over-keys-by-default." class="nav-link" data-scroll-target="#dictionaries-iterate-over-keys-by-default."><span class="header-section-number">6.1.2.5</span> <strong>Dictionaries</strong>: Iterate over keys by default.</a></li>
-  <li><a href="#checking-if-an-object-is-iterable" id="toc-checking-if-an-object-is-iterable" class="nav-link" data-scroll-target="#checking-if-an-object-is-iterable"><span class="header-section-number">6.1.2.6</span> Checking if an Object is Iterable</a></li>
+  <li><a href="#checking-if-an-object-is-iterable" id="toc-checking-if-an-object-is-iterable" class="nav-link" data-scroll-target="#checking-if-an-object-is-iterable"><span class="header-section-number">6.1.2</span> Checking if an Object is Iterable</a></li>
   </ul></li>
-  </ul></li>
-  <li><a href="#iterables-unpacking" id="toc-iterables-unpacking" class="nav-link" data-scroll-target="#iterables-unpacking"><span class="header-section-number">6.2</span> Iterables Unpacking</a>
+  <li><a href="#common-iterables-in-python" id="toc-common-iterables-in-python" class="nav-link" data-scroll-target="#common-iterables-in-python"><span class="header-section-number">6.2</span> Common Iterables in Python</a>
   <ul>
-  <li><a href="#basic-unpacking" id="toc-basic-unpacking" class="nav-link" data-scroll-target="#basic-unpacking"><span class="header-section-number">6.2.1</span> Basic Unpacking</a></li>
-  <li><a href="#extended-star-unpacking" id="toc-extended-star-unpacking" class="nav-link" data-scroll-target="#extended-star-unpacking"><span class="header-section-number">6.2.2</span> Extended (Star) Unpacking</a></li>
-  <li><a href="#unpacking-with-functions" id="toc-unpacking-with-functions" class="nav-link" data-scroll-target="#unpacking-with-functions"><span class="header-section-number">6.2.3</span> Unpacking with Functions</a></li>
+  <li><a href="#strings" id="toc-strings" class="nav-link" data-scroll-target="#strings"><span class="header-section-number">6.2.1</span> Strings</a></li>
+  <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists"><span class="header-section-number">6.2.2</span> Lists</a></li>
+  <li><a href="#tuples" id="toc-tuples" class="nav-link" data-scroll-target="#tuples"><span class="header-section-number">6.2.3</span> Tuples</a></li>
+  <li><a href="#sets" id="toc-sets" class="nav-link" data-scroll-target="#sets"><span class="header-section-number">6.2.4</span> Sets</a></li>
+  <li><a href="#dictionaries" id="toc-dictionaries" class="nav-link" data-scroll-target="#dictionaries"><span class="header-section-number">6.2.5</span> Dictionaries</a></li>
+  <li><a href="#ranges" id="toc-ranges" class="nav-link" data-scroll-target="#ranges"><span class="header-section-number">6.2.6</span> Ranges</a></li>
   </ul></li>
-  <li><a href="#built-in-functions-for-iterable-in-python" id="toc-built-in-functions-for-iterable-in-python" class="nav-link" data-scroll-target="#built-in-functions-for-iterable-in-python"><span class="header-section-number">6.3</span> Built-in Functions for Iterable in Python</a>
+  <li><a href="#iterating-over-iterables" id="toc-iterating-over-iterables" class="nav-link" data-scroll-target="#iterating-over-iterables"><span class="header-section-number">6.3</span> Iterating over Iterables</a></li>
+  <li><a href="#iterables-unpacking" id="toc-iterables-unpacking" class="nav-link" data-scroll-target="#iterables-unpacking"><span class="header-section-number">6.4</span> Iterables Unpacking</a>
   <ul>
-  <li><a href="#general-functions" id="toc-general-functions" class="nav-link" data-scroll-target="#general-functions"><span class="header-section-number">6.3.1</span> General Functions</a></li>
-  <li><a href="#sorted" id="toc-sorted" class="nav-link" data-scroll-target="#sorted"><span class="header-section-number">6.3.2</span> <code>sorted()</code></a>
-  <ul class="collapse">
-  <li><a href="#difference-between-sorted-and-list.sort" id="toc-difference-between-sorted-and-list.sort" class="nav-link" data-scroll-target="#difference-between-sorted-and-list.sort"><span class="header-section-number">6.3.2.1</span> Difference Between <code>sorted()</code> and <code>list.sort()</code></a></li>
+  <li><a href="#basic-unpacking" id="toc-basic-unpacking" class="nav-link" data-scroll-target="#basic-unpacking"><span class="header-section-number">6.4.1</span> Basic Unpacking</a></li>
+  <li><a href="#extended-unpacking" id="toc-extended-unpacking" class="nav-link" data-scroll-target="#extended-unpacking"><span class="header-section-number">6.4.2</span> Extended (*) Unpacking</a></li>
+  <li><a href="#unpacking-with-functions" id="toc-unpacking-with-functions" class="nav-link" data-scroll-target="#unpacking-with-functions"><span class="header-section-number">6.4.3</span> Unpacking with Functions</a></li>
   </ul></li>
-  <li><a href="#enumerate" id="toc-enumerate" class="nav-link" data-scroll-target="#enumerate"><span class="header-section-number">6.3.3</span> <code>enumerate()</code></a>
+  <li><a href="#built-in-functions-for-iterables" id="toc-built-in-functions-for-iterables" class="nav-link" data-scroll-target="#built-in-functions-for-iterables"><span class="header-section-number">6.5</span> Built-in Functions for Iterables</a>
+  <ul>
+  <li><a href="#general-functions" id="toc-general-functions" class="nav-link" data-scroll-target="#general-functions"><span class="header-section-number">6.5.1</span> General Functions</a></li>
+  <li><a href="#sorted" id="toc-sorted" class="nav-link" data-scroll-target="#sorted"><span class="header-section-number">6.5.2</span> <code>sorted()</code></a>
   <ul class="collapse">
-  <li><a href="#syntax" id="toc-syntax" class="nav-link" data-scroll-target="#syntax"><span class="header-section-number">6.3.3.1</span> <strong>Syntax</strong></a></li>
+  <li><a href="#difference-between-sorted-and-list.sort" id="toc-difference-between-sorted-and-list.sort" class="nav-link" data-scroll-target="#difference-between-sorted-and-list.sort"><span class="header-section-number">6.5.2.1</span> Difference Between <code>sorted()</code> and <code>list.sort()</code></a></li>
   </ul></li>
-  <li><a href="#zip" id="toc-zip" class="nav-link" data-scroll-target="#zip"><span class="header-section-number">6.3.4</span> <code>zip()</code></a></li>
-  <li><a href="#unzipping" id="toc-unzipping" class="nav-link" data-scroll-target="#unzipping"><span class="header-section-number">6.3.5</span> unzipping</a></li>
+  <li><a href="#enumerate" id="toc-enumerate" class="nav-link" data-scroll-target="#enumerate"><span class="header-section-number">6.5.3</span> <code>enumerate()</code></a>
+  <ul class="collapse">
+  <li><a href="#syntax" id="toc-syntax" class="nav-link" data-scroll-target="#syntax"><span class="header-section-number">6.5.3.1</span> <strong>Syntax</strong></a></li>
+  </ul></li>
+  <li><a href="#zip" id="toc-zip" class="nav-link" data-scroll-target="#zip"><span class="header-section-number">6.5.4</span> <code>zip()</code></a></li>
+  <li><a href="#unzipping" id="toc-unzipping" class="nav-link" data-scroll-target="#unzipping"><span class="header-section-number">6.5.5</span> unzipping</a></li>
+  <li><a href="#exercise-1-iterating-using-a-for-loop-and-manual-iteration" id="toc-exercise-1-iterating-using-a-for-loop-and-manual-iteration" class="nav-link" data-scroll-target="#exercise-1-iterating-using-a-for-loop-and-manual-iteration"><span class="header-section-number">6.5.6</span> Exercise 1: Iterating Using a For Loop and Manual Iteration</a></li>
+  <li><a href="#exercise-2-combining-iterables-with-zip" id="toc-exercise-2-combining-iterables-with-zip" class="nav-link" data-scroll-target="#exercise-2-combining-iterables-with-zip"><span class="header-section-number">6.5.7</span> Exercise 2: Combining Iterables with <code>zip()</code></a></li>
+  <li><a href="#exercise-3-unzipping-a-list-of-tuples" id="toc-exercise-3-unzipping-a-list-of-tuples" class="nav-link" data-scroll-target="#exercise-3-unzipping-a-list-of-tuples"><span class="header-section-number">6.5.8</span> Exercise 3: Unzipping a List of Tuples</a></li>
+  <li><a href="#exercise-4-using-built-in-functions-on-iterables" id="toc-exercise-4-using-built-in-functions-on-iterables" class="nav-link" data-scroll-target="#exercise-4-using-built-in-functions-on-iterables"><span class="header-section-number">6.5.9</span> Exercise 4: Using Built-in Functions on Iterables</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -316,7 +322,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>In Python, an <strong>iterable</strong> is an object capable of returning its members one at a time. Common examples of iterables include strings, lists, tuples, sets, dictionaries, and even custom objects that implement specific methods. Iterables are fundamental in Python for loops, comprehensions, and many built-in functions.</p>
+<p>In Python, an <strong>iterable</strong> is an object capable of returning its members one at a time. Common examples of iterables include strings, lists, tuples, sets, dictionaries, and Ranges. Iterables are fundamental in Python for loops, comprehensions, and many built-in functions.</p>
 <section id="what-are-python-iterables" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="what-are-python-iterables"><span class="header-section-number">6.1</span> What are Python Iterables</h2>
 <section id="what-makes-an-object-iterable" class="level3" data-number="6.1.1">
@@ -344,102 +350,150 @@ __getitem__(index, /) method of builtins.list instance
 </div>
 </div>
 </section>
-<section id="examples-of-common-iterables" class="level3" data-number="6.1.2">
-<h3 data-number="6.1.2" class="anchored" data-anchor-id="examples-of-common-iterables"><span class="header-section-number">6.1.2</span> Examples of Common Iterables</h3>
-<section id="strings-iterate-over-characters" class="level4" data-number="6.1.2.1">
-<h4 data-number="6.1.2.1" class="anchored" data-anchor-id="strings-iterate-over-characters"><span class="header-section-number">6.1.2.1</span> <strong>Strings</strong>: Iterate over characters</h4>
-<div id="cell-5" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> char <span class="kw">in</span> <span class="st">"Python"</span>:</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(char, end<span class="op">=</span><span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="checking-if-an-object-is-iterable" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="checking-if-an-object-is-iterable"><span class="header-section-number">6.1.2</span> Checking if an Object is Iterable</h3>
+<p>You can check if an object is iterable using the <code>collections.abc.Iterable</code> class:</p>
+<div id="cell-5" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections.abc <span class="im">import</span> Iterable</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">isinstance</span>([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], Iterable))  </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">isinstance</span>(<span class="dv">123</span>, Iterable))    </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">isinstance</span>(<span class="bu">range</span>(<span class="dv">5</span>), Iterable))</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">isinstance</span>(<span class="st">"hello"</span>, Iterable))   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>True
+False
+True
+True</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="common-iterables-in-python" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="common-iterables-in-python"><span class="header-section-number">6.2</span> Common Iterables in Python</h2>
+<p>Here are some built-in iterables in Python:</p>
+<section id="strings" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="strings"><span class="header-section-number">6.2.1</span> Strings</h3>
+<div id="cell-7" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> char <span class="kw">in</span> <span class="st">"Python"</span>:</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(char, end<span class="op">=</span><span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>P y t h o n </code></pre>
 </div>
 </div>
 </section>
-<section id="lists-iterate-over-elements." class="level4" data-number="6.1.2.2">
-<h4 data-number="6.1.2.2" class="anchored" data-anchor-id="lists-iterate-over-elements."><span class="header-section-number">6.1.2.2</span> <strong>Lists</strong>: Iterate over elements.</h4>
-<div id="cell-7" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> num <span class="kw">in</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]:</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(num, end<span class="op">=</span><span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="lists" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="lists"><span class="header-section-number">6.2.2</span> Lists</h3>
+<div id="cell-9" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> num <span class="kw">in</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]:</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(num, end<span class="op">=</span><span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>1 2 3 </code></pre>
 </div>
 </div>
 </section>
-<section id="tuples-iterate-like-lists." class="level4" data-number="6.1.2.3">
-<h4 data-number="6.1.2.3" class="anchored" data-anchor-id="tuples-iterate-like-lists."><span class="header-section-number">6.1.2.3</span> <strong>Tuples</strong>: Iterate like lists.</h4>
-<div id="cell-9" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> (<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>):</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(item, end<span class="op">=</span><span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="tuples" class="level3" data-number="6.2.3">
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="tuples"><span class="header-section-number">6.2.3</span> Tuples</h3>
+<div id="cell-11" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> (<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(item, end<span class="op">=</span><span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>4 5 6 </code></pre>
 </div>
 </div>
 </section>
-<section id="sets-iterate-over-unique-elements." class="level4" data-number="6.1.2.4">
-<h4 data-number="6.1.2.4" class="anchored" data-anchor-id="sets-iterate-over-unique-elements."><span class="header-section-number">6.1.2.4</span> <strong>Sets</strong>: Iterate over unique elements.</h4>
-<div id="cell-11" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> elem <span class="kw">in</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>}:</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(elem, end<span class="op">=</span><span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="sets" class="level3" data-number="6.2.4">
+<h3 data-number="6.2.4" class="anchored" data-anchor-id="sets"><span class="header-section-number">6.2.4</span> Sets</h3>
+<div id="cell-13" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> elem <span class="kw">in</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>}:</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(elem, end<span class="op">=</span><span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>1 2 3 </code></pre>
 </div>
 </div>
 </section>
-<section id="dictionaries-iterate-over-keys-by-default." class="level4" data-number="6.1.2.5">
-<h4 data-number="6.1.2.5" class="anchored" data-anchor-id="dictionaries-iterate-over-keys-by-default."><span class="header-section-number">6.1.2.5</span> <strong>Dictionaries</strong>: Iterate over keys by default.</h4>
-<div id="cell-13" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>my_dict <span class="op">=</span> {<span class="st">"a"</span>: <span class="dv">1</span>, <span class="st">"b"</span>: <span class="dv">2</span>}</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key <span class="kw">in</span> my_dict:</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(key, end<span class="op">=</span><span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="dictionaries" class="level3" data-number="6.2.5">
+<h3 data-number="6.2.5" class="anchored" data-anchor-id="dictionaries"><span class="header-section-number">6.2.5</span> Dictionaries</h3>
+<div id="cell-15" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>my_dict <span class="op">=</span> {<span class="st">"a"</span>: <span class="dv">1</span>, <span class="st">"b"</span>: <span class="dv">2</span>}</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key <span class="kw">in</span> my_dict:</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(key, end<span class="op">=</span><span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>a b </code></pre>
 </div>
 </div>
 </section>
-<section id="checking-if-an-object-is-iterable" class="level4" data-number="6.1.2.6">
-<h4 data-number="6.1.2.6" class="anchored" data-anchor-id="checking-if-an-object-is-iterable"><span class="header-section-number">6.1.2.6</span> Checking if an Object is Iterable</h4>
-<p>You can check if an object is iterable using the <code>collections.abc.Iterable</code> class:</p>
-<div id="cell-15" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections.abc <span class="im">import</span> Iterable</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">isinstance</span>([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], Iterable))  </span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">isinstance</span>(<span class="dv">123</span>, Iterable))       </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="ranges" class="level3" data-number="6.2.6">
+<h3 data-number="6.2.6" class="anchored" data-anchor-id="ranges"><span class="header-section-number">6.2.6</span> Ranges</h3>
+<div id="cell-17" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):  <span class="co"># Generates numbers from 0 to 4</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i, end<span class="op">=</span><span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>True
-False</code></pre>
+<pre><code>0 1 2 3 4 </code></pre>
 </div>
 </div>
 </section>
 </section>
+<section id="iterating-over-iterables" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="iterating-over-iterables"><span class="header-section-number">6.3</span> Iterating over Iterables</h2>
+<p>You can iterate over an iterable using: * A <code>for</code> loop. * the <code>iter()</code> and <code>next()</code> functions</p>
+<p>We’ve often used <code>for</code> loops to traverse iterables in Python. Now, let’s dive into how you can manually iterate over an iterable using the built-in <code>iter()</code> and <code>next()</code> functions. This approach offers finer control over the iteration process and can be especially useful in more advanced scenarios.</p>
+<div id="cell-19" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Manually Iterating Over an Iterable Using iter() and next()</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define an iterable, such as a list of numbers</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>]</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtain an iterator from the iterable</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>iterator <span class="op">=</span> <span class="bu">iter</span>(numbers)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Use a while loop to manually iterate over the elements</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Retrieve the next element in the iterator</span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>        number <span class="op">=</span> <span class="bu">next</span>(iterator)</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(number)</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">StopIteration</span>:</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>        <span class="co"># When there are no more elements, a StopIteration exception is raised.</span></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Iteration complete!"</span>)</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>10
+20
+30
+40
+50
+Iteration complete!</code></pre>
+</div>
+</div>
 </section>
-<section id="iterables-unpacking" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="iterables-unpacking"><span class="header-section-number">6.2</span> Iterables Unpacking</h2>
-<p>Python supports unpacking for iterables, allowing you to assign elements of an iterable to variables in a concise and readable way. Unpacking is a powerful feature that works with sequences like lists, tuples, and other iterable objects.</p>
-<section id="basic-unpacking" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored" data-anchor-id="basic-unpacking"><span class="header-section-number">6.2.1</span> Basic Unpacking</h3>
+<section id="iterables-unpacking" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="iterables-unpacking"><span class="header-section-number">6.4</span> Iterables Unpacking</h2>
+<p>Python supports unpacking for iterables, allowing you to assign elements of an iterable to variables in a concise and readable way. Unpacking is a powerful feature that works with python iterable objects.</p>
+<section id="basic-unpacking" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="basic-unpacking"><span class="header-section-number">6.4.1</span> Basic Unpacking</h3>
 <p>You can unpack the elements of an iterable into separate variables:</p>
-<div id="cell-18" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Unpacking a list</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>a, b, c <span class="op">=</span> numbers</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, b, c)  <span class="co"># Output: 1 2 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-22" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Unpacking a list</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>a, b, c <span class="op">=</span> numbers</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, b, c)  <span class="co"># Output: 1 2 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>1 2 3</code></pre>
 </div>
 </div>
 <p><strong>Note</strong>: The number of variables must match the number of elements in the iterable, or Python will raise a <code>ValueError</code>.</p>
 </section>
-<section id="extended-star-unpacking" class="level3" data-number="6.2.2">
-<h3 data-number="6.2.2" class="anchored" data-anchor-id="extended-star-unpacking"><span class="header-section-number">6.2.2</span> Extended (Star) Unpacking</h3>
+<section id="extended-unpacking" class="level3" data-number="6.4.2">
+<h3 data-number="6.4.2" class="anchored" data-anchor-id="extended-unpacking"><span class="header-section-number">6.4.2</span> Extended (*) Unpacking</h3>
 <p>Using the <code>*</code> operator, you can unpack multiple elements into a single variable, capturing the remaining elements as a list:</p>
-<div id="cell-21" class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>a, <span class="op">*</span>b, c <span class="op">=</span> numbers</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)  <span class="co"># Output: 1</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(b)  <span class="co"># Output: [2, 3, 4]</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(c)  <span class="co"># Output: 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-25" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>a, <span class="op">*</span>b, c <span class="op">=</span> numbers</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)  </span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(b)  </span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(c)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>1
 [2, 3, 4]
@@ -448,50 +502,50 @@ False</code></pre>
 </div>
 <p>Here, <code>b</code> (with <code>*</code>) captures all the middle elements as a list.</p>
 </section>
-<section id="unpacking-with-functions" class="level3" data-number="6.2.3">
-<h3 data-number="6.2.3" class="anchored" data-anchor-id="unpacking-with-functions"><span class="header-section-number">6.2.3</span> Unpacking with Functions</h3>
+<section id="unpacking-with-functions" class="level3" data-number="6.4.3">
+<h3 data-number="6.4.3" class="anchored" data-anchor-id="unpacking-with-functions"><span class="header-section-number">6.4.3</span> Unpacking with Functions</h3>
 <p>You can use unpacking to pass iterable elements as arguments to functions:</p>
-<div id="cell-24" class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># unpacking a list or tuple</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add(a, b, c):</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b <span class="op">+</span> c</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> add(<span class="op">*</span>numbers)</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)  <span class="co"># Output: 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-28" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># unpacking a list or tuple</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add(a, b, c):</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b <span class="op">+</span> c</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> add(<span class="op">*</span>numbers)</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>6</code></pre>
 </div>
 </div>
-<div id="cell-25" class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># unpacking a dictionary</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add(a<span class="op">=</span><span class="dv">0</span>, b<span class="op">=</span><span class="dv">0</span>, c<span class="op">=</span><span class="dv">0</span>):</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b <span class="op">+</span> c</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> {<span class="st">"a"</span>: <span class="dv">1</span>, <span class="st">"b"</span>: <span class="dv">2</span>, <span class="st">"c"</span>: <span class="dv">3</span>}</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> add(<span class="op">**</span>numbers)</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)  <span class="co"># Output: 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-29" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># unpacking a dictionary</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add(a<span class="op">=</span><span class="dv">0</span>, b<span class="op">=</span><span class="dv">0</span>, c<span class="op">=</span><span class="dv">0</span>):</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b <span class="op">+</span> c</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> {<span class="st">"a"</span>: <span class="dv">1</span>, <span class="st">"b"</span>: <span class="dv">2</span>, <span class="st">"c"</span>: <span class="dv">3</span>}</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> add(<span class="op">**</span>numbers)</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>6</code></pre>
 </div>
 </div>
 <p>If we are interested in retrieving only some values of the tuple, the expression *_ can be used to discard the other values. Let’s say we are interested in retrieving only the first and the last two values of the tuple:</p>
-<div id="cell-27" class="cell" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>x,<span class="op">*</span>_,y,z  <span class="op">=</span> (<span class="fl">4.5</span>, <span class="st">"this is a string"</span>, ((<span class="st">"Nested tuple"</span>,<span class="dv">5</span>)),<span class="st">"99"</span>,<span class="dv">99</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-31" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>x,<span class="op">*</span>_,y,z  <span class="op">=</span> (<span class="fl">4.5</span>, <span class="st">"this is a string"</span>, ((<span class="st">"Nested tuple"</span>,<span class="dv">5</span>)),<span class="st">"99"</span>,<span class="dv">99</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-28" class="cell" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>x, y , z</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-32" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>x, y , z</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="26">
 <pre><code>(4.5, '99', 99)</code></pre>
 </div>
 </div>
 </section>
 </section>
-<section id="built-in-functions-for-iterable-in-python" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="built-in-functions-for-iterable-in-python"><span class="header-section-number">6.3</span> Built-in Functions for Iterable in Python</h2>
+<section id="built-in-functions-for-iterables" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="built-in-functions-for-iterables"><span class="header-section-number">6.5</span> Built-in Functions for Iterables</h2>
 <p>Python provides a variety of built-in functions to operate on iterables, making it easy to manipulate, process, and analyze collections like lists, tuples, strings, sets, and dictionaries. Below is a list of commonly used built-in functions specifically designed for iterables.</p>
-<section id="general-functions" class="level3" data-number="6.3.1">
-<h3 data-number="6.3.1" class="anchored" data-anchor-id="general-functions"><span class="header-section-number">6.3.1</span> General Functions</h3>
+<section id="general-functions" class="level3" data-number="6.5.1">
+<h3 data-number="6.5.1" class="anchored" data-anchor-id="general-functions"><span class="header-section-number">6.5.1</span> General Functions</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 9%">
@@ -553,65 +607,80 @@ False</code></pre>
 </tr>
 </tbody>
 </table>
-<div id="cell-31" class="cell" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span>([<span class="st">"apple"</span>, <span class="st">"orange"</span>, <span class="st">"banana"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-35" class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span>([<span class="st">"apple"</span>, <span class="st">"orange"</span>, <span class="st">"banana"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="28">
 <pre><code>['apple', 'banana', 'orange']</code></pre>
 </div>
 </div>
-<div id="cell-32" class="cell" data-execution_count="29">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="bu">max</span>([<span class="st">"apple"</span>, <span class="st">"orange"</span>, <span class="st">"banana"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-36" class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="bu">max</span>([<span class="st">"apple"</span>, <span class="st">"orange"</span>, <span class="st">"banana"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="29">
 <pre><code>'orange'</code></pre>
 </div>
 </div>
 </section>
-<section id="sorted" class="level3" data-number="6.3.2">
-<h3 data-number="6.3.2" class="anchored" data-anchor-id="sorted"><span class="header-section-number">6.3.2</span> <code>sorted()</code></h3>
+<section id="sorted" class="level3" data-number="6.5.2">
+<h3 data-number="6.5.2" class="anchored" data-anchor-id="sorted"><span class="header-section-number">6.5.2</span> <code>sorted()</code></h3>
 <p>The <code>sorted()</code> function in Python is used to return a new sorted list from an iterable. It is a versatile and powerful tool for sorting data in ascending or descending order, with the ability to customize sorting behavior using a key function.</p>
-<div id="cell-34" class="cell" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">5</span>]</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>sorted_numbers <span class="op">=</span> <span class="bu">sorted</span>(numbers)</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sorted_numbers)  <span class="co"># Output: [1, 1, 3, 4, 5]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-38" class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">5</span>]</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>sorted_numbers <span class="op">=</span> <span class="bu">sorted</span>(numbers)</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sorted_numbers)  <span class="co"># Output: [1, 1, 3, 4, 5]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1, 1, 3, 4, 5]</code></pre>
 </div>
 </div>
-<div id="cell-35" class="cell" data-execution_count="31">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">5</span>]</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>sorted_numbers <span class="op">=</span> <span class="bu">sorted</span>(numbers, reverse<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sorted_numbers)  <span class="co"># Output: [5, 4, 3, 1, 1]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-39" class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">5</span>]</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>sorted_numbers <span class="op">=</span> <span class="bu">sorted</span>(numbers, reverse<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sorted_numbers)  <span class="co"># Output: [5, 4, 3, 1, 1]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[5, 4, 3, 1, 1]</code></pre>
 </div>
 </div>
-<div id="cell-36" class="cell" data-execution_count="32">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>word <span class="op">=</span> <span class="st">"python"</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>sorted_chars <span class="op">=</span> <span class="bu">sorted</span>(word)</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sorted_chars)  <span class="co"># Output: ['h', 'n', 'o', 'p', 't', 'y']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-40" class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>word <span class="op">=</span> <span class="st">"python"</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>sorted_chars <span class="op">=</span> <span class="bu">sorted</span>(word)</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sorted_chars)  <span class="co"># Output: ['h', 'n', 'o', 'p', 't', 'y']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['h', 'n', 'o', 'p', 't', 'y']</code></pre>
 </div>
 </div>
 <p>The <code>key</code> parameter allows customization of sorting logic by applying a function to each element before comparison.</p>
-<div id="cell-38" class="cell" data-execution_count="33">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">"banana"</span>, <span class="st">"apple"</span>, <span class="st">"cherry"</span>]</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>sorted_words <span class="op">=</span> <span class="bu">sorted</span>(words, key<span class="op">=</span><span class="bu">len</span>)</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sorted_words)  <span class="co"># Output: ['apple', 'banana', 'cherry']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-42" class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">"banana"</span>, <span class="st">"apple"</span>, <span class="st">"cherry"</span>]</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>sorted_words <span class="op">=</span> <span class="bu">sorted</span>(words, key<span class="op">=</span><span class="bu">len</span>)</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sorted_words)  <span class="co"># Output: ['apple', 'banana', 'cherry']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['apple', 'banana', 'cherry']</code></pre>
 </div>
 </div>
-<div id="cell-39" class="cell" data-execution_count="34">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="op">-</span><span class="dv">5</span>, <span class="dv">3</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">7</span>]</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>sorted_numbers <span class="op">=</span> <span class="bu">sorted</span>(numbers, key<span class="op">=</span><span class="bu">abs</span>)</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sorted_numbers)  <span class="co"># Output: [-1, 3, -5, 7]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-43" class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="op">-</span><span class="dv">5</span>, <span class="dv">3</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">7</span>]</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>sorted_numbers <span class="op">=</span> <span class="bu">sorted</span>(numbers, key<span class="op">=</span><span class="bu">abs</span>)</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sorted_numbers)  <span class="co"># Output: [-1, 3, -5, 7]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[-1, 3, -5, 7]</code></pre>
 </div>
 </div>
-<section id="difference-between-sorted-and-list.sort" class="level4" data-number="6.3.2.1">
-<h4 data-number="6.3.2.1" class="anchored" data-anchor-id="difference-between-sorted-and-list.sort"><span class="header-section-number">6.3.2.1</span> Difference Between <code>sorted()</code> and <code>list.sort()</code></h4>
+<div id="cell-44" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span>([<span class="st">"apple"</span>, <span class="st">"orange"</span>, <span class="dv">32</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg ansi-bold">TypeError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg ansi-bold">In[20], line 1</span>
+<span class="ansi-green-fg ansi-bold">----&gt; 1</span> <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">sorted</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">[</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">apple</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">orange</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">32</span><span class="ansi-yellow-bg">]</span><span class="ansi-yellow-bg">)</span>
+
+<span class="ansi-red-fg ansi-bold">TypeError</span>: '&lt;' not supported between instances of 'int' and 'str'</pre>
+</div>
+</div>
+</div>
+<p>When you use functions like <code>max()</code>, <code>min()</code>, <code>sum(</code>), or <code>sorted</code> on an iterable, Python will try to perform comparisons or arithmetic operations between the elements. These functions work seamlessly when all elements are of types that can be compared or added together. However, if the iterable contains mixed types that are not inherently comparable (like strings and numbers), you’ll run into errors.</p>
+<p><strong>By ensuring the elements in your iterable are of compatible types, you can effectively use these functions without encountering runtime errors.</strong></p>
+<section id="difference-between-sorted-and-list.sort" class="level4" data-number="6.5.2.1">
+<h4 data-number="6.5.2.1" class="anchored" data-anchor-id="difference-between-sorted-and-list.sort"><span class="header-section-number">6.5.2.1</span> Difference Between <code>sorted()</code> and <code>list.sort()</code></h4>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 13%">
@@ -644,18 +713,18 @@ False</code></pre>
 </tbody>
 </table>
 <p><strong>Example:</strong></p>
-<div id="cell-41" class="cell" data-execution_count="35">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>]</span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Using sorted()</span></span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>new_list <span class="op">=</span> <span class="bu">sorted</span>(my_list)</span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original List:"</span>, my_list)  <span class="co"># [3, 1, 2]</span></span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"New Sorted List:"</span>, new_list)  <span class="co"># [1, 2, 3]</span></span>
-<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Using list.sort()</span></span>
-<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>my_list.sort()</span>
-<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"List after list.sort():"</span>, my_list)  <span class="co"># [1, 2, 3]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-47" class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>]</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Using sorted()</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>new_list <span class="op">=</span> <span class="bu">sorted</span>(my_list)</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original List:"</span>, my_list)  <span class="co"># [3, 1, 2]</span></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"New Sorted List:"</span>, new_list)  <span class="co"># [1, 2, 3]</span></span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Using list.sort()</span></span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>my_list.sort()</span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"List after list.sort():"</span>, my_list)  <span class="co"># [1, 2, 3]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Original List: [3, 1, 2]
 New Sorted List: [1, 2, 3]
@@ -664,50 +733,50 @@ List after list.sort(): [1, 2, 3]</code></pre>
 </div>
 </section>
 </section>
-<section id="enumerate" class="level3" data-number="6.3.3">
-<h3 data-number="6.3.3" class="anchored" data-anchor-id="enumerate"><span class="header-section-number">6.3.3</span> <code>enumerate()</code></h3>
+<section id="enumerate" class="level3" data-number="6.5.3">
+<h3 data-number="6.5.3" class="anchored" data-anchor-id="enumerate"><span class="header-section-number">6.5.3</span> <code>enumerate()</code></h3>
 <p>The <code>enumerate()</code> function adds a counter to an iterable and returns it as an <strong>enumerate object</strong>, which can be iterated over to get both the <strong>index</strong> and the <strong>value</strong> of each element in the iterable.</p>
-<section id="syntax" class="level4" data-number="6.3.3.1">
-<h4 data-number="6.3.3.1" class="anchored" data-anchor-id="syntax"><span class="header-section-number">6.3.3.1</span> <strong>Syntax</strong></h4>
+<section id="syntax" class="level4" data-number="6.5.3.1">
+<h4 data-number="6.5.3.1" class="anchored" data-anchor-id="syntax"><span class="header-section-number">6.5.3.1</span> <strong>Syntax</strong></h4>
 <p><code>enumerate(iterable, start=0)</code></p>
-<div id="cell-43" class="cell" data-execution_count="36">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, fruit <span class="kw">in</span> <span class="bu">enumerate</span>(fruits):</span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Index: </span><span class="sc">{</span>index<span class="sc">}</span><span class="ss">, Fruit: </span><span class="sc">{</span>fruit<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-49" class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, fruit <span class="kw">in</span> <span class="bu">enumerate</span>(fruits):</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Index: </span><span class="sc">{</span>index<span class="sc">}</span><span class="ss">, Fruit: </span><span class="sc">{</span>fruit<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Index: 0, Fruit: apple
 Index: 1, Fruit: banana
 Index: 2, Fruit: cherry</code></pre>
 </div>
 </div>
-<div id="cell-44" class="cell" data-execution_count="37">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># change the start index</span></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, fruit <span class="kw">in</span> <span class="bu">enumerate</span>(fruits, start<span class="op">=</span><span class="dv">1</span>):</span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Index: </span><span class="sc">{</span>index<span class="sc">}</span><span class="ss">, Fruit: </span><span class="sc">{</span>fruit<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-50" class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># change the start index</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, fruit <span class="kw">in</span> <span class="bu">enumerate</span>(fruits, start<span class="op">=</span><span class="dv">1</span>):</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Index: </span><span class="sc">{</span>index<span class="sc">}</span><span class="ss">, Fruit: </span><span class="sc">{</span>fruit<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Index: 1, Fruit: apple
 Index: 2, Fruit: banana
 Index: 3, Fruit: cherry</code></pre>
 </div>
 </div>
-<div id="cell-45" class="cell" data-execution_count="38">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># using enumerate() with a list comprehension</span></span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>indexed_fruits <span class="op">=</span> [(index, fruit) <span class="cf">for</span> index, fruit <span class="kw">in</span> <span class="bu">enumerate</span>(fruits, start<span class="op">=</span><span class="dv">1</span>)]</span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(indexed_fruits)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-51" class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># using enumerate() with a list comprehension</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>indexed_fruits <span class="op">=</span> [(index, fruit) <span class="cf">for</span> index, fruit <span class="kw">in</span> <span class="bu">enumerate</span>(fruits, start<span class="op">=</span><span class="dv">1</span>)]</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(indexed_fruits)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[(1, 'apple'), (2, 'banana'), (3, 'cherry')]</code></pre>
 </div>
 </div>
-<div id="cell-46" class="cell" data-execution_count="39">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Working with Strings</span></span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>word <span class="op">=</span> <span class="st">"python"</span></span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, char <span class="kw">in</span> <span class="bu">enumerate</span>(word):</span>
-<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Index: </span><span class="sc">{</span>index<span class="sc">}</span><span class="ss">, Character: </span><span class="sc">{</span>char<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-52" class="cell" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Working with Strings</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>word <span class="op">=</span> <span class="st">"python"</span></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, char <span class="kw">in</span> <span class="bu">enumerate</span>(word):</span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Index: </span><span class="sc">{</span>index<span class="sc">}</span><span class="ss">, Character: </span><span class="sc">{</span>char<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Index: 0, Character: p
 Index: 1, Character: y
@@ -719,37 +788,125 @@ Index: 5, Character: n</code></pre>
 </div>
 </section>
 </section>
-<section id="zip" class="level3" data-number="6.3.4">
-<h3 data-number="6.3.4" class="anchored" data-anchor-id="zip"><span class="header-section-number">6.3.4</span> <code>zip()</code></h3>
+<section id="zip" class="level3" data-number="6.5.4">
+<h3 data-number="6.5.4" class="anchored" data-anchor-id="zip"><span class="header-section-number">6.5.4</span> <code>zip()</code></h3>
 <p>The <code>zip()</code> function is a built-in Python function that combines two or more iterables (e.g., lists, tuples, strings) into a single iterator of tuples. It is commonly used to pair elements from multiple iterables based on their positions.</p>
-<div id="cell-48" class="cell" data-execution_count="40">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># combining two lists</span></span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>list1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>list2 <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>]</span>
-<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>zipped <span class="op">=</span> <span class="bu">zip</span>(list1, list2)</span>
-<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">list</span>(zipped))  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-54" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(<span class="bu">zip</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Help on class zip in module builtins:
+
+class zip(object)
+ |  zip(*iterables, strict=False) --&gt; Yield tuples until an input is exhausted.
+ |
+ |     &gt;&gt;&gt; list(zip('abcdefg', range(3), range(4)))
+ |     [('a', 0, 0), ('b', 1, 1), ('c', 2, 2)]
+ |
+ |  The zip object yields n-length tuples, where n is the number of iterables
+ |  passed as positional arguments to zip().  The i-th element in every tuple
+ |  comes from the i-th iterable argument to zip().  This continues until the
+ |  shortest argument is exhausted.
+ |
+ |  If strict is true and one of the arguments is exhausted before the others,
+ |  raise a ValueError.
+ |
+ |  Methods defined here:
+ |
+ |  __getattribute__(self, name, /)
+ |      Return getattr(self, name).
+ |
+ |  __iter__(self, /)
+ |      Implement iter(self).
+ |
+ |  __next__(self, /)
+ |      Implement next(self).
+ |
+ |  __reduce__(...)
+ |      Return state information for pickling.
+ |
+ |  __setstate__(...)
+ |      Set state information for unpickling.
+ |
+ |  ----------------------------------------------------------------------
+ |  Static methods defined here:
+ |
+ |  __new__(*args, **kwargs)
+ |      Create and return a new object.  See help(type) for accurate signature.
+</code></pre>
+</div>
+</div>
+<p><strong>Key Points</strong></p>
+<ul>
+<li><p><strong>Aggregation of Iterables:</strong><br>
+<code>zip()</code> takes any number of iterables as arguments and returns an iterator of tuples, where each tuple contains the corresponding elements from all the iterables.</p></li>
+<li><p><strong>Length of the Result:</strong><br>
+The iterator stops when the shortest input iterable is exhausted. If the iterables have different lengths, elements from the longer iterables that do not have a corresponding element in the shorter ones are ignored.</p></li>
+<li><p><strong>Return Type:</strong><br>
+The object returned by <code>zip()</code> is an iterator in Python 3. To convert it to a list or tuple, you can use the <code>list()</code> or <code>tuple()</code> functions.</p></li>
+</ul>
+<p>Basic Usage Example</p>
+<div id="cell-56" class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># combining two lists</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>list1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>list2 <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>]</span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>zipped <span class="op">=</span> <span class="bu">zip</span>(list1, list2)</span>
+<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a>zipped </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="31">
+<pre><code>&lt;zip at 0x20e27f3cec0&gt;</code></pre>
+</div>
+</div>
+<div id="cell-57" class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(zipped)</span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(zipped))</span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a><span class="co"># is zipped an iterator?</span></span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">isinstance</span>(zipped, Iterable))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;zip object at 0x0000020E27F3CEC0&gt;
+&lt;class 'zip'&gt;
+True</code></pre>
+</div>
+</div>
+<p>The <code>zip()</code> function returns an iterator, not a list. When you print an iterator directly, it doesn’t display the elements but rather the object’s memory address. To see the elements, you can iterate over it using a loop or convert the iterator into a list (or tuple or dict).</p>
+<div id="cell-59" class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co"># iterate over the zip object</span></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> zipped:</span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(item)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(1, 'a')
+(2, 'b')
+(3, 'c')</code></pre>
+</div>
+</div>
+<div id="cell-60" class="cell" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># convert the zip object to a list</span></span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>list1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>list2 <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>]</span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a>zipped <span class="op">=</span> <span class="bu">zip</span>(list1, list2)</span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">list</span>(zipped))  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[(1, 'a'), (2, 'b'), (3, 'c')]</code></pre>
 </div>
 </div>
-<div id="cell-49" class="cell" data-execution_count="41">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating dictionaries from two list</span></span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>keys <span class="op">=</span> [<span class="st">'name'</span>, <span class="st">'age'</span>, <span class="st">'city'</span>]</span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> [<span class="st">'Alice'</span>, <span class="dv">30</span>, <span class="st">'New York'</span>]</span>
-<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>dictionary <span class="op">=</span> <span class="bu">dict</span>(<span class="bu">zip</span>(keys, values))</span>
-<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dictionary)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-61" class="cell" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating dictionaries from two list</span></span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>keys <span class="op">=</span> [<span class="st">'name'</span>, <span class="st">'age'</span>, <span class="st">'city'</span>]</span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> [<span class="st">'Alice'</span>, <span class="dv">30</span>, <span class="st">'New York'</span>]</span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a>dictionary <span class="op">=</span> <span class="bu">dict</span>(<span class="bu">zip</span>(keys, values))</span>
+<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dictionary)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{'name': 'Alice', 'age': 30, 'city': 'New York'}</code></pre>
 </div>
 </div>
-<div id="cell-50" class="cell" data-execution_count="42">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">'Alice'</span>, <span class="st">'Bob'</span>, <span class="st">'Charlie'</span>]</span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> [<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">95</span>]</span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, score <span class="kw">in</span> <span class="bu">zip</span>(names, scores):</span>
-<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> scored </span><span class="sc">{</span>score<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-62" class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">'Alice'</span>, <span class="st">'Bob'</span>, <span class="st">'Charlie'</span>]</span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> [<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">95</span>]</span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, score <span class="kw">in</span> <span class="bu">zip</span>(names, scores):</span>
+<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> scored </span><span class="sc">{</span>score<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Alice scored 85
 Bob scored 90
@@ -757,40 +914,97 @@ Charlie scored 95</code></pre>
 </div>
 </div>
 </section>
-<section id="unzipping" class="level3" data-number="6.3.5">
-<h3 data-number="6.3.5" class="anchored" data-anchor-id="unzipping"><span class="header-section-number">6.3.5</span> unzipping</h3>
+<section id="unzipping" class="level3" data-number="6.5.5">
+<h3 data-number="6.5.5" class="anchored" data-anchor-id="unzipping"><span class="header-section-number">6.5.5</span> unzipping</h3>
 <p>You can “unzip” a zipped object using the <code>zip(*zipped)</code> syntax:</p>
-<div id="cell-52" class="cell" data-execution_count="43">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>zipped <span class="op">=</span> [(<span class="dv">1</span>, <span class="st">'a'</span>), (<span class="dv">2</span>, <span class="st">'b'</span>), (<span class="dv">3</span>, <span class="st">'c'</span>)]</span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>unzipped <span class="op">=</span> <span class="bu">zip</span>(<span class="op">*</span>zipped)</span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>list1, list2 <span class="op">=</span> <span class="bu">list</span>(unzipped)</span>
-<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(list1)  <span class="co"># Output: [1, 2, 3]</span></span>
-<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(list2)  <span class="co"># Output: ['a', 'b', 'c']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-64" class="cell" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>zipped <span class="op">=</span> [(<span class="dv">1</span>, <span class="st">'a'</span>), (<span class="dv">2</span>, <span class="st">'b'</span>), (<span class="dv">3</span>, <span class="st">'c'</span>)]</span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>unzipped <span class="op">=</span> <span class="bu">zip</span>(<span class="op">*</span>zipped)</span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a>list1, list2 <span class="op">=</span> <span class="bu">list</span>(unzipped)</span>
+<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(list1)  </span>
+<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(list2) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>(1, 2, 3)
 ('a', 'b', 'c')</code></pre>
 </div>
 </div>
-<div id="cell-53" class="cell" data-execution_count="44">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(<span class="bu">print</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Help on built-in function print in module builtins:
-
-print(*args, sep=' ', end='\n', file=None, flush=False)
-    Prints the values to a stream, or to sys.stdout by default.
-
-    sep
-      string inserted between values, default a space.
-    end
-      string appended after the last value, default a newline.
-    file
-      a file-like object (stream); defaults to the current sys.stdout.
-    flush
-      whether to forcibly flush the stream.
-</code></pre>
-</div>
-</div>
+</section>
+<section id="exercise-1-iterating-using-a-for-loop-and-manual-iteration" class="level3" data-number="6.5.6">
+<h3 data-number="6.5.6" class="anchored" data-anchor-id="exercise-1-iterating-using-a-for-loop-and-manual-iteration"><span class="header-section-number">6.5.6</span> Exercise 1: Iterating Using a For Loop and Manual Iteration</h3>
+<ol type="1">
+<li><strong>Using a For Loop:</strong>
+<ul>
+<li><p>Given the list:</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Write a <code>for</code> loop to print each element.</p></li>
+</ul></li>
+<li><strong>Using <code>iter()</code> and <code>next()</code>:</strong>
+<ul>
+<li>Obtain an iterator from the list using <code>iter()</code>.</li>
+<li>Use a <code>while</code> loop and <code>next()</code> to print each element.</li>
+<li>Handle the <code>StopIteration</code> exception gracefully when there are no more elements.</li>
+</ul></li>
+</ol>
+<p><em>Hint:</em><br>
+Remember that calling <code>next()</code> on an exhausted iterator raises a <code>StopIteration</code> exception.</p>
+</section>
+<section id="exercise-2-combining-iterables-with-zip" class="level3" data-number="6.5.7">
+<h3 data-number="6.5.7" class="anchored" data-anchor-id="exercise-2-combining-iterables-with-zip"><span class="header-section-number">6.5.7</span> Exercise 2: Combining Iterables with <code>zip()</code></h3>
+<ol type="1">
+<li><strong>Zipping Two Lists:</strong>
+<ul>
+<li><p>Given the lists:</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>list1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>list2 <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Use the <code>zip()</code> function to combine these lists.</p></li>
+<li><p>Convert the result into a list and print it.</p></li>
+</ul></li>
+<li><strong>Iterating Over the Zipped Object:</strong>
+<ul>
+<li>Iterate over the zipped object using a <code>for</code> loop and print each tuple.</li>
+</ul></li>
+</ol>
+<p><em>Note:</em><br>
+The <code>zip()</code> function returns an iterator, so converting it to a list will reveal its elements.</p>
+</section>
+<section id="exercise-3-unzipping-a-list-of-tuples" class="level3" data-number="6.5.8">
+<h3 data-number="6.5.8" class="anchored" data-anchor-id="exercise-3-unzipping-a-list-of-tuples"><span class="header-section-number">6.5.8</span> Exercise 3: Unzipping a List of Tuples</h3>
+<ol type="1">
+<li><strong>Given Data:</strong>
+<ul>
+<li><p>You have a list of tuples:</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>pairs <span class="op">=</span> [(<span class="st">'apple'</span>, <span class="dv">1</span>), (<span class="st">'banana'</span>, <span class="dv">2</span>), (<span class="st">'cherry'</span>, <span class="dv">3</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul></li>
+<li><strong>Unzipping:</strong>
+<ul>
+<li>Use the unpacking operator (<code>*</code>) along with <code>zip()</code> to separate the list into two tuples:
+<ul>
+<li>One tuple for the fruit names.</li>
+<li>One tuple for the corresponding numbers.</li>
+</ul></li>
+<li>Print both tuples.</li>
+</ul></li>
+</ol>
+<p><em>Hint:</em><br>
+Use the syntax <code>names, numbers = zip(*pairs)</code>.</p>
+</section>
+<section id="exercise-4-using-built-in-functions-on-iterables" class="level3" data-number="6.5.9">
+<h3 data-number="6.5.9" class="anchored" data-anchor-id="exercise-4-using-built-in-functions-on-iterables"><span class="header-section-number">6.5.9</span> Exercise 4: Using Built-in Functions on Iterables</h3>
+<ol type="1">
+<li><strong>Numeric List Operations:</strong>
+<ul>
+<li><p>Create a list:</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">1</span>, <span class="dv">9</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul></li>
+<li><strong>Apply Built-in Functions:</strong>
+<ul>
+<li>Use the <code>min()</code>, <code>max()</code>, and <code>sum()</code> functions on this list.</li>
+<li>Print the results of each function.</li>
+</ul></li>
+</ol>
+<p><em>Note:</em><br>
+These functions require the elements of the iterable to be of compatible types (e.g., all numbers).</p>
 
 
 </section>
