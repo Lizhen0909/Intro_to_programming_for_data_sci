@@ -328,11 +328,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   </ul></li>
   <li><a href="#choosing-the-right-data-structure" id="toc-choosing-the-right-data-structure" class="nav-link" data-scroll-target="#choosing-the-right-data-structure"><span class="header-section-number">5.5</span> Choosing the Right Data Structure</a></li>
-  <li><a href="#final-thoughts" id="toc-final-thoughts" class="nav-link" data-scroll-target="#final-thoughts"><span class="header-section-number">5.6</span> Final Thoughts</a>
+  <li><a href="#immutable-data-types-in-python" id="toc-immutable-data-types-in-python" class="nav-link" data-scroll-target="#immutable-data-types-in-python"><span class="header-section-number">5.6</span> Immutable Data Types in Python</a></li>
+  <li><a href="#final-thoughts" id="toc-final-thoughts" class="nav-link" data-scroll-target="#final-thoughts"><span class="header-section-number">5.7</span> Final Thoughts</a>
   <ul>
-  <li><a href="#bonus-practice-exercise" id="toc-bonus-practice-exercise" class="nav-link" data-scroll-target="#bonus-practice-exercise"><span class="header-section-number">5.6.1</span> Bonus Practice exercise</a></li>
+  <li><a href="#bonus-practice-exercise" id="toc-bonus-practice-exercise" class="nav-link" data-scroll-target="#bonus-practice-exercise"><span class="header-section-number">5.7.1</span> Bonus Practice exercise</a></li>
   </ul></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"><span class="header-section-number">5.7</span> Resources</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"><span class="header-section-number">5.8</span> Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -2255,8 +2256,97 @@ Imputed GDP per capita for the year 1999 is $ 34592.0</code></pre>
 </ul></li>
 </ol>
 </section>
-<section id="final-thoughts" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="final-thoughts"><span class="header-section-number">5.6</span> Final Thoughts</h2>
+<section id="immutable-data-types-in-python" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="immutable-data-types-in-python"><span class="header-section-number">5.6</span> Immutable Data Types in Python</h2>
+<p>In Python, <strong>immutable data types</strong> are those whose values cannot be changed after they are created. If you try to modify an immutable object, Python will create a new object instead of changing the original one.</p>
+<p>Here is a list of immutable data types in python</p>
+<ul>
+<li>Integers (<code>int</code>)</li>
+<li>Floats (<code>float</code>)</li>
+<li>Booleans (<code>bool</code>)</li>
+<li>Strings (<code>str</code>)</li>
+<li>Tuples (<code>tuple</code>)</li>
+</ul>
+<p><strong>Key Characteristics of Immutable Data Types</strong></p>
+<ul>
+<li><p><strong>Cannot be modified in place</strong>: Any operation that appears to modify an immutable object actually creates a new object.</p></li>
+<li><p><strong>Hashable</strong>: Immutable objects can be used as keys in dictionaries or elements in sets because their values do not change.</p></li>
+<li><p><strong>Memory Efficiency</strong>: Python may reuse memory for immutable objects (e.g., small integers or short strings) to optimize performance.</p></li>
+</ul>
+<div id="bcc03b77" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="co"># when you try to modify the interger, it creates a new integer object</span></span>
+<span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a>my_integer <span class="op">=</span> <span class="dv">32</span></span>
+<span id="cb93-3"><a href="#cb93-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-4"><a href="#cb93-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Memory address of my_integer</span></span>
+<span id="cb93-5"><a href="#cb93-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Memory address of my_integers:"</span>, <span class="bu">id</span>(my_integer))</span>
+<span id="cb93-6"><a href="#cb93-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-7"><a href="#cb93-7" aria-hidden="true" tabindex="-1"></a>my_integer <span class="op">=</span> <span class="dv">12</span></span>
+<span id="cb93-8"><a href="#cb93-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Memory address of my_integer</span></span>
+<span id="cb93-9"><a href="#cb93-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Memory address of my_integers:"</span>, <span class="bu">id</span>(my_integer))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Memory address of my_integers: 140725600664984
+Memory address of my_integers: 140725600664344</code></pre>
+</div>
+</div>
+<div id="6f2099cb" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">"hello"</span></span>
+<span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-3"><a href="#cb95-3" aria-hidden="true" tabindex="-1"></a>s[<span class="dv">0</span>] <span class="op">=</span> <span class="st">'H'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg ansi-bold">TypeError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg ansi-bold">In[8], line 3</span>
+<span class="ansi-green-fg">      1</span> s <span style="color:rgb(98,98,98)">=</span> <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">hello</span><span style="color:rgb(175,0,0)">"</span>
+<span class="ansi-green-fg ansi-bold">----&gt; 3</span> <span class="ansi-yellow-bg">s</span><span class="ansi-yellow-bg">[</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">0</span><span class="ansi-yellow-bg">]</span> <span style="color:rgb(98,98,98)">=</span> <span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">H</span><span style="color:rgb(175,0,0)">'</span>
+
+<span class="ansi-red-fg ansi-bold">TypeError</span>: 'str' object does not support item assignment</pre>
+</div>
+</div>
+</div>
+<div id="015be83f" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Immutable example: Strings</span></span>
+<span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">"hello"</span></span>
+<span id="cb96-3"><a href="#cb96-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-4"><a href="#cb96-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original string:"</span>, s)</span>
+<span id="cb96-5"><a href="#cb96-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Memory address of original s:"</span>, <span class="bu">id</span>(s))  </span>
+<span id="cb96-6"><a href="#cb96-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-7"><a href="#cb96-7" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> s.upper()  </span>
+<span id="cb96-8"><a href="#cb96-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"New string:"</span>, s.upper())</span>
+<span id="cb96-9"><a href="#cb96-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Memory address of s.upper:"</span>, <span class="bu">id</span>(s.upper))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Original string: hello
+Memory address of original s: 1341161965296
+New string: HELLO
+Memory address of s.upper: 1341172556928</code></pre>
+</div>
+</div>
+<p>For comparison, here are some <strong>mutable data types</strong> in Python:</p>
+<ul>
+<li>Lists (<code>list</code>)</li>
+<li>Dictionaries (<code>dict</code>)</li>
+<li>Sets (<code>set</code>)</li>
+</ul>
+<div id="9dfa2a88" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mutable example: Lists</span></span>
+<span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"list before modification:"</span>, lst)</span>
+<span id="cb98-4"><a href="#cb98-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Memory address of lst:"</span>, <span class="bu">id</span>(lst))</span>
+<span id="cb98-5"><a href="#cb98-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb98-6"><a href="#cb98-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Modifying the list</span></span>
+<span id="cb98-7"><a href="#cb98-7" aria-hidden="true" tabindex="-1"></a>lst.append(<span class="dv">4</span>) </span>
+<span id="cb98-8"><a href="#cb98-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"list after modification:"</span>, lst)</span>
+<span id="cb98-9"><a href="#cb98-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Memory address of lst:"</span>, <span class="bu">id</span>(lst)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>list before modification: [1, 2, 3]
+Memory address of lst: 1341172415488
+list after modification: [1, 2, 3, 4]
+Memory address of lst: 1341172415488</code></pre>
+</div>
+</div>
+</section>
+<section id="final-thoughts" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="final-thoughts"><span class="header-section-number">5.7</span> Final Thoughts</h2>
 <ul>
 <li><strong>Lists</strong> are your go-to when you need an adjustable sequence of ordered items.<br>
 </li>
@@ -2267,8 +2357,8 @@ Imputed GDP per capita for the year 1999 is $ 34592.0</code></pre>
 <li><strong>Sets</strong> focus on uniqueness and membership operations, which can greatly optimize tasks like deduplication and intersection.</li>
 </ul>
 <p>Choose the right data structure based on your needs to write concise, efficient, and easy-to-maintain code.</p>
-<section id="bonus-practice-exercise" class="level3" data-number="5.6.1">
-<h3 data-number="5.6.1" class="anchored" data-anchor-id="bonus-practice-exercise"><span class="header-section-number">5.6.1</span> Bonus Practice exercise</h3>
+<section id="bonus-practice-exercise" class="level3" data-number="5.7.1">
+<h3 data-number="5.7.1" class="anchored" data-anchor-id="bonus-practice-exercise"><span class="header-section-number">5.7.1</span> Bonus Practice exercise</h3>
 <p>The object <code>deck</code> defined below corresponds to a deck of cards. Estimate the probablity that a five card hand will be a <a href="https://en.wikipedia.org/wiki/Flush_(cards)">flush</a>, as follows:</p>
 <ol type="1">
 <li>Write a function that accepts a hand of 5 cards as argument, and returns whether the hand is a flush or not.</li>
@@ -2278,53 +2368,53 @@ Imputed GDP per capita for the year 1999 is $ 34592.0</code></pre>
 </ol>
 <p>You may use the function <a href="https://docs.python.org/3/library/random.html">shuffle()</a> from the <code>random</code> library to shuffle the deck everytime before pulling a hand of 5 cards.</p>
 <div id="ea062589" class="cell">
-<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a>deck <span class="op">=</span> [{<span class="st">'value'</span>:i, <span class="st">'suit'</span>:c}</span>
-<span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c <span class="kw">in</span> [<span class="st">'spades'</span>, <span class="st">'clubs'</span>, <span class="st">'hearts'</span>, <span class="st">'diamonds'</span>]</span>
-<span id="cb93-3"><a href="#cb93-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>,<span class="dv">15</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a>deck <span class="op">=</span> [{<span class="st">'value'</span>:i, <span class="st">'suit'</span>:c}</span>
+<span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c <span class="kw">in</span> [<span class="st">'spades'</span>, <span class="st">'clubs'</span>, <span class="st">'hearts'</span>, <span class="st">'diamonds'</span>]</span>
+<span id="cb100-3"><a href="#cb100-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>,<span class="dv">15</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Solution:</strong></p>
 <div id="4b8df3e9" class="cell">
-<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random <span class="im">as</span> rm</span>
-<span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb94-3"><a href="#cb94-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Function to check if a 5-card hand is a flush</span></span>
-<span id="cb94-4"><a href="#cb94-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> chck_flush(hands):  </span>
-<span id="cb94-5"><a href="#cb94-5" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb94-6"><a href="#cb94-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Assuming that the hand is a flush, before checking the cards</span></span>
-<span id="cb94-7"><a href="#cb94-7" aria-hidden="true" tabindex="-1"></a>    yes_flush <span class="op">=</span><span class="dv">1</span></span>
-<span id="cb94-8"><a href="#cb94-8" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb94-9"><a href="#cb94-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Storing the suit of the first card in 'first_suit'</span></span>
-<span id="cb94-10"><a href="#cb94-10" aria-hidden="true" tabindex="-1"></a>    first_suit <span class="op">=</span> hands[<span class="dv">0</span>][<span class="st">'suit'</span>]</span>
-<span id="cb94-11"><a href="#cb94-11" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb94-12"><a href="#cb94-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Iterating over the remaining 4 cards of the hand</span></span>
-<span id="cb94-13"><a href="#cb94-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="bu">len</span>(hands)):</span>
-<span id="cb94-14"><a href="#cb94-14" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb94-15"><a href="#cb94-15" aria-hidden="true" tabindex="-1"></a>        <span class="co">#If the suit of any of the cards does not match the suit of the first card, the hand is not a flush</span></span>
-<span id="cb94-16"><a href="#cb94-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> first_suit<span class="op">!=</span>hands[j][<span class="st">'suit'</span>]:</span>
-<span id="cb94-17"><a href="#cb94-17" aria-hidden="true" tabindex="-1"></a>            yes_flush <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> </span>
-<span id="cb94-18"><a href="#cb94-18" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb94-19"><a href="#cb94-19" aria-hidden="true" tabindex="-1"></a>            <span class="co">#As soon as a card with a different suit is found, the hand is not a flush and there is no need to check other cards. So, we 'break' out of the loop</span></span>
-<span id="cb94-20"><a href="#cb94-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span><span class="op">;</span></span>
-<span id="cb94-21"><a href="#cb94-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> yes_flush</span>
-<span id="cb94-22"><a href="#cb94-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb94-23"><a href="#cb94-23" aria-hidden="true" tabindex="-1"></a>flush<span class="op">=</span><span class="dv">0</span></span>
-<span id="cb94-24"><a href="#cb94-24" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000</span>):</span>
-<span id="cb94-25"><a href="#cb94-25" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb94-26"><a href="#cb94-26" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Shuffling the deck</span></span>
-<span id="cb94-27"><a href="#cb94-27" aria-hidden="true" tabindex="-1"></a>    rm.shuffle(deck)</span>
-<span id="cb94-28"><a href="#cb94-28" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb94-29"><a href="#cb94-29" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Picking out the first 5 cards of the deck as a hand and checking if they are a flush</span></span>
-<span id="cb94-30"><a href="#cb94-30" aria-hidden="true" tabindex="-1"></a>    <span class="co">#If the hand is a flush it is counted</span></span>
-<span id="cb94-31"><a href="#cb94-31" aria-hidden="true" tabindex="-1"></a>    flush<span class="op">=</span>flush<span class="op">+</span>chck_flush(deck[<span class="dv">0</span>:<span class="dv">5</span>])</span>
-<span id="cb94-32"><a href="#cb94-32" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb94-33"><a href="#cb94-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Probability of obtaining a flush="</span>, <span class="dv">100</span><span class="op">*</span>(flush<span class="op">/</span><span class="dv">10000</span>),<span class="st">"%"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random <span class="im">as</span> rm</span>
+<span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb101-3"><a href="#cb101-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Function to check if a 5-card hand is a flush</span></span>
+<span id="cb101-4"><a href="#cb101-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> chck_flush(hands):  </span>
+<span id="cb101-5"><a href="#cb101-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb101-6"><a href="#cb101-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Assuming that the hand is a flush, before checking the cards</span></span>
+<span id="cb101-7"><a href="#cb101-7" aria-hidden="true" tabindex="-1"></a>    yes_flush <span class="op">=</span><span class="dv">1</span></span>
+<span id="cb101-8"><a href="#cb101-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb101-9"><a href="#cb101-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Storing the suit of the first card in 'first_suit'</span></span>
+<span id="cb101-10"><a href="#cb101-10" aria-hidden="true" tabindex="-1"></a>    first_suit <span class="op">=</span> hands[<span class="dv">0</span>][<span class="st">'suit'</span>]</span>
+<span id="cb101-11"><a href="#cb101-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb101-12"><a href="#cb101-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Iterating over the remaining 4 cards of the hand</span></span>
+<span id="cb101-13"><a href="#cb101-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="bu">len</span>(hands)):</span>
+<span id="cb101-14"><a href="#cb101-14" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb101-15"><a href="#cb101-15" aria-hidden="true" tabindex="-1"></a>        <span class="co">#If the suit of any of the cards does not match the suit of the first card, the hand is not a flush</span></span>
+<span id="cb101-16"><a href="#cb101-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> first_suit<span class="op">!=</span>hands[j][<span class="st">'suit'</span>]:</span>
+<span id="cb101-17"><a href="#cb101-17" aria-hidden="true" tabindex="-1"></a>            yes_flush <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> </span>
+<span id="cb101-18"><a href="#cb101-18" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb101-19"><a href="#cb101-19" aria-hidden="true" tabindex="-1"></a>            <span class="co">#As soon as a card with a different suit is found, the hand is not a flush and there is no need to check other cards. So, we 'break' out of the loop</span></span>
+<span id="cb101-20"><a href="#cb101-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb101-21"><a href="#cb101-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> yes_flush</span>
+<span id="cb101-22"><a href="#cb101-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb101-23"><a href="#cb101-23" aria-hidden="true" tabindex="-1"></a>flush<span class="op">=</span><span class="dv">0</span></span>
+<span id="cb101-24"><a href="#cb101-24" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000</span>):</span>
+<span id="cb101-25"><a href="#cb101-25" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb101-26"><a href="#cb101-26" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Shuffling the deck</span></span>
+<span id="cb101-27"><a href="#cb101-27" aria-hidden="true" tabindex="-1"></a>    rm.shuffle(deck)</span>
+<span id="cb101-28"><a href="#cb101-28" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb101-29"><a href="#cb101-29" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Picking out the first 5 cards of the deck as a hand and checking if they are a flush</span></span>
+<span id="cb101-30"><a href="#cb101-30" aria-hidden="true" tabindex="-1"></a>    <span class="co">#If the hand is a flush it is counted</span></span>
+<span id="cb101-31"><a href="#cb101-31" aria-hidden="true" tabindex="-1"></a>    flush<span class="op">=</span>flush<span class="op">+</span>chck_flush(deck[<span class="dv">0</span>:<span class="dv">5</span>])</span>
+<span id="cb101-32"><a href="#cb101-32" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb101-33"><a href="#cb101-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Probability of obtaining a flush="</span>, <span class="dv">100</span><span class="op">*</span>(flush<span class="op">/</span><span class="dv">10000</span>),<span class="st">"%"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Probability of obtaining a flush= 0.26 %</code></pre>
 </div>
 </div>
 </section>
 </section>
-<section id="resources" class="level2" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="resources"><span class="header-section-number">5.7</span> Resources</h2>
+<section id="resources" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="resources"><span class="header-section-number">5.8</span> Resources</h2>
 <ul>
 <li><a href="https://www.dataquest.io/blog/python-dictionary-comprehension-tutorial/">Dictionary Comprehension</a></li>
 <li><a href="https://www.netguru.com/blog/python-list-comprehension-dictionary">List Comprehensions, Dictionary Comprehensions</a></li>
