@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -102,9 +102,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -261,17 +258,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#object" id="toc-object" class="nav-link active" data-scroll-target="#object"><span class="header-section-number">7.1</span> Object</a></li>
-  <li><a href="#class" id="toc-class" class="nav-link" data-scroll-target="#class"><span class="header-section-number">7.2</span> Class</a>
+  <li><a href="#classes" id="toc-classes" class="nav-link active" data-scroll-target="#classes"><span class="header-section-number">7.1</span> Classes</a>
   <ul>
-  <li><a href="#creating-your-own-class" id="toc-creating-your-own-class" class="nav-link" data-scroll-target="#creating-your-own-class"><span class="header-section-number">7.2.1</span> Creating your own class</a></li>
-  <li><a href="#example-a-class-that-analyzes-a-string" id="toc-example-a-class-that-analyzes-a-string" class="nav-link" data-scroll-target="#example-a-class-that-analyzes-a-string"><span class="header-section-number">7.2.2</span> Example: A class that analyzes a string</a></li>
-  <li><a href="#practice-exercise-1" id="toc-practice-exercise-1" class="nav-link" data-scroll-target="#practice-exercise-1"><span class="header-section-number">7.2.3</span> Practice exercise 1</a></li>
+  <li><a href="#built-in-data-types-in-python" id="toc-built-in-data-types-in-python" class="nav-link" data-scroll-target="#built-in-data-types-in-python"><span class="header-section-number">7.1.1</span> Built-in Data Types in Python</a></li>
+  <li><a href="#understanding-classes-in-python" id="toc-understanding-classes-in-python" class="nav-link" data-scroll-target="#understanding-classes-in-python"><span class="header-section-number">7.1.2</span> Understanding Classes in Python</a></li>
+  <li><a href="#creating-your-own-classes" id="toc-creating-your-own-classes" class="nav-link" data-scroll-target="#creating-your-own-classes"><span class="header-section-number">7.1.3</span> Creating your own classes</a></li>
   </ul></li>
-  <li><a href="#inheritance" id="toc-inheritance" class="nav-link" data-scroll-target="#inheritance"><span class="header-section-number">7.3</span> Inheritance</a>
+  <li><a href="#objects" id="toc-objects" class="nav-link" data-scroll-target="#objects"><span class="header-section-number">7.2</span> Objects</a>
   <ul>
-  <li><a href="#practice-exercise-2" id="toc-practice-exercise-2" class="nav-link" data-scroll-target="#practice-exercise-2"><span class="header-section-number">7.3.1</span> Practice exercise 2</a></li>
-  <li><a href="#practice-exercise-3" id="toc-practice-exercise-3" class="nav-link" data-scroll-target="#practice-exercise-3"><span class="header-section-number">7.3.2</span> Practice exercise 3</a></li>
+  <li><a href="#example-a-class-that-analyzes-a-string" id="toc-example-a-class-that-analyzes-a-string" class="nav-link" data-scroll-target="#example-a-class-that-analyzes-a-string"><span class="header-section-number">7.2.1</span> Example: A class that analyzes a string</a></li>
+  <li><a href="#practice-exercise-1" id="toc-practice-exercise-1" class="nav-link" data-scroll-target="#practice-exercise-1"><span class="header-section-number">7.2.2</span> Practice exercise 1</a></li>
+  </ul></li>
+  <li><a href="#class-constructors" id="toc-class-constructors" class="nav-link" data-scroll-target="#class-constructors"><span class="header-section-number">7.3</span> Class Constructors</a>
+  <ul>
+  <li><a href="#default-constructor-no-parameters" id="toc-default-constructor-no-parameters" class="nav-link" data-scroll-target="#default-constructor-no-parameters"><span class="header-section-number">7.3.1</span> Default Constructor (No Parameters)</a></li>
+  <li><a href="#using-default-values-in-constructors" id="toc-using-default-values-in-constructors" class="nav-link" data-scroll-target="#using-default-values-in-constructors"><span class="header-section-number">7.3.2</span> Using Default Values in Constructors</a></li>
+  </ul></li>
+  <li><a href="#difference-between-instance-attributes-and-class-attributes-in-python-oop" id="toc-difference-between-instance-attributes-and-class-attributes-in-python-oop" class="nav-link" data-scroll-target="#difference-between-instance-attributes-and-class-attributes-in-python-oop"><span class="header-section-number">7.4</span> Difference Between Instance Attributes and Class Attributes in Python (OOP)</a>
+  <ul>
+  <li><a href="#instance-attributes-defined-in-__init__" id="toc-instance-attributes-defined-in-__init__" class="nav-link" data-scroll-target="#instance-attributes-defined-in-__init__"><span class="header-section-number">7.4.1</span> Instance Attributes (Defined in <code>__init__</code>)</a></li>
+  <li><a href="#class-attributes-defined-outside-__init__" id="toc-class-attributes-defined-outside-__init__" class="nav-link" data-scroll-target="#class-attributes-defined-outside-__init__"><span class="header-section-number">7.4.2</span> Class Attributes ( Defined Outside <code>__init__</code>)</a></li>
+  </ul></li>
+  <li><a href="#inheritance-in-python" id="toc-inheritance-in-python" class="nav-link" data-scroll-target="#inheritance-in-python"><span class="header-section-number">7.5</span> Inheritance in Python</a>
+  <ul>
+  <li><a href="#what-is-inheritance" id="toc-what-is-inheritance" class="nav-link" data-scroll-target="#what-is-inheritance"><span class="header-section-number">7.5.1</span> What is Inheritance?</a></li>
+  <li><a href="#defining-a-parent-base-and-child-derived-class" id="toc-defining-a-parent-base-and-child-derived-class" class="nav-link" data-scroll-target="#defining-a-parent-base-and-child-derived-class"><span class="header-section-number">7.5.2</span> Defining a Parent (Base) and Child (Derived) Class</a></li>
+  <li><a href="#the-super-function" id="toc-the-super-function" class="nav-link" data-scroll-target="#the-super-function"><span class="header-section-number">7.5.3</span> The <code>super()</code> Function</a></li>
+  <li><a href="#method-overriding-in-inheritance" id="toc-method-overriding-in-inheritance" class="nav-link" data-scroll-target="#method-overriding-in-inheritance"><span class="header-section-number">7.5.4</span> Method Overriding in Inheritance</a></li>
+  <li><a href="#checking-relationships-with-issubclass-and-isinstance" id="toc-checking-relationships-with-issubclass-and-isinstance" class="nav-link" data-scroll-target="#checking-relationships-with-issubclass-and-isinstance"><span class="header-section-number">7.5.5</span> Checking Relationships with <code>issubclass()</code> and <code>isinstance()</code></a></li>
+  <li><a href="#practice-exercise-2" id="toc-practice-exercise-2" class="nav-link" data-scroll-target="#practice-exercise-2"><span class="header-section-number">7.5.6</span> Practice exercise 2</a></li>
+  <li><a href="#practice-exercise-3" id="toc-practice-exercise-3" class="nav-link" data-scroll-target="#practice-exercise-3"><span class="header-section-number">7.5.7</span> Practice exercise 3</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -298,135 +314,213 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>In Python, everything is an object, which makes it an object-oriented programming language.</p>
-<p>Object-oriented programming is the one in which a program is based on <em>objects</em>. An object is an independent entity within the program and can cooperatively work with other objects. A program can be made up of one or more objects, which can leverage the functionality and information contained in other objects.</p>
-<section id="object" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="object"><span class="header-section-number">7.1</span> Object</h2>
-<p>An object consists of two items:</p>
-<ol type="1">
-<li><p><strong>Attributes</strong> - Attributes are the data stored within the object.</p></li>
-<li><p><strong>Methods</strong> - Methods are the functions defined within the object. Methods can use the object attributes <em>(or data stored within the object)</em> as well as accept additional data as arguments.</p></li>
-</ol>
-<p>We have already seen several in-built python objects such as string objects, integer objects, float objects, list objects, tuple objects and dictionary objects, in previous chapters. Each of these objects have attributes and methods associated with them.</p>
-<p>For example, consider a <em>integer</em> object named as <code>integer_example</code>.</p>
-<div id="1f7c11e1" class="cell" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>integer_example <span class="op">=</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>The attributes and methods of this <em>integer</em> object can be seen by putting a <code>.</code> next to its name, and pressing the <em>tab</em> key. A dropdown menu consisting of the attributes and methods will appear as shown below.</p>
-<div id="41e38203" class="cell" data-execution_count="102">
-<div class="cell-output cell-output-display" data-execution_count="102">
-<img src="./Datasets/attributes.jpg" width="250" height="200">
-</div>
-</div>
-<p>A list of all attributes and methods associated with an object can be obtained with the <code>dir()</code> function. Ignore the ones with underscores - these are used by Python itself. The rest of them can be used to perform operations.</p>
-<div id="bb1445b8" class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#This code is not executed to avoid printing a long list</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span>(integer_example)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>For example, an attribute of <code>integer_example</code> is real, which contains the real part of the number:</p>
-<div id="d5ccc3e3" class="cell" data-execution_count="33">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>integer_example.real</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="33">
-<pre><code>5</code></pre>
-</div>
-</div>
-<p>A example of a method of <code>integer_example</code> is <code>as_integer_ratio()</code>, which returns a tuple containing the numerator and denominator of the integer when it is expressed as a fraction.</p>
-<div id="b2377bd1" class="cell" data-execution_count="39">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>integer_example.as_integer_ratio()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="39">
-<pre><code>(5, 1)</code></pre>
+<p>Python is a versatile programming language that supports object-oriented programming (OOP). <strong>In Python, everything is an object, and built-in data types are implemented as classes.</strong></p>
+<section id="classes" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="classes"><span class="header-section-number">7.1</span> Classes</h2>
+<section id="built-in-data-types-in-python" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="built-in-data-types-in-python"><span class="header-section-number">7.1.1</span> Built-in Data Types in Python</h3>
+<p>In Python, every built-in data type is implemented as a class. This includes:</p>
+<ul>
+<li><code>int</code></li>
+<li><code>float</code></li>
+<li><code>str</code></li>
+<li><code>list</code></li>
+<li><code>tuple</code></li>
+<li><code>dict</code></li>
+<li><code>set</code></li>
+<li><code>NoneType</code></li>
+</ul>
+<p>You can confirm this by using the <code>type()</code> function or checking an object’s <code>__class__</code> attribute:</p>
+<div id="81574d51" class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="dv">42</span>))         </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="fl">3.14</span>))        </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="st">"hello"</span>))     </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]))   </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="va">None</span>))       </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'int'&gt;
+&lt;class 'float'&gt;
+&lt;class 'str'&gt;
+&lt;class 'list'&gt;
+&lt;class 'NoneType'&gt;</code></pre>
 </div>
 </div>
-<p>Note that attributes do not have any parenthesis after them as they are just data, and cannot accept arguments. On the other hand methods have parenthesis after them as they are functions that may or may not have arguments.</p>
+<div id="5c8bbbcc" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Checking the __class__ attribute</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x.__class__)   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'int'&gt;</code></pre>
+</div>
+</div>
 </section>
-<section id="class" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="class"><span class="header-section-number">7.2</span> Class</h2>
-<p>A <em>class</em> is a template for objects. It contains the attributes and methods associated with the object of the class. As an analaogy, the <em>class</em> Cat will consist of characterisitcs (or <em>attributes</em>) shared by all cats such as breed, fur color, etc., as well as capability to perform functions (or <em>methods</em>) such as run, meow, etc.</p>
-<p>Please see the python documentation for <a href="https://docs.python.org/3/tutorial/classes.html">class</a>.</p>
-<p><strong>Instance:</strong> An <em>instance</em> is a specific realization of the object of a particular class. Continuing with the Cat analaogy of a class, a particular cat is an <em>instance</em> of the class Cat. Similarly, in the example above, the object <code>integer_example</code> is an instance of the class <em>integer</em>. The words <em>object</em> and <em>instance</em> are often used interchangeably.</p>
-<p>Creating an <em>instance</em> of a class is called <strong>Instantiation</strong>.</p>
-<section id="creating-your-own-class" class="level3" data-number="7.2.1">
-<h3 data-number="7.2.1" class="anchored" data-anchor-id="creating-your-own-class"><span class="header-section-number">7.2.1</span> Creating your own class</h3>
-<p>Until now we saw examples of in-built Python classes, such as <em>integer, List</em>, etc. Now, we’ll learn to create our own class that serves our purpose.</p>
-<p>Below is a toy example of a class.</p>
-<div id="989d90ce" class="cell" data-execution_count="61">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ToyClass:</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, x, y):</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.x <span class="op">=</span> x</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.y <span class="op">=</span> y</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> add(<span class="va">self</span>):</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.x <span class="op">+</span> <span class="va">self</span>.y</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> multiply(<span class="va">self</span>):</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.x<span class="op">*</span><span class="va">self</span>.y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="understanding-classes-in-python" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="understanding-classes-in-python"><span class="header-section-number">7.1.2</span> Understanding Classes in Python</h3>
+<p>A <strong>class</strong> is a blueprint for creating objects. It defines the <strong>attributes</strong> (characteristics) and <strong>methods</strong> (behaviors) that its objects will have.</p>
+<p>For example, consider a <code>Cat</code> class: - <strong>Attributes</strong>: Characteristics shared by all cats, such as <code>breed</code>, <code>fur_color</code>, and <code>age</code>. - <strong>Methods</strong>: Actions that a cat can perform, such as <code>meow()</code>, <code>run()</code>, or <code>sleep()</code>.</p>
+<p>For more details, refer to the official Python documentation on <a href="https://docs.python.org/3/tutorial/classes.html">classes</a>.</p>
+</section>
+<section id="creating-your-own-classes" class="level3" data-number="7.1.3">
+<h3 data-number="7.1.3" class="anchored" data-anchor-id="creating-your-own-classes"><span class="header-section-number">7.1.3</span> Creating your own classes</h3>
+<p>Until now, we have worked with built-in Python classes like <code>int</code>, <code>list</code>, and <code>dict</code>. However, in many cases, we need to <strong>create our own classes</strong> to model real-world entities in a structured way.</p>
+<p>Defining your own classes provides several key benefits in programming:</p>
+<ol type="1">
+<li><strong>Encapsulation</strong> – Organize data and related functionality together.</li>
+<li><strong>Reusability</strong> – Code can be reused by creating multiple instances of the class.</li>
+<li><strong>Abstraction</strong> – Hide unnecessary details and expose only the required functionality.</li>
+<li><strong>Inheritance</strong> – Reuse existing class behavior in new classes, avoiding redundancy.</li>
+</ol>
+<p>When we create a new class, we actually create a new type. Now, we are going to create our own type, which we can use in a way that is similar to the built-in types.</p>
+<p>Let’s start with the Car class:</p>
+<div id="6e4428ae" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Car:</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand, color, speed<span class="op">=</span><span class="dv">0</span>):</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.brand <span class="op">=</span> brand      <span class="co"># Attribute</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.color <span class="op">=</span> color      <span class="co"># Attribute</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.speed <span class="op">=</span> speed      <span class="co"># Attribute</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> accelerate(<span class="va">self</span>, increment):</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Increase the car's speed."""</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.speed <span class="op">+=</span> increment</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>brand<span class="sc">}</span><span class="ss"> is now moving at </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>speed<span class="sc">}</span><span class="ss"> mph."</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> brake(<span class="va">self</span>, decrement):</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Decrease the car's speed."""</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.speed <span class="op">=</span> <span class="bu">max</span>(<span class="dv">0</span>, <span class="va">self</span>.speed <span class="op">-</span> decrement)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>brand<span class="sc">}</span><span class="ss"> slowed down to </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>speed<span class="sc">}</span><span class="ss"> mph."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We’ll use the example above to explain the following terms:</p>
 <ul>
 <li><p><strong>The <code>class</code> statement:</strong> We use the <code>class</code> statement to create a class. The <a href="https://peps.python.org/pep-0008/#class-names">Python style guide</a> recommends to use CamelCase for class names.</p></li>
-<li><p><strong>The constructor (or the <code>__init__()</code> method):</strong> A class typically has a method called <code>__init__</code>. This method is called a constructor and is automatically called when an object or instance of the class is created. The constructor initializes the attributes of the class. In the above example, the constructor accepts two values as arguments, and initializes its attributes <code>x</code> and <code>y</code> with those values.</p></li>
-<li><p><strong>The <code>self</code> argument:</strong> This is the first argument to every method in the class. Whenever the class refers to one of its attributes or methods, it must precede them by <code>self</code>. The purpose of <code>self</code> is to distinguish the class’s attributes and methods from other variables and functions in the program.</p></li>
+<li><p><strong>The constructor (or the <code>__init__()</code> method):</strong> A class typically has a method called <code>__init__</code>. This method is called a constructor and is automatically called when an object or instance of the class is created. The constructor initializes the attributes of the class. In the above example, the constructor accepts Three values as arguments, and initializes its attributes <code>brand</code> and <code>color</code> with those values and have a default value for <code>speed</code>.</p></li>
+<li><p><strong>The <code>self</code> argument:</strong> This is the first parameter of instance methods in a class. It represents the instance of the class itself, allowing access to its attributes and methods. When referring to instance attributes or methods within the class, they must be prefixed with self. The purpose of self is to distinguish instance-specific attributes and methods from local variables or other functions in the program.</p></li>
 </ul>
-<p>The class <code>ToyClass</code> consists of two attributes <code>x</code> and <code>y</code>, a constructor <code>__init__()</code>, and two methods <code>add()</code> and <code>multiply()</code>.</p>
-<p>To create an <em>object</em> or <em>instance</em> of the class <code>ToyClass</code>, we’ll use the class name with the values to be passed as argument to the constructor for initializing the <em>object / instance</em>.</p>
-<div id="ab45790e" class="cell" data-execution_count="62">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>toy_instance <span class="op">=</span> ToyClass(<span class="dv">6</span>,<span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This example demonstrates how a class encapsulates attributes and behaviors. The <code>Car</code> class defines three attributes: <code>brand</code>, <code>color</code>, and <code>speed</code>, along with a constructor (<code>__init__()</code>) and two methods: <code>accelerate()</code> and <code>brake()</code>. This structure makes it easy to create multiple car objects and manipulate their states independently.</p>
+</section>
+</section>
+<section id="objects" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="objects"><span class="header-section-number">7.2</span> Objects</h2>
+<p>In Python, an <strong>object</strong> is an instance of a class. A class acts as a <strong>blueprint</strong>, defining the structure and behavior that its objects will have. Each object has its own attributes (data) and can perform methods (functions associated with the class). Compared to the class (which is just a blueprint), an object is a <strong>concrete and tangible</strong> entity that exists in memory.</p>
+<p>In Python, when you create a variable and assign a value to it, Python internally creates an instance of the corresponding class. Every value in Python is an object,</p>
+<div id="6b656393" class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span>    <span class="co"># x ia an insance of int class</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="st">"Hello"</span>     <span class="co"># y is an instance of str class</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]  <span class="co"># z is an instance of list class</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(x)) </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(y))  </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(z))  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'int'&gt;
+&lt;class 'str'&gt;
+&lt;class 'list'&gt;</code></pre>
 </div>
-<p>The <code>x</code> <em>attribute</em> of the class <code>ToyClass</code> can be called using the <code>.</code> operator with the object name:</p>
-<div id="b2a0debe" class="cell" data-execution_count="66">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>toy_instance.x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="66">
+</div>
+<p>Once we define a class as a blueprint, we can create instances of that class to generate objects of its type. In fact, we can create as many objects as we want from a single class, each with its own unique data while sharing the same structure and behavior defined in the class.</p>
+<p>Let’s create two objects of the <code>Car</code> class we defined earlier</p>
+<p>To create an <em>object</em> or <em>instance</em> of the class <code>Car</code>, we’ll use the class name with the values to be passed as argument to the constructor for initializing the <em>object / instance</em>.</p>
+<div id="665bff8c" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating objects (instances of the Car class)</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>car1 <span class="op">=</span> Car(<span class="st">"Toyota"</span>, <span class="st">"Red"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>car2 <span class="op">=</span> Car(<span class="st">"Honda"</span>, <span class="st">"Blue"</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(car1))</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(car2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class '__main__.Car'&gt;
+&lt;class '__main__.Car'&gt;</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Instance:</strong> An <em>instance</em> is a specific realization of the object of a particular class. Creating an <em>instance</em> of a class is called <strong>Instantiation</strong>. Here a particular car is an <em>instance</em> of the class Car. Similarly, in the example above, the object <code>x</code> is an instance of the class <em>integer</em>. <strong>The words <em>object</em> and <em>instance</em> are often used interchangeably</strong>.</p>
+</blockquote>
+<p>The <em>attributes</em> of an instance can be accessed using the <code>.</code> operator with the object name</p>
+<div id="83983a4e" class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(car1.brand)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(car2.brand)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(car1.color)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(car2.color)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(car1.speed)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(car2.speed)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
 <pre><code>6</code></pre>
 </div>
 </div>
-<p>To use the <code>multiply()</code> <em>method</em> of the class <code>ToyClass</code>, we’ll use the <code>.</code> operator with the object name:</p>
-<div id="7e42759d" class="cell" data-execution_count="67">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>toy_instance.multiply()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="67">
-<pre><code>72</code></pre>
+<p>What happens if the instance variable doesn’t exist?</p>
+<div id="ca8c6398" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>car1.engine</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg ansi-bold">AttributeError</span>                            Traceback (most recent call last)
+Cell <span class="ansi-green-fg ansi-bold">In[12], line 1</span>
+<span class="ansi-green-fg ansi-bold">----&gt; 1</span> <span class="ansi-yellow-bg">car1</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">engine</span>
+
+<span class="ansi-red-fg ansi-bold">AttributeError</span>: 'Car' object has no attribute 'engine'</pre>
 </div>
 </div>
-</section>
-<section id="example-a-class-that-analyzes-a-string" class="level3" data-number="7.2.2">
-<h3 data-number="7.2.2" class="anchored" data-anchor-id="example-a-class-that-analyzes-a-string"><span class="header-section-number">7.2.2</span> Example: A class that analyzes a string</h3>
+</div>
+<p>Methods are functions inside a class that operate on instance attributes. To call a method use:</p>
+<div id="e82ea227" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(car1.accelerate(<span class="dv">20</span>))</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(car2.brake(<span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Toyota is now moving at 80 mph.
+Honda slowed down to 0 mph.</code></pre>
+</div>
+</div>
+<p>Unlike attributes, methods require <code>parentheses ()</code> because they need to be executed, just like the functions we learned earlier</p>
+<p>A list of all attributes and methods associated with an object can be obtained with the <code>dir()</code> function. Ignore the ones with underscores - these are used by Python itself. The rest of them can be used to perform operations.</p>
+<div id="8088ed4f" class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span>(car1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Filtering out only user-defined attributes and methods</p>
+<div id="3448f8ef" class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>([attr <span class="cf">for</span> attr <span class="kw">in</span> <span class="bu">dir</span>(car1) <span class="cf">if</span> <span class="kw">not</span> attr.startswith(<span class="st">'__'</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['accelerate', 'brake', 'brand', 'color', 'speed']</code></pre>
+</div>
+</div>
+<section id="example-a-class-that-analyzes-a-string" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="example-a-class-that-analyzes-a-string"><span class="header-section-number">7.2.1</span> Example: A class that analyzes a string</h3>
 <p>Let us create a class that analyzes a string.</p>
-<div id="0361ae53" class="cell" data-execution_count="70">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> AnalyzeString:</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Constructor</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, s):</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>        s <span class="op">=</span> s.lower()</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.words <span class="op">=</span> s.split()</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">#This method counts the numebr of words</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> number_of_words(<span class="va">self</span>):</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (<span class="bu">len</span>(<span class="va">self</span>.words))</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">#This method counts the number of words starting with the string s</span></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> starts_with(<span class="va">self</span>,s):</span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">len</span>([x <span class="cf">for</span> x <span class="kw">in</span> <span class="va">self</span>.words <span class="cf">if</span> x[:<span class="bu">len</span>(s)]<span class="op">==</span>s])</span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">#This method counts the number of words of length n</span></span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> words_with_length(<span class="va">self</span>,n):</span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">len</span>([x <span class="cf">for</span> x <span class="kw">in</span> <span class="va">self</span>.words <span class="cf">if</span> <span class="bu">len</span>(x)<span class="op">==</span>n])</span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    <span class="co">#This method returns the frequency of the word w</span></span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> word_frequency(<span class="va">self</span>,w):</span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.words.count(w)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="08c004bd" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> AnalyzeString:</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">#Constructor</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, s):</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>        s <span class="op">=</span> s.lower()</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.words <span class="op">=</span> s.split()</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">#This method counts the numebr of words</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> number_of_words(<span class="va">self</span>):</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (<span class="bu">len</span>(<span class="va">self</span>.words))</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">#This method counts the number of words starting with the string s</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> starts_with(<span class="va">self</span>,s):</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">len</span>([x <span class="cf">for</span> x <span class="kw">in</span> <span class="va">self</span>.words <span class="cf">if</span> x[:<span class="bu">len</span>(s)]<span class="op">==</span>s])</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">#This method counts the number of words of length n</span></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> words_with_length(<span class="va">self</span>,n):</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">len</span>([x <span class="cf">for</span> x <span class="kw">in</span> <span class="va">self</span>.words <span class="cf">if</span> <span class="bu">len</span>(x)<span class="op">==</span>n])</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>    <span class="co">#This method returns the frequency of the word w</span></span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> word_frequency(<span class="va">self</span>,w):</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.words.count(w)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Let us create an instance of the class <code>AnalyzeString()</code> to analyze a sentence.</p>
-<div id="dbd64bca" class="cell" data-execution_count="71">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Defining a string</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">'This sentence in an example of a string that we will analyse using a class we have defined'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="e532b97c" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Defining a string</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">'This sentence in an example of a string that we will analyse using a class we have defined'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="053a542c" class="cell" data-execution_count="72">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Creating an instance of class AnalyzeString()</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>sentence_analysis <span class="op">=</span> AnalyzeString(sentence)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="1c598bbd" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Creating an instance of class AnalyzeString()</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>sentence_analysis <span class="op">=</span> AnalyzeString(sentence)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="bbbe954e" class="cell" data-execution_count="75">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#The attribute 'word' contains the list of words in the sentence</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>sentence_analysis.words</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="75">
+<div id="af5be32f" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#The attribute 'word' contains the list of words in the sentence</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>sentence_analysis.words</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="27">
 <pre><code>['this',
  'sentence',
  'in',
@@ -447,23 +541,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  'defined']</code></pre>
 </div>
 </div>
-<div id="6b93f075" class="cell" data-execution_count="76">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#The method 'word_frequncy()' provides the frequency of a word in the sentence</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>sentnce_analysis.word_frequency(<span class="st">'we'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="76">
+<div id="8c8229f5" class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">#The method 'word_frequncy()' provides the frequency of a word in the sentence</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>sentence_analysis.word_frequency(<span class="st">'we'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="28">
 <pre><code>2</code></pre>
 </div>
 </div>
-<div id="ed96f276" class="cell" data-execution_count="78">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#The method 'starts_with()' provides the frequency of number of words starting with a particular string</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>sentnce_analysis.starts_with(<span class="st">'th'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="78">
+<div id="bd76e618" class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">#The method 'starts_with()' provides the frequency of number of words starting with a particular string</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>sentence_analysis.starts_with(<span class="st">'th'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="29">
 <pre><code>2</code></pre>
 </div>
 </div>
 </section>
-<section id="practice-exercise-1" class="level3" data-number="7.2.3">
-<h3 data-number="7.2.3" class="anchored" data-anchor-id="practice-exercise-1"><span class="header-section-number">7.2.3</span> Practice exercise 1</h3>
+<section id="practice-exercise-1" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="practice-exercise-1"><span class="header-section-number">7.2.2</span> Practice exercise 1</h3>
 <p>Write a class called <code>PasswordManager</code>. The class should have a list called <code>old_passwords</code> that holds all of the user’s past passwords. The last item of the list is the user’s current password. There should be a method called <code>get_password</code> that returns the current password and a method called <code>set_password</code> that sets the user’s password. The <code>set_password</code> method should only change the password if the attempted password is different from all the user’s past passwords. It should either print ‘<em>Password changed successfully!</em>’, or ‘<em>Old password cannot be reused, try again.</em>’ Finally, create a method called <code>is_correct</code> that receives a string and returns a boolean <code>True</code> or <code>False</code> depending on whether the string is equal to the current password or not.</p>
 <p>To initialize the object of the class, use the list below.</p>
 <p>After defining the class:</p>
@@ -474,83 +568,311 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Try re-setting the password to ‘oktoberfest2022’, and then check the current password.</p></li>
 <li><p>Check the <code>is_correct()</code> method</p></li>
 </ol>
-<div id="012eba2f" class="cell" data-execution_count="133">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>past_passwords <span class="op">=</span> [<span class="st">'titanic1911'</span>,<span class="st">'ibiza1972'</span>,<span class="st">'montecarlo799'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="9c3e4f9c" class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>past_passwords <span class="op">=</span> [<span class="st">'titanic1911'</span>,<span class="st">'ibiza1972'</span>,<span class="st">'montecarlo799'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="059dd617" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> PasswordManager:</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>,past_passwords):</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.old_passwords <span class="op">=</span> past_passwords</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_password(<span class="va">self</span>):</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.old_passwords[<span class="bu">len</span>(<span class="va">self</span>.old_passwords)<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> set_password(<span class="va">self</span>,new_password):</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> new_password <span class="kw">not</span> <span class="kw">in</span> <span class="va">self</span>.old_passwords:</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.old_passwords.append(new_password)</span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Password changed!"</span>)</span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Old password cannot be reused, try again."</span>)</span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> is_correct(<span class="va">self</span>,password):</span>
-<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> password <span class="op">==</span> <span class="va">self</span>.old_passwords[<span class="bu">len</span>(<span class="va">self</span>.old_passwords)<span class="op">-</span><span class="dv">1</span>]:</span>
-<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">True</span></span>
-<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
-<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>passwd <span class="op">=</span> PasswordManager(past_passwords)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="507d53d1" class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> PasswordManager:</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>,past_passwords):</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.old_passwords <span class="op">=</span> past_passwords</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_password(<span class="va">self</span>):</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.old_passwords[<span class="bu">len</span>(<span class="va">self</span>.old_passwords)<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> set_password(<span class="va">self</span>,new_password):</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> new_password <span class="kw">not</span> <span class="kw">in</span> <span class="va">self</span>.old_passwords:</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.old_passwords.append(new_password)</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Password changed!"</span>)</span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Old password cannot be reused, try again."</span>)</span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> is_correct(<span class="va">self</span>,password):</span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> password <span class="op">==</span> <span class="va">self</span>.old_passwords[<span class="bu">len</span>(<span class="va">self</span>.old_passwords)<span class="op">-</span><span class="dv">1</span>]:</span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>passwd <span class="op">=</span> PasswordManager(past_passwords)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
-<section id="inheritance" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="inheritance"><span class="header-section-number">7.3</span> Inheritance</h2>
-<p>In object-oriented programming there is a concept called <em>inheritance</em> where we can create a new class that builds off of another class. The new class gets all of the variables and methods of the class it is inheriting from (called the base class). It can then define additional variables and methods that are not present in the base class, and it can also override some of the methods of the base class. That is, it can rewrite them to suit its own purposes. Here is a simple example:</p>
-<div id="037420f0" class="cell" data-execution_count="38">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Parent:</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, a, b):</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.a <span class="op">=</span> a</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> method1(<span class="va">self</span>):</span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.a<span class="op">+</span><span class="st">' should study!'</span></span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> method2(<span class="va">self</span>):</span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.a<span class="op">+</span><span class="st">' does not study enough '</span></span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Child(Parent):</span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, a,b):</span>
-<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.a <span class="op">=</span> a</span>
-<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.b <span class="op">=</span> b</span>
-<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> method1(<span class="va">self</span>):</span>
-<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.a<span class="op">+</span><span class="st">' should play with '</span> <span class="op">+</span> <span class="va">self</span>.b</span>
-<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> method3(<span class="va">self</span>):</span>
-<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.a <span class="op">+</span> <span class="st">' does not play enough'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Note that when inheriting from a class, we indicate the parent class in parentheses in the <code>class</code> statement.</p>
-<p>We see that <code>method1</code> is present in both the <code>Parent</code> and <code>Child</code> classes, while <code>method2</code> is only present in the <code>Parent</code> class. Let us understand how does the <code>Child</code> class use the methods of the Parent class, and what happens if a method with the same name is present in both the parent and child classes.</p>
-<div id="6fdad83a" class="cell" data-execution_count="39">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> Parent(<span class="st">'Sam'</span>, <span class="st">'John'</span>)</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> Child(<span class="st">'Sam'</span>,<span class="st">'Pam'</span>)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Parent method 1: '</span>, p.method1())</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Parent method 2: '</span>, p.method2())</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Child method 1: '</span>, c.method1())</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Child method 2: '</span>, c.method2())</span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Child method 3: '</span>, c.method3())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="class-constructors" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="class-constructors"><span class="header-section-number">7.3</span> Class Constructors</h2>
+<p>A <strong>constructor</strong> is a special method in a class that is <strong>automatically called</strong> when an object is created.<br>
+- In Python, the constructor method is named <code>__init__()</code>.<br>
+- It <strong>initializes object attributes</strong> when an instance is created.</p>
+<div id="ae386b34" class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Car:</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand, color, speed<span class="op">=</span><span class="dv">0</span>):</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Constructor to initialize Car attributes"""</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.brand <span class="op">=</span> brand</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.color <span class="op">=</span> color</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.speed <span class="op">=</span> speed  <span class="co"># Default value is 0</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating instances (objects)</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>car1 <span class="op">=</span> Car(<span class="st">"Toyota"</span>, <span class="st">"Red"</span>, <span class="dv">50</span>)</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>car2 <span class="op">=</span> Car(<span class="st">"Honda"</span>, <span class="st">"Blue"</span>)  <span class="co"># speed uses default value</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing attributes</span></span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(car1.brand, car1.color, car1.speed)  <span class="co"># Toyota Red 50</span></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(car2.brand, car2.color, car2.speed)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Parent method 1:  Sam should study!
-Parent method 2:  Sam does not study enough 
-
-Child method 1:  Sam should play with Pam
-Child method 2:  Sam does not study enough 
-Child method 3:  Sam does not play enough</code></pre>
+<pre><code>Toyota Red 50
+Honda Blue 0</code></pre>
 </div>
 </div>
-<p>We see in the example above that the child has overridden the parent’s <code>method1</code>. The child has inherited the parent’s <code>method2</code>, so it can use it without having to define it. The child also adds some features to the parent class, namely a new variable <code>b</code> and a new method, <code>method3</code>.</p>
-<section id="practice-exercise-2" class="level3" data-number="7.3.1">
-<h3 data-number="7.3.1" class="anchored" data-anchor-id="practice-exercise-2"><span class="header-section-number">7.3.1</span> Practice exercise 2</h3>
+<section id="default-constructor-no-parameters" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="default-constructor-no-parameters"><span class="header-section-number">7.3.1</span> Default Constructor (No Parameters)</h3>
+<p>If a class does not explicitly define a constructor, Python automatically provides a default constructor. This constructor only includes self and takes no additional parameters.</p>
+<p>Let’s create an empty class to demonstrate this:</p>
+<div id="e077c457" class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a class Circle that doesn't have any attributes or methods</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Circle:</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an instance of the Circle class</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> Circle()</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(c))  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class '__main__.Circle'&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="using-default-values-in-constructors" class="level3" data-number="7.3.2">
+<h3 data-number="7.3.2" class="anchored" data-anchor-id="using-default-values-in-constructors"><span class="header-section-number">7.3.2</span> Using Default Values in Constructors</h3>
+<p>You can set default values for parameters to make them optional.</p>
+<div id="a9b9025c" class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Student:</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, grade<span class="op">=</span><span class="st">"Not Assigned"</span>):</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.grade <span class="op">=</span> grade  <span class="co"># Default: "Not Assigned"</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>s1 <span class="op">=</span> Student(<span class="st">"John"</span>, <span class="st">"A"</span>)  <span class="co"># Assigned grade</span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>s2 <span class="op">=</span> Student(<span class="st">"Emma"</span>)       <span class="co"># Uses default grade</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s1.name, s1.grade)  <span class="co"># John A</span></span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s2.name, s2.grade)  <span class="co"># Emma Not Assigned</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>John A
+Emma Not Assigned</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="difference-between-instance-attributes-and-class-attributes-in-python-oop" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="difference-between-instance-attributes-and-class-attributes-in-python-oop"><span class="header-section-number">7.4</span> Difference Between Instance Attributes and Class Attributes in Python (OOP)</h2>
+<p>In Python object-oriented programming, attributes can be defined at two levels:</p>
+<ul>
+<li><strong>Instance Attributes</strong> → Specific to each instance of the class.</li>
+<li><strong>Class Attributes</strong> → Shared across all instances of the class.</li>
+</ul>
+<section id="instance-attributes-defined-in-__init__" class="level3" data-number="7.4.1">
+<h3 data-number="7.4.1" class="anchored" data-anchor-id="instance-attributes-defined-in-__init__"><span class="header-section-number">7.4.1</span> Instance Attributes (Defined in <code>__init__</code>)</h3>
+<ul>
+<li>Defined inside the constructor (<code>__init__</code>) using <code>self</code>, and accessed using <code>self.attribute_name</code></li>
+<li>Each instance has its own copy of instance attributes.</li>
+<li>Changes to an instance attribute affect only that instance.</li>
+</ul>
+<div id="d84642ac" class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Instance attributes using our Car class</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Car:</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand, color):</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.brand <span class="op">=</span> brand  <span class="co"># Instance attribute</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.color <span class="op">=</span> color  <span class="co"># Instance attribute</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating instances</span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>car1 <span class="op">=</span> Car(<span class="st">"Toyota"</span>, <span class="st">"Red"</span>)</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>car2 <span class="op">=</span> Car(<span class="st">"Honda"</span>, <span class="st">"Blue"</span>)</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Each instance has different values</span></span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(car1.brand)  <span class="co"># Toyota</span></span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(car2.brand)  <span class="co"># Honda</span></span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Changing an instance attribute only affects that instance</span></span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>car1.color <span class="op">=</span> <span class="st">"Black"</span></span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(car1.color)  <span class="co"># Black</span></span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(car2.color)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Toyota
+Honda
+Black
+Blue</code></pre>
+</div>
+</div>
+</section>
+<section id="class-attributes-defined-outside-__init__" class="level3" data-number="7.4.2">
+<h3 data-number="7.4.2" class="anchored" data-anchor-id="class-attributes-defined-outside-__init__"><span class="header-section-number">7.4.2</span> Class Attributes ( Defined Outside <code>__init__</code>)</h3>
+<ul>
+<li>Defined at the class level (outside <code>__init__</code>).</li>
+<li>Shared across all instances of the class.</li>
+<li>Changing a class attribute affects all instances (unless overridden at the instance level).</li>
+</ul>
+<div id="d5b4faba" class="cell" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Car:</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    wheels <span class="op">=</span> <span class="dv">4</span>  <span class="co"># Class attribute (shared by all instances)</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand):</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.brand <span class="op">=</span> brand  <span class="co"># Instance attribute</span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating instances</span></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>car1 <span class="op">=</span> Car(<span class="st">"Toyota"</span>)</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>car2 <span class="op">=</span> Car(<span class="st">"Honda"</span>)</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing class attribute</span></span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(car1.wheels)  <span class="co"># 4</span></span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(car2.wheels)  <span class="co"># 4</span></span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Changing the class attribute affects all instances</span></span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>Car.wheels <span class="op">=</span> <span class="dv">6</span></span>
+<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(car1.wheels)  <span class="co"># 6</span></span>
+<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(car2.wheels)  <span class="co"># 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>4
+4
+6
+6</code></pre>
+</div>
+</div>
+<p><strong>Note</strong>: Just like attributes, methods can be categorized into instance methods and class methods. So far, everything we have defined are instance methods. Class methods, however, are beyond the scope of this data science course and will not be covered.</p>
+</section>
+</section>
+<section id="inheritance-in-python" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="inheritance-in-python"><span class="header-section-number">7.5</span> Inheritance in Python</h2>
+<section id="what-is-inheritance" class="level3" data-number="7.5.1">
+<h3 data-number="7.5.1" class="anchored" data-anchor-id="what-is-inheritance"><span class="header-section-number">7.5.1</span> What is Inheritance?</h3>
+<p><strong>Inheritance</strong> is a fundamental concept in Object-Oriented Programming (OOP) that allows a <strong>child class</strong> to inherit attributes and methods from a <strong>parent class</strong>. This promotes <strong>code reuse</strong> and <strong>hierarchical structuring</strong> of classes.</p>
+<p>Here are Key Benefits of Inheritance:</p>
+<ul>
+<li><strong>Code Reusability</strong> – Avoids redundant code by reusing existing functionality.</li>
+<li><strong>Extensibility</strong> – Allows adding new functionality without modifying the original class.</li>
+<li><strong>Improves Maintainability</strong> – Easier to manage and update related classes.</li>
+</ul>
+</section>
+<section id="defining-a-parent-base-and-child-derived-class" class="level3" data-number="7.5.2">
+<h3 data-number="7.5.2" class="anchored" data-anchor-id="defining-a-parent-base-and-child-derived-class"><span class="header-section-number">7.5.2</span> Defining a Parent (Base) and Child (Derived) Class</h3>
+<p>A child class <strong>inherits</strong> from a parent class by specifying the parent class name in parentheses.</p>
+<p><strong>Example: Basic Inheritance</strong></p>
+<div id="4b857043" class="cell" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parent Class (Base Class)</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Animal:</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name):</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> speak(<span class="va">self</span>):</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Some sound"</span></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Child Class (Derived Class)</span></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog(Animal):  <span class="co"># Inheriting from Animal</span></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> speak(<span class="va">self</span>):</span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Woof!"</span></span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating objects</span></span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>dog1 <span class="op">=</span> Dog(<span class="st">"Buddy"</span>)</span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing inherited attributes and methods</span></span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dog1.name)      </span>
+<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dog1.speak())   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Buddy
+Woof!</code></pre>
+</div>
+</div>
+<p><strong>Explanation:</strong> * <code>Dog</code> inherits from <code>Animal</code>, meaning it gets all the properties of <code>Animal</code>. * The <code>Dog</code> class overrides the <code>speak()</code> method to provide a specialized behavior.</p>
+</section>
+<section id="the-super-function" class="level3" data-number="7.5.3">
+<h3 data-number="7.5.3" class="anchored" data-anchor-id="the-super-function"><span class="header-section-number">7.5.3</span> The <code>super()</code> Function</h3>
+<p>The <code>super()</code> function allows calling methods from the parent class inside the child class.</p>
+<p>Example: Using <code>super()</code> to Extend Parent Behavior</p>
+<div id="66c044cf" class="cell" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Animal:</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name):</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> speak(<span class="va">self</span>):</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Some sound"</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Cat(Animal):</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, color):</span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(name)  <span class="co"># Calling Parent Constructor</span></span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.color <span class="op">=</span> color  <span class="co"># Additional attribute in Child Class</span></span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> speak(<span class="va">self</span>):</span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Meow!"</span></span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating an instance</span></span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>cat1 <span class="op">=</span> Cat(<span class="st">"Whiskers"</span>, <span class="st">"Gray"</span>)</span>
+<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cat1.name)   <span class="co"># Whiskers (Inherited from Animal)</span></span>
+<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cat1.color)  <span class="co"># Gray (Defined in Cat)</span></span>
+<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cat1.speak()) <span class="co"># Meow! (Overridden method)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Whiskers
+Gray
+Meow!</code></pre>
+</div>
+</div>
+<ul>
+<li><code>super().__init__(name)</code> ensures the parent class constructor is properly called.</li>
+<li>This allows the child class to initialize both inherited and new attributes.</li>
+</ul>
+</section>
+<section id="method-overriding-in-inheritance" class="level3" data-number="7.5.4">
+<h3 data-number="7.5.4" class="anchored" data-anchor-id="method-overriding-in-inheritance"><span class="header-section-number">7.5.4</span> Method Overriding in Inheritance</h3>
+<ul>
+<li>If a method exists in both the parent and child class, the child class’s method overrides the parent’s method.</li>
+<li>This is useful for customizing behavior.</li>
+</ul>
+<p>Example: Overriding a Method</p>
+<div id="52fcd6db" class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Parent:</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> show(<span class="va">self</span>):</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"This is the Parent class"</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Child(Parent):</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> show(<span class="va">self</span>):  <span class="co"># Overriding method</span></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"This is the Child class"</span></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>obj <span class="op">=</span> Child()</span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(obj.show())  <span class="co"># This is the Child class</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>This is the Child class</code></pre>
+</div>
+</div>
+</section>
+<section id="checking-relationships-with-issubclass-and-isinstance" class="level3" data-number="7.5.5">
+<h3 data-number="7.5.5" class="anchored" data-anchor-id="checking-relationships-with-issubclass-and-isinstance"><span class="header-section-number">7.5.5</span> Checking Relationships with <code>issubclass()</code> and <code>isinstance()</code></h3>
+<ul>
+<li><code>issubclass(Child, Parent)</code> → Checks if a class is a subclass of another.</li>
+<li><code>isinstance(object, Class)</code> → Checks if an object is an instance of a class.</li>
+</ul>
+<div id="641aff00" class="cell" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Animal:</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog(Animal):</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>dog1 <span class="op">=</span> Dog()</span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">issubclass</span>(Dog, Animal))  <span class="co"># True</span></span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">isinstance</span>(dog1, Dog))    <span class="co"># True</span></span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">isinstance</span>(dog1, Animal)) <span class="co"># True (Since Dog inherits from Animal)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>True
+True
+True</code></pre>
+</div>
+</div>
+<p><strong>Key Takeaways:</strong></p>
+<ul>
+<li>Inheritance promotes code reuse and hierarchy in OOP.</li>
+<li>A child class can inherit and override parent class methods.</li>
+<li>Use <code>super()</code> to call parent class methods inside the child class.</li>
+</ul>
+<p>For more details, refer to the official Python documentation on <a href="https://docs.python.org/3/tutorial/classes.html#inheritance">Inheritance</a>.</p>
+</section>
+<section id="practice-exercise-2" class="level3" data-number="7.5.6">
+<h3 data-number="7.5.6" class="anchored" data-anchor-id="practice-exercise-2"><span class="header-section-number">7.5.6</span> Practice exercise 2</h3>
 <p>Define a class that inherits the in-built Python class <code>list</code>, and adds a new method to the class called <code>nunique()</code> which returns the number of unique elements in the list.</p>
 <p>Define the following list as an object of the class you created. Then:</p>
 <ol type="1">
@@ -558,58 +880,58 @@ Child method 3:  Sam does not play enough</code></pre>
 <li><p>Check if the <code>pop()</code> method of the parent class works to pop an element out of the object.</p></li>
 </ol>
 <div id="d0733231" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>list_ex <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">12</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>list_ex <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">12</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="bf83938a" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> list_v2(<span class="bu">list</span>):</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> nuinque(<span class="va">self</span>):</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>        unique_elements <span class="op">=</span> []</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> x <span class="kw">in</span> <span class="va">self</span>:</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> x <span class="kw">not</span> <span class="kw">in</span> unique_elements:</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>                unique_elements.append(x)</span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">len</span>(unique_elements)</span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>list_ex <span class="op">=</span> list_v2(list_ex)</span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Number of unique elements = "</span>, list_ex.nuinque())</span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Checking the pop() method, the popped out element is"</span>, list_ex.pop())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> list_v2(<span class="bu">list</span>):</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> nuinque(<span class="va">self</span>):</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>        unique_elements <span class="op">=</span> []</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> x <span class="kw">in</span> <span class="va">self</span>:</span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> x <span class="kw">not</span> <span class="kw">in</span> unique_elements:</span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>                unique_elements.append(x)</span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">len</span>(unique_elements)</span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>list_ex <span class="op">=</span> list_v2(list_ex)</span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Number of unique elements = "</span>, list_ex.nuinque())</span>
+<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Checking the pop() method, the popped out element is"</span>, list_ex.pop())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Number of unique elements =  6
 Checking the pop() method, the popped out element is 12</code></pre>
 </div>
 </div>
 </section>
-<section id="practice-exercise-3" class="level3" data-number="7.3.2">
-<h3 data-number="7.3.2" class="anchored" data-anchor-id="practice-exercise-3"><span class="header-section-number">7.3.2</span> Practice exercise 3</h3>
+<section id="practice-exercise-3" class="level3" data-number="7.5.7">
+<h3 data-number="7.5.7" class="anchored" data-anchor-id="practice-exercise-3"><span class="header-section-number">7.5.7</span> Practice exercise 3</h3>
 <p>Define a class named <code>PasswordManagerUpdated</code> that inherits the class <code>PasswordManager</code> defined in Practice exercise 1. The class <code>PasswordManagerUpdated</code> should have two methods, other than the <em>constructor</em>:</p>
 <ol type="1">
 <li><p>The method <code>set_password()</code> that sets a new password. The new password must only be accepted if it does not have any punctuations in it, and if it is not the same as one of the old passwords. If the new password is not acceptable, then one of the appropriate messages should be printed - (a) <em>Cannot have punctuation in password, try again</em>, or (b) <em>Old password cannot be reused, try again</em>.</p></li>
 <li><p>The method <code>suggest_password()</code> that randomly sets and returns a password as a string comprising of 15 randomly chosen letters. Letters may be repeated as well.</p></li>
 </ol>
 <div id="5a15b9c3" class="cell" data-execution_count="134">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> string <span class="im">import</span> punctuation</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random <span class="im">as</span> rm</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> string <span class="im">as</span> st</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> PasswordManager_updated(PasswordManager):</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>,past_passwords):</span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.old_passwords <span class="op">=</span> past_passwords.copy()</span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> set_password(<span class="va">self</span>,new_password):</span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> new_password <span class="kw">not</span> <span class="kw">in</span> <span class="va">self</span>.old_passwords:</span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> punc <span class="kw">in</span> punctuation:</span>
-<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> punc <span class="kw">in</span> new_password:</span>
-<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>                    <span class="bu">print</span>(<span class="st">"Cannot have punctuation in password, try again"</span>)</span>
-<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">break</span></span>
-<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.old_passwords.append(new_password)</span>
-<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"password changed!"</span>)</span>
-<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Old password cannot be reused, try again."</span>)</span>
-<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> suggest_password(<span class="va">self</span>):</span>
-<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>        suggested_passwd <span class="op">=</span> <span class="st">''</span></span>
-<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">15</span>):</span>
-<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>            suggested_passwd <span class="op">=</span> suggested_passwd <span class="op">+</span> st.ascii_lowercase[rm.randint(<span class="dv">0</span>,<span class="dv">26</span>)]</span>
-<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.old_passwords.append(suggested_passwd)           </span>
-<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> suggested_passwd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> string <span class="im">import</span> punctuation</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random <span class="im">as</span> rm</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> string <span class="im">as</span> st</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> PasswordManager_updated(PasswordManager):</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>,past_passwords):</span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.old_passwords <span class="op">=</span> past_passwords.copy()</span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> set_password(<span class="va">self</span>,new_password):</span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> new_password <span class="kw">not</span> <span class="kw">in</span> <span class="va">self</span>.old_passwords:</span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> punc <span class="kw">in</span> punctuation:</span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> punc <span class="kw">in</span> new_password:</span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>                    <span class="bu">print</span>(<span class="st">"Cannot have punctuation in password, try again"</span>)</span>
+<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">break</span></span>
+<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.old_passwords.append(new_password)</span>
+<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"password changed!"</span>)</span>
+<span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb50-17"><a href="#cb50-17" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Old password cannot be reused, try again."</span>)</span>
+<span id="cb50-18"><a href="#cb50-18" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb50-19"><a href="#cb50-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> suggest_password(<span class="va">self</span>):</span>
+<span id="cb50-20"><a href="#cb50-20" aria-hidden="true" tabindex="-1"></a>        suggested_passwd <span class="op">=</span> <span class="st">''</span></span>
+<span id="cb50-21"><a href="#cb50-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">15</span>):</span>
+<span id="cb50-22"><a href="#cb50-22" aria-hidden="true" tabindex="-1"></a>            suggested_passwd <span class="op">=</span> suggested_passwd <span class="op">+</span> st.ascii_lowercase[rm.randint(<span class="dv">0</span>,<span class="dv">26</span>)]</span>
+<span id="cb50-23"><a href="#cb50-23" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.old_passwords.append(suggested_passwd)           </span>
+<span id="cb50-24"><a href="#cb50-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> suggested_passwd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
