@@ -28,12 +28,12 @@ book:
         - data_structures.ipynb
         - python_iterable.ipynb
         - classes.ipynb
-    - part: "R"
-      chapters:
-        - Variable_expressions_statements-R.qmd
-        - control_flow.qmd
-        - control_flow2.qmd 
-        - robjects.qmd
+    #- part: "R"
+      #chapters:
+        #- Variable_expressions_statements-R.qmd
+        #- control_flow.qmd
+        #- control_flow2.qmd 
+        #- robjects.qmd
         #- recursion.qmd
   appendices: 
     - template_A01_WI25.ipynb
