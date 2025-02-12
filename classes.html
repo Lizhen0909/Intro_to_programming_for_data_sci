@@ -646,30 +646,59 @@ Honda slowed down to 0 mph.</code></pre>
 <li><p>Try re-setting the password to ‘oktoberfest2022’, and then check the current password.</p></li>
 <li><p>Check the <code>is_correct()</code> method</p></li>
 </ol>
-<div id="9c3e4f9c" class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>past_passwords <span class="op">=</span> [<span class="st">'titanic1911'</span>,<span class="st">'ibiza1972'</span>,<span class="st">'montecarlo799'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="507d53d1" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> PasswordManager:</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, initial_passwords):</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.old_passwords <span class="op">=</span> initial_passwords</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_password(<span class="va">self</span>):</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Returns the current password (last item in the old_passwords list)."""</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.old_passwords[<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> set_password(<span class="va">self</span>, new_password):</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Sets a new password only if it has not been used before."""</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> new_password <span class="kw">in</span> <span class="va">self</span>.old_passwords:</span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Old password cannot be reused, try again."</span>)</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.old_passwords.append(new_password)</span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Password changed successfully!"</span>)</span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> is_correct(<span class="va">self</span>, password):</span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Checks if the provided password matches the current password."""</span></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> password <span class="op">==</span> <span class="va">self</span>.get_password()</span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize PasswordManager with given passwords</span></span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a>initial_passwords <span class="op">=</span> [<span class="st">"alpha123"</span>, <span class="st">"beta456"</span>, <span class="st">"gamma789"</span>, <span class="st">"delta321"</span>, <span class="st">"ibiza1972"</span>]</span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a>password_manager <span class="op">=</span> PasswordManager(initial_passwords)</span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Check the attribute old_passwords</span></span>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Old passwords:"</span>, password_manager.old_passwords)</span>
+<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Check the method get_password()</span></span>
+<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Current password:"</span>, password_manager.get_password())</span>
+<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Try re-setting the password to 'ibiza1972'</span></span>
+<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a>password_manager.set_password(<span class="st">"ibiza1972"</span>)</span>
+<span id="cb28-34"><a href="#cb28-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Current password after attempt:"</span>, password_manager.get_password())</span>
+<span id="cb28-35"><a href="#cb28-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-36"><a href="#cb28-36" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Try re-setting the password to 'oktoberfest2022'</span></span>
+<span id="cb28-37"><a href="#cb28-37" aria-hidden="true" tabindex="-1"></a>password_manager.set_password(<span class="st">"oktoberfest2022"</span>)</span>
+<span id="cb28-38"><a href="#cb28-38" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Current password after attempt:"</span>, password_manager.get_password())</span>
+<span id="cb28-39"><a href="#cb28-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-40"><a href="#cb28-40" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Check the is_correct() method</span></span>
+<span id="cb28-41"><a href="#cb28-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Is 'oktoberfest2022' correct?"</span>, password_manager.is_correct(<span class="st">"oktoberfest2022"</span>))</span>
+<span id="cb28-42"><a href="#cb28-42" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Is 'wrongpassword' correct?"</span>, password_manager.is_correct(<span class="st">"wrongpassword"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Old passwords: ['alpha123', 'beta456', 'gamma789', 'delta321', 'ibiza1972']
+Current password: ibiza1972
+Old password cannot be reused, try again.
+Current password after attempt: ibiza1972
+Password changed successfully!
+Current password after attempt: oktoberfest2022
+Is 'oktoberfest2022' correct? True
+Is 'wrongpassword' correct? False</code></pre>
 </div>
-<div id="507d53d1" class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> PasswordManager:</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>,past_passwords):</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.old_passwords <span class="op">=</span> past_passwords</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_password(<span class="va">self</span>):</span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.old_passwords[<span class="bu">len</span>(<span class="va">self</span>.old_passwords)<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> set_password(<span class="va">self</span>,new_password):</span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> new_password <span class="kw">not</span> <span class="kw">in</span> <span class="va">self</span>.old_passwords:</span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.old_passwords.append(new_password)</span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Password changed!"</span>)</span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Old password cannot be reused, try again."</span>)</span>
-<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> is_correct(<span class="va">self</span>,password):</span>
-<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> password <span class="op">==</span> <span class="va">self</span>.old_passwords[<span class="bu">len</span>(<span class="va">self</span>.old_passwords)<span class="op">-</span><span class="dv">1</span>]:</span>
-<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">True</span></span>
-<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
-<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>passwd <span class="op">=</span> PasswordManager(past_passwords)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -1058,31 +1087,69 @@ Checking the pop() method, the popped out element is 12</code></pre>
 <li><p>The method <code>set_password()</code> that sets a new password. The new password must only be accepted if it does not have any punctuations in it, and if it is not the same as one of the old passwords. If the new password is not acceptable, then one of the appropriate messages should be printed - (a) <em>Cannot have punctuation in password, try again</em>, or (b) <em>Old password cannot be reused, try again</em>.</p></li>
 <li><p>The method <code>suggest_password()</code> that randomly sets and returns a password as a string comprising of 15 randomly chosen letters. Letters may be repeated as well.</p></li>
 </ol>
-<div id="5a15b9c3" class="cell" data-execution_count="36">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> string <span class="im">import</span> punctuation</span>
-<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random <span class="im">as</span> rm</span>
-<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> string <span class="im">as</span> st</span>
-<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> PasswordManager_updated(PasswordManager):</span>
-<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>,past_passwords):</span>
-<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.old_passwords <span class="op">=</span> past_passwords.copy()</span>
-<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> set_password(<span class="va">self</span>,new_password):</span>
-<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> new_password <span class="kw">not</span> <span class="kw">in</span> <span class="va">self</span>.old_passwords:</span>
-<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> punc <span class="kw">in</span> punctuation:</span>
-<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> punc <span class="kw">in</span> new_password:</span>
-<span id="cb57-12"><a href="#cb57-12" aria-hidden="true" tabindex="-1"></a>                    <span class="bu">print</span>(<span class="st">"Cannot have punctuation in password, try again"</span>)</span>
-<span id="cb57-13"><a href="#cb57-13" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">break</span></span>
-<span id="cb57-14"><a href="#cb57-14" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.old_passwords.append(new_password)</span>
-<span id="cb57-15"><a href="#cb57-15" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"password changed!"</span>)</span>
-<span id="cb57-16"><a href="#cb57-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb57-17"><a href="#cb57-17" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Old password cannot be reused, try again."</span>)</span>
-<span id="cb57-18"><a href="#cb57-18" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb57-19"><a href="#cb57-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> suggest_password(<span class="va">self</span>):</span>
-<span id="cb57-20"><a href="#cb57-20" aria-hidden="true" tabindex="-1"></a>        suggested_passwd <span class="op">=</span> <span class="st">''</span></span>
-<span id="cb57-21"><a href="#cb57-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">15</span>):</span>
-<span id="cb57-22"><a href="#cb57-22" aria-hidden="true" tabindex="-1"></a>            suggested_passwd <span class="op">=</span> suggested_passwd <span class="op">+</span> st.ascii_lowercase[rm.randint(<span class="dv">0</span>,<span class="dv">26</span>)]</span>
-<span id="cb57-23"><a href="#cb57-23" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.old_passwords.append(suggested_passwd)           </span>
-<span id="cb57-24"><a href="#cb57-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> suggested_passwd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="5a15b9c3" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> string</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> PasswordManagerUpdated(PasswordManager):</span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, initial_passwords):</span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(initial_passwords)</span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> set_password(<span class="va">self</span>, new_password):</span>
+<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Sets a new password if it does not contain punctuation and is not a reused password."""</span></span>
+<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">any</span>(char <span class="kw">in</span> string.punctuation <span class="cf">for</span> char <span class="kw">in</span> new_password):</span>
+<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Cannot have punctuation in password, try again."</span>)</span>
+<span id="cb57-12"><a href="#cb57-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> new_password <span class="kw">in</span> <span class="va">self</span>.old_passwords:</span>
+<span id="cb57-13"><a href="#cb57-13" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Old password cannot be reused, try again."</span>)</span>
+<span id="cb57-14"><a href="#cb57-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb57-15"><a href="#cb57-15" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.old_passwords.append(new_password)</span>
+<span id="cb57-16"><a href="#cb57-16" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Password changed successfully!"</span>)</span>
+<span id="cb57-17"><a href="#cb57-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-18"><a href="#cb57-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> suggest_password(<span class="va">self</span>):</span>
+<span id="cb57-19"><a href="#cb57-19" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Generates and returns a random 15-character password without punctuation."""</span></span>
+<span id="cb57-20"><a href="#cb57-20" aria-hidden="true" tabindex="-1"></a>        suggested_password <span class="op">=</span> <span class="st">''</span>.join(random.choices(string.ascii_letters, k<span class="op">=</span><span class="dv">15</span>))</span>
+<span id="cb57-21"><a href="#cb57-21" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.old_passwords.append(suggested_password)</span>
+<span id="cb57-22"><a href="#cb57-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> suggested_password</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Note that <code>ascii_letters</code> constant in Python is part of the <code>string</code> module and is a predefined string that contains all the lowercase and uppercase ASCII letters. It It contains all lowercase (‘a’ to ‘z’) and uppercase (‘A’ to ‘Z’) ASCII characters in sequence.</p>
+<div id="51d92a4d" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> string</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing ascii_letters</span></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> string.ascii_letters</span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</code></pre>
+</div>
+</div>
+<p>Let’s use the class below:</p>
+<div id="4a8eea39" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize PasswordManagerUpdated with given passwords</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>initial_passwords <span class="op">=</span> [<span class="st">"alpha123"</span>, <span class="st">"beta456"</span>, <span class="st">"gamma789"</span>, <span class="st">"delta321"</span>, <span class="st">"ibiza1972"</span>]</span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>password_manager_updated <span class="op">=</span> PasswordManagerUpdated(initial_passwords)</span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Try setting a password with punctuation</span></span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>password_manager_updated.set_password(<span class="st">"newPass@word!"</span>)</span>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Try setting an already used password</span></span>
+<span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a>password_manager_updated.set_password(<span class="st">"ibiza1972"</span>)</span>
+<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-11"><a href="#cb60-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Set a new valid password</span></span>
+<span id="cb60-12"><a href="#cb60-12" aria-hidden="true" tabindex="-1"></a>password_manager_updated.set_password(<span class="st">"securePass123"</span>)</span>
+<span id="cb60-13"><a href="#cb60-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Current password:"</span>, password_manager_updated.get_password())</span>
+<span id="cb60-14"><a href="#cb60-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-15"><a href="#cb60-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Generate and set a suggested password</span></span>
+<span id="cb60-16"><a href="#cb60-16" aria-hidden="true" tabindex="-1"></a>suggested <span class="op">=</span> password_manager_updated.suggest_password()</span>
+<span id="cb60-17"><a href="#cb60-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Suggested password:"</span>, suggested)</span>
+<span id="cb60-18"><a href="#cb60-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Current password after suggestion:"</span>, password_manager_updated.get_password())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Cannot have punctuation in password, try again.
+Old password cannot be reused, try again.
+Password changed successfully!
+Current password: securePass123
+Suggested password: xXgtHYeOAPsVvvY
+Current password after suggestion: xXgtHYeOAPsVvvY</code></pre>
+</div>
 </div>
 
 
