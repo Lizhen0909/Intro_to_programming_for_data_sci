@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./template_A01_WI25.html" rel="next">
+<link href="./Variable_expressions_statements-R.html" rel="next">
 <link href="./python_iterable.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -74,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-72c93205fb41c15e2e398b4f9a505ee2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2ce9fc9ac8b614e7ffef13962cc12eaf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -216,12 +216,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
+ <span class="menu-text">R</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Variable_expressions_statements-R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">R: Variables, expression and statements</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./control_flow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">R: Control flow statements</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./control_flow2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">R: Functions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./robjects.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">R: Objects</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./template_A01_WI25.html" class="sidebar-item-text sidebar-link">
@@ -285,7 +320,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#defining-a-parent-base-and-child-derived-class" id="toc-defining-a-parent-base-and-child-derived-class" class="nav-link" data-scroll-target="#defining-a-parent-base-and-child-derived-class"><span class="header-section-number">7.5.2</span> Defining a Parent (Base) and Child (Derived) Class</a></li>
   <li><a href="#the-super-function" id="toc-the-super-function" class="nav-link" data-scroll-target="#the-super-function"><span class="header-section-number">7.5.3</span> The <code>super()</code> Function</a></li>
   <li><a href="#method-overriding-in-inheritance" id="toc-method-overriding-in-inheritance" class="nav-link" data-scroll-target="#method-overriding-in-inheritance"><span class="header-section-number">7.5.4</span> Method Overriding in Inheritance</a></li>
-  <li><a href="#checking-relationships-with-issubclass-and-isinstance" id="toc-checking-relationships-with-issubclass-and-isinstance" class="nav-link" data-scroll-target="#checking-relationships-with-issubclass-and-isinstance"><span class="header-section-number">7.5.5</span> Checking Relationships with <code>issubclass()</code> and <code>isinstance()</code></a></li>
+  <li><a href="#check-relationship" id="toc-check-relationship" class="nav-link" data-scroll-target="#check-relationship"><span class="header-section-number">7.5.5</span> Check Relationship</a></li>
   <li><a href="#the-object-class-in-python" id="toc-the-object-class-in-python" class="nav-link" data-scroll-target="#the-object-class-in-python"><span class="header-section-number">7.5.6</span> The <code>object</code> class in Python</a>
   <ul class="collapse">
   <li><a href="#what-is-the-object-class" id="toc-what-is-the-object-class" class="nav-link" data-scroll-target="#what-is-the-object-class"><span class="header-section-number">7.5.6.1</span> What is the <code>object</code> class?</a></li>
@@ -820,7 +855,11 @@ Blue</code></pre>
 Woof!</code></pre>
 </div>
 </div>
-<p><strong>Explanation:</strong> * <code>Dog</code> inherits from <code>Animal</code>, meaning it gets all the properties of <code>Animal</code>. * The <code>Dog</code> class overrides the <code>speak()</code> method to provide a specialized behavior.</p>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li><code>Dog</code> inherits from <code>Animal</code>, meaning it gets all the properties of <code>Animal</code>.</li>
+<li>The <code>Dog</code> class overrides the <code>speak()</code> method to provide a specialized behavior.</li>
+</ul>
 </section>
 <section id="the-super-function" class="level3" data-number="7.5.3">
 <h3 data-number="7.5.3" class="anchored" data-anchor-id="the-super-function"><span class="header-section-number">7.5.3</span> The <code>super()</code> Function</h3>
@@ -882,8 +921,8 @@ Meow!</code></pre>
 </div>
 </div>
 </section>
-<section id="checking-relationships-with-issubclass-and-isinstance" class="level3" data-number="7.5.5">
-<h3 data-number="7.5.5" class="anchored" data-anchor-id="checking-relationships-with-issubclass-and-isinstance"><span class="header-section-number">7.5.5</span> Checking Relationships with <code>issubclass()</code> and <code>isinstance()</code></h3>
+<section id="check-relationship" class="level3" data-number="7.5.5">
+<h3 data-number="7.5.5" class="anchored" data-anchor-id="check-relationship"><span class="header-section-number">7.5.5</span> Check Relationship</h3>
 <ul>
 <li><code>issubclass(Child, Parent)</code> → Checks if a class is a subclass of another.</li>
 <li><code>isinstance(object, Class)</code> → Checks if an object is an instance of a class.</li>
@@ -1475,8 +1514,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./template_A01_WI25.html" class="pagination-link" aria-label="Assignment 1">
-        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Assignment 1</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Variable_expressions_statements-R.html" class="pagination-link" aria-label="R: Variables, expression and statements">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">R: Variables, expression and statements</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
