@@ -8,32 +8,22 @@ editor_options:
   chunk_output_type: console
 ---
 
-## The if - else if - else statement
+## Code Blocks: R vs. Python
 
-The if - else if - else statements can check several conditions, and execute the code corresponding to the condition that is true. Note that there can be as many `else if` statements as required.
+Different programming languages define code blocks differently:
 
-**Syntax:** R uses curly braces `{}` to identify the code to be executed if a condition is true. All the code in the curly braces within a condition is executed if the condition is true.
+- **Python** uses **indentation** to structure code.
+- **R** uses **curly braces `{}`** to define code blocks.
 
-**Example:** Input a number. Print whether it is positive, negative or zero. If it is negative, print its absolute value.
+You have learned **indentation** (spaces or tabs) determines the structure of code in Python.
 
-```{r}
-number = readline("Enter a number:")
-```
+### Code blocks in R (Uses `{}`)
 
-```{r}
-#| eval: true
-number = '3'
-```
+In R, **curly braces** `{}` define code blocks, and indentation is not required (but recommended for readability).
 
 ```{r}
-number_integer = as.integer(number)
-
-if (number_integer>0) {
-  print("Number is positive")
-} else if (number_integer==0) {
-  print("Number is zero")
-} else {
-  print("Number is negative")
+for (i in 1:5) {
+  print(i)
 }
 ```
 
@@ -64,6 +54,47 @@ tryCatch(
   },
   warning = function(w)  print("Input must be an integer") 
 )
+```
+
+## Control flow statements
+
+Like Python, R provides `if-else`, `for` loops, `while` loops, and `switch/case` for decision-making and iteration.
+However, in Python, conditions do not require parentheses, whereas in R, parentheses must enclose the condition.
+
+```{r}
+x <- 5
+while (x > 0) {  # Parentheses required
+  print(x)
+  x <- x - 1
+}
+```
+
+## The `if - else if - else` statement
+
+The `if - else if - else` statements can check several conditions, and execute the code corresponding to the condition that is true. Note that there can be as many `else if` statements as required.
+
+
+**Example:** Input a number. Print whether it is positive, negative or zero. If it is negative, print its absolute value.
+
+```{r}
+number = readline("Enter a number:")
+```
+
+```{r}
+#| eval: true
+number = '3'
+```
+
+```{r}
+number_integer = as.integer(number)
+
+if (number_integer>0) {
+  print("Number is positive")
+} else if (number_integer==0) {
+  print("Number is zero")
+} else {
+  print("Number is negative")
+}
 ```
 
 ## Loops

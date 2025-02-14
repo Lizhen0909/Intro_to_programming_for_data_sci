@@ -630,7 +630,7 @@
     "href": "control_flow.html",
     "title": "9  R: Control flow statements",
     "section": "",
-    "text": "9.1 The if - else if - else statement\nThe if - else if - else statements can check several conditions, and execute the code corresponding to the condition that is true. Note that there can be as many else if statements as required.\nSyntax: R uses curly braces {} to identify the code to be executed if a condition is true. All the code in the curly braces within a condition is executed if the condition is true.\nExample: Input a number. Print whether it is positive, negative or zero. If it is negative, print its absolute value.\nnumber = readline(\"Enter a number:\")\n\nEnter a number:\nnumber = '3'\nnumber_integer = as.integer(number)\n\nif (number_integer&gt;0) {\n  print(\"Number is positive\")\n} else if (number_integer==0) {\n  print(\"Number is zero\")\n} else {\n  print(\"Number is negative\")\n}\n\n[1] \"Number is positive\"",
+    "text": "9.1 Code Blocks: R vs. Python\nDifferent programming languages define code blocks differently:\nYou have learned indentation (spaces or tabs) determines the structure of code in Python.",
     "crumbs": [
       "R",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>R: Control flow statements</span>"
@@ -651,8 +651,8 @@
     "objectID": "control_flow.html#loops",
     "href": "control_flow.html#loops",
     "title": "9  R: Control flow statements",
-    "section": "9.3 Loops",
-    "text": "9.3 Loops\n\n9.3.1 for loop\nWe use the : operator to define a vector of consecutive integers. For example, the sequence of integers from 1 to 10 can be generated with the code 1:10. Usually, we generate a sequence in this manner to iterate over the sequence with a for loop.\nExample: Print the first \\(n\\) elements of the Fibonacci sequence, where \\(n\\) is an integer input by the user, such that \\(n&gt;2\\). In a fibonacci sequence, each number is the sum of the preceding two numbers, and the sequence starts from \\(0,1\\). The sequence is as follows:\n\\(0,1,1,2,3,5,8,13,....\\)\n\nn = readline(\"Enter a number:\")\n\nEnter a number:\n\n\n\nn = 6\n\n\n#Initializing the sequence to start from 0, 1\nn1 = 0 \nn2 = 1\n\n#Printing the first two numbers of the sequence\nelements &lt;- c(n1, n2)\n\nfor (i in 1:(n - 2)) {  \n  #Since two numbers of the sequence are already printed,n-2 numbers are required \n  #Computing the next number of the sequence as the summation of the previous two numbers\n  n3 = n1 + n2\n  elements &lt;-c (elements, n3)\n  \n  #As 'n3' is already printed, it is no longer the next number of the sequence. \n  #Thus, we move the values of the variables n1 and n2 one place to the right to compute the next number of the sequence.\n  n1 = n2\n  n2 = n3  \n}\nprint(elements)\n\n[1] 0 1 1 2 3 5\n\nprint(paste0(\"These are the first \", n, \" elements of the fibonacci series\"))\n\n[1] \"These are the first 6 elements of the fibonacci series\"\n\n\n\n\n9.3.2 while loop\nExample: Print all the elements of the Fibonacci sequence less than n, where n is an integer input by the user, such that n&gt;2. In a fibonacci sequence, each number is the sum of the preceding two numbers, and the sequence starts from 0,1. The sequence is as follows:\n0,1,1,2,3,5,8,13,..\n\nn = readline(\"Enter a number:\")\n\nEnter a number:\n\n\n\nn = 50\n\n\n#Initializing the sequence to start from 0, 1\nn1 = 0 \nn2 = 1\n\n#Printing the first number of the sequence\nelements &lt;- n1\nwhile (n2 &lt; n) {\n  #Print the next number of the sequence\n  elements &lt;- c(elements, n2)\n  \n  #Comptuing the next number of the sequence as the summation of the previous two numbers\n  n3 = n1 + n2\n  \n  #As n2 is already printed, assigning n2 to n3, so that the next number of the sequence (i.e., currently n3) is printed if the program enters the loop again\n  #Assigning n1 to n2 as n1 has already been used to compute the next number of the seqeunce (i.e., currently n3). \n  n1 = n2\n  n2 = n3  \n}\nprint(elements)\n\n [1]  0  1  1  2  3  5  8 13 21 34\n\nprint(paste(\"These are all the elements of the fibonacci series less than\", n))\n\n[1] \"These are all the elements of the fibonacci series less than 50\"",
+    "section": "9.5 Loops",
+    "text": "9.5 Loops\n\n9.5.1 for loop\nWe use the : operator to define a vector of consecutive integers. For example, the sequence of integers from 1 to 10 can be generated with the code 1:10. Usually, we generate a sequence in this manner to iterate over the sequence with a for loop.\nExample: Print the first \\(n\\) elements of the Fibonacci sequence, where \\(n\\) is an integer input by the user, such that \\(n&gt;2\\). In a fibonacci sequence, each number is the sum of the preceding two numbers, and the sequence starts from \\(0,1\\). The sequence is as follows:\n\\(0,1,1,2,3,5,8,13,....\\)\n\nn = readline(\"Enter a number:\")\n\nEnter a number:\n\n\n\nn = 6\n\n\n#Initializing the sequence to start from 0, 1\nn1 = 0 \nn2 = 1\n\n#Printing the first two numbers of the sequence\nelements &lt;- c(n1, n2)\n\nfor (i in 1:(n - 2)) {  \n  #Since two numbers of the sequence are already printed,n-2 numbers are required \n  #Computing the next number of the sequence as the summation of the previous two numbers\n  n3 = n1 + n2\n  elements &lt;-c (elements, n3)\n  \n  #As 'n3' is already printed, it is no longer the next number of the sequence. \n  #Thus, we move the values of the variables n1 and n2 one place to the right to compute the next number of the sequence.\n  n1 = n2\n  n2 = n3  \n}\nprint(elements)\n\n[1] 0 1 1 2 3 5\n\nprint(paste0(\"These are the first \", n, \" elements of the fibonacci series\"))\n\n[1] \"These are the first 6 elements of the fibonacci series\"\n\n\n\n\n9.5.2 while loop\nExample: Print all the elements of the Fibonacci sequence less than n, where n is an integer input by the user, such that n&gt;2. In a fibonacci sequence, each number is the sum of the preceding two numbers, and the sequence starts from 0,1. The sequence is as follows:\n0,1,1,2,3,5,8,13,..\n\nn = readline(\"Enter a number:\")\n\nEnter a number:\n\n\n\nn = 50\n\n\n#Initializing the sequence to start from 0, 1\nn1 = 0 \nn2 = 1\n\n#Printing the first number of the sequence\nelements &lt;- n1\nwhile (n2 &lt; n) {\n  #Print the next number of the sequence\n  elements &lt;- c(elements, n2)\n  \n  #Comptuing the next number of the sequence as the summation of the previous two numbers\n  n3 = n1 + n2\n  \n  #As n2 is already printed, assigning n2 to n3, so that the next number of the sequence (i.e., currently n3) is printed if the program enters the loop again\n  #Assigning n1 to n2 as n1 has already been used to compute the next number of the seqeunce (i.e., currently n3). \n  n1 = n2\n  n2 = n3  \n}\nprint(elements)\n\n [1]  0  1  1  2  3  5  8 13 21 34\n\nprint(paste(\"These are all the elements of the fibonacci series less than\", n))\n\n[1] \"These are all the elements of the fibonacci series less than 50\"",
     "crumbs": [
       "R",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>R: Control flow statements</span>"
@@ -662,8 +662,8 @@
     "objectID": "control_flow.html#break-statement",
     "href": "control_flow.html#break-statement",
     "title": "9  R: Control flow statements",
-    "section": "9.4 break statement",
-    "text": "9.4 break statement\nThe break statement is used to unconditionally exit the innermost loop.\nFor example, suppose we need to keep asking the user to input year of birth and compute the corresponding age, until the user enters 1900 as the year of birth.\n\n#The loop will continue to run indefinitely as the condition 'True' is always true\nwhile (TRUE) {\n  year = (readline(\"Enter year of birth:\"))\n  year = as.integer(year)\n  if (year == 1900) break \n  else print(paste(\"Age = \",2022 - year))\n}",
+    "section": "9.6 break statement",
+    "text": "9.6 break statement\nThe break statement is used to unconditionally exit the innermost loop.\nFor example, suppose we need to keep asking the user to input year of birth and compute the corresponding age, until the user enters 1900 as the year of birth.\n\n#The loop will continue to run indefinitely as the condition 'True' is always true\nwhile (TRUE) {\n  year = (readline(\"Enter year of birth:\"))\n  year = as.integer(year)\n  if (year == 1900) break \n  else print(paste(\"Age = \",2022 - year))\n}",
     "crumbs": [
       "R",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>R: Control flow statements</span>"
@@ -673,8 +673,8 @@
     "objectID": "control_flow.html#next-statement",
     "href": "control_flow.html#next-statement",
     "title": "9  R: Control flow statements",
-    "section": "9.5 next statement",
-    "text": "9.5 next statement\nThe next statement is used to continue with the next iteration of the loop without executing the lines of code below it.\nFor example, consider the following code:\n\nfor (i in 1:10) {\n  if (i %% 2 == 0) next\n  print(i)\n}\n\n[1] 1\n[1] 3\n[1] 5\n[1] 7\n[1] 9\n\n\nWhen the control flow reads the statement next, it goes back to the beginning of the for loop, and ignores the lines of code below the statement.\n\n9.5.1 Practice exercise\nWrite a program that asks the user the question, “How many stars are in the Milky Way (in billions)?”. If the user answers 100, the program should print correct, and stop. However, if the user answers incorrectly, the program should print “incorrect”, and ask them if they want to try again. The program should continue to run until the user answers correctly, or they want to stop trying.\n\nwhile (TRUE) {\n  answer = readline(\"How many stars are there in the Milky Way (in billions)? \")\n  if (answer == '100') {\n    print(\"Correct\")\n    break\n  } else {\n    print(\"Incorrect\")\n  }\n  try_again = readline(\"Do you want to try again? (Y/N):\")\n  if (try_again == 'Y') {\n    next\n  } else {\n    break\n  }\n}",
+    "section": "9.7 next statement",
+    "text": "9.7 next statement\nThe next statement is used to continue with the next iteration of the loop without executing the lines of code below it.\nFor example, consider the following code:\n\nfor (i in 1:10) {\n  if (i %% 2 == 0) next\n  print(i)\n}\n\n[1] 1\n[1] 3\n[1] 5\n[1] 7\n[1] 9\n\n\nWhen the control flow reads the statement next, it goes back to the beginning of the for loop, and ignores the lines of code below the statement.\n\n9.7.1 Practice exercise\nWrite a program that asks the user the question, “How many stars are in the Milky Way (in billions)?”. If the user answers 100, the program should print correct, and stop. However, if the user answers incorrectly, the program should print “incorrect”, and ask them if they want to try again. The program should continue to run until the user answers correctly, or they want to stop trying.\n\nwhile (TRUE) {\n  answer = readline(\"How many stars are there in the Milky Way (in billions)? \")\n  if (answer == '100') {\n    print(\"Correct\")\n    break\n  } else {\n    print(\"Incorrect\")\n  }\n  try_again = readline(\"Do you want to try again? (Y/N):\")\n  if (try_again == 'Y') {\n    next\n  } else {\n    break\n  }\n}",
     "crumbs": [
       "R",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>R: Control flow statements</span>"
@@ -684,8 +684,8 @@
     "objectID": "control_flow.html#loops-with-the-character-vector",
     "href": "control_flow.html#loops-with-the-character-vector",
     "title": "9  R: Control flow statements",
-    "section": "9.6 Loops with the character vector",
-    "text": "9.6 Loops with the character vector\nLoops can be used to iterate over the elements in a character vector, just like we used them to iterate over a sequence of integers. The function nchar is used to get the number of characters in the character vector/\nConsider the following character vector:\n\nsentence = 'She sells sea shells on the sea shore'\n\nThe length of the character vector is:\n\nnchar(sentence)\n\n[1] 37\n\n\nSlicing a character data: The function substr() is used to slice a character vector from the start index to the stop index. Note that the indices in R start from 1, instead of 0. For example, let us slice the object sentence from the \\(5^{th}\\) index to the \\(9^{the}\\) index:\n\nsubstr(sentence, 5, 9)\n\n[1] \"sells\"\n\n\nExample: Define a character vector and count the number of ts.\n\nchar_vec = 'Getting a tatto is not a nice experience'\n#Initializing a variable 'count_t' which will store the number of 't's in the string\ncount_t = 0\n\n#Iterating over the entire length of the string. \n#The length of the string is given by the len() function\nfor (i in 1:nchar(char_vec)) {\n  if (substr(char_vec, i, i) == 't') {\n    count_t &lt;- count_t + 1\n  }\n}\nprint(paste(\"Number of 't's in the string = \", count_t))\n\n[1] \"Number of 't's in the string =  6\"\n\n\n\n9.6.1 Practice exercise\nWrite a program that prints the number of ’the’s found in sentence\n\nsentence = \"She sells the sea shells on the sea shore during the summer\"\ncount = 0\nfor (i in 1:(nchar(sentence) - nchar(\"the\"))) {\n  if (substr(sentence, i, i + nchar(\"the\") - 1) == \"the\") {\n    count = count + 1\n  }\n}\nprint(paste(\"Number of thes in the sentence = \", count))\n\n[1] \"Number of thes in the sentence =  3\"",
+    "section": "9.8 Loops with the character vector",
+    "text": "9.8 Loops with the character vector\nLoops can be used to iterate over the elements in a character vector, just like we used them to iterate over a sequence of integers. The function nchar is used to get the number of characters in the character vector/\nConsider the following character vector:\n\nsentence = 'She sells sea shells on the sea shore'\n\nThe length of the character vector is:\n\nnchar(sentence)\n\n[1] 37\n\n\nSlicing a character data: The function substr() is used to slice a character vector from the start index to the stop index. Note that the indices in R start from 1, instead of 0. For example, let us slice the object sentence from the \\(5^{th}\\) index to the \\(9^{the}\\) index:\n\nsubstr(sentence, 5, 9)\n\n[1] \"sells\"\n\n\nExample: Define a character vector and count the number of ts.\n\nchar_vec = 'Getting a tatto is not a nice experience'\n#Initializing a variable 'count_t' which will store the number of 't's in the string\ncount_t = 0\n\n#Iterating over the entire length of the string. \n#The length of the string is given by the len() function\nfor (i in 1:nchar(char_vec)) {\n  if (substr(char_vec, i, i) == 't') {\n    count_t &lt;- count_t + 1\n  }\n}\nprint(paste(\"Number of 't's in the string = \", count_t))\n\n[1] \"Number of 't's in the string =  6\"\n\n\n\n9.8.1 Practice exercise\nWrite a program that prints the number of ’the’s found in sentence\n\nsentence = \"She sells the sea shells on the sea shore during the summer\"\ncount = 0\nfor (i in 1:(nchar(sentence) - nchar(\"the\"))) {\n  if (substr(sentence, i, i + nchar(\"the\") - 1) == \"the\") {\n    count = count + 1\n  }\n}\nprint(paste(\"Number of thes in the sentence = \", count))\n\n[1] \"Number of thes in the sentence =  3\"",
     "crumbs": [
       "R",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>R: Control flow statements</span>"
@@ -1107,6 +1107,39 @@
     "crumbs": [
       "R",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>R: Basics</span>"
+    ]
+  },
+  {
+    "objectID": "control_flow.html#code-blocks-r-vs.-python",
+    "href": "control_flow.html#code-blocks-r-vs.-python",
+    "title": "9  R: Control flow statements",
+    "section": "",
+    "text": "Python uses indentation to structure code.\nR uses curly braces {} to define code blocks.\n\n\n\n9.1.1 Code blocks in R (Uses {})\nIn R, curly braces {} define code blocks, and indentation is not required (but recommended for readability).\n\nfor (i in 1:5) {\n  print(i)\n}\n\n[1] 1\n[1] 2\n[1] 3\n[1] 4\n[1] 5",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>R: Control flow statements</span>"
+    ]
+  },
+  {
+    "objectID": "control_flow.html#control-flow-statements",
+    "href": "control_flow.html#control-flow-statements",
+    "title": "9  R: Control flow statements",
+    "section": "9.3 Control flow statements",
+    "text": "9.3 Control flow statements\nLike Python, R provides if-else, for loops, while loops, and switch/case for decision-making and iteration. However, in Python, conditions do not require parentheses, whereas in R, parentheses must enclose the condition.\n\nx &lt;- 5\nwhile (x &gt; 0) {  # Parentheses required\n  print(x)\n  x &lt;- x - 1\n}\n\n[1] 5\n[1] 4\n[1] 3\n[1] 2\n[1] 1",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>R: Control flow statements</span>"
+    ]
+  },
+  {
+    "objectID": "control_flow.html#the-if---else-if---else-statement",
+    "href": "control_flow.html#the-if---else-if---else-statement",
+    "title": "9  R: Control flow statements",
+    "section": "9.4 The if - else if - else statement",
+    "text": "9.4 The if - else if - else statement\nThe if - else if - else statements can check several conditions, and execute the code corresponding to the condition that is true. Note that there can be as many else if statements as required.\nExample: Input a number. Print whether it is positive, negative or zero. If it is negative, print its absolute value.\n\nnumber = readline(\"Enter a number:\")\n\nEnter a number:\n\n\n\nnumber = '3'\n\n\nnumber_integer = as.integer(number)\n\nif (number_integer&gt;0) {\n  print(\"Number is positive\")\n} else if (number_integer==0) {\n  print(\"Number is zero\")\n} else {\n  print(\"Number is negative\")\n}\n\n[1] \"Number is positive\"",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>R: Control flow statements</span>"
     ]
   }
 ]
