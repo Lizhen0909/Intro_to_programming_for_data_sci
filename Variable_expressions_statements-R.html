@@ -4952,6 +4952,9 @@ vertical-align: -.125em;
   <li><a href="#using-sprintf" id="toc-using-sprintf" class="nav-link" data-scroll-target="#using-sprintf"><span class="header-section-number">8.5.4</span> Using <code>sprintf()</code></a></li>
   </ul></li>
   <li><a href="#taking-user-input" id="toc-taking-user-input" class="nav-link" data-scroll-target="#taking-user-input"><span class="header-section-number">8.6</span> Taking user input</a></li>
+  <li><a href="#arithmetic-operations-in-r" id="toc-arithmetic-operations-in-r" class="nav-link" data-scroll-target="#arithmetic-operations-in-r"><span class="header-section-number">8.7</span> Arithmetic Operations in R</a></li>
+  <li><a href="#logical-boolean-operations-in-r" id="toc-logical-boolean-operations-in-r" class="nav-link" data-scroll-target="#logical-boolean-operations-in-r"><span class="header-section-number">8.8</span> Logical (Boolean) Operations in R</a></li>
+  <li><a href="#logical-operators-in-r" id="toc-logical-operators-in-r" class="nav-link" data-scroll-target="#logical-operators-in-r"><span class="header-section-number">8.9</span> Logical Operators in R</a></li>
   </ul>
 </nav>
     </div>
@@ -5309,6 +5312,168 @@ vertical-align: -.125em;
 <pre><code>You are NA years old.</code></pre>
 </div>
 </div>
+</section>
+<section id="arithmetic-operations-in-r" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="arithmetic-operations-in-r"><span class="header-section-number">8.7</span> Arithmetic Operations in R</h2>
+<p>R supports standard arithmetic operations for numeric values.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Operation</th>
+<th>Symbol</th>
+<th>Example</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Addition</td>
+<td><code>+</code></td>
+<td><code>5 + 3</code></td>
+<td><code>8</code></td>
+</tr>
+<tr class="even">
+<td>Subtraction</td>
+<td><code>-</code></td>
+<td><code>10 - 4</code></td>
+<td><code>6</code></td>
+</tr>
+<tr class="odd">
+<td>Multiplication</td>
+<td><code>*</code></td>
+<td><code>6 * 2</code></td>
+<td><code>12</code></td>
+</tr>
+<tr class="even">
+<td>Division</td>
+<td><code>/</code></td>
+<td><code>8 / 2</code></td>
+<td><code>4</code></td>
+</tr>
+<tr class="odd">
+<td>Exponentiation</td>
+<td><code>^</code> or <code>**</code></td>
+<td><code>3^2</code> or <code>3**2</code></td>
+<td><code>9</code></td>
+</tr>
+<tr class="even">
+<td>Integer Division</td>
+<td><code>%/%</code></td>
+<td><code>10 %/% 3</code></td>
+<td><code>3</code></td>
+</tr>
+<tr class="odd">
+<td>Modulo (Remainder)</td>
+<td><code>%%</code></td>
+<td><code>10 %% 3</code></td>
+<td><code>1</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>💡 <strong>Note:</strong><br>
+- Integer division <code>%/%</code> returns the quotient without the remainder.<br>
+- Modulo <code>%%</code> returns the remainder after division.</p>
+</blockquote>
+<hr>
+</section>
+<section id="logical-boolean-operations-in-r" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="logical-boolean-operations-in-r"><span class="header-section-number">8.8</span> Logical (Boolean) Operations in R</h2>
+<p>Logical operations return <code>TRUE</code> or <code>FALSE</code>, often used for conditions.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Operation</th>
+<th>Symbol</th>
+<th>Example</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Greater than</td>
+<td><code>&gt;</code></td>
+<td><code>5 &gt; 3</code></td>
+<td><code>TRUE</code></td>
+</tr>
+<tr class="even">
+<td>Less than</td>
+<td><code>&lt;</code></td>
+<td><code>2 &lt; 1</code></td>
+<td><code>FALSE</code></td>
+</tr>
+<tr class="odd">
+<td>Greater than or equal to</td>
+<td><code>&gt;=</code></td>
+<td><code>4 &gt;= 4</code></td>
+<td><code>TRUE</code></td>
+</tr>
+<tr class="even">
+<td>Less than or equal to</td>
+<td><code>&lt;=</code></td>
+<td><code>6 &lt;= 5</code></td>
+<td><code>FALSE</code></td>
+</tr>
+<tr class="odd">
+<td>Equal to</td>
+<td><code>==</code></td>
+<td><code>5 == 5</code></td>
+<td><code>TRUE</code></td>
+</tr>
+<tr class="even">
+<td>Not equal to</td>
+<td><code>!=</code></td>
+<td><code>3 != 2</code></td>
+<td><code>TRUE</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>💡 <strong>Note:</strong><br>
+- Always use <code>==</code> for comparison (not <code>=</code>).<br>
+- <code>!=</code> checks if values are different.</p>
+</blockquote>
+<hr>
+</section>
+<section id="logical-operators-in-r" class="level2" data-number="8.9">
+<h2 data-number="8.9" class="anchored" data-anchor-id="logical-operators-in-r"><span class="header-section-number">8.9</span> Logical Operators in R</h2>
+<p>Logical operators are used to combine conditions.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Symbol</th>
+<th>Example</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>AND</td>
+<td><code>&amp;</code></td>
+<td><code>(5 &gt; 3) &amp; (2 &lt; 4)</code></td>
+<td><code>TRUE</code></td>
+</tr>
+<tr class="even">
+<td>OR</td>
+<td><code>|</code></td>
+<td><code>(5 &gt; 3) | (2 &gt; 4)</code></td>
+<td><code>TRUE</code></td>
+</tr>
+<tr class="odd">
+<td>NOT</td>
+<td><code>!</code></td>
+<td><code>!(5 &gt; 3)</code></td>
+<td><code>FALSE</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>💡 <strong>Notes:</strong><br>
+- <code>&amp;</code> (AND) returns <code>TRUE</code> only if <strong>both</strong> conditions are <code>TRUE</code>.<br>
+- <code>|</code> (OR) returns <code>TRUE</code> if <strong>at least one</strong> condition is <code>TRUE</code>.<br>
+- <code>!</code> (NOT) negates a logical value.</p>
+</blockquote>
 
 
 </section>
