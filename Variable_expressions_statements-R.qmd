@@ -246,3 +246,58 @@ age <- as.numeric(readline(prompt="Enter your age: "))
 cat("You are", age, "years old.\n")
 ```
 
+
+## Arithmetic Operations in R
+
+R supports standard arithmetic operations for numeric values.
+
+| Operation         | Symbol | Example   | Result |
+|------------------|--------|-----------|--------|
+| Addition        | `+`    | `5 + 3`   | `8`    |
+| Subtraction     | `-`    | `10 - 4`  | `6`    |
+| Multiplication  | `*`    | `6 * 2`   | `12`   |
+| Division        | `/`    | `8 / 2`   | `4`    |
+| Exponentiation  | `^` or `**` | `3^2` or `3**2` | `9`  |
+| Integer Division | `%/%`  | `10 %/% 3` | `3`  |
+| Modulo (Remainder) | `%%` | `10 %% 3` | `1`  |
+
+> 💡 **Note:**  
+> - Integer division `%/%` returns the quotient without the remainder.  
+> - Modulo `%%` returns the remainder after division.
+
+---
+
+## Logical (Boolean) Operations in R
+
+Logical operations return `TRUE` or `FALSE`, often used for conditions.
+
+| Operation | Symbol | Example   | Result  |
+|-----------|--------|-----------|---------|
+| Greater than | `>`  | `5 > 3`  | `TRUE`  |
+| Less than    | `<`  | `2 < 1`  | `FALSE` |
+| Greater than or equal to | `>=` | `4 >= 4` | `TRUE`  |
+| Less than or equal to | `<=` | `6 <= 5` | `FALSE` |
+| Equal to   | `==` | `5 == 5`  | `TRUE`  |
+| Not equal to | `!=` | `3 != 2` | `TRUE`  |
+
+> 💡 **Note:**  
+> - Always use `==` for comparison (not `=`).  
+> - `!=` checks if values are different.
+
+---
+
+## Logical Operators in R
+
+Logical operators are used to combine conditions.
+
+| Operator | Symbol | Example                   | Result  |
+|----------|--------|---------------------------|---------|
+| AND      | `&`    | `(5 > 3) & (2 < 4)`       | `TRUE`  |
+| OR       | `|`    | `(5 > 3) | (2 > 4)`       | `TRUE`  |
+| NOT      | `!`    | `!(5 > 3)`                | `FALSE` |
+
+> 💡 **Notes:**  
+> - `&` (AND) returns `TRUE` only if **both** conditions are `TRUE`.  
+> - `|` (OR) returns `TRUE` if **at least one** condition is `TRUE`.  
+> - `!` (NOT) negates a logical value.
+

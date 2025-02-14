@@ -584,23 +584,23 @@
   {
     "objectID": "Variable_expressions_statements-R.html",
     "href": "Variable_expressions_statements-R.html",
-    "title": "8  R: Variables, expression and statements",
+    "title": "8  R: Basics",
     "section": "",
-    "text": "8.1 Style guide\nWe will use the tidyverse style guide for styling R code.",
+    "text": "8.1 Comments\nComments in R start with the # symbol. Everything after # on a line is ignored by R.\n# This is a single-line comment\nx &lt;- 10  # Assigning 10 to x\nR does not support multi-line comments like Python’s \"\"\", but you can simulate them using multiple # symbols:\n# This is a \n# multi-line comment\nTo comment a block of code quickly in RStudio, use:",
     "crumbs": [
       "R",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>R: Variables, expression and statements</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>R: Basics</span>"
     ]
   },
   {
     "objectID": "Variable_expressions_statements-R.html#data-types",
     "href": "Variable_expressions_statements-R.html#data-types",
-    "title": "8  R: Variables, expression and statements",
+    "title": "8  R: Basics",
     "section": "8.2 Data Types",
-    "text": "8.2 Data Types\nSome of the commonly used objects in R are numbers - integer and double (or numeric), character and logical (TRUE/FALSE). The data type of the object can be identified using the in-built R function class() or typeof(). For example, see the following objects and their types:\n\nclass(4)\n\n[1] \"numeric\"\n\n\n\ntypeof(4)\n\n[1] \"double\"\n\n\n\nclass(4.4)\n\n[1] \"numeric\"\n\n\n\ntypeof(4.4)\n\n[1] \"double\"\n\n\n\nclass(4L)\n\n[1] \"integer\"\n\n\n\ntypeof(4L)\n\n[1] \"integer\"\n\n\n\nclass('4')\n\n[1] \"character\"\n\n\n\ntypeof('4')\n\n[1] \"character\"\n\n\n\nclass(TRUE)\n\n[1] \"logical\"\n\n\n\ntypeof(FALSE)\n\n[1] \"logical\"",
+    "text": "8.2 Data Types\nR has several built-in data types that are crucial for data analysis and computation. The commonly used data types include:\n\nNumeric (double and integer)\nCharacter (strings)\nLogical (TRUE or FALSE)\n\nThe data type of a variable/constant in R can be identified using the built-in functions class() or typeof(). For example, the following variables and their values demonstrate different data types:\nNumeric data in R consists of double (default) and integer types.\n\n# Double (default numeric type)\nclass(10.5)\n\n[1] \"numeric\"\n\n\n\n# Integer (use L suffix)\nclass(10L) \n\n[1] \"integer\"\n\n\n\nclass(4)\n\n[1] \"numeric\"\n\n\n\ntypeof(4)\n\n[1] \"double\"\n\n\n\nclass(4.4)\n\n[1] \"numeric\"\n\n\n\ntypeof(4.4)\n\n[1] \"double\"\n\n\n\nclass(4L)\n\n[1] \"integer\"\n\n\n\ntypeof(4L)\n\n[1] \"integer\"\n\n\n\nclass('4')\n\n[1] \"character\"\n\n\n\ntypeof('4')\n\n[1] \"character\"\n\n\n\nclass(TRUE)\n\n[1] \"logical\"\n\n\n\ntypeof(FALSE)\n\n[1] \"logical\"",
     "crumbs": [
       "R",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>R: Variables, expression and statements</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>R: Basics</span>"
     ]
   },
   {
@@ -617,12 +617,12 @@
   {
     "objectID": "Variable_expressions_statements-R.html#converting-datatypes",
     "href": "Variable_expressions_statements-R.html#converting-datatypes",
-    "title": "8  R: Variables, expression and statements",
+    "title": "8  R: Basics",
     "section": "8.4 Converting datatypes",
-    "text": "8.4 Converting datatypes\nSometimes a value may have a datatype that is not suitable for using it. For example, consider the variable called annual_income in the code below:\n\nannual_income = \"80000\"\n\nSuppose we wish to divide annual_income by 12 to get the monthly income. We cannot use the variable annual_income directly as its datatype is a string and not a number. Thus, numerical operations cannot be performed on the variable annual_income.\nWe’ll need to convert annual_income to an integer. For that we will use the R’s in-built as.integer() function:\n\nannual_income = as.integer(annual_income)\nmonthly_income = annual_income/12\nprint(paste0(\"monthly income = \", monthly_income))\n\n[1] \"monthly income = 6666.66666666667\"\n\n\nSimilarly, datatypes can be converted from one type to another using in-built R functions as shown below:\n\n#Converting integer to character\nas.character(9)\n\n[1] \"9\"\n\n\n\n#Converting character to numeric\nas.numeric('9.4')\n\n[1] 9.4\n\n\n\n#Converting logical to integer\nas.numeric(FALSE)\n\n[1] 0\n\n\nNote that any non-zero numeric value, if converted to the ‘logical’ datatype, will return TRUE, while converting 0 to the ‘logical’ datatype will return FALSE. Only numeric values can be converted to the ‘logical’ datatype.\n\n# Converting integer to logical\nas.logical(40)\n\n[1] TRUE\n\n\n\n# Converting integer to logical\nas.logical(0)\n\n[1] FALSE\n\n\n\n# Converting integer to logical\nas.logical(-30.1)\n\n[1] TRUE\n\n\nSometimes, conversion of a value may not be possible. For example, it is not possible to convert the variable greeting defined below to a number:\n\ngreeting = \"hello\"\n\nHowever, strings can be concatenated using the paste0() function:\n\npaste0(\"hello\", \" there!\")\n\n[1] \"hello there!\"\n\n\nR’s in-built readline() function can be used to accept an input from the user. For example, suppose we wish the user to input their age:\n\nage = readline(\"Enter your age:\")\n\nEnter your age:\n\n\nThe entered value is stored in the variable age and can be used for computation.",
+    "text": "8.4 Converting datatypes\nSometimes a value may have a datatype that is not suitable for using it. For example, consider the variable called annual_income in the code below:\n\nannual_income = \"80000\"\n\nSuppose we wish to divide annual_income by 12 to get the monthly income. We cannot use the variable annual_income directly as its datatype is a string and not a number. Thus, numerical operations cannot be performed on the variable annual_income.\nWe’ll need to convert annual_income to an integer. For that we will use the R’s in-built as.integer() function:\n\nannual_income = as.integer(annual_income)\nmonthly_income = annual_income/12\nprint(paste0(\"monthly income = \", monthly_income))\n\n[1] \"monthly income = 6666.66666666667\"\n\n\nSimilarly, datatypes can be converted from one type to another using in-built R functions as shown below:\n\n#Converting integer to character\nas.character(9)\n\n[1] \"9\"\n\n\n\n#Converting character to numeric\nas.numeric('9.4')\n\n[1] 9.4\n\n\n\n#Converting logical to integer\nas.numeric(FALSE)\n\n[1] 0\n\n\nNote that any non-zero numeric value, if converted to the ‘logical’ datatype, will return TRUE, while converting 0 to the ‘logical’ datatype will return FALSE. Only numeric values can be converted to the ‘logical’ datatype.\n\n# Converting integer to logical\nas.logical(40)\n\n[1] TRUE\n\n\n\n# Converting integer to logical\nas.logical(0)\n\n[1] FALSE\n\n\n\n# Converting integer to logical\nas.logical(-30.1)\n\n[1] TRUE\n\n\nSometimes, conversion of a value may not be possible. For example, it is not possible to convert the variable greeting defined below to a number:\n\ngreeting = \"hello\"\nas.numeric(greeting)\n\nWarning: NAs introduced by coercion\n\n\n[1] NA\n\n\nHowever, strings can be concatenated using the paste0() function:\n\npaste0(\"hello\", \" there!\")\n\n[1] \"hello there!\"\n\n\nThe following table summarizes how to convert between Numeric, Character, and Logical types in R:\n\n\n\n\n\n\n\n\n\nFrom → To\nConversion Function\nExample Usage\nNotes\n\n\n\n\nNumeric → Character\nas.character(x)\nas.character(42) → \"42\"\nConverts numbers to strings\n\n\nNumeric → Logical\nas.logical(x)\nas.logical(0) → FALSE\n0 is FALSE, non-zero is TRUE\n\n\nCharacter → Numeric\nas.numeric(x)\nas.numeric(\"3.14\") → 3.14\nReturns NA if conversion fails\n\n\nCharacter → Logical\nas.logical(x)\nas.logical(\"TRUE\") → TRUE\nCase-sensitive, \"TRUE\" and \"FALSE\" work\n\n\nLogical → Numeric\nas.numeric(x)\nas.numeric(TRUE) → 1\nTRUE = 1, FALSE = 0\n\n\nLogical → Character\nas.character(x)\nas.character(FALSE) → \"FALSE\"\nConverts logical values to text\n\n\n\nNote: Always verify conversions using class() or typeof() to ensure expected results.",
     "crumbs": [
       "R",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>R: Variables, expression and statements</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>R: Basics</span>"
     ]
   },
   {
@@ -1030,6 +1030,83 @@
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>E</span>  <span class='chapter-title'>Assignment templates and Datasets</span>"
+    ]
+  },
+  {
+    "objectID": "Variable_expressions_statements-R.html#comments",
+    "href": "Variable_expressions_statements-R.html#comments",
+    "title": "8  R: Basics",
+    "section": "",
+    "text": "Ctrl + Shift + C (Windows/Linux)\nCmd + Shift + C (Mac)",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>R: Basics</span>"
+    ]
+  },
+  {
+    "objectID": "Variable_expressions_statements-R.html#variables",
+    "href": "Variable_expressions_statements-R.html#variables",
+    "title": "8  R: Basics",
+    "section": "8.3 Variables",
+    "text": "8.3 Variables\nWe have the following rules for a R variable name:\n\nA variable name must start with a letter and can be a combination of letters, digits, period(.) and underscore(_). If it starts with period(.), it cannot be followed by a digit.\nA variable name cannot start with a number or underscore (_)\nVariable names are case-sensitive (age, Age and AGE are three different variables)\nReserved words cannot be used as variables (TRUE, FALSE, NULL, if…)",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>R: Basics</span>"
+    ]
+  },
+  {
+    "objectID": "Variable_expressions_statements-R.html#displaying-information",
+    "href": "Variable_expressions_statements-R.html#displaying-information",
+    "title": "8  R: Basics",
+    "section": "8.5 Displaying information",
+    "text": "8.5 Displaying information\n\n8.5.1 Using print()\nThe print() function is the most basic way to display output.\n\nx &lt;- \"Hello, R!\"\nprint(x)\n\n[1] \"Hello, R!\"\n\n\n\n\n8.5.2 Using cat()\nThe cat() function concatenates and prints text without quotes.\n\nname &lt;- \"Alice\"\ncat(\"Hello,\", name, \"!\\n\")\n\nHello, Alice !\n\n\n\ncat() does not return a value; it just displays output.\n\\n adds a new line.\n\n\n\n8.5.3 Using message()\nThe message() function is useful for warnings or informational messages.\n\nmessage(\"This is a message!\")\n\nThis is a message!\n\n\nUnlike print(),message() does not print inside RMarkdown unless message=TRUE in chunk options.\n\n\n8.5.4 Using sprintf()\nFor formatted output, use sprintf():\n\nname &lt;- \"Alice\"\nage &lt;- 25\nsprintf(\"My name is %s, and I am %d years old.\", name, age)\n\n[1] \"My name is Alice, and I am 25 years old.\"",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>R: Basics</span>"
+    ]
+  },
+  {
+    "objectID": "Variable_expressions_statements-R.html#taking-user-input",
+    "href": "Variable_expressions_statements-R.html#taking-user-input",
+    "title": "8  R: Basics",
+    "section": "8.6 Taking user input",
+    "text": "8.6 Taking user input\nR’s in-built readline() function can be used to accept an input from the user. For example, suppose we wish the user to input their age:\n\nuser_name &lt;- readline(prompt=\"Enter your name: \")\n\nEnter your name: \n\ncat(\"Hello,\", user_name, \"!\\n\")\n\nHello,  !\n\n\nSince RMarkdown is non-interactive, readline() will not work inside a notebook. Instead, you can assign input directly for demonstration:\n\nuser_name &lt;- \"Alice\"\ncat(\"Hello,\", user_name, \"!\\n\")\n\nHello, Alice !\n\n\nWhen using readline(), the input is always a *character string**, and it must be converted explicitly to numeric before performing calculations.\n\nage &lt;- as.numeric(readline(prompt=\"Enter your age: \"))\n\nEnter your age: \n\ncat(\"You are\", age, \"years old.\\n\")\n\nYou are NA years old.",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>R: Basics</span>"
+    ]
+  },
+  {
+    "objectID": "Variable_expressions_statements-R.html#arithmetic-operations-in-r",
+    "href": "Variable_expressions_statements-R.html#arithmetic-operations-in-r",
+    "title": "8  R: Basics",
+    "section": "8.7 Arithmetic Operations in R",
+    "text": "8.7 Arithmetic Operations in R\nR supports standard arithmetic operations for numeric values.\n\n\n\nOperation\nSymbol\nExample\nResult\n\n\n\n\nAddition\n+\n5 + 3\n8\n\n\nSubtraction\n-\n10 - 4\n6\n\n\nMultiplication\n*\n6 * 2\n12\n\n\nDivision\n/\n8 / 2\n4\n\n\nExponentiation\n^ or **\n3^2 or 3**2\n9\n\n\nInteger Division\n%/%\n10 %/% 3\n3\n\n\nModulo (Remainder)\n%%\n10 %% 3\n1\n\n\n\n\n💡 Note:\n- Integer division %/% returns the quotient without the remainder.\n- Modulo %% returns the remainder after division.",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>R: Basics</span>"
+    ]
+  },
+  {
+    "objectID": "Variable_expressions_statements-R.html#logical-boolean-operations-in-r",
+    "href": "Variable_expressions_statements-R.html#logical-boolean-operations-in-r",
+    "title": "8  R: Basics",
+    "section": "8.8 Logical (Boolean) Operations in R",
+    "text": "8.8 Logical (Boolean) Operations in R\nLogical operations return TRUE or FALSE, often used for conditions.\n\n\n\nOperation\nSymbol\nExample\nResult\n\n\n\n\nGreater than\n&gt;\n5 &gt; 3\nTRUE\n\n\nLess than\n&lt;\n2 &lt; 1\nFALSE\n\n\nGreater than or equal to\n&gt;=\n4 &gt;= 4\nTRUE\n\n\nLess than or equal to\n&lt;=\n6 &lt;= 5\nFALSE\n\n\nEqual to\n==\n5 == 5\nTRUE\n\n\nNot equal to\n!=\n3 != 2\nTRUE\n\n\n\n\n💡 Note:\n- Always use == for comparison (not =).\n- != checks if values are different.",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>R: Basics</span>"
+    ]
+  },
+  {
+    "objectID": "Variable_expressions_statements-R.html#logical-operators-in-r",
+    "href": "Variable_expressions_statements-R.html#logical-operators-in-r",
+    "title": "8  R: Basics",
+    "section": "8.9 Logical Operators in R",
+    "text": "8.9 Logical Operators in R\nLogical operators are used to combine conditions.\n\n\n\nOperator\nSymbol\nExample\nResult\n\n\n\n\nAND\n&\n(5 &gt; 3) & (2 &lt; 4)\nTRUE\n\n\nOR\n|\n(5 &gt; 3) | (2 &gt; 4)\nTRUE\n\n\nNOT\n!\n!(5 &gt; 3)\nFALSE\n\n\n\n\n💡 Notes:\n- & (AND) returns TRUE only if both conditions are TRUE.\n- | (OR) returns TRUE if at least one condition is TRUE.\n- ! (NOT) negates a logical value.",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>R: Basics</span>"
     ]
   }
 ]
