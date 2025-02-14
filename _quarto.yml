@@ -28,9 +28,9 @@ book:
         - data_structures.ipynb
         - python_iterable.ipynb
         - classes.ipynb
-    #- part: "R"
-      #chapters:
-        #- Variable_expressions_statements-R.qmd
+    - part: "R"
+      chapters:
+        - Variable_expressions_statements-R.qmd
         #- control_flow.qmd
         #- control_flow2.qmd 
         #- robjects.qmd
