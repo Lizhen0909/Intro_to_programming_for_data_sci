@@ -8,7 +8,20 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Atomic vectors
+R has several **data structures** to store and manipulate data efficiently. 
+These structures can be classified into **homogeneous** (same type) and **heterogeneous** (different types) categories.
+
+![](images/Type_of_data_structure_in_R.png)
+
+| Data Structure   | Dimensions | Homogeneous? | Example |
+|-----------------|------------|--------------|---------|
+| **Atomic Vector** | 1D | ✅ Yes | `c(1, 2, 3)` |
+| **List**         | 1D | ❌ No  | `list(name="Alice", age=25)` |
+| **Matrix**       | 2D | ✅ Yes | `matrix(1:6, nrow=2)` |
+| **Data Frame**   | 2D | ❌ No  | `data.frame(name, age)` |
+
+
+## Atomic vectors ((1D, Homogeneous))
 
 An atomic vector in R is a vector containing objects of the same datatype. If the objects are not of the same datatype, then they are coerced to be of the same datatype. It is defined using the keyword `c()`.
 
@@ -252,7 +265,7 @@ sum(sapply(words_vec, palindrome))
 ```
 
 
-## Matrix
+## Matrix ((2D, Homogeneous))
 
 Matrices are two-dimensional arrays. The in-built function `matrix()` is used to define a matrix. An atomic vector can be organized as a matrix by specifying the number of rows and columns.
 
@@ -563,7 +576,7 @@ for (i in 1:9) {
 }
 ```
 
-## Lists
+## Lists  (1D, Heterogeneous)
 
 Atomic vectors and matrices are quite useful in R. However, a constraint with them is that they can only contain objects of the same datatype. For example, an atomic vector can contain all numeric objects, all character objects, or all logical objects, but not a mixture of multiple types of objects. Thus, there arises a need for a `list` data structure that can store objects of multiple datatypes.
 
@@ -695,4 +708,27 @@ Solve [practice exercise 5](https://nustat.github.io/Intro_to_programming_for_da
 profit <- lapply(movies, function(x) x$`Worldwide Gross`-x$`Production Budget`)
 positive_wg <- lapply(movies, function(x) x$`Worldwide Gross` > 0)
 sum(profit < 0 & positive_wg > 0, na.rm = TRUE)
+```
+
+## Data Frames (2D, Heterogeneous)
+
+A data frame is a table-like structure where each column is a vector. Unlike matrices, columns can have different types.
+
+### Creating data Frames
+
+```{r}
+df <- data.frame(Name=c("Alice", "Bob", "Charlie"),
+                 Age=c(25, 30, 35),
+                 Score=c(90, 85, 88))
+
+print(df)
+```
+
+### Accessing Data Frame Elements
+
+```{r}
+df$Name   # Accessing a column
+df[2, ]   # Second row
+df[ , "Age"]  # Age column
+df[1:2, c("Name", "Score")]  # Subset
 ```

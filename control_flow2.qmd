@@ -40,7 +40,55 @@ any(c(TRUE, FALSE, FALSE))   # TRUE if at least one TRUE
 all(c(TRUE, TRUE, FALSE))    # FALSE if any FALSE
 ```
 
+### Random number generation
 
+R provides various functions to generate random numbers from different distributions. These functions are essential for **simulation, statistical modeling, and machine learning**.
+
+| Function | Description | Example |
+|----------|-------------|---------|
+| `runif(n, min, max)` | Uniform distribution | `runif(5, 0, 10)` |
+| `rnorm(n, mean, sd)` | Normal distribution | `rnorm(5, mean=0, sd=1)` |
+| `rbinom(n, size, prob)` | Binomial distribution | `rbinom(5, size=10, prob=0.5)` |
+| `rpois(n, lambda)` | Poisson distribution | `rpois(5, lambda=3)` |
+| `sample(x, size, replace)` | Random sampling | `sample(1:10, 5, replace=TRUE)` |
+
+#### Setting a seed for reproducibility
+
+Setting a seed ensures that random number generation produces the same results every time.
+
+```{r}
+set.seed(42)
+runif(3)
+```
+
+#### Generating uniform random numbers (`runif()`)
+
+The **`runif()`** function generates random numbers from a **uniform distribution** between a given `min` and `max`.
+
+```{r}
+set.seed(42)  # Set seed for reproducibility
+runif(5, min=0, max=10)
+```
+
+#### Generating Normally Distributed Numbers (`rnorm()`)
+
+The `rnorm()` function generates random numbers from a normal (Gaussian) distribution.
+
+
+```{r}
+
+set.seed(42)
+rnorm(5, mean=0, sd=1)
+```
+
+#### Random Sampling (`sample()`)
+
+The `sample()` function randomly selects elements from a given vector.
+
+```{r}
+set.seed(42)
+sample(1:10, 5, replace=TRUE)
+```
 
 ## Defining a function
 
