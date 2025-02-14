@@ -247,7 +247,7 @@ cat("You are", age, "years old.\n")
 ```
 
 
-## Arithmetic Operations in R
+## Arithmetic Operations
 
 R supports standard arithmetic operations for numeric values.
 
@@ -267,7 +267,7 @@ R supports standard arithmetic operations for numeric values.
 
 ---
 
-## Logical (Boolean) Operations in R
+## Logical (Boolean) Operations
 
 Logical operations return `TRUE` or `FALSE`, often used for conditions.
 
@@ -286,7 +286,7 @@ Logical operations return `TRUE` or `FALSE`, often used for conditions.
 
 ---
 
-## Logical Operators in R
+## Logical Operators
 
 Logical operators are used to combine conditions.
 
