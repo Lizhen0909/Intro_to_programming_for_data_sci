@@ -69,9 +69,9 @@ while (x > 0) {  # Parentheses required
 }
 ```
 
-## The `if - else if - else` statement
+## The `if-else if-else` statement
 
-The `if - else if - else` statements can check several conditions, and execute the code corresponding to the condition that is true. Note that there can be as many `else if` statements as required.
+The `if-else if-else` statements can check several conditions, and execute the code corresponding to the condition that is true. Note that there can be as many `else if` statements as required.
 
 
 **Example:** Input a number. Print whether it is positive, negative or zero. If it is negative, print its absolute value.
@@ -289,4 +289,36 @@ for (i in 1:(nchar(sentence) - nchar("the"))) {
 print(paste("Number of thes in the sentence = ", count))
 ```
 
+## Practice exercises
 
+### Problem 1
+
+```{r}
+my_num <- "0"
+```
+
+Using `my_num` above:
+
+- check if the number is numeric
+- convert the number to numeric
+
+
+### Problem 2
+
+- Define a variable to be your name.
+- Define a variable to be your favorite number.
+- Define a variable to be your favorite color.
+
+- Print a sentence that reads: "My name is {} and my favorite number is {}".
+- Store a variable that checks if your favorite number is less than 10. Print this variable.
+- Store a variable that checks if your favorite number is even. Print this variable.
+- Store a variable that checks if your favorite color is "red". Print this variable.
+- Convert one of your stored Boolean to a numeric data type. What happens?
+
+- Print a statement that returns TRUE if your favorite number is less than 10 and favorite color is NOT red and returns FALSE otherwise.
+- Print a statement that return TRUE if your favorite number is even or less than 10.
+
+
+### Problem 3
+
+Create a sequence of numbers from 20 to 50 and find the mean of the numbers, the sum of the numbers, and the length of the sequence.

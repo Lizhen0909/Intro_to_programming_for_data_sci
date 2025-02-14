@@ -1,5 +1,5 @@
 ---
-title: "R: Objects"
+title: "R: Data structures"
 format:
     html:
       toc: true

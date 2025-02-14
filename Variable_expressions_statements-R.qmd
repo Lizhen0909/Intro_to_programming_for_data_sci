@@ -102,6 +102,30 @@ We have the following rules for a R variable name:
 -   Variable names are case-sensitive (age, Age and AGE are three different variables)
 -   Reserved words cannot be used as variables (TRUE, FALSE, NULL, if...)
 
+### The assignment operator 
+
+#### Using `<-` (**Preferred Operator**)
+
+The `<-` operator is the standard way to assign values in R:
+
+```{r}
+x <- 10
+y <- "Hello, R!"
+z <- TRUE
+```
+
+#### Using `=` (**Not Recommended**)
+
+Although `=` can be used for assignment, it is generally not recommended because it can cause issues in function arguments:
+
+```{r}
+x = 10  # Works, but `<-` is preferred
+
+```
+> 💡 **Best Practice:**  
+> - Always use `<-` for assignments to avoid ambiguity. 
+
+
 ## Converting datatypes
 
 Sometimes a value may have a datatype that is not suitable for using it. For example, consider the variable called `annual_income` in the code below:
