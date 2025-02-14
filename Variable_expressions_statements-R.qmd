@@ -1,5 +1,5 @@
 ---
-title: "R: Variables, expression and statements"
+title: "R: Basics"
 format:
   html:
     toc: true
@@ -8,13 +8,50 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Style guide
+## Comments
 
-We will use the [tidyverse style guide](https://style.tidyverse.org/index.html) for styling R code. 
+Comments in R start with the `#` symbol. Everything after `#` on a line is ignored by R.
+
+```{r}
+# This is a single-line comment
+x <- 10  # Assigning 10 to x
+```
+
+R does not support multi-line comments like Python's `"""`, but you can simulate them using multiple `#` symbols:
+
+
+```{r}
+# This is a 
+# multi-line comment
+```
+
+To comment a block of code quickly in RStudio, use:
+
+* `Ctrl + Shift + C (Windows/Linux)`
+* `Cmd + Shift + C (Mac)`
 
 ## Data Types
 
-Some of the commonly used objects in R are numbers - integer and double (or numeric), character and logical (TRUE/FALSE). The data type of the object can be identified using the in-built R function `class()` or `typeof()`. For example, see the following objects and their types:
+R has several built-in data types that are crucial for data analysis and computation. The commonly used data types include:
+
+- **Numeric** (double and integer)
+- **Character** (strings)
+- **Logical** (TRUE or FALSE)
+
+The data type of a variable/constant in R can be identified using the built-in functions `class()` or `typeof()`. For example, the following variables and their values demonstrate different data types:
+
+Numeric data in R consists of **double (default)** and **integer** types.
+
+```{r}
+# Double (default numeric type)
+class(10.5)
+```
+
+```{r}
+# Integer (use L suffix)
+class(10L) 
+```
+
 
 ```{r}
 class(4)
@@ -56,7 +93,7 @@ class(TRUE)
 typeof(FALSE)
 ```
 
-## Variable names
+## Variables
 
 We have the following rules for a R variable name:
 
@@ -121,6 +158,7 @@ Sometimes, conversion of a value may not be possible. For example, it is not pos
 
 ```{r}
 greeting = "hello"
+as.numeric(greeting)
 ```
 
 However, strings can be concatenated using the `paste0()` function:
@@ -129,10 +167,82 @@ However, strings can be concatenated using the `paste0()` function:
 paste0("hello", " there!")
 ```
 
-R’s in-built readline() function can be used to accept an input from the user. For example, suppose we wish the user to input their age:
+The following table summarizes how to convert between **Numeric**, **Character**, and **Logical** types in R:
+
+| From → To         | Conversion Function     | Example Usage                  | Notes |
+|-------------------|----------------------|--------------------------------|-------|
+| Numeric → Character | `as.character(x)`  | `as.character(42)` → `"42"`   | Converts numbers to strings |
+| Numeric → Logical  | `as.logical(x)`    | `as.logical(0)` → `FALSE`  | `0` is `FALSE`, non-zero is `TRUE` |
+| Character → Numeric | `as.numeric(x)`   | `as.numeric("3.14")` → `3.14` | Returns `NA` if conversion fails |
+| Character → Logical | `as.logical(x)`   | `as.logical("TRUE")` → `TRUE` | Case-sensitive, `"TRUE"` and `"FALSE"` work |
+| Logical → Numeric  | `as.numeric(x)`    | `as.numeric(TRUE)` → `1`    | `TRUE = 1`, `FALSE = 0` |
+| Logical → Character | `as.character(x)` | `as.character(FALSE)` → `"FALSE"` | Converts logical values to text |
+
+**Note:** Always verify conversions using `class()` or `typeof()` to ensure expected results.
+
+## Displaying information
+
+### Using `print()`
+
+The `print()` function is the most basic way to display output.
 
 ```{r}
-age = readline("Enter your age:")
+x <- "Hello, R!"
+print(x)
 ```
 
-The entered value is stored in the variable `age` and can be used for computation.
+### Using `cat()`
+
+The `cat()` function concatenates and prints text without quotes.
+
+```{r}
+name <- "Alice"
+cat("Hello,", name, "!\n")
+```
+
+* `cat()` does not return a value; it just displays output.
+* `\n` adds a new line.
+
+### Using `message()`
+
+The `message()` function is useful for warnings or informational messages.
+
+```{r}
+message("This is a message!")
+```
+
+Unlike `print()`,` message()` does not print inside RMarkdown unless `message=TRUE` in chunk options.
+
+### Using `sprintf()`
+
+For formatted output, use `sprintf()`:
+
+```{r}
+name <- "Alice"
+age <- 25
+sprintf("My name is %s, and I am %d years old.", name, age)
+```
+
+## Taking user input
+
+R’s in-built `readline()` function can be used to accept an input from the user. For example, suppose we wish the user to input their age:
+
+```{r}
+user_name <- readline(prompt="Enter your name: ")
+cat("Hello,", user_name, "!\n")
+```
+
+Since RMarkdown is non-interactive, `readline()` will not work inside a notebook. Instead, you can assign input directly for demonstration:
+
+```{r}
+user_name <- "Alice"
+cat("Hello,", user_name, "!\n")
+```
+
+When using `readline()`, the input is always a *character string**, and it must be converted explicitly to numeric before performing calculations.
+
+```{r}
+age <- as.numeric(readline(prompt="Enter your age: "))
+cat("You are", age, "years old.\n")
+```
+
