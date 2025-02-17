@@ -78,20 +78,33 @@ typeof(4L)
 ```
 
 ```{r}
-class('4')
-```
-
-```{r}
-typeof('4')
-```
-
-```{r}
 class(TRUE)
 ```
 
 ```{r}
 typeof(FALSE)
 ```
+
+R Strings can be created by assigning character values to a variable. These strings can be further concatenated by using various functions and methods to form a big string. 
+
+```{r}
+# R program for String Creation
+ 
+# creating a string with double quotes
+str1 <- "OK1"
+cat ("String 1 is : ", str1)
+ 
+# creating a string with single quotes
+str2 <- 'OK2'
+cat ("String 2 is : ", str2)
+str3 <- "This is 'acceptable and 'allowed' in R"
+cat ("String 3 is : ", str3)
+str4 <- 'Hi, Wondering "if this "works"'
+cat ("String 4 is : ", str4)
+```
+
+R Strings are always stored as double-quoted values. A double-quoted string can contain single quotes within it. 
+Single-quoted strings can’t contain single quotes. Similarly, double quotes can’t be surrounded by double quotes.
 
 ## Variables
 
@@ -226,6 +239,19 @@ cat("Hello,", name, "!\n")
 
 * `cat()` does not return a value; it just displays output.
 * `\n` adds a new line.
+
+### Using `paste()`
+
+The `paste()` function concatenates text elements into a single string.
+
+```{r}
+name <- "Alice"
+paste("Hello,", name, "!\n")
+```
+
+* `paste()` returns a character string.
+* `paste0()` is a variant of `paste()` that does not add spaces between elements.
+* To print the result without quotes, use `cat()`
 
 ### Using `message()`
 
