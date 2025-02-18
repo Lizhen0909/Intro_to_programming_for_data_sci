@@ -317,9 +317,9 @@ R supports standard arithmetic operations for numeric values.
 
 ---
 
-## Logical (Boolean) Operations
+## Comparison Operators
 
-Logical operations return `TRUE` or `FALSE`, often used for conditions.
+Comparison operations return `TRUE` or `FALSE`, often used for conditions.
 
 | Operation | Symbol | Example   | Result  |
 |-----------|--------|-----------|---------|
