@@ -5016,7 +5016,7 @@ vertical-align: -.125em;
 </section>
 <section id="sms-store-manager-10-points" class="level2" data-number="D.1">
 <h2 data-number="D.1" class="anchored" data-anchor-id="sms-store-manager-10-points"><span class="header-section-number">D.1</span> SMS store manager (10 points)</h2>
-<p>Create a new class, named as <em>SMS_store_manager</em>. This class will be used to store and manage SMSs of a person’s cellphone. An object of this class, say <em>my_inbox</em>, will be initialized with a list of existing messages. The class attribute <code>messages</code> will store the existing messages during instantiation:</p>
+<p>Create a new class, named as <code>SMS_store_manager</code>. This class will be used to store and manage SMSs of a person’s cellphone. An object of this class, say <code>my_inbox</code>, will be initialized with a list of existing messages. The class attribute <code>messages</code> will store the existing messages during instantiation:</p>
 <div id="8405368b" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>my_inbox(existing_messages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -5042,7 +5042,7 @@ vertical-align: -.125em;
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>my_inbox.delete(i)     <span class="co"># Delete the message at index i</span></span>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>my_inbox.clear()       <span class="co"># Delete all messages from inbox</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Once you define the class, instantiate an object of this class, and call it <em>harry_messages</em>. Initialize the object with the existing messages below.</p>
+<p>Once you define the class, instantiate an object of this class, and call it <code>harry_messages</code>. Initialize the object with the existing messages below.</p>
 <div id="dc187354" class="cell" data-execution_count="912">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>existing_messages <span class="op">=</span> [{<span class="st">'has_been_viewed'</span>:<span class="va">False</span>, <span class="st">'from_number'</span>:<span class="dv">8769038451</span>, <span class="st">'time'</span>:<span class="st">'09:30'</span>,<span class="st">'date'</span>:<span class="st">'2022-10-27'</span>,<span class="st">'text_of_SMS'</span>:<span class="st">'Hi, how about lunch at 11?'</span>},</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                        {<span class="st">'has_been_viewed'</span>:<span class="va">False</span>, <span class="st">'from_number'</span>:<span class="dv">9579038373</span>, <span class="st">'time'</span>:<span class="st">'19:30'</span>,<span class="st">'date'</span>:<span class="st">'2022-10-20'</span>, <span class="st">'text_of_SMS'</span>:<span class="st">'Your order has arrived'</span>},</span>
@@ -5057,7 +5057,7 @@ vertical-align: -.125em;
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>                        {<span class="st">'has_been_viewed'</span>:<span class="va">True</span>, <span class="st">'from_number'</span>:<span class="dv">7739984533</span>, <span class="st">'time'</span>:<span class="st">'07:20'</span>,<span class="st">'date'</span>:<span class="st">'2022-07-24'</span>,<span class="st">'text_of_SMS'</span>:<span class="st">'Do you want to be rich today? Do you want to be your own boss? Check out beyourownboss.com. Register today for just $5!!!'</span>},</span>
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                        {<span class="st">'has_been_viewed'</span>:<span class="va">True</span>, <span class="st">'from_number'</span>:<span class="dv">3443498738</span>, <span class="st">'time'</span>:<span class="st">'07:20'</span>,<span class="st">'date'</span>:<span class="st">'2022-07-22'</span>,<span class="st">'text_of_SMS'</span>:<span class="st">'Want to lose weight? Get Dr. Oz magic pills @ozpills.com. Satisfaction guaranteed.'</span>}]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Use the object <em>harry_messages</em> to:</p>
+<p>Use the object <code>harry_messages</code> to:</p>
 <section id="points" class="level3" data-number="D.1.1">
 <h3 data-number="D.1.1" class="anchored" data-anchor-id="points"><span class="header-section-number">D.1.1</span> (2 points)</h3>
 <p>Add a new message below:</p>
@@ -5087,7 +5087,7 @@ vertical-align: -.125em;
 </section>
 <section id="personalized-sms-store-manager-12-points" class="level2" data-number="D.2">
 <h2 data-number="D.2" class="anchored" data-anchor-id="personalized-sms-store-manager-12-points"><span class="header-section-number">D.2</span> Personalized SMS store manager (12 points)</h2>
-<p>Inherit the class developed in the previous question to create a new class <em>SMS_personalized_store_manager</em>. This class will inherit all the methods of the class <em>SMS_store_manager</em>. However, it will have the following differences as compared to the parent class:</p>
+<p>Inherit the class developed in the previous question to create a new class <code>SMS_personalized_store_manager</code>. This class will inherit all the methods of the class <code>SMS_store_manager</code>. However, it will have the following differences as compared to the parent class:</p>
 <ol type="1">
 <li><p>Instantiation</p>
 <ol type="a">
@@ -5124,7 +5124,7 @@ vertical-align: -.125em;
 </ol></li>
 <li><p>The class will modify the method <code>add_new_arrival(self,from_number, time, date, text_of_SMS)</code> of the parent class to tag a new message as <code>'spam'</code>, <code>'update'</code> or <code>'personal'</code>.</p></li>
 </ol>
-<p>Once you define the class, instantiate an object of this class with the lists <code>existing_messages</code>, <code>spam_words</code> and <code>update_words</code>, and call it <em>ron_messages</em>:</p>
+<p>Once you define the class, instantiate an object of this class with the lists <code>existing_messages</code>, <code>spam_words</code> and <code>update_words</code>, and call it <code>ron_messages</code>:</p>
 <section id="points-5" class="level3" data-number="D.2.1">
 <h3 data-number="D.2.1" class="anchored" data-anchor-id="points-5"><span class="header-section-number">D.2.1</span> (2 points)</h3>
 <p>Add a new message below:</p>
@@ -5158,15 +5158,21 @@ vertical-align: -.125em;
 </section>
 <section id="creating-a-new-datatype---list-of-dictionaries-8-points" class="level2" data-number="D.3">
 <h2 data-number="D.3" class="anchored" data-anchor-id="creating-a-new-datatype---list-of-dictionaries-8-points"><span class="header-section-number">D.3</span> Creating a new datatype - list of dictionaries (8 points)</h2>
-<p>Read <em>movie_data</em> with the code below.</p>
-<div id="647e5c8f" class="cell" data-execution_count="934">
+<p>Read <em>filtered_movies.json</em> with the code below.</p>
+<div id="647e5c8f" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"movies.json"</span>, encoding<span class="op">=</span><span class="st">"utf8"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"filtered_movies.json"</span>, encoding<span class="op">=</span><span class="st">"utf8"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    movie_data<span class="op">=</span>json.load(<span class="bu">file</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Note: The <code>filtered_movie.json</code> file has been cleaned to remove all None values. You can safely sort the data without worrying about missing values.</p>
 <section id="points-11" class="level3" data-number="D.3.1">
 <h3 data-number="D.3.1" class="anchored" data-anchor-id="points-11"><span class="header-section-number">D.3.1</span> (4 points)</h3>
-<p>Inherit the in-built python class <code>list()</code> to create a new class <code>list_dict()</code>. This class will be used for objects that are a list of dictionaries, where all the dictionaries in the list have the same keys. Add a method in this class, named as <code>sort_by_dict_value()</code> that sorts the dictionaries of the list based on the values of the desired key in the dictionaries. Sorting can be done in ascending or descending order depending on the user. The key to be used for sorting and the order (ascending / descending) will be parameters to the method <code>sort_by_dict_value()</code>. If the sorting order is unspecified, use ascending as default.</p>
+<p>Inherit the in-built python class <code>list()</code> to create a new class <code>list_dict()</code>. This class will be used for objects that are a list of dictionaries, where all the dictionaries in the list have the same keys. Add a method in this class, named as <code>sort_by_dict_value()</code> that sorts the dictionaries of the list based on the values of the desired key in the dictionaries. Sorting can be done in ascending or descending order depending on the user. The key to be used for sorting and the order (ascending / descending) will be parameters to the method <code>sort_by_dict_value()</code>. If the sorting order is unspecified, use <code>ascending</code> as default.</p>
+<p>Hints:</p>
+<ul>
+<li><p>Python lists have a built-in <code>sort()</code> function that sorts elements <strong>in place</strong>. To sort a list of dictionaries by a specific dictionary value, you need to set the <code>key</code> parameter.</p></li>
+<li><p>For implementation details, refer to <a href="https://lizhen0909.github.io/Intro_to_programming_for_data_sci_wi25/data_structures.html#sorting-a-list">Sorting a List</a>.</p></li>
+</ul>
 </section>
 <section id="points-12" class="level3" data-number="D.3.2">
 <h3 data-number="D.3.2" class="anchored" data-anchor-id="points-12"><span class="header-section-number">D.3.2</span> (2 points)</h3>
