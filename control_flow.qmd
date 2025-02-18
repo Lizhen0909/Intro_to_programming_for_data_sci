@@ -82,8 +82,6 @@ The warning block will be triggered, not the error block.
 
 ## Control flow tools
 
-### Comparison Operators and Logical Operators in Control flow 
-
 Control flow in R relies on comparison operators and logical operators to make decisions based on conditions. 
 These operators are commonly used in conditional statements like if, ifelse(), and loops.
 
@@ -181,8 +179,6 @@ seq(1, 10, by = 2)
 ```
 
 **Summary**
-
-## Summary
 
 | Feature             | R (`:` Operator)               | Python (`range()`)        | R (`seq() Function`)               |
 |--------------------|--------------------------------|---------------------------|------------------------------------|
@@ -382,28 +378,106 @@ while (TRUE) {
 }
 ```
 
-## Loops with the `character` vector
+## `characters` in R
 
-Loops can be used to iterate over the elements in a `character` vector, just like we used them to iterate over a sequence of integers. The function  `nchar` is used to get the number of characters in the `character` vector/
+###  Basic Definitions**
+- In **Python**, strings are defined using either single (`'`) or double (`"`) quotes.
+- In **R**, character values (strings) are always enclosed in double quotes (`" "`), though single quotes (`' '`) also work, 
+But single quotes are normally only used to delimit character constants containing double quotes.
 
-Consider the following `character` vector:
 
-```{r}
-sentence <- 'She sells sea shells on the sea shore'
-```
+### String/Character Length
 
-The length of the `character` vector is:
-```{r}
-nchar(sentence)
-```
-
-**Slicing a character data**: The function `substr()` is used to slice a character vector from the `start` index to the `stop` index. Note that the indices in R start from `1`, instead of `0`. For example, let us slice the object `sentence` from the $5^{th}$ index to the $9^{the}$ index:
+* In Python, len() is used to count the number of characters.
+* In R, nchar() is used.
 
 ```{r}
-substr(sentence, 5, 9)
+s <- "Hello"
+print(nchar(s)) 
 ```
 
-**Example:** Define a `character` vector and count the number of *t*s.
+### String Indexing and Slicing
+
+* Python allows direct indexing and slicing using `[]`.
+* R does not support direct indexing for characters. Instead, `substr()` is used.
+
+```{r}
+s <- "Hello"
+print(substr(s, 2, 2))   # Output: "e" (1-based index)
+print(substr(s, 2, 4)) 
+```
+
+**Key Difference**: Python uses 0-based indexing, while R uses 1-based indexing.
+
+### String Concatenation
+
+* Python: Uses `+` for concatenation.
+* R: Uses `paste()` or `paste0()`.
+
+```{r}
+s1 <- "Hello"
+s2 <- "World"
+print(paste(s1, s2))   
+print(paste0(s1, s2))
+```
+
+### Changing Case (Uppercase & Lowercase)
+
+* Python: `s.upper()` and `s.lower()` for conversion
+* R: `toupper(s)` and `tolower(s)`
+
+```{r}
+s <- "Hello"
+print(toupper(s))
+print(tolower(s))
+```
+
+### Finding Substrings
+
+* Python: Uses `.find()` or `in` to check for substrings.
+* R: Uses `grep()` or `grepl()`.
+
+```{r}
+s <- "Hello World"
+print(grepl("World", s))  
+print(grep("World", s))
+```
+
+### String Replacement
+
+* Python: Uses `.replace()`.
+* R: Uses `gsub()`.
+
+### Summary table
+
+| Feature              | Python (String)                     | R (Character)                   |
+|----------------------|------------------------------------|--------------------------------|
+| **Definition**       | `'Hello'` or `"Hello"`            | `"Hello"`                      |
+| **Data Type Check**  | `type("Hello")` → `str`           | `class("Hello")` → `"character"` |
+| **Length**          | `len(s)`                           | `nchar(s)`                     |
+| **Indexing**        | `s[1]` (0-based)                   | `substr(s, 2, 2)` (1-based)    |
+| **Concatenation**   | `s1 + s2`                          | `paste(s1, s2)` or `paste0(s1, s2)` |
+| **Upper/Lower Case** | `s.upper(), s.lower()`            | `toupper(s), tolower(s)`       |
+| **Finding Substrings** | `"World" in s`, `s.find("World")` | `grepl("World", s)`, `grep("World", s)` |
+| **Replace Substring** | `s.replace("old", "new")`        | `gsub("old", "new", s)`        |
+
+
+
+### Practice exercise 1
+
+Try converting the following Python string operations into equivalent R code:
+
+```
+s = "Data Science"
+print(len(s))
+print(s[5:])
+print(s.replace("Data", "AI"))
+```
+
+
+### Practice exercise 2
+
+ Define a `character`  and count the number of *t*s.
 
 ```{r}
 char_vec <- 'Getting a tatto is not a nice experience'
@@ -422,7 +496,7 @@ print(paste("Number of 't's in the string = ", count_t))
 ```
 
 
-### Practice exercise
+### Practice exercise 3
 
 Write a program that prints the number of 'the's found in sentence
 
@@ -437,7 +511,7 @@ for (i in 1:(nchar(sentence) - nchar("the"))) {
 print(paste("Number of thes in the sentence = ", count))
 ```
 
-## Practice exercises
+## Practice exercise 4
 
 ### Problem 1
 
