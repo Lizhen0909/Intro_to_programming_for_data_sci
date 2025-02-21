@@ -535,9 +535,9 @@ print(paste("Number of thes in the sentence = ", count))
 
 Use `strsplit()` to implement this function
 
-## Practice exercise 4
+### Practice exercise 4
 
-### Problem 1
+#### Problem 1
 
 ```{r}
 my_num <- "0"
@@ -549,7 +549,7 @@ Using `my_num` above:
 - convert the number to numeric
 
 
-### Problem 2
+#### Problem 2
 
 - Define a variable to be your name.
 - Define a variable to be your favorite number.
@@ -564,7 +564,7 @@ Using `my_num` above:
 - Print a statement that returns TRUE if your favorite number is less than 10 and favorite color is NOT red and returns FALSE otherwise.
 - Print a statement that return TRUE if your favorite number is even or less than 10.
 
-## Practice exercise 5
+### Practice exercise 5
 
 Create an interactive R code block that asks the user to enter their age and ensures the input is a **valid integer**. The code should handle incorrect inputs and guide the user until they provide a valid response.
 

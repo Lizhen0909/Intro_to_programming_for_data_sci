@@ -5119,13 +5119,9 @@ window.Quarto = {
   <li><a href="#practice-exercise-1" id="toc-practice-exercise-1" class="nav-link" data-scroll-target="#practice-exercise-1"><span class="header-section-number">9.7.10</span> Practice exercise 1</a></li>
   <li><a href="#practice-exercise-2" id="toc-practice-exercise-2" class="nav-link" data-scroll-target="#practice-exercise-2"><span class="header-section-number">9.7.11</span> Practice exercise 2</a></li>
   <li><a href="#practice-exercise-3" id="toc-practice-exercise-3" class="nav-link" data-scroll-target="#practice-exercise-3"><span class="header-section-number">9.7.12</span> Practice exercise 3</a></li>
+  <li><a href="#practice-exercise-4" id="toc-practice-exercise-4" class="nav-link" data-scroll-target="#practice-exercise-4"><span class="header-section-number">9.7.13</span> Practice exercise 4</a></li>
+  <li><a href="#practice-exercise-5" id="toc-practice-exercise-5" class="nav-link" data-scroll-target="#practice-exercise-5"><span class="header-section-number">9.7.14</span> Practice exercise 5</a></li>
   </ul></li>
-  <li><a href="#practice-exercise-4" id="toc-practice-exercise-4" class="nav-link" data-scroll-target="#practice-exercise-4"><span class="header-section-number">9.8</span> Practice exercise 4</a>
-  <ul class="collapse">
-  <li><a href="#problem-1" id="toc-problem-1" class="nav-link" data-scroll-target="#problem-1"><span class="header-section-number">9.8.1</span> Problem 1</a></li>
-  <li><a href="#problem-2" id="toc-problem-2" class="nav-link" data-scroll-target="#problem-2"><span class="header-section-number">9.8.2</span> Problem 2</a></li>
-  </ul></li>
-  <li><a href="#practice-exercise-5" id="toc-practice-exercise-5" class="nav-link" data-scroll-target="#practice-exercise-5"><span class="header-section-number">9.9</span> Practice exercise 5</a></li>
   </ul>
 </nav>
     </div>
@@ -5829,11 +5825,10 @@ print(s.replace("Data", "AI"))</code></pre>
 </div>
 <p>Use <code>strsplit()</code> to implement this function</p>
 </section>
-</section>
-<section id="practice-exercise-4" class="level2" data-number="9.8">
-<h2 data-number="9.8" class="anchored" data-anchor-id="practice-exercise-4"><span class="header-section-number">9.8</span> Practice exercise 4</h2>
-<section id="problem-1" class="level3" data-number="9.8.1">
-<h3 data-number="9.8.1" class="anchored" data-anchor-id="problem-1"><span class="header-section-number">9.8.1</span> Problem 1</h3>
+<section id="practice-exercise-4" class="level3" data-number="9.7.13">
+<h3 data-number="9.7.13" class="anchored" data-anchor-id="practice-exercise-4"><span class="header-section-number">9.7.13</span> Practice exercise 4</h3>
+<section id="problem-1" class="level4" data-number="9.7.13.1">
+<h4 data-number="9.7.13.1" class="anchored" data-anchor-id="problem-1"><span class="header-section-number">9.7.13.1</span> Problem 1</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>my_num <span class="ot">&lt;-</span> <span class="st">"0"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -5843,8 +5838,8 @@ print(s.replace("Data", "AI"))</code></pre>
 <li>convert the number to numeric</li>
 </ul>
 </section>
-<section id="problem-2" class="level3" data-number="9.8.2">
-<h3 data-number="9.8.2" class="anchored" data-anchor-id="problem-2"><span class="header-section-number">9.8.2</span> Problem 2</h3>
+<section id="problem-2" class="level4" data-number="9.7.13.2">
+<h4 data-number="9.7.13.2" class="anchored" data-anchor-id="problem-2"><span class="header-section-number">9.7.13.2</span> Problem 2</h4>
 <ul>
 <li><p>Define a variable to be your name.</p></li>
 <li><p>Define a variable to be your favorite number.</p></li>
@@ -5859,8 +5854,8 @@ print(s.replace("Data", "AI"))</code></pre>
 </ul>
 </section>
 </section>
-<section id="practice-exercise-5" class="level2" data-number="9.9">
-<h2 data-number="9.9" class="anchored" data-anchor-id="practice-exercise-5"><span class="header-section-number">9.9</span> Practice exercise 5</h2>
+<section id="practice-exercise-5" class="level3" data-number="9.7.14">
+<h3 data-number="9.7.14" class="anchored" data-anchor-id="practice-exercise-5"><span class="header-section-number">9.7.14</span> Practice exercise 5</h3>
 <p>Create an interactive R code block that asks the user to enter their age and ensures the input is a <strong>valid integer</strong>. The code should handle incorrect inputs and guide the user until they provide a valid response.</p>
 <p><strong>Requirements</strong> - The script should <strong>continuously prompt the user</strong> until they enter a valid integer. - If the input is <strong>not an integer</strong>, the script should display an error message and ask again. - Once a valid integer is entered: - If the age is <strong>18 or older</strong>, display: <code>"You are an adult."</code> - If the age is <strong>less than 18</strong>, display: <code>"You are a minor."</code></p>
 <p><strong>Guidelines &amp; Hints</strong> - Use <strong><code>readline()</code></strong> to collect user input. - Convert the input using <strong><code>as.integer()</code></strong> and check if it returns <strong><code>NA</code></strong> for invalid inputs. - Utilize <strong>a loop</strong> to ensure the user is repeatedly prompted until they enter a valid integer. - Provide <strong>clear error messages</strong> to guide the user. - Consider handling <strong>unexpected errors</strong> using <strong>error-catching techniques</strong> such as <strong><code>tryCatch()</code></strong>.</p>
@@ -5893,6 +5888,7 @@ print(s.replace("Data", "AI"))</code></pre>
 </table>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
