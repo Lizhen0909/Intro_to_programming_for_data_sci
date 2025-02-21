@@ -380,7 +380,7 @@ while (TRUE) {
 
 ## `characters` in R
 
-###  Basic Definitions**
+###  Basic Definitions
 - In **Python**, strings are defined using either single (`'`) or double (`"`) quotes.
 - In **R**, character values (strings) are always enclosed in double quotes (`" "`), though single quotes (`' '`) also work, 
 But single quotes are normally only used to delimit character constants containing double quotes.
@@ -448,6 +448,27 @@ print(grep("World", s))
 * Python: Uses `.replace()`.
 * R: Uses `gsub()`.
 
+### String Splitting
+
+* Python: Uses `split()` method in strings to break them into lists
+* R: Uses `strsplit()` function to split strings into a list of character vectors.
+
+```{r}
+sentence <- "Hello, how are you?"
+words <- strsplit(sentence, " ")  # Split by space
+print(words)
+```
+
+`strsplit()` returns a list, even if applied to a single string.
+The delimiter is treated as a regex, meaning special characters need to be escaped
+
+```{r}
+# splitting using a comma
+sentence <- "apple,banana,grape,orange"
+words <- strsplit(sentence, ",")
+print(words[[1]])
+```
+
 ### Summary table
 
 | Feature              | Python (String)                     | R (Character)                   |
@@ -460,7 +481,7 @@ print(grep("World", s))
 | **Upper/Lower Case** | `s.upper(), s.lower()`            | `toupper(s), tolower(s)`       |
 | **Finding Substrings** | `"World" in s`, `s.find("World")` | `grepl("World", s)`, `grep("World", s)` |
 | **Replace Substring** | `s.replace("old", "new")`        | `gsub("old", "new", s)`        |
-
+| **Splitting** | `s.split(" ")` (default: whitespace)      | `strsplit(s, " ")`(default: whitespace)   |
 
 
 ### Practice exercise 1
@@ -495,6 +516,7 @@ print(paste("Number of 't's in the string = ", count_t))
 
 ```
 
+Use `strsplit()` to implement this function.
 
 ### Practice exercise 3
 
@@ -510,6 +532,8 @@ for (i in 1:(nchar(sentence) - nchar("the"))) {
 }
 print(paste("Number of thes in the sentence = ", count))
 ```
+
+Use `strsplit()` to implement this function
 
 ## Practice exercise 4
 
@@ -540,3 +564,29 @@ Using `my_num` above:
 - Print a statement that returns TRUE if your favorite number is less than 10 and favorite color is NOT red and returns FALSE otherwise.
 - Print a statement that return TRUE if your favorite number is even or less than 10.
 
+## Practice exercise 5
+
+Create an interactive R code block that asks the user to enter their age and ensures the input is a **valid integer**. The code should handle incorrect inputs and guide the user until they provide a valid response.
+
+**Requirements**
+- The script should **continuously prompt the user** until they enter a valid integer.
+- If the input is **not an integer**, the script should display an error message and ask again.
+- Once a valid integer is entered:
+  - If the age is **18 or older**, display: `"You are an adult."`
+  - If the age is **less than 18**, display: `"You are a minor."`
+
+**Guidelines & Hints**
+- Use **`readline()`** to collect user input.
+- Convert the input using **`as.integer()`** and check if it returns **`NA`** for invalid inputs.
+- Utilize **a loop** to ensure the user is repeatedly prompted until they enter a valid integer.
+- Provide **clear error messages** to guide the user.
+- Consider handling **unexpected errors** using **error-catching techniques** such as **`tryCatch()`**.
+
+**Example User Interaction**
+
+| Input            | Output |
+|-----------------|----------------|
+| `"abc"`         | `"Please enter a valid integer for age."` |
+| `"twenty"`      | `"Please enter a valid integer for age."` |
+| `"18"`          | `"You are an adult."` |
+| `"17"`          | `"You are a minor."` |

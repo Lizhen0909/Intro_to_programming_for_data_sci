@@ -206,14 +206,14 @@ paste0("hello", " there!")
 
 The following table summarizes how to convert between **Numeric**, **Character**, and **Logical** types in R:
 
-| From → To         | Conversion Function     | Example Usage                  | Notes |
-|-------------------|----------------------|--------------------------------|-------|
-| Numeric → Character | `as.character(x)`  | `as.character(42)` → `"42"`   | Converts numbers to strings |
-| Numeric → Logical  | `as.logical(x)`    | `as.logical(0)` → `FALSE`  | `0` is `FALSE`, non-zero is `TRUE` |
-| Character → Numeric | `as.numeric(x)`   | `as.numeric("3.14")` → `3.14` | Returns `NA` if conversion fails |
-| Character → Logical | `as.logical(x)`   | `as.logical("TRUE")` → `TRUE` | Case-sensitive, `"TRUE"` and `"FALSE"` work |
-| Logical → Numeric  | `as.numeric(x)`    | `as.numeric(TRUE)` → `1`    | `TRUE = 1`, `FALSE = 0` |
-| Logical → Character | `as.character(x)` | `as.character(FALSE)` → `"FALSE"` | Converts logical values to text |
+| From → To               | Conversion Function | Example Usage                | Notes                                      | Failure Behavior                              |
+|-------------------------|---------------------|------------------------------|--------------------------------------------|----------------------------------------------|
+| **Numeric → Character** | `as.character(x)`   | `as.character(42) → "42"`    | Converts numbers to strings               | Not applicable (always succeeds)            |
+| **Numeric → Logical**   | `as.logical(x)`     | `as.logical(0) → FALSE`      | `0` is `FALSE`, non-zero is `TRUE`        | Returns `NA` if input is not numeric        |
+| **Character → Numeric** | `as.numeric(x)`     | `as.numeric("3.14") → 3.14`  | Returns `NA` if conversion fails          | Returns `NA` if conversion fails            |
+| **Character → Logical** | `as.logical(x)`     | `as.logical("TRUE") → TRUE`  | Case-sensitive, `"TRUE"` and `"FALSE"` work | Returns `NA` if input is not `"TRUE"` or `"FALSE"` |
+| **Logical → Numeric**   | `as.numeric(x)`     | `as.numeric(TRUE) → 1`       | `TRUE = 1`, `FALSE = 0`                   | Returns `NA` if input is not logical        |
+| **Logical → Character** | `as.character(x)`   | `as.character(FALSE) → "FALSE"` | Converts logical values to strings    | Not applicable (always succeeds)            |
 
 **Note:** Always verify conversions using `class()` or `typeof()` to ensure expected results.
 
@@ -338,16 +338,63 @@ Comparison operations return `TRUE` or `FALSE`, often used for conditions.
 
 ## Logical Operators
 
-Logical operators are used to combine conditions.
+Logical operators are used to combine conditions in R. There are two types of logical operators:
 
-| Operator | Symbol | Example                   | Result  |
-|----------|--------|---------------------------|---------|
-| AND      | `&`    | `(5 > 3) & (2 < 4)`       | `TRUE`  |
-| OR       | `|`    | `(5 > 3) | (2 > 4)`       | `TRUE`  |
-| NOT      | `!`    | `!(5 > 3)`                | `FALSE` |
+Element-wise operators: `&` (AND), `|` (OR), and `!` (NOT) – work element-by-element for vectors.
+Short-circuit operators: `&&` (AND), `||` (OR) – only evaluate the first element of each condition, primarily used in control flow (e.g., if statements).
 
-> 💡 **Notes:**  
-> - `&` (AND) returns `TRUE` only if **both** conditions are `TRUE`.  
-> - `|` (OR) returns `TRUE` if **at least one** condition is `TRUE`.  
-> - `!` (NOT) negates a logical value.
+| Operator               | Symbol  | Description                                | Example               | Result  |
+|------------------------|---------|--------------------------------------------|-----------------------|---------|
+| **AND**               | `&`     | Element-wise AND (Both must be `TRUE`)     | `(5 > 3) & (2 < 4)`   | `TRUE`  |
+| **OR**                | `|`     | Element-wise OR (At least one must be `TRUE`) | `(5 > 3) | (2 > 4)` | `TRUE`  |
+| **NOT**               | `!`     | Negates a logical value                    | `!(5 > 3)`           | `FALSE` |
+| **Short-circuit AND** | `&&`    | Evaluates only the first element           | `TRUE && FALSE`       | `FALSE` |
+| **Short-circuit OR**  | `||`    | Evaluates only the first element           | `TRUE || FALSE`       | `TRUE`  |
 
+**Difference between element-wise and short-circuit operators
+
+## 2. Differences Between Element-wise and Short-circuit Operators
+
+| Operator Type        | Symbol  | Works on Vectors?     | Use Case                          |
+|----------------------|---------|----------------------|----------------------------------|
+| **Element-wise AND** | `&`     | ✅ Yes               | Use with vectors or data frames  |
+| **Element-wise OR**  | `|`     | ✅ Yes               | Use with vectors or data frames  |
+| **Short-circuit AND** | `&&`    | ❌ No (only first element) | Use in `if` statements          |
+| **Short-circuit OR**  | `||`    | ❌ No (only first element) | Use in `if` statements          |
+
+
+> 💡 **Key Takeaways:**  
+> - Use `&` and `|` for **vector operations** (e.g., filtering in data frames).  
+> - Use `&&` and `||` in `if` statements for **better efficiency**. 
+> - The `!` operator **negates logical values** (useful for filtering and reversing conditions).
+
+Examples:
+
+```{r}
+x <- c(TRUE, FALSE, TRUE)
+y <- c(FALSE, TRUE, TRUE)
+
+# Element-wise AND
+x & y  
+
+# Element-wise OR
+x | y 
+```
+
+```{r}
+a <- 10
+b <- 5
+
+if (a > 0 && b > 0) {
+  print("Both are positive")
+}
+
+if (a > 0 || b < 0) {
+  print("At least one condition is met")
+}
+```
+
+```{r}
+x <- c(TRUE, FALSE, TRUE)
+!x  # [FALSE TRUE FALSE]
+```
