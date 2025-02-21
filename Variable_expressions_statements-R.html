@@ -4965,6 +4965,7 @@ vertical-align: -.125em;
   <li><a href="#arithmetic-operations" id="toc-arithmetic-operations" class="nav-link" data-scroll-target="#arithmetic-operations"><span class="header-section-number">8.7</span> Arithmetic Operations</a></li>
   <li><a href="#comparison-operators" id="toc-comparison-operators" class="nav-link" data-scroll-target="#comparison-operators"><span class="header-section-number">8.8</span> Comparison Operators</a></li>
   <li><a href="#logical-operators" id="toc-logical-operators" class="nav-link" data-scroll-target="#logical-operators"><span class="header-section-number">8.9</span> Logical Operators</a></li>
+  <li><a href="#differences-between-element-wise-and-short-circuit-operators" id="toc-differences-between-element-wise-and-short-circuit-operators" class="nav-link" data-scroll-target="#differences-between-element-wise-and-short-circuit-operators"><span class="header-section-number">8.10</span> 2. Differences Between Element-wise and Short-circuit Operators</a></li>
   </ul>
 </nav>
     </div>
@@ -5223,10 +5224,11 @@ vertical-align: -.125em;
 <p>The following table summarizes how to convert between <strong>Numeric</strong>, <strong>Character</strong>, and <strong>Logical</strong> types in R:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 23%">
+<col style="width: 15%">
+<col style="width: 12%">
+<col style="width: 18%">
+<col style="width: 26%">
 <col style="width: 27%">
-<col style="width: 40%">
-<col style="width: 8%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -5234,44 +5236,51 @@ vertical-align: -.125em;
 <th>Conversion Function</th>
 <th>Example Usage</th>
 <th>Notes</th>
+<th>Failure Behavior</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Numeric → Character</td>
+<td><strong>Numeric → Character</strong></td>
 <td><code>as.character(x)</code></td>
-<td><code>as.character(42)</code> → <code>"42"</code></td>
+<td><code>as.character(42) → "42"</code></td>
 <td>Converts numbers to strings</td>
+<td>Not applicable (always succeeds)</td>
 </tr>
 <tr class="even">
-<td>Numeric → Logical</td>
+<td><strong>Numeric → Logical</strong></td>
 <td><code>as.logical(x)</code></td>
-<td><code>as.logical(0)</code> → <code>FALSE</code></td>
+<td><code>as.logical(0) → FALSE</code></td>
 <td><code>0</code> is <code>FALSE</code>, non-zero is <code>TRUE</code></td>
+<td>Returns <code>NA</code> if input is not numeric</td>
 </tr>
 <tr class="odd">
-<td>Character → Numeric</td>
+<td><strong>Character → Numeric</strong></td>
 <td><code>as.numeric(x)</code></td>
-<td><code>as.numeric("3.14")</code> → <code>3.14</code></td>
+<td><code>as.numeric("3.14") → 3.14</code></td>
+<td>Returns <code>NA</code> if conversion fails</td>
 <td>Returns <code>NA</code> if conversion fails</td>
 </tr>
 <tr class="even">
-<td>Character → Logical</td>
+<td><strong>Character → Logical</strong></td>
 <td><code>as.logical(x)</code></td>
-<td><code>as.logical("TRUE")</code> → <code>TRUE</code></td>
+<td><code>as.logical("TRUE") → TRUE</code></td>
 <td>Case-sensitive, <code>"TRUE"</code> and <code>"FALSE"</code> work</td>
+<td>Returns <code>NA</code> if input is not <code>"TRUE"</code> or <code>"FALSE"</code></td>
 </tr>
 <tr class="odd">
-<td>Logical → Numeric</td>
+<td><strong>Logical → Numeric</strong></td>
 <td><code>as.numeric(x)</code></td>
-<td><code>as.numeric(TRUE)</code> → <code>1</code></td>
+<td><code>as.numeric(TRUE) → 1</code></td>
 <td><code>TRUE = 1</code>, <code>FALSE = 0</code></td>
+<td>Returns <code>NA</code> if input is not logical</td>
 </tr>
 <tr class="even">
-<td>Logical → Character</td>
+<td><strong>Logical → Character</strong></td>
 <td><code>as.character(x)</code></td>
-<td><code>as.character(FALSE)</code> → <code>"FALSE"</code></td>
-<td>Converts logical values to text</td>
+<td><code>as.character(FALSE) → "FALSE"</code></td>
+<td>Converts logical values to strings</td>
+<td>Not applicable (always succeeds)</td>
 </tr>
 </tbody>
 </table>
@@ -5502,43 +5511,154 @@ vertical-align: -.125em;
 </section>
 <section id="logical-operators" class="level2" data-number="8.9">
 <h2 data-number="8.9" class="anchored" data-anchor-id="logical-operators"><span class="header-section-number">8.9</span> Logical Operators</h2>
-<p>Logical operators are used to combine conditions.</p>
+<p>Logical operators are used to combine conditions in R. There are two types of logical operators:</p>
+<p>Element-wise operators: <code>&amp;</code> (AND), <code>|</code> (OR), and <code>!</code> (NOT) – work element-by-element for vectors. Short-circuit operators: <code>&amp;&amp;</code> (AND), <code>||</code> (OR) – only evaluate the first element of each condition, primarily used in control flow (e.g., if statements).</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 8%">
+<col style="width: 40%">
+<col style="width: 21%">
+<col style="width: 8%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Operator</th>
 <th>Symbol</th>
+<th>Description</th>
 <th>Example</th>
 <th>Result</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>AND</td>
+<td><strong>AND</strong></td>
 <td><code>&amp;</code></td>
+<td>Element-wise AND (Both must be <code>TRUE</code>)</td>
 <td><code>(5 &gt; 3) &amp; (2 &lt; 4)</code></td>
 <td><code>TRUE</code></td>
 </tr>
 <tr class="even">
-<td>OR</td>
+<td><strong>OR</strong></td>
 <td><code>|</code></td>
+<td>Element-wise OR (At least one must be <code>TRUE</code>)</td>
 <td><code>(5 &gt; 3) | (2 &gt; 4)</code></td>
 <td><code>TRUE</code></td>
 </tr>
 <tr class="odd">
-<td>NOT</td>
+<td><strong>NOT</strong></td>
 <td><code>!</code></td>
+<td>Negates a logical value</td>
 <td><code>!(5 &gt; 3)</code></td>
 <td><code>FALSE</code></td>
+</tr>
+<tr class="even">
+<td><strong>Short-circuit AND</strong></td>
+<td><code>&amp;&amp;</code></td>
+<td>Evaluates only the first element</td>
+<td><code>TRUE &amp;&amp; FALSE</code></td>
+<td><code>FALSE</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Short-circuit OR</strong></td>
+<td><code>||</code></td>
+<td>Evaluates only the first element</td>
+<td><code>TRUE || FALSE</code></td>
+<td><code>TRUE</code></td>
+</tr>
+</tbody>
+</table>
+<p>**Difference between element-wise and short-circuit operators</p>
+</section>
+<section id="differences-between-element-wise-and-short-circuit-operators" class="level2" data-number="8.10">
+<h2 data-number="8.10" class="anchored" data-anchor-id="differences-between-element-wise-and-short-circuit-operators"><span class="header-section-number">8.10</span> 2. Differences Between Element-wise and Short-circuit Operators</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 10%">
+<col style="width: 25%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Operator Type</th>
+<th>Symbol</th>
+<th>Works on Vectors?</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Element-wise AND</strong></td>
+<td><code>&amp;</code></td>
+<td>✅ Yes</td>
+<td>Use with vectors or data frames</td>
+</tr>
+<tr class="even">
+<td><strong>Element-wise OR</strong></td>
+<td><code>|</code></td>
+<td>✅ Yes</td>
+<td>Use with vectors or data frames</td>
+</tr>
+<tr class="odd">
+<td><strong>Short-circuit AND</strong></td>
+<td><code>&amp;&amp;</code></td>
+<td>❌ No (only first element)</td>
+<td>Use in <code>if</code> statements</td>
+</tr>
+<tr class="even">
+<td><strong>Short-circuit OR</strong></td>
+<td><code>||</code></td>
+<td>❌ No (only first element)</td>
+<td>Use in <code>if</code> statements</td>
 </tr>
 </tbody>
 </table>
 <blockquote class="blockquote">
-<p>💡 <strong>Notes:</strong><br>
-- <code>&amp;</code> (AND) returns <code>TRUE</code> only if <strong>both</strong> conditions are <code>TRUE</code>.<br>
-- <code>|</code> (OR) returns <code>TRUE</code> if <strong>at least one</strong> condition is <code>TRUE</code>.<br>
-- <code>!</code> (NOT) negates a logical value.</p>
+<p>💡 <strong>Key Takeaways:</strong><br>
+- Use <code>&amp;</code> and <code>|</code> for <strong>vector operations</strong> (e.g., filtering in data frames).<br>
+- Use <code>&amp;&amp;</code> and <code>||</code> in <code>if</code> statements for <strong>better efficiency</strong>. - The <code>!</code> operator <strong>negates logical values</strong> (useful for filtering and reversing conditions).</p>
 </blockquote>
+<p>Examples:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>)</span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Element-wise AND</span></span>
+<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a>x <span class="sc">&amp;</span> y  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE FALSE  TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Element-wise OR</span></span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>x <span class="sc">|</span> y </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE TRUE TRUE</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-4"><a href="#cb77-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (a <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;&amp;</span> b <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb77-5"><a href="#cb77-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Both are positive"</span>)</span>
+<span id="cb77-6"><a href="#cb77-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Both are positive"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (a <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">||</span> b <span class="sc">&lt;</span> <span class="dv">0</span>) {</span>
+<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"At least one condition is met"</span>)</span>
+<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "At least one condition is met"</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>x  <span class="co"># [FALSE TRUE FALSE]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE  TRUE FALSE</code></pre>
+</div>
+</div>
 
 
 </section>
