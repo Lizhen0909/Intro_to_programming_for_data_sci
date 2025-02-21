@@ -484,6 +484,8 @@ print(words[[1]])
 | **Splitting** | `s.split(" ")` (default: whitespace)      | `strsplit(s, " ")`(default: whitespace)   |
 
 
+## Practice exercises
+
 ### Practice exercise 1
 
 Try converting the following Python string operations into equivalent R code:
