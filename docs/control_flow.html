@@ -5863,8 +5863,23 @@ print(s.replace("Data", "AI"))</code></pre>
 <section id="practice-exercise-5" class="level3" data-number="9.8.5">
 <h3 data-number="9.8.5" class="anchored" data-anchor-id="practice-exercise-5"><span class="header-section-number">9.8.5</span> Practice exercise 5</h3>
 <p>Create an interactive R code block that asks the user to enter their age and ensures the input is a <strong>valid integer</strong>. The code should handle incorrect inputs and guide the user until they provide a valid response.</p>
-<p><strong>Requirements</strong> - The script should <strong>continuously prompt the user</strong> until they enter a valid integer. - If the input is <strong>not an integer</strong>, the script should display an error message and ask again. - Once a valid integer is entered: - If the age is <strong>18 or older</strong>, display: <code>"You are an adult."</code> - If the age is <strong>less than 18</strong>, display: <code>"You are a minor."</code></p>
-<p><strong>Guidelines &amp; Hints</strong> - Use <strong><code>readline()</code></strong> to collect user input. - Convert the input using <strong><code>as.integer()</code></strong> and check if it returns <strong><code>NA</code></strong> for invalid inputs. - Utilize <strong>a loop</strong> to ensure the user is repeatedly prompted until they enter a valid integer. - Provide <strong>clear error messages</strong> to guide the user. - Consider handling <strong>unexpected errors</strong> using <strong>error-catching techniques</strong> such as <strong><code>tryCatch()</code></strong>.</p>
+<p><strong>Requirements</strong></p>
+<ul>
+<li>The script should <strong>continuously prompt the user</strong> until they enter a valid integer.</li>
+<li>If the input is <strong>not an integer</strong>, the script should display an error message and ask again.</li>
+<li>Once a valid integer is entered:
+<ul>
+<li>If the age is <strong>18 or older</strong>, display: <code>"You are an adult."</code></li>
+<li>If the age is <strong>less than 18</strong>, display: <code>"You are a minor."</code></li>
+</ul></li>
+</ul>
+<p><strong>Guidelines &amp; Hints</strong></p>
+<ul>
+<li>Use <strong><code>readline()</code></strong> to collect user input.</li>
+<li>Convert the input using <strong><code>as.integer()</code></strong> and check if it returns <strong><code>NA</code></strong> for invalid inputs.</li>
+<li>Utilize <strong>a loop</strong> to ensure the user is repeatedly prompted until they enter a valid integer.</li>
+<li>Provide <strong>clear error messages</strong> to guide the user.</li>
+</ul>
 <p><strong>Example User Interaction</strong></p>
 <table class="caption-top table">
 <thead>

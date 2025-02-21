@@ -571,6 +571,7 @@ Using `my_num` above:
 Create an interactive R code block that asks the user to enter their age and ensures the input is a **valid integer**. The code should handle incorrect inputs and guide the user until they provide a valid response.
 
 **Requirements**
+
 - The script should **continuously prompt the user** until they enter a valid integer.
 - If the input is **not an integer**, the script should display an error message and ask again.
 - Once a valid integer is entered:
@@ -578,11 +579,13 @@ Create an interactive R code block that asks the user to enter their age and ens
   - If the age is **less than 18**, display: `"You are a minor."`
 
 **Guidelines & Hints**
+
 - Use **`readline()`** to collect user input.
 - Convert the input using **`as.integer()`** and check if it returns **`NA`** for invalid inputs.
 - Utilize **a loop** to ensure the user is repeatedly prompted until they enter a valid integer.
 - Provide **clear error messages** to guide the user.
-- Consider handling **unexpected errors** using **error-catching techniques** such as **`tryCatch()`**.
+
+
 
 **Example User Interaction**
 
