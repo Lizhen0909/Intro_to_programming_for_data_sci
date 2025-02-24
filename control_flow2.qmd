@@ -10,15 +10,35 @@ editor_options:
 
 ## Functions in R
 
-Functions in R are used to **encapsulate reusable code**. R provides a wide range of **built-in functions**, and users can also define their own functions.
+
+
+Functions in R are used to **encapsulate reusable code**. R provides a wide range of **built-in functions** for mathematical operations, statistics, and data manipulation, and users can also define their own functions.
 
 ---
 
 ### Built-in Functions in R
 
-R has many **predefined functions** for mathematical operations, statistics, and data manipulation.
+R is a language specifically designed for statistical computing, with many of its core libraries developed by leading statisticians. 
+It excels in statistical analysis and is widely used in academic research and applied statistics. 
+While Python is more versatile for general-purpose programming and machine learning, R remains a strong choice for pure statistical work.
 
-#### 🔹 Common Built-in Functions
+R has many **predefined functions** for mathematical operations, statistics, and data manipulation. 
+These functions are part of R's base and default packages, allowing users to perform various tasks without additional libraries.
+
+#### mathematical Functions
+
+| Function       | Description                             |
+|---------------|-----------------------------------------|
+| `abs(x)`      | Absolute value of `x`                  |
+| `sqrt(x)`     | Square root of `x`                     |
+| `exp(x)`      | Exponential function \( e^x \)         |
+| `log(x, base=n)` | Logarithm (default natural log)    |
+| `log10(x)`    | Base-10 logarithm                      |
+| `log2(x)`     | Base-2 logarithm                       |
+| `round(x, n)` | Rounds `x` to `n` decimal places      |
+| `floor(x)`    | Rounds `x` down                        |
+| `ceiling(x)`  | Rounds `x` up                          |
+| `trunc(x)`    | Truncates `x` (removes decimal part)   |
 
 ```{r}
 sqrt(25)
@@ -27,20 +47,71 @@ round(3.14159, 2)
 ```
 
 
-```{r}
-# Character functions
-toupper("hello")  # Convert to uppercase → "HELLO"
-tolower("WORLD")  # Convert to lowercase → "world"
-nchar("Hello")    # Count characters → 5
-```
+#### Statistical Functions
+
+| Function         | Description                              |
+|-----------------|------------------------------------------|
+| `mean(x)`       | Mean of `x`                              |
+| `median(x)`     | Median of `x`                            |
+| `var(x)`        | Variance of `x`                          |
+| `sd(x)`         | Standard deviation of `x`               |
+| `sum(x)`        | Sum of all elements in `x`              |
+| `prod(x)`       | Product of all elements in `x`          |
+| `min(x)`        | Minimum value in `x`                    |
+| `max(x)`        | Maximum value in `x`                    |
+| `range(x)`      | Minimum and maximum of `x`              |
+| `quantile(x, p)` | p-th quantile of `x`                   |
+| `cor(x, y)`     | Correlation between `x` and `y`        |
+| `cov(x, y)`     | Covariance between `x` and `y`         |
 
 ```{r}
-# Logical functions
-any(c(TRUE, FALSE, FALSE))   # TRUE if at least one TRUE
-all(c(TRUE, TRUE, FALSE))    # FALSE if any FALSE
+# Create a sample numeric vector
+x <- c(10, 20, 30, 40, 50, 60, 70, 80, 90, 100)
+y <- c(15, 25, 35, 45, 55, 65, 75, 85, 95, 105)
+
+# 1. Basic statistical functions
+mean_x <- mean(x)       # Mean of x
+median_x <- median(x)   # Median of x
+var_x <- var(x)         # Variance of x
+sd_x <- sd(x)           # Standard deviation of x
+
+# 2. Summation and product
+sum_x <- sum(x)         # Sum of elements in x
+prod_x <- prod(x[1:5])  # Product of first five elements of x
+
+# 3. Minimum, Maximum, and Range
+min_x <- min(x)         # Minimum value
+max_x <- max(x)         # Maximum value
+range_x <- range(x)     # Range (min and max)
+
+# 4. Quantiles
+quantiles_x <- quantile(x, probs = c(0.25, 0.5, 0.75))  # 25th, 50th, 75th percentile
+
+# 5. Correlation and Covariance
+cor_xy <- cor(x, y)  # Correlation between x and y
+cov_xy <- cov(x, y)  # Covariance between x and y
+
+# Print results
+cat("Mean of x:", mean_x, "\n")
+cat("Median of x:", median_x, "\n")
+cat("Variance of x:", var_x, "\n")
+cat("Standard deviation of x:", sd_x, "\n\n")
+
+cat("Sum of x:", sum_x, "\n")
+cat("Product of first five elements in x:", prod_x, "\n\n")
+
+cat("Min of x:", min_x, "\n")
+cat("Max of x:", max_x, "\n")
+cat("Range of x:", range_x, "\n\n")
+
+cat("Quantiles of x:\n")
+print(quantiles_x)
+
+cat("\nCorrelation between x and y:", cor_xy, "\n")
+cat("Covariance between x and y:", cov_xy, "\n")
 ```
 
-### Random number generation
+#### Random number generation
 
 R provides various functions to generate random numbers from different distributions. These functions are essential for **simulation, statistical modeling, and machine learning**.
 
@@ -52,7 +123,7 @@ R provides various functions to generate random numbers from different distribut
 | `rpois(n, lambda)` | Poisson distribution | `rpois(5, lambda=3)` |
 | `sample(x, size, replace)` | Random sampling | `sample(1:10, 5, replace=TRUE)` |
 
-#### Setting a seed for reproducibility
+##### Setting a seed for reproducibility
 
 Setting a seed ensures that random number generation produces the same results every time.
 
@@ -61,7 +132,7 @@ set.seed(42)
 runif(3)
 ```
 
-#### Generating uniform random numbers (`runif()`)
+##### Generating uniform random numbers (`runif()`)
 
 The **`runif()`** function generates random numbers from a **uniform distribution** between a given `min` and `max`.
 
@@ -70,7 +141,7 @@ set.seed(42)  # Set seed for reproducibility
 runif(5, min=0, max=10)
 ```
 
-#### Generating Normally Distributed Numbers (`rnorm()`)
+##### Generating Normally Distributed Numbers (`rnorm()`)
 
 The `rnorm()` function generates random numbers from a normal (Gaussian) distribution.
 
@@ -81,7 +152,7 @@ set.seed(42)
 rnorm(5, mean=0, sd=1)
 ```
 
-#### Random Sampling (`sample()`)
+##### Random Sampling (`sample()`)
 
 The `sample()` function randomly selects elements from a given vector.
 
@@ -90,10 +161,63 @@ set.seed(42)
 sample(1:10, 5, replace=TRUE)
 ```
 
-## Defining a function
+## User-defined Functions
 
-Functions in R are defined using the keyword `function()`. All the statements within a function are enclosed with `{}` braces. Look at the function defined below. It takes an integer as an argument, and prints whether the integer is odd or even.
+### Defining a function
 
+Functions in R are defined using the keyword `function()`. 
+All the statements within a function are enclosed with `{}` braces. 
+
+
+```{r}
+my_function <- function() { # create a function with the name my_function
+  print("Hello R!")
+}
+```
+
+### Calling a function
+
+After creating a Function, you have to call the function to use it.
+
+```{r}
+my_function() # call the function named my_function
+```
+
+### Arguments
+
+Information can be passed into functions as arguments.
+
+Arguments are specified after the function name, inside the parentheses. You can add as many arguments as you want, just separate them with a comma.
+
+The following example has a function with one argument (fname). When the function is called, we pass along a first name, which is used inside the function to print the full name:
+
+```{r}
+my_function <- function(fname) {
+  paste("Hello", fname)
+}
+
+my_function("Lizhen")
+my_function("Sarah")
+my_function("Jack")
+```
+
+### Return values
+
+To let a function return a result, use the `return()` function:
+
+```{r}
+# Function to return the largest of three numbers
+largest_value <- function(a, b, c) {
+  return(max(a, b, c))
+}
+
+# Example usage
+result <- largest_value(10, 25, 15)
+print(result) 
+```
+
+A function in R does not necessarily need to return a value explicitly; it can simply print output to the console.
+Look at the function defined below. It takes an integer as an argument, and prints whether the integer is odd or even.
 
 ```{r}
 odd_even <- function(intgr) {
@@ -107,16 +231,15 @@ odd_even <- function(intgr) {
 odd_even(3)
 ```
 
-### Function arguments
+## Function arguments
 
-In both R and Python, functions 
+Like Python, functions in R
 support multiple types of arguments, including **positional arguments**, **default arguments**, **variable-length arguments**, and **keyword arguments**. The behavior of function arguments in R is nearly identical to Python.
 
 
-### Practice exercise
+### Positional arguments:
 
 Write a function that returns all prime numbers between $a$ and $b$, where $a$ and $b$ are parameters of the function.
-
 
 ```{r}
 prime <- function(a, b) {
@@ -136,3 +259,86 @@ prime <- function(a, b) {
 }
 prime(40, 60)
 ```
+
+### default arguments
+
+```{r}
+greet <- function(name = "Guest", age = 25, country = "USA") {
+  cat("Hello,", name, "!\n")
+  cat("You are", age, "years old and from", country, ".\n")
+}
+
+# Calling the function with default values
+greet()
+```
+
+### keyword arguments
+
+```{r}
+greet <- function(name = "Guest", age = 25, country = "USA") {
+  cat("Hello,", name, "!\n")
+  cat("You are", age, "years old and from", country, ".\n")
+}
+
+# Calling the function with default values
+greet()
+
+# Calling the function with keyword arguments
+greet(name = "Alice", age = 30, country = "Canada")
+
+# Calling with positional arguments (order matters)
+greet("Bob", 40, "UK")
+
+# Mixing positional and named arguments
+greet("Charlie", country = "Australia")  
+```
+
+### Variable-number arguments
+
+```{r}
+# Function that accepts variable-length arguments and computes their sum
+sum_values <- function(...) {
+  values <- c(...)  # Collect arguments into a vector
+  sum(values, na.rm = TRUE)  # Sum with NA removal support
+}
+
+# Example usage
+result <- sum_values(10, 20, 30, 40, 50)
+print(result)  
+```
+
+
+```{r}
+# Function that accepts extra named arguments
+display_info <- function(name, ...) {
+  cat("Name:", name, "\n")
+  
+  # Capture extra arguments as a list
+  extras <- list(...)
+  for (key in names(extras)) {
+    cat(key, ":", extras[[key]], "\n")
+  }
+}
+
+# Example usage with additional named arguments
+display_info("David", age = 28, country = "Germany", occupation = "Engineer")
+
+```
+
+## Practice exercises
+
+### Problem 1
+
+Write a function where the input is any word and the output is the number of letters in it. Store the output of the function, then print the sentence: "{} has {} letters."
+
+
+### Problem 2
+
+Write a function that has no input values and simulates rolling a die. In other words, it should generate a random integer between 1 and 6, inclusive. The function should return the integer. Then use a loop to "roll the die" 5 times.
+
+
+### Problem 3
+
+Write a function that simulates rolling a die. The function should have an input for the number of sides of the die and the number of times the die is rolled. Have the default number of sides be 6. Within the function calculate the mean(), sum(), min(), max() of all the dice rolled.
+
+The function should return the dice rolled and the 4 calculations. Run your function with any sided dice and any number of times.
