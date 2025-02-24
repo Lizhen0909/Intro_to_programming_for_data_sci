@@ -237,7 +237,7 @@ Like Python, functions in R
 support multiple types of arguments, including **positional arguments**, **default arguments**, **variable-length arguments**, and **keyword arguments**. The behavior of function arguments in R is nearly identical to Python.
 
 
-### Positional arguments:
+### Positional arguments
 
 Write a function that returns all prime numbers between $a$ and $b$, where $a$ and $b$ are parameters of the function.
 
@@ -325,7 +325,7 @@ display_info("David", age = 28, country = "Germany", occupation = "Engineer")
 
 ```
 
-## Variable scope:
+## Variable scope
 
 R has global and local variables, similar to Python, but there are some  differences in how they are managed.
 
@@ -382,7 +382,7 @@ print(counter)
 
 ### Problem 1
 
-Write a function where the input is any word and the output is the number of letters in it. Store the output of the function, then print the sentence: "{} has {} letters.
+Write a function where the input is any word and the output is the number of letters in it. Store the output of the function, then print the sentence: "{} has {} letters".
 
 
 ### Problem 2
