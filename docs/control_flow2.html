@@ -5710,7 +5710,7 @@ occupation : Engineer </code></pre>
 <h2 data-number="10.5" class="anchored" data-anchor-id="practice-exercises"><span class="header-section-number">10.5</span> Practice exercises</h2>
 <section id="problem-1" class="level3" data-number="10.5.1">
 <h3 data-number="10.5.1" class="anchored" data-anchor-id="problem-1"><span class="header-section-number">10.5.1</span> Problem 1</h3>
-<p>Write a function where the input is any word and the output is the number of letters in it. Store the output of the function, then print the sentence: “{} has {} letters.”</p>
+<p>Write a function where the input is any word and the output is the number of letters in it. Store the output of the function, then print the sentence: “{} has {} letters.</p>
 </section>
 <section id="problem-2" class="level3" data-number="10.5.2">
 <h3 data-number="10.5.2" class="anchored" data-anchor-id="problem-2"><span class="header-section-number">10.5.2</span> Problem 2</h3>
@@ -5720,6 +5720,14 @@ occupation : Engineer </code></pre>
 <h3 data-number="10.5.3" class="anchored" data-anchor-id="problem-3"><span class="header-section-number">10.5.3</span> Problem 3</h3>
 <p>Write a function that simulates rolling a die. The function should have an input for the number of sides of the die and the number of times the die is rolled. Have the default number of sides be 6. Within the function calculate the mean(), sum(), min(), max() of all the dice rolled.</p>
 <p>The function should return the dice rolled and the 4 calculations. Run your function with any sided dice and any number of times.</p>
+<p>Below is my function and make it work</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>roll_die <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">size=</span><span class="dv">6</span>, <span class="at">roll_times=</span><span class="dv">1</span>){</span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span> (<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>size, roll_times, <span class="at">replace=</span><span class="cn">TRUE</span>))</span>
+<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb77-4"><a href="#cb77-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-5"><a href="#cb77-5" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">"The average of"</span>, roll_times, <span class="st">"rolling a die with"</span>, size, <span class="st">"is"</span>, <span class="fu">mean</span>(<span class="fu">roll_die</span>(<span class="at">roll_times=</span><span class="dv">5</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 </section>

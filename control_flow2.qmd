@@ -382,7 +382,7 @@ print(counter)
 
 ### Problem 1
 
-Write a function where the input is any word and the output is the number of letters in it. Store the output of the function, then print the sentence: "{} has {} letters."
+Write a function where the input is any word and the output is the number of letters in it. Store the output of the function, then print the sentence: "{} has {} letters.
 
 
 ### Problem 2
@@ -395,3 +395,15 @@ Write a function that has no input values and simulates rolling a die. In other 
 Write a function that simulates rolling a die. The function should have an input for the number of sides of the die and the number of times the die is rolled. Have the default number of sides be 6. Within the function calculate the mean(), sum(), min(), max() of all the dice rolled.
 
 The function should return the dice rolled and the 4 calculations. Run your function with any sided dice and any number of times.
+
+Below is my function and make it work
+
+```{r}
+#| eval: false
+
+roll_die <- function(size=6, roll_times=1){
+  return (sample(1:size, roll_times, replace=TRUE))
+}
+
+paste("The average of", roll_times, "rolling a die with", size, "is", mean(roll_die(roll_times=5)))
+```
