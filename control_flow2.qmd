@@ -325,6 +325,59 @@ display_info("David", age = 28, country = "Germany", occupation = "Engineer")
 
 ```
 
+## Variable scope:
+
+R has global and local variables, similar to Python, but there are some  differences in how they are managed.
+
+### Local variables
+
+* Variables declared inside a function are local to that function.
+* They are not accessible outside the function.
+
+```{r}
+#| eval: false
+
+my_function <- function() {
+  x <- 10  # Local variable
+  cat("Inside function: x =", x, "\n")
+}
+
+my_function()
+print(x)  # Error: object 'x' not found
+```
+
+### Global variables
+
+* Variables declared outside any function are global.
+* They can be accessed from anywhere unless shadowed by a local variable of the same name.
+
+```{r}
+y <- 100  # Global variable
+
+my_function <- function() {
+  cat("Inside function: y =", y, "\n")  # Can access global variable
+}
+
+my_function()
+print(y)  # Still accessible
+```
+
+### Modifying Global variables inside a function
+
+Unlike Python (`global` keyword), R requires the special assignment operator `<<-` to modify a global variable inside a function.
+
+```{r}
+counter <- 0  # Global variable
+
+increase_counter <- function() {
+  counter <<- counter + 1  # Modifies global variable
+}
+
+increase_counter()
+increase_counter()
+print(counter)  
+```
+
 ## Practice exercises
 
 ### Problem 1

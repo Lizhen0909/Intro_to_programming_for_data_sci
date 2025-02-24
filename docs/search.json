@@ -1322,8 +1322,19 @@
     "objectID": "control_flow2.html#practice-exercises",
     "href": "control_flow2.html#practice-exercises",
     "title": "10  R: Functions",
-    "section": "10.4 Practice exercises",
-    "text": "10.4 Practice exercises\n\n10.4.1 Problem 1\nWrite a function where the input is any word and the output is the number of letters in it. Store the output of the function, then print the sentence: “{} has {} letters.”\n\n\n10.4.2 Problem 2\nWrite a function that has no input values and simulates rolling a die. In other words, it should generate a random integer between 1 and 6, inclusive. The function should return the integer. Then use a loop to “roll the die” 5 times.\n\n\n10.4.3 Problem 3\nWrite a function that simulates rolling a die. The function should have an input for the number of sides of the die and the number of times the die is rolled. Have the default number of sides be 6. Within the function calculate the mean(), sum(), min(), max() of all the dice rolled.\nThe function should return the dice rolled and the 4 calculations. Run your function with any sided dice and any number of times.",
+    "section": "10.5 Practice exercises",
+    "text": "10.5 Practice exercises\n\n10.5.1 Problem 1\nWrite a function where the input is any word and the output is the number of letters in it. Store the output of the function, then print the sentence: “{} has {} letters.”\n\n\n10.5.2 Problem 2\nWrite a function that has no input values and simulates rolling a die. In other words, it should generate a random integer between 1 and 6, inclusive. The function should return the integer. Then use a loop to “roll the die” 5 times.\n\n\n10.5.3 Problem 3\nWrite a function that simulates rolling a die. The function should have an input for the number of sides of the die and the number of times the die is rolled. Have the default number of sides be 6. Within the function calculate the mean(), sum(), min(), max() of all the dice rolled.\nThe function should return the dice rolled and the 4 calculations. Run your function with any sided dice and any number of times.",
+    "crumbs": [
+      "R",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>R: Functions</span>"
+    ]
+  },
+  {
+    "objectID": "control_flow2.html#variable-scope",
+    "href": "control_flow2.html#variable-scope",
+    "title": "10  R: Functions",
+    "section": "10.4 Variable scope:",
+    "text": "10.4 Variable scope:\nR has global and local variables, similar to Python, but there are some differences in how they are managed.\n\n10.4.1 Local variables\n\nVariables declared inside a function are local to that function.\nThey are not accessible outside the function.\n\n\nmy_function &lt;- function() {\n  x &lt;- 10  # Local variable\n  cat(\"Inside function: x =\", x, \"\\n\")\n}\n\nmy_function()\nprint(x)  # Error: object 'x' not found\n\n\n\n10.4.2 Global variables\n\nVariables declared outside any function are global.\nThey can be accessed from anywhere unless shadowed by a local variable of the same name.\n\n\ny &lt;- 100  # Global variable\n\nmy_function &lt;- function() {\n  cat(\"Inside function: y =\", y, \"\\n\")  # Can access global variable\n}\n\nmy_function()\n\nInside function: y = 100 \n\nprint(y)  # Still accessible\n\n[1] 100\n\n\n\n\n10.4.3 Modifying Global variables inside a function\nUnlike Python (global keyword), R requires the special assignment operator &lt;&lt;- to modify a global variable inside a function.\n\ncounter &lt;- 0  # Global variable\n\nincrease_counter &lt;- function() {\n  counter &lt;&lt;- counter + 1  # Modifies global variable\n}\n\nincrease_counter()\nincrease_counter()\nprint(counter)  \n\n[1] 2",
     "crumbs": [
       "R",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>R: Functions</span>"

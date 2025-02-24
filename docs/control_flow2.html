@@ -5103,11 +5103,17 @@ window.Quarto = {
   <li><a href="#keyword-arguments" id="toc-keyword-arguments" class="nav-link" data-scroll-target="#keyword-arguments"><span class="header-section-number">10.3.3</span> keyword arguments</a></li>
   <li><a href="#variable-number-arguments" id="toc-variable-number-arguments" class="nav-link" data-scroll-target="#variable-number-arguments"><span class="header-section-number">10.3.4</span> Variable-number arguments</a></li>
   </ul></li>
-  <li><a href="#practice-exercises" id="toc-practice-exercises" class="nav-link" data-scroll-target="#practice-exercises"><span class="header-section-number">10.4</span> Practice exercises</a>
+  <li><a href="#variable-scope" id="toc-variable-scope" class="nav-link" data-scroll-target="#variable-scope"><span class="header-section-number">10.4</span> Variable scope:</a>
   <ul class="collapse">
-  <li><a href="#problem-1" id="toc-problem-1" class="nav-link" data-scroll-target="#problem-1"><span class="header-section-number">10.4.1</span> Problem 1</a></li>
-  <li><a href="#problem-2" id="toc-problem-2" class="nav-link" data-scroll-target="#problem-2"><span class="header-section-number">10.4.2</span> Problem 2</a></li>
-  <li><a href="#problem-3" id="toc-problem-3" class="nav-link" data-scroll-target="#problem-3"><span class="header-section-number">10.4.3</span> Problem 3</a></li>
+  <li><a href="#local-variables" id="toc-local-variables" class="nav-link" data-scroll-target="#local-variables"><span class="header-section-number">10.4.1</span> Local variables</a></li>
+  <li><a href="#global-variables" id="toc-global-variables" class="nav-link" data-scroll-target="#global-variables"><span class="header-section-number">10.4.2</span> Global variables</a></li>
+  <li><a href="#modifying-global-variables-inside-a-function" id="toc-modifying-global-variables-inside-a-function" class="nav-link" data-scroll-target="#modifying-global-variables-inside-a-function"><span class="header-section-number">10.4.3</span> Modifying Global variables inside a function</a></li>
+  </ul></li>
+  <li><a href="#practice-exercises" id="toc-practice-exercises" class="nav-link" data-scroll-target="#practice-exercises"><span class="header-section-number">10.5</span> Practice exercises</a>
+  <ul class="collapse">
+  <li><a href="#problem-1" id="toc-problem-1" class="nav-link" data-scroll-target="#problem-1"><span class="header-section-number">10.5.1</span> Problem 1</a></li>
+  <li><a href="#problem-2" id="toc-problem-2" class="nav-link" data-scroll-target="#problem-2"><span class="header-section-number">10.5.2</span> Problem 2</a></li>
+  <li><a href="#problem-3" id="toc-problem-3" class="nav-link" data-scroll-target="#problem-3"><span class="header-section-number">10.5.3</span> Problem 3</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -5639,18 +5645,79 @@ occupation : Engineer </code></pre>
 </div>
 </section>
 </section>
-<section id="practice-exercises" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="practice-exercises"><span class="header-section-number">10.4</span> Practice exercises</h2>
-<section id="problem-1" class="level3" data-number="10.4.1">
-<h3 data-number="10.4.1" class="anchored" data-anchor-id="problem-1"><span class="header-section-number">10.4.1</span> Problem 1</h3>
+<section id="variable-scope" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="variable-scope"><span class="header-section-number">10.4</span> Variable scope:</h2>
+<p>R has global and local variables, similar to Python, but there are some differences in how they are managed.</p>
+<section id="local-variables" class="level3" data-number="10.4.1">
+<h3 data-number="10.4.1" class="anchored" data-anchor-id="local-variables"><span class="header-section-number">10.4.1</span> Local variables</h3>
+<ul>
+<li>Variables declared inside a function are local to that function.</li>
+<li>They are not accessible outside the function.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>my_function <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="dv">10</span>  <span class="co"># Local variable</span></span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"Inside function: x ="</span>, x, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a><span class="fu">my_function</span>()</span>
+<span id="cb70-7"><a href="#cb70-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)  <span class="co"># Error: object 'x' not found</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="global-variables" class="level3" data-number="10.4.2">
+<h3 data-number="10.4.2" class="anchored" data-anchor-id="global-variables"><span class="header-section-number">10.4.2</span> Global variables</h3>
+<ul>
+<li>Variables declared outside any function are global.</li>
+<li>They can be accessed from anywhere unless shadowed by a local variable of the same name.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">100</span>  <span class="co"># Global variable</span></span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>my_function <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"Inside function: y ="</span>, y, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)  <span class="co"># Can access global variable</span></span>
+<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-7"><a href="#cb71-7" aria-hidden="true" tabindex="-1"></a><span class="fu">my_function</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Inside function: y = 100 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(y)  <span class="co"># Still accessible</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 100</code></pre>
+</div>
+</div>
+</section>
+<section id="modifying-global-variables-inside-a-function" class="level3" data-number="10.4.3">
+<h3 data-number="10.4.3" class="anchored" data-anchor-id="modifying-global-variables-inside-a-function"><span class="header-section-number">10.4.3</span> Modifying Global variables inside a function</h3>
+<p>Unlike Python (<code>global</code> keyword), R requires the special assignment operator <code>&lt;&lt;-</code> to modify a global variable inside a function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>counter <span class="ot">&lt;-</span> <span class="dv">0</span>  <span class="co"># Global variable</span></span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>increase_counter <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a>  counter <span class="ot">&lt;&lt;-</span> counter <span class="sc">+</span> <span class="dv">1</span>  <span class="co"># Modifies global variable</span></span>
+<span id="cb75-5"><a href="#cb75-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb75-6"><a href="#cb75-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb75-7"><a href="#cb75-7" aria-hidden="true" tabindex="-1"></a><span class="fu">increase_counter</span>()</span>
+<span id="cb75-8"><a href="#cb75-8" aria-hidden="true" tabindex="-1"></a><span class="fu">increase_counter</span>()</span>
+<span id="cb75-9"><a href="#cb75-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(counter)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="practice-exercises" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="practice-exercises"><span class="header-section-number">10.5</span> Practice exercises</h2>
+<section id="problem-1" class="level3" data-number="10.5.1">
+<h3 data-number="10.5.1" class="anchored" data-anchor-id="problem-1"><span class="header-section-number">10.5.1</span> Problem 1</h3>
 <p>Write a function where the input is any word and the output is the number of letters in it. Store the output of the function, then print the sentence: “{} has {} letters.”</p>
 </section>
-<section id="problem-2" class="level3" data-number="10.4.2">
-<h3 data-number="10.4.2" class="anchored" data-anchor-id="problem-2"><span class="header-section-number">10.4.2</span> Problem 2</h3>
+<section id="problem-2" class="level3" data-number="10.5.2">
+<h3 data-number="10.5.2" class="anchored" data-anchor-id="problem-2"><span class="header-section-number">10.5.2</span> Problem 2</h3>
 <p>Write a function that has no input values and simulates rolling a die. In other words, it should generate a random integer between 1 and 6, inclusive. The function should return the integer. Then use a loop to “roll the die” 5 times.</p>
 </section>
-<section id="problem-3" class="level3" data-number="10.4.3">
-<h3 data-number="10.4.3" class="anchored" data-anchor-id="problem-3"><span class="header-section-number">10.4.3</span> Problem 3</h3>
+<section id="problem-3" class="level3" data-number="10.5.3">
+<h3 data-number="10.5.3" class="anchored" data-anchor-id="problem-3"><span class="header-section-number">10.5.3</span> Problem 3</h3>
 <p>Write a function that simulates rolling a die. The function should have an input for the number of sides of the die and the number of times the die is rolled. Have the default number of sides be 6. Within the function calculate the mean(), sum(), min(), max() of all the dice rolled.</p>
 <p>The function should return the dice rolled and the 4 calculations. Run your function with any sided dice and any number of times.</p>
 
