@@ -34,6 +34,7 @@ book:
         - control_flow.qmd
         - control_flow2.qmd 
         - robjects.qmd
+        - data_structures_r.qmd
         #- recursion.qmd
   appendices: 
     - template_A01_WI25.ipynb
