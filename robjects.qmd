@@ -1,5 +1,5 @@
 ---
-title: "Atomic Vectors"
+title: "R: Atomic vectors"
 format:
     html:
       toc: true
@@ -29,6 +29,52 @@ char_vec <- c("apple", "banana", "cherry")
 print(char_vec)
 ```
 
+#### Type Coercion
+
+- When you assign elements of different types to an atomic vector, R does **not** raise an error.  
+- Instead, it **automatically performs type coercion** to ensure all elements in the vector share the same type.
+
+- Coercion follows a hierarchy: **Logical → Integer → Double → Character**.
+
+```{r}
+vec <- c(1, "apple", TRUE)  # Mixed types
+typeof(vec)
+```
+
+### Atomic vector types
+
+- R has **six** atomic vector types:
+
+  1. **Logical** (`TRUE`, `FALSE`)
+  2. **Integer** (Whole numbers: `1L`, `2L`, `-5L`)
+  3. **Double (Numeric)** (Decimal numbers: `1.5`, `3.14`, `-2.8`)
+  4. **Character** (Text strings: `"hello"`, `"R programming"`)
+  5. **Complex** (Complex numbers: `1 + 2i`)
+  6. **Raw** (Stores raw bytes)
+
+- In this course, we normally use the first four types: **Logical, Integer, Double, and Character**.
+
+#### Checking Whether a Variable is an Atomic Vector  
+
+There are two common functions to check if a variable is an atomic vector:  
+- `is.atomic(x)`: Returns `TRUE` if `x` is an atomic object.  
+- `is.vector(x)`: Returns `TRUE` if `x` is a vector (with no attributes other than names).  
+
+```{r}
+is.atomic(numeric_vec)
+is.vector(char_vec)
+```
+
+#### Checking the Data Type of an Atomic Vector  
+
+To determine the specific type of an atomic vector, use:  
+- `typeof(x)`: Returns the underlying storage type of `x`.  
+- `class(x)`: Returns the class of `x`.  
+
+```{r}
+typeof(numeric_vec)
+class(char_vec)
+```
 
 ### Slicing a vector
 

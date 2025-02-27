@@ -42,6 +42,7 @@ book:
     - template_A03_WI25.ipynb
     - template_A04_WI25.ipynb
     - template_A05_WI25.qmd
+    - template_A06_WI25.qmd
     - Datasets.ipynb
 
 bibliography: references.bib
