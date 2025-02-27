@@ -1343,100 +1343,100 @@
   {
     "objectID": "template_A06_WI25.html",
     "href": "template_A06_WI25.html",
-    "title": "Appendix F — Assignment 5",
+    "title": "Appendix F — Assignment 6",
     "section": "",
     "text": "Instructions\nThe grader cannot grade what they cannot see! Failure to render your document after completing all questions will lead to deductions.",
     "crumbs": [
       "Appendices",
-      "<span class='chapter-number'>F</span>  <span class='chapter-title'>Assignment 5</span>"
+      "<span class='chapter-number'>F</span>  <span class='chapter-title'>Assignment 6</span>"
     ]
   },
   {
     "objectID": "template_A06_WI25.html#instructions",
     "href": "template_A06_WI25.html#instructions",
-    "title": "Appendix F — Assignment 5",
+    "title": "Appendix F — Assignment 6",
     "section": "",
     "text": "Write your name on the assignment\nWrite your code in the Code cells of the template provided to write solutions for the assignment. Do not open a new qmd, and work from scratch. Ensure that the solution is written neatly enough to understand and grade.\nYou may talk to a friend, discuss the questions and potential directions for solving them. However, you need to write your own solutions and code separately, and not as a group activity. Do not use AI to solve the problems.\nThere are point deductions if your code is not clean and organized.\nOnly print what is asked for. Highly inefficient code will be deducted for because it demonstrates lack of understanding.\nRender as an HTML and submit BOTH the .qmd and HTML file.",
     "crumbs": [
       "Appendices",
-      "<span class='chapter-number'>F</span>  <span class='chapter-title'>Assignment 5</span>"
+      "<span class='chapter-number'>F</span>  <span class='chapter-title'>Assignment 6</span>"
     ]
   },
   {
     "objectID": "template_A06_WI25.html#question-1-3-points",
     "href": "template_A06_WI25.html#question-1-3-points",
-    "title": "Appendix F — Assignment 5",
+    "title": "Appendix F — Assignment 6",
     "section": "F.1 Question 1 (3 points)",
     "text": "F.1 Question 1 (3 points)\n\nF.1.1 Part a\nCreate a vector called bears which contains the values 20, 17, 10, 28, 13, 30, 13, 17, 16, 26, 12, 28, 17, 27.\nCreate a vector called opponent which contains the values 27, 41, 31, 20, 19, 12, 30, 24, 13, 31, 10, 13, 20, 16.\nNote: each element represents the amount of points scored in a particular football game.\nNo need to print any output here.\n\n\nF.1.2 Part b\nInsert the value 40 as the 5th element in bears.\nInsert the value 38 as the 1st element in opponent.\nPrint both vectors to prove you were successful.\n\n\nF.1.3 Part c\nDetermine the largest win spread for the Bears (ie: spread is the difference between bear’s score and opponent’s score) and print the following statement:\n“The largest win spread is {}, when the Bears scored {} points and the Opponent scored {} points.”\nNote: this needs to still run correctly even if the elements changed or were re-ordered.",
     "crumbs": [
       "Appendices",
-      "<span class='chapter-number'>F</span>  <span class='chapter-title'>Assignment 5</span>"
+      "<span class='chapter-number'>F</span>  <span class='chapter-title'>Assignment 6</span>"
     ]
   },
   {
     "objectID": "template_A06_WI25.html#question-2-7-points",
     "href": "template_A06_WI25.html#question-2-7-points",
-    "title": "Appendix F — Assignment 5",
+    "title": "Appendix F — Assignment 6",
     "section": "F.2 Question 2 (7 points)",
     "text": "F.2 Question 2 (7 points)\n\nF.2.1 Part a\nCreate a matrix game_score by utilizing the vectors bears and opponent from Question 1 where the first column represents bears and the second column represents opponent.\nName the columns bears and opponent respectively.\nPrint game_score to prove this was successful.\n\n\nF.2.2 Part b\nThe game_score is missing some games. Add on a matrix that contains bears scores of 37, 9 and opponent scores of 17, 17, respectively. Print the new game_score matrix.\n\n\nF.2.3 Part c\nIterate through game_score and print “Win” if the bears won and “Loss” if the bears lost.\n\n\nF.2.4 Part d\nUse game_score and an inequality to check if the bears won each game. Store this as a vector called win and print the vector win.\nie: Since 20 is less than 38 the first element of win should be FALSE.\n\n\nF.2.5 Part e\nAdd the vector win as a third column to game_score. Print game_score.\n\n\nF.2.6 Part f\nHow many games did the Bears lose before their first win (games are in order)? Many ways to accomplish this BUT you must utilize game_score to do so.\nClarification: do not directly reference any of the individual vectors from previous question parts, this must use the matrix game_score.\nThe code must be capable of running correctly even if the values changed.",
     "crumbs": [
       "Appendices",
-      "<span class='chapter-number'>F</span>  <span class='chapter-title'>Assignment 5</span>"
+      "<span class='chapter-number'>F</span>  <span class='chapter-title'>Assignment 6</span>"
     ]
   },
   {
     "objectID": "template_A06_WI25.html#question-3-2-points",
     "href": "template_A06_WI25.html#question-3-2-points",
-    "title": "Appendix F — Assignment 5",
+    "title": "Appendix F — Assignment 6",
     "section": "F.3 Question 3 (2 points)",
     "text": "F.3 Question 3 (2 points)\nWrite a function called number_of_factors that takes an integer and returns how many factors the number has. Run your function with 8 to check if it works.",
     "crumbs": [
       "Appendices",
-      "<span class='chapter-number'>F</span>  <span class='chapter-title'>Assignment 5</span>"
+      "<span class='chapter-number'>F</span>  <span class='chapter-title'>Assignment 6</span>"
     ]
   },
   {
     "objectID": "template_A06_WI25.html#question-4-3-points",
     "href": "template_A06_WI25.html#question-4-3-points",
-    "title": "Appendix F — Assignment 5",
+    "title": "Appendix F — Assignment 6",
     "section": "F.4 Question 4 (3 points)",
     "text": "F.4 Question 4 (3 points)\nWrite a function that calculates the area of a rectangle. The function should have an input for length (in inches) and width (in inches). Set a default value for both length and width to be 48.\nThe function should have 2 outputs: the area in terms of square inches and the area in terms of square feet. There are 12 inches in 1 foot.\nRun your function with a length of 102 and width of 60 and store the output as a variable. Then print the following:\n“The area in square inches is {}.”\n“The area in square feet is {}.”",
     "crumbs": [
       "Appendices",
-      "<span class='chapter-number'>F</span>  <span class='chapter-title'>Assignment 5</span>"
+      "<span class='chapter-number'>F</span>  <span class='chapter-title'>Assignment 6</span>"
     ]
   },
   {
     "objectID": "template_A06_WI25.html#question-5-5-points",
     "href": "template_A06_WI25.html#question-5-5-points",
-    "title": "Appendix F — Assignment 5",
+    "title": "Appendix F — Assignment 6",
     "section": "F.5 Question 5 (5 points)",
     "text": "F.5 Question 5 (5 points)\nWrite a function that takes a single string vector as an input. Have the function return only the word (or words) with the most letters.\nIf there are multiple words with the most letters, then return all words with the most letters as a vector.\nClarification: This is NOT returning a list that contains each word individually. It is returning a vector containing all words with the most letters.\nTest the function using the vector fruits created below.\n\nfruits &lt;- c(\"apple\", \"orange\", \"banana\", \n            \"pear\", \"grapes\", \"kiwi\")",
     "crumbs": [
       "Appendices",
-      "<span class='chapter-number'>F</span>  <span class='chapter-title'>Assignment 5</span>"
+      "<span class='chapter-number'>F</span>  <span class='chapter-title'>Assignment 6</span>"
     ]
   },
   {
     "objectID": "template_A06_WI25.html#question-6-4-points",
     "href": "template_A06_WI25.html#question-6-4-points",
-    "title": "Appendix F — Assignment 5",
+    "title": "Appendix F — Assignment 6",
     "section": "F.6 Question 6 (4 points)",
     "text": "F.6 Question 6 (4 points)\nWrite a function that checks if a value is in a vector. The function should take both a value and vector as inputs and return either TRUE or FALSE.\nRun your function using the variables value and check created below.\n\nvalue &lt;- 2\ncheck &lt;- seq(1, 15, 3)\n\nAfter running the function, depending on what the function returns, print either:\n\n“{} is in the vector.”\n“{} is not in the vector.",
     "crumbs": [
       "Appendices",
-      "<span class='chapter-number'>F</span>  <span class='chapter-title'>Assignment 5</span>"
+      "<span class='chapter-number'>F</span>  <span class='chapter-title'>Assignment 6</span>"
     ]
   },
   {
     "objectID": "template_A06_WI25.html#question-7-6-points",
     "href": "template_A06_WI25.html#question-7-6-points",
-    "title": "Appendix F — Assignment 5",
+    "title": "Appendix F — Assignment 6",
     "section": "F.7 Question 7 (6 points)",
     "text": "F.7 Question 7 (6 points)\nBelow is a matrix of random numbers.\n\n# Don't change this! A seed keeps results consistent.\nset.seed(123)\nx &lt;- matrix(sample(-50:50, 20), nrow = 5)\n\n\nF.7.1 Part a\nWrite a function that takes a matrix as an input, converts all negative numbers to NA, and returns the new matrix. Test your function using the matrix x that was created for you.\n\n\nF.7.2 Part b\nWrite a function that takes a matrix as an input and converts all even numbers to 1 and odd numbers to 0. The function should return the new matrix. Test your function using the matrix x that was created for you.",
     "crumbs": [
       "Appendices",
-      "<span class='chapter-number'>F</span>  <span class='chapter-title'>Assignment 5</span>"
+      "<span class='chapter-number'>F</span>  <span class='chapter-title'>Assignment 6</span>"
     ]
   },
   {

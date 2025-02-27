@@ -1,5 +1,5 @@
 ---
-title: "Assignment 5"
+title: "Assignment 6"
 subtitle: "STAT 201"
 author: "YOUR NAME"
 
