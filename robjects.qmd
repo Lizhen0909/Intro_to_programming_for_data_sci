@@ -29,7 +29,7 @@ char_vec <- c("apple", "banana", "cherry")
 print(char_vec)
 ```
 
-#### Type Coercion
+#### Type Coercion (mixed types)
 
 - When you assign elements of different types to an atomic vector, R does **not** raise an error.  
 - Instead, it **automatically performs type coercion** to ensure all elements in the vector share the same type.
@@ -64,6 +64,19 @@ There are two common functions to check if a variable is an atomic vector:
 is.atomic(numeric_vec)
 is.vector(char_vec)
 ```
+
+Note that atomic vectors are a subset of vectors in R. Vectors can be list or expression as well.
+
+```{r}
+is.vector(list())
+
+is.vector(expression())
+
+is.atomic(list())
+
+is.atomic(expression())
+```
+
 
 #### Checking the Data Type of an Atomic Vector  
 
@@ -209,14 +222,18 @@ If you want to process each element individually, use `sapply()`
 
 ```{r}
 numbers <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-# Use sapply to check if each number is even or odd
-result <- sapply(numbers, function(x) {
+
+# Function to check if a number is even or odd
+is_even_or_odd <- function(x) {
   if (x %% 2 == 0) {
     return("Even")
   } else {
     return("Odd")
   }
-})
+}
+
+# Apply the function to each element in the vector
+result <- sapply(numbers, is_even_or_odd)
 
 # Print the result
 print(result)
@@ -232,8 +249,10 @@ vec
 Suppose, we wish to square each element of the vector. We can use the `sapply()` function as below:
 
 ```{r}
-sapply(vec, FUN = function(x) x**2)
+sapply(vec, function(x) x**2)
 ```
+
+Note that : `function(x) $x**2$` is an anonymous function (also called a lambda function) in R.
 
 ### The `rep()` function
 
@@ -379,86 +398,12 @@ vec1[vec1 > 2]
 | `which(x == value)` | Returns indices of elements equal to `value` | `which(c(5, 10, 5) == 5)` → `1 3` |
 
 
-### Practice Exercise 1
-
- USA’s GDP per capita from 1960 to 2021 is given by the vector `G` in the code chunk below. The values are arranged in ascending order of the year, i.e., the first value is for 1960, the second value is for 1961, and so on. Store the years in which the GDP per capita of the US increased by more than 10%, in a vector.
-
-```{r}
-G = c(3007, 3067, 3244, 3375,3574, 3828, 4146, 4336, 4696, 5032,5234,5609,6094,6726,7226,7801,8592,9453,10565,11674,12575,13976,14434,15544,17121,18237,19071,20039,21417,22857,23889,24342,25419,26387,27695,28691,29968,31459,32854,34515,36330,37134,37998,39490,41725,44123,46302,48050,48570,47195,48651,50066,51784,53291,55124,56763,57867,59915,62805,65095,63028,69288)
-```
-
-```{r}
-years <- c()
-for (i in 1:(length(G) - 1)) {
-  diff = (G[i+1] - G[i]) / G[i]
-  if (diff > 0.1) years <- c(years, 1960 + i)
-}
-print(years)
-```
-
-
-Now, solve this without using a `for` loop.
-
-
-### Practice exercise 2
-
-Below is a vector consisting of responses to the question: “At what age do you think you will marry?” from students of the STAT303-1 Fall 2022 class.
-
-```{r}
-exp_marriage_age <- c('24','30','28','29','30','27','26','28','30+','26','28','30','30','30','probably never','30','25','25','30','28','30+ ','30','25','28','28','25','25','27','28','30','30','35','26','28','27','27','30','25','30','26','32','27','26','27','26','28','37','28','28','28','35','28','27','28','26','28','26','30','27','30','28','25','26','28','35','29','27','27','30','24','25','29','27','33','30','30','25','26','30','32','26','30','30','I wont','25','27','27','25','27','27','32','26','25','never','28','33','28','35','25','30','29','30','31','28','28','30','40','30','28','30','27','by 30','28','27','28','30-35','35','30','30','never','30','35','28','31','30','27','33','32','27','27','26','N/A','25','26','29','28','34','26','24','28','30','120','25','33','27','28','32','30','26','30','30','28','27','27','27','27','27','27','28','30','30','30','28','30','28','30','30','28','28','30','27','30','28','25','never','69','28','28','33','30','28','28','26','30','26','27','30','25','Never','27','27','25')
-```
-
-#### Cleaning data
-
-Remove the elements that are not integers - such as ‘probably never’, ‘30+’, etc. Convert the reamining elements to integer. What is the length of the new vector?
-
-```{r}
-new_vector <- as.integer(exp_marriage_age)
-numeric_values <- new_vector[!is.na(new_vector)]
-length(numeric_values)
-```
-
-
-#### Capping unreasonably high values
-Cap the values greater than 80 to 80, in the clean vector obtained above. What is the mean age when people expect to marry in the new vector?
-
-```{r}
-numeric_values[numeric_values > 80] <- 80
-mean(numeric_values)
-```
-
-#### People marrying at 30 or more
-Determine the percentage of people who expect to marry at an age of 30 or more.
-```{r}
-sum(numeric_values >= 30) / length(numeric_values)
-```
-
-
-### Practice exercise 2
-
-Write a function that identifies if a word is a [palindrome](https://en.wikipedia.org/wiki/Palindrome) *(A palindrome is a word that reads the same both backwards and forwards, for example, peep, rotator, madam, etc.)*. Apply the function to the vector of words below to count the number of palindrome words.
-
-```{r}
-words_vec <- c('fat', 'civic', 'radar', 'mountain', 'noon','papa')
-```
-
-```{r}
-palindrome <- function(word) {
-  for (i in 1:as.integer(nchar(word)/2)) {
-    if (substr(word, i, i) != substr(word, nchar(word) - (i-1), nchar(word) - (i-1))) {
-      return(FALSE)
-    }
-  }
-  return(TRUE)
-}
-sum(sapply(words_vec, palindrome))
-```
 
 Next, let's explore how vectorized operations in R improve performance over loops!
 
-## Vectorized Operations in R
+## Vectorization in R
 
-Vectorized operations in R are significantly faster and more efficient than loops. This is because vectorized functions are implemented in optimized C code under the hood, allowing R to apply operations to entire vectors at once instead of iterating through elements one by one.
+Vectorization in R refers to the ability to perform operations on entire vectors (or arrays) without the need for explicit loops. This makes computations faster and more efficient because R applies the operation element-wise internally using optimized C or Fortran code.
 
 ### Comparing Loop vs. Vectorized Operations
 
@@ -535,6 +480,18 @@ system.time({
 * `for` loop and `sapply()' performs comparably.
 * The direct vectorized operation (`sqrt(vec)`) is the fastest.
 
+### Functions that support vectorization
+
+Many R functions are already vectorized, such as:
+
+| Operation     | Function                                    |
+|--------------|--------------------------------------------|
+| **Arithmetic**  | `+`, `-`, `*`, `/`, `^`                   |
+| **Logical**     | `>`, `<`, `==`, `!=`          |
+| **Math Functions** | `sqrt()`, `log()`, `exp()`, `abs()`, `round()` |
+| **Aggregation**   | `sum()`, `mean()`, `max()`, `min()`, `sd()` |
+
+
 ### Understanding why vectorization is faster
 
 Reasons Vectorized Operations are More Efficient:
@@ -545,3 +502,73 @@ Reasons Vectorized Operations are More Efficient:
 * Parallel execution is possible for some vectorized functions.
 
 In R, both vectors and matrices support full vectorization, meaning element-wise operations can be applied directly without explicit loops.
+
+## Practice exercises
+
+### Exercise 1
+
+ USA’s GDP per capita from 1960 to 2021 is given by the vector `G` in the code chunk below. The values are arranged in ascending order of the year, i.e., the first value is for 1960, the second value is for 1961, and so on. Store the years in which the GDP per capita of the US increased by more than 10%, in a vector.
+
+```{r}
+G = c(3007, 3067, 3244, 3375,3574, 3828, 4146, 4336, 4696, 5032,5234,5609,6094,6726,7226,7801,8592,9453,10565,11674,12575,13976,14434,15544,17121,18237,19071,20039,21417,22857,23889,24342,25419,26387,27695,28691,29968,31459,32854,34515,36330,37134,37998,39490,41725,44123,46302,48050,48570,47195,48651,50066,51784,53291,55124,56763,57867,59915,62805,65095,63028,69288)
+```
+
+```{r}
+years <- c()
+for (i in 1:(length(G) - 1)) {
+  diff <- (G[i+1] - G[i]) / G[i]
+  if (diff > 0.1) years <- c(years, 1960 + i)
+}
+print(years)
+```
+
+
+Solve this without using a `for` loop.
+
+
+### Exercise 2
+
+Below is a vector consisting of responses to the question: “At what age do you think you will marry?” from students of the STAT303-1 Fall 2022 class.
+
+```{r}
+exp_marriage_age <- c('24','30','28','29','30','27','26','28','30+','26','28','30','30','30','probably never','30','25','25','30','28','30+ ','30','25','28','28','25','25','27','28','30','30','35','26','28','27','27','30','25','30','26','32','27','26','27','26','28','37','28','28','28','35','28','27','28','26','28','26','30','27','30','28','25','26','28','35','29','27','27','30','24','25','29','27','33','30','30','25','26','30','32','26','30','30','I wont','25','27','27','25','27','27','32','26','25','never','28','33','28','35','25','30','29','30','31','28','28','30','40','30','28','30','27','by 30','28','27','28','30-35','35','30','30','never','30','35','28','31','30','27','33','32','27','27','26','N/A','25','26','29','28','34','26','24','28','30','120','25','33','27','28','32','30','26','30','30','28','27','27','27','27','27','27','28','30','30','30','28','30','28','30','30','28','28','30','27','30','28','25','never','69','28','28','33','30','28','28','26','30','26','27','30','25','Never','27','27','25')
+```
+
+#### Cleaning data
+
+Remove the elements that are not integers - such as ‘probably never’, ‘30+’, etc. Convert the reamining elements to integer. What is the length of the new vector?
+
+
+
+
+#### Capping unreasonably high values
+Cap the values greater than 80 to 80, in the clean vector obtained above. What is the mean age when people expect to marry in the new vector?
+
+
+
+#### People marrying at 30 or more
+
+
+
+### Exercise 3
+
+Write a function that identifies if a word is a [palindrome](https://en.wikipedia.org/wiki/Palindrome) *(A palindrome is a word that reads the same both backwards and forwards, for example, peep, rotator, madam, etc.)*. Apply the function to the vector of words below to count the number of palindrome words.
+
+```{r}
+words_vec <- c('fat', 'civic', 'radar', 'mountain', 'noon','papa')
+```
+
+```{r}
+palindrome <- function(word) {
+  for (i in 1:as.integer(nchar(word)/2)) {
+    if (substr(word, i, i) != substr(word, nchar(word) - (i-1), nchar(word) - (i-1))) {
+      return(FALSE)
+    }
+  }
+  return(TRUE)
+}
+sum(sapply(words_vec, palindrome))
+```
+
+Try to solve this without using a `for` loop
+
