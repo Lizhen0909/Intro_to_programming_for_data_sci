@@ -507,11 +507,28 @@ In R, both vectors and matrices support full vectorization, meaning element-wise
 
 ### Exercise 1
 
- USA’s GDP per capita from 1960 to 2021 is given by the vector `G` in the code chunk below. The values are arranged in ascending order of the year, i.e., the first value is for 1960, the second value is for 1961, and so on. Store the years in which the GDP per capita of the US increased by more than 10%, in a vector.
+ USA’s GDP per capita from 1960 to 2021 is given by the vector `G` in the code chunk below. The values are arranged in ascending order of the year, i.e., the first value is for 1960, the second value is for 1961, and so on. 
 
 ```{r}
 G = c(3007, 3067, 3244, 3375,3574, 3828, 4146, 4336, 4696, 5032,5234,5609,6094,6726,7226,7801,8592,9453,10565,11674,12575,13976,14434,15544,17121,18237,19071,20039,21417,22857,23889,24342,25419,26387,27695,28691,29968,31459,32854,34515,36330,37134,37998,39490,41725,44123,46302,48050,48570,47195,48651,50066,51784,53291,55124,56763,57867,59915,62805,65095,63028,69288)
 ```
+
+#### 
+What was the GDP per capita in 1990?
+
+####
+What is the mean, median, and standard deviation of the GDP per capita?
+
+####
+Find the first year where GDP per capita exceeded $50,000.
+
+####
+What is the range of GDP per capita over the years?
+
+####
+In which years did the GDP per capita increase by more than 10%?
+
+Here is the loop version
 
 ```{r}
 years <- c()
@@ -523,8 +540,13 @@ print(years)
 ```
 
 
-Solve this without using a `for` loop.
+You need to solve this problem without using a `for` loop.
 
+####
+Find the year with the highest GDP per capita growth (percentage-wise).
+
+####
+Identify all years where GDP per capita decreased.
 
 ### Exercise 2
 
@@ -571,4 +593,47 @@ sum(sapply(words_vec, palindrome))
 ```
 
 Try to solve this without using a `for` loop
+
+Hints:
+
+- Define a function to **reverse a word**. You may need `strsplit()` to split the word into individual characters and `paste()` to concatenate them back into a word.
+- Use `sapply()` to apply a function to each element of an **atomic vector**.  
+
+#### Understanding `collapse` vs. `sep` in `paste()` in R {-}
+
+The `paste()` function in R allows you to **combine strings**, but `collapse` and `sep` have **different roles**.
+
+
+##### `sep` (Separator Between Arguments) {-}
+
+* Used when **multiple arguments** are passed to `paste()`.
+* Defines the **separator between these arguments**.
+
+```{r}
+paste("Hello", "World", sep = "-")
+paste("R", "is", "fun", sep = " | ")
+```
+
+Use `sep` when combining multiple elements passed separately.
+
+##### `collapse` (Collapsing a Vector into One String) {-}
+
+* Used when concatenating elements of a vector into a single string.
+* Defines the separator between vector elements.
+
+```{r}
+char_vec <- c("R", "is", "fun")
+paste(char_vec, collapse = " ")
+```
+
+```{r}
+char_vec <- c("apple", "banana", "cherry")
+paste(char_vec, collapse = ", ")
+```
+
+```{r}
+char_vec <- c("l", "o", "v", "e")
+paste(char_vec, collapse = "")
+
+```
 
