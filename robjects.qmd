@@ -8,7 +8,9 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Atomic vectors
+```{r, echo=FALSE, out.width="50%", fig.align="center"}
+knitr::include_graphics("images/atomic.jpg")
+```
 
 **Atomic vectors** are the most basic data type in R.
 
