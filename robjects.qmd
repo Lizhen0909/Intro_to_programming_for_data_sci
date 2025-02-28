@@ -534,7 +534,7 @@ Here is the loop version
 years <- c()
 for (i in 1:(length(G) - 1)) {
   diff <- (G[i+1] - G[i]) / G[i]
-  if (diff > 0.1) years <- c(years, 1960 + i)
+  if (diff > 0.1) years <- c(years, 1959 + i)
 }
 print(years)
 ```
