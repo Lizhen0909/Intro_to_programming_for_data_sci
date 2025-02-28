@@ -5436,7 +5436,7 @@ window.Quarto = {
 <pre><code>[1]  1  4  9 16 25 36</code></pre>
 </div>
 </div>
-<p>Note that : <code>function(x) $x**2$</code> is an anonymous function (also called a lambda function) in R.</p>
+<p>Note that : <code>function(x) x**2</code> is an anonymous function (also called a lambda function) in R.</p>
 </section>
 <section id="the-rep-function" class="level3" data-number="11.1.9">
 <h3 data-number="11.1.9" class="anchored" data-anchor-id="the-rep-function"><span class="header-section-number">11.1.9</span> The <code>rep()</code> function</h3>
@@ -5735,7 +5735,7 @@ window.Quarto = {
 <span id="cb87-14"><a href="#cb87-14" aria-hidden="true" tabindex="-1"></a><span class="fu">system.time</span>(<span class="fu">square_loop</span>(vec))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
-   0.03    0.00    0.03 </code></pre>
+   0.05    0.00    0.04 </code></pre>
 </div>
 </div>
 <p>Using Vectorized Operation (Fast)</p>
@@ -5774,7 +5774,7 @@ window.Quarto = {
 <span id="cb91-10"><a href="#cb91-10" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
-   0.03    0.00    0.03 </code></pre>
+   0.04    0.00    0.03 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using sapply</span></span>
 <span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a><span class="fu">system.time</span>({</span>
@@ -5782,7 +5782,7 @@ window.Quarto = {
 <span id="cb93-4"><a href="#cb93-4" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
-   0.44    0.00    0.44 </code></pre>
+   0.42    0.02    0.43 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using vectorized operation (for comparison)</span></span>
 <span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a><span class="fu">system.time</span>({</span>
@@ -5870,6 +5870,7 @@ window.Quarto = {
 <section id="cleaning-data" class="level4" data-number="11.3.2.1">
 <h4 data-number="11.3.2.1" class="anchored" data-anchor-id="cleaning-data"><span class="header-section-number">11.3.2.1</span> Cleaning data</h4>
 <p>Remove the elements that are not integers - such as ‘probably never’, ‘30+’, etc. Convert the reamining elements to integer. What is the length of the new vector?</p>
+<p>Hint: Use <code>is.na()</code> to detect missing values.</p>
 </section>
 <section id="capping-unreasonably-high-values" class="level4" data-number="11.3.2.2">
 <h4 data-number="11.3.2.2" class="anchored" data-anchor-id="capping-unreasonably-high-values"><span class="header-section-number">11.3.2.2</span> Capping unreasonably high values</h4>

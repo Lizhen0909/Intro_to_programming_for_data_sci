@@ -252,7 +252,7 @@ Suppose, we wish to square each element of the vector. We can use the `sapply()`
 sapply(vec, function(x) x**2)
 ```
 
-Note that : `function(x) $x**2$` is an anonymous function (also called a lambda function) in R.
+Note that : `function(x) x**2` is an anonymous function (also called a lambda function) in R.
 
 ### The `rep()` function
 
@@ -538,7 +538,7 @@ exp_marriage_age <- c('24','30','28','29','30','27','26','28','30+','26','28','3
 
 Remove the elements that are not integers - such as ‘probably never’, ‘30+’, etc. Convert the reamining elements to integer. What is the length of the new vector?
 
-
+Hint: Use `is.na()` to detect missing values.
 
 
 #### Capping unreasonably high values
