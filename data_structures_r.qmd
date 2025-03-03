@@ -25,20 +25,38 @@ Since atomic vectors were covered in the previous chapter, this chapter will foc
 
 ## Matrix ((2D, Homogeneous))
 
-Matrices are two-dimensional arrays. The built-in function `matrix()` is used to define a matrix. An atomic vector can be organized as a matrix by specifying the number of rows and columns.
+Matrices are two-dimensional arrays. 
 
-For example, let us define a 2x3 matrix (2 rows and 3 columns) consisting of consecutive integers fro1 1 to 6.
+### Creating a matrix
+
+The built-in function `matrix()` is used to define a matrix. An atomic vector can be organized as a matrix by specifying the number of rows and columns.
+
+For example, let us define a 3x3 matrix (3 rows and 3 columns) consisting of consecutive integers from 1 to 9.
 
 ```{r}
-mat <- matrix(1:6, 2, 3)
+mat <- matrix(1:9, 3, 3)
 mat
 ```
 
 Note that the integers fill up column-wise in the matrix. If we wish to fill-up the matrix by row, we can use the `byrow` argument.
 
 ```{r}
-mat <- matrix(1:6, 2, 3, byrow = TRUE)
+mat <- matrix(1:9, 3, 3, byrow = TRUE)
 mat
+```
+
+### Getting matrix dimensions, the number of rows, the number of columns
+
+Get matrix dimensions will give vector of c(rows, cols): - `dim()`
+
+```{r}
+dim(mat)
+```
+
+Get number of elements: length()
+
+```{r}
+length(mat)
 ```
 
 The functions `nrow()` and `ncol()` can be used to get the number of rows and columns of the matrix respectively.
@@ -50,6 +68,8 @@ nrow(mat)
 ```{r}
 ncol(mat)
 ```
+
+### Matrix indexing and Slicing
 
 Matrices can be sliced using the indices of row and column separated by a `,` in box brackets. Suppose we wish to get the element in the $2^{nd}$ row and $3^{rd}$ column of the matrix:
 
@@ -69,7 +89,65 @@ Row and columns of the matrix can be sliced using the `:` operator. Suppose we w
 mat[1:2, 2:3]
 ```
 
-Element-wise arithmetic operations can be performed between 2 matrices of the same shape.
+### Adding and Removing
+
+-   use `cbind()` to add a column of correct length
+-   use `rbind()` to add a row of correct length
+-   if length is incorrect there will be a warning (no error it will still run), however it will "recycle" values.
+-   When adding a row or a col, you CANNOT insert it between the existing rows/cols. However, you can re-arrange AFTER it is added using indexing.
+-   use negative indexes to remove rows/columns
+
+```{r}
+new_col <- c(7, 8, 9)
+
+# add the column 
+mat_new <- cbind(mat, new_col)
+print(mat_new)
+
+mat_new <- cbind(mat, new_col = 5)
+print(mat_new)
+
+```
+
+```{r}
+new_row <- c(7, 8, 9)
+
+# add the row 
+mat_new <- rbind(mat, new_row)
+print(mat_new)
+
+mat_new <- rbind(mat, new_row = 5)
+print(mat_new)
+
+```
+
+```{r}
+# remove the added row
+mat_new <- mat_new[-4, ]
+print(mat_new)
+```
+
+```{r}
+# remove the added column
+mat_new <- mat_new[, -4]
+print(mat_new)
+```
+
+### Iterating
+
+To iterate through each element you generally need a nested loop combined with `nrow()` and `ncol()`
+
+```{r}
+for (i in 1: nrow(mat_new)){
+  for (j in 1: ncol(mat_new)) {
+    print(paste("Element at (", i, ",", j, "):", mat[i, j]))
+  }
+}
+```
+
+### Element-wise arithmetic operations 
+
+Element-wise arithmetic operations have the same logic with atomic vectors, they can be performed between 2 matrices of the same shape.
 
 ```{r}
 mat1 <- matrix(1:6, 2, 3)
@@ -104,6 +182,27 @@ row_sum
 ```
 
 In the above code, we sum up all the elements of the row simultaneously. However, we still need to sum up the elements of each row one at a time.
+
+
+#### Matrix multiplication vs. element-wise multiplication
+
+-   Matrix multiplication: using `%*%`
+
+```{r}
+# Create another 3x3 matrix
+mat2 <- matrix(9:1, nrow = 3)
+
+# Perform matrix multiplication
+result <- mat %*% mat2
+print(result)
+```
+
+-   Element-wise multiplication: using `*`
+
+```{r}
+# Element-wise multiplication
+mat * mat
+```
 
 ### The `apply()` function
 
@@ -142,6 +241,41 @@ time.taken
 ```
 
 Observe that the `apply()` function takes much lesser time to sum up all the rows of the matrix as compared to the `for` loop.
+
+### Misc useful functions:
+
+Check if a value/string is in the matrix:
+
+-   `"val" %in% my_mat`
+
+```{r}
+# Create a matrix
+fruit_mat <- matrix(c("apple", "banana", "cherry", "date"), nrow=2, byrow=TRUE)
+
+# Check if "banana" is in the matrix
+"banana" %in% fruit_mat 
+
+# Check if "grape" is in the matrix
+"grape" %in% fruit_mat  
+```
+
+If you want to return TRUE or FALSE directly:
+
+```{r}
+any(fruit_mat == "banana")  
+any(fruit_mat == "grape") 
+```
+
+```{r}
+which(mat == "banana", arr.ind = TRUE)
+```
+
+
+Check if a value is missing (ie: NA):
+
+-   `is.na(val)`
+
+## Practice exericise 1
 
 Recall the earlier example where we computed year's in which the increase in GDP per capita was more than 10%. Let us use matrices to solve the problem. We'll also compare the time it takes using a matrix with the time it takes using `for` loops.
 
@@ -341,6 +475,8 @@ for (i in 1:9) {
 
 Atomic vectors and matrices are quite useful in R. However, a constraint with them is that they can only contain objects of the same datatype. For example, an atomic vector can contain all numeric objects, all character objects, or all logical objects, but not a mixture of multiple types of objects. Thus, there arises a need for a `list` data structure that can store objects of multiple datatypes.
 
+### Creating and Indexing
+
 A list can be defined using the `list()` function. For example, consider the list below:
 
 ```{r}
@@ -367,6 +503,10 @@ Multiple elements can be sliced from the list by specifying the indices as an at
 list_ex[c(1,3)]
 ```
 
+### Naming a list
+
+
+
 Elements of a list can be named using the `names()` function. Let us name the elements of `list_ex`:
 
 ```{r}
@@ -391,13 +531,64 @@ Names of elements of a list can also be specified while defining the list, as in
 list_ex_with_names <- list(movie = 'The Dark Knight', IMDB_rating = 9)
 ```
 
-A list can be converted to an atomic vector using the `unlist()` function. For example, let us convert the list `list_ex` to a vector:
+### Using as Function Input
+
+No arithmetic or logical operations with a list, since elements are with different data types. A list can be converted to an atomic vector using the `unlist()` function. For example, let us convert the list `list_ex` to a vector:
 
 ```{r}
 unlist(list_ex)
 ```
 
 Since a vector can contain objects of a single datatype, note that all objects have been converted to the `character` datatype in the vector above.
+
+Another example:
+
+```{r}
+# Define a list with mixed data types
+my_list <- list(a = 1, b = 2, c = "text", d = 4, e = TRUE)
+
+# Function to sum numeric elements in the list
+sum_list_numeric <- function(lst) {
+  # Convert list to a vector, forcing non-numeric elements to NA
+  vec <- unlist(lst)
+  
+  # Keep only numeric values (ignoring non-numeric ones)
+  numeric_values <- as.numeric(vec[!is.na(as.numeric(vec))])
+  
+  # Compute sum
+  return(sum(numeric_values))
+}
+
+# Call the function
+result <- sum_list_numeric(my_list)
+print(result) 
+```
+
+### Applying a function to each element of a list: the `lapply()` function
+
+```{r}
+# Define a list with numeric values
+num_list <- list(a = 1:5, b = 6:10, c = 11:15)
+
+# Use lapply() to compute the sum of each list element
+sum_results <- lapply(num_list, sum)
+
+# Print the result
+print(sum_results)
+
+```
+
+ -  Using lapply() with an Anonymous Function
+
+```{r}
+# Compute the mean of each element in the list
+mean_results <- lapply(num_list, function(x) mean(x))
+
+# Print the result
+print(mean_results)
+
+```
+
 
 ### Practice exercise 5
 
@@ -444,22 +635,6 @@ for (i in 1:length(movies)) {
 print(paste("Number of movies with negative profit =", count))
 ```
 
-### The `lapply()` function
-
-The `lapply()` function is used to apply a function on each element of a list, and returns a list of the same length.
-
-For example, consider the list below:
-
-```{r}
-list_ex <- list(1, "apple", TRUE, list("another list", TRUE))
-```
-
-Let us use the `lapply()` function to find the class of each element of the list `list_ex`:
-
-```{r}
-lapply(list_ex, function(x) class(x))
-```
-
 ### Practice exercise 6
 
 Solve practice exercise 5 without using a `for` loop. Use the `lapply()` function.
@@ -501,3 +676,29 @@ df[1:2, c("Name", "Score")]  # Subset
 | **List**         | 1D | ❌ No  | `list(name="Alice", age=25)` |
 | **Matrix**       | 2D | ✅ Yes | `matrix(1:6, nrow=2)` |
 | **Data Frame**   | 2D | ❌ No  | `data.frame(name, age)` |
+
+### Iterating
+
+```{r}
+# Iterate over rows
+for (i in 1:nrow(df)) {
+  print(paste("Row", i, ":", df[i, ]))
+}
+
+```
+
+```{r}
+for (col in names(df)) {
+  print(paste("Column:", col))
+  print(df[[col]])  # Access column by name
+}
+
+```
+
+```{r}
+for (i in 1:nrow(df)) {
+  for (j in 1:ncol(df)) {
+    print(paste("Element at [", i, ",", j, "]:", df[i, j]))
+  }
+}
+
