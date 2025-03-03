@@ -275,7 +275,7 @@ Check if a value is missing (ie: NA):
 
 -   `is.na(val)`
 
-## Practice exericise 1
+### Practice exericise 1
 
 Recall the earlier example where we computed year's in which the increase in GDP per capita was more than 10%. Let us use matrices to solve the problem. We'll also compare the time it takes using a matrix with the time it takes using `for` loops.
 
@@ -670,13 +670,6 @@ df[1:2, c("Name", "Score")]  # Subset
 ```
 
 
-| Data Structure   | Dimensions | Homogeneous? | Example |
-|-----------------|------------|--------------|---------|
-| **Atomic Vector** | 1D | ✅ Yes | `c(1, 2, 3)` |
-| **List**         | 1D | ❌ No  | `list(name="Alice", age=25)` |
-| **Matrix**       | 2D | ✅ Yes | `matrix(1:6, nrow=2)` |
-| **Data Frame**   | 2D | ❌ No  | `data.frame(name, age)` |
-
 ### Iterating
 
 ```{r}
@@ -701,4 +694,13 @@ for (i in 1:nrow(df)) {
     print(paste("Element at [", i, ",", j, "]:", df[i, j]))
   }
 }
+```
 
+## Summary
+
+| Data Structure   | Dimensions | Homogeneous? | Example |
+|-----------------|------------|--------------|---------|
+| **Atomic Vector** | 1D | ✅ Yes | `c(1, 2, 3)` |
+| **List**         | 1D | ❌ No  | `list(name="Alice", age=25)` |
+| **Matrix**       | 2D | ✅ Yes | `matrix(1:6, nrow=2)` |
+| **Data Frame**   | 2D | ❌ No  | `data.frame(name, age)` |
