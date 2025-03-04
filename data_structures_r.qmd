@@ -551,7 +551,7 @@ print(paste("Occurred in period:", max_period))
 print(paste("Occurred in year:", max_year_within_period))
 ```
 
-If an built-in function is not available for the computations to be performed, we can write our own user-defined function within the `apply()` function
+If a built-in function is not available for the required computations, we can create a user-defined function and pass it to the `apply()` function to perform the operation efficiently. See example below
 
 ####
 
@@ -559,8 +559,14 @@ Identify the five-year periods which the GDP per capita experienced a continuous
 
 
 ```{r}
+
+# Define a function to check if all values in a row are decreasing
+is_decreasing <- function(row) {
+  return(all(diff(row) < 0))
+}
+
 # Identify periods where GDP decreases year by year
-decreasing_periods <- apply(GDP_5year, 1, function(row) all(diff(row) < 0))
+decreasing_periods <- apply(GDP_5year, 1, is_decreasing)
 
 # Extract period names where GDP is continuously decreasing
 decreasing_period_names <- rownames(GDP_5year)[decreasing_periods]
@@ -569,8 +575,22 @@ decreasing_period_names <- rownames(GDP_5year)[decreasing_periods]
 print(decreasing_period_names)
 ```
 
-The 5 year periods during which the GDP per capita decreased as compared to the previous year are 2006-2010, and 2016-2020.
 
+
+Instead of defining a named function, you can also use an anonymous function directly within the `apply()` function for a more concise approach
+
+```{r}
+# Apply a user-defined function to check for decreasing GDP in each period
+decreasing_periods <- apply(GDP_5year, 1, function(row) all(diff(row) < 0))
+
+# Extract the period names where GDP decreased every year
+decreasing_period_names <- rownames(GDP_5year)[decreasing_periods]
+
+# Print the periods of financial decline
+print(decreasing_period_names)
+```
+
+The 5 year periods during which the GDP per capita decreased as compared to the previous year are 2006-2010, and 2016-2020.
 
 ### Exercise 2
 
@@ -599,6 +619,7 @@ Note that:
 
 1. The *Country Name* for US is given as *United States* in the data.
 2. The 'closeness' of capital cities from the US capital is based on the Euclidean distance of their coordinates to those of the US capital.
+3. The dataset includes two records: *United States* and *US Minor Outlying Islands*, both belonging to the U.S., with a distance of zero. These records must be excluded to accurately identify the closest foreign capital cities.
 
 **Hint:**
 
@@ -610,22 +631,8 @@ Note that:
 
 4. Use the `apply()` function on the matrix obtained above to find the Euclidean distance of Washington DC from the rest of the capital cities. 
 
-5. Using the distances obtained above, find the country that has the closest capital to DC.
+5. Using the distances obtained above, find the country that has the closest capital to DC (Euclidean distance > 0).
 
-
-```{r}
-#| eval: false
-#| echo: false
-US_index <- which(country_names == 'United States')
-DC_coord <- coordinates_capital_cities[US_index,]
-DC_coord_matrix <- matrix(rep(DC_coord, 245), 245, 2, byrow = TRUE)
-DC_minus_capital_cities <- DC_coord_matrix - coordinates_capital_cities
-distance_of_DC_from_other_cities <- apply(DC_minus_capital_cities**2, 1, sum)
-distance_of_DC_from_other_cities[distance_of_DC_from_other_cities == 0] <- 999999
-country_names[which.min(distance_of_DC_from_other_cities)]
-coordinates_capital_cities[which.min(distance_of_DC_from_other_cities),]
-top_10_coords <- coordinates_capital_cities[which.min(distance_of_DC_from_other_cities),]
-```
 
 #### Top 10 countries closest to DC
 
@@ -636,12 +643,23 @@ top_10_coords <- coordinates_capital_cities[which.min(distance_of_DC_from_other_
 
 ```{r}
 #| eval: false
+
+# Find the index of the US capital (Washington, D.C.)
 US_index = which(country_names == 'United States')
 dc_coord <- coordinates_capital_cities[US_index,]
+
+# Compute Euclidean distances to Washington, D.C.
 distances_to_DC <- apply(coordinates_capital_cities, 1, 
                   function(city_coord) sqrt(sum((city_coord - dc_coord)**2)))
+
+# Create a matrix with country index and distance                  
 num_of_countries <- length(country_names)
 distances_to_DC_matrix <- cbind(1:num_of_countries, distances_to_DC)
+
+# Exclude records where the distance is exactly 0
+distances_to_DC_matrix <- distances_to_DC_matrix[distances_to_DC_matrix[, 2] > 0, ]
+
+# Sort by distance
 sorted <- distances_to_DC_matrix[order(distances_to_DC_matrix[,2]),]
 ```
 
@@ -650,44 +668,44 @@ Top 10 countries with capitals closest to Washington DC are the following:
 ```{r}
 #| eval: false
 
+# Get the top 10 closest countries (after exclusions)
+top_10_countries <- sorted[1:10, 1]
+
+# Print the country name
+print(country_names[sorted[1:10, 1]])
+
+```
+
+You can also use the following code to exclude the U.S. records
+
+
+```{r}
+#| eval: false
+
 #Exclude rows where the country is "United States" or "US Minor Outlying Islands"
 filtered_sorted <- sorted[!(country_names[sorted[, 1]] %in% c("United States", "US Minor Outlying Islands")), ]
-
-# Get the top 10 closest countries (after exclusions)
-top_10_countries <- country_names[filtered_sorted[1:10, 1]]
-
-# Print the result
-print(top_10_countries)
 ```
+
 
 The coordinates of the top 10 capital cities closest to Washington DC are:
 
 ```{r}
 #| eval: false
-coordinates_capital_cities[top_10_countries]
+coordinates_capital_cities[top_10_countries, ]
 ```
 
 
-```{r}
-#| eval: false
-#| echo: false
-for (i in 1:9) {
-  distance_of_DC_from_other_cities[which.min(distance_of_DC_from_other_cities)] <- 999999
-  print(country_names[which.min(distance_of_DC_from_other_cities)])
-  coord_closest_to_DC <- coordinates_capital_cities[which.min(distance_of_DC_from_other_cities),]
-  top_10_coords <- rbind(top_10_coords,coord_closest_to_DC)
-}
-```
+#### Use `data.frame` to solve the above task
 
 
 ### Exercise 3
 
-Download the dataset *movies.json*. Execute the following code to read the data into the object `movies`:
+Download the dataset *movies.csv*. Execute the following code to read the data into the object `movies`:
 
 ```{r}
 #| eval: false
-library(rjson)
-movies<-fromJSON(file = 'movies.json')
+
+movies <- read.csv("movies.csv", stringsAsFactors = FALSE)
 ```
 
 #### 
@@ -705,31 +723,13 @@ Count the number movies having a negative profit, i.e., their production budget 
 
 Ignore the movies that:
 
-1. Have missing values of production budget or worldwide gross. Use the `is.null()` function to identify missing or NULL values.
+1. Have missing values of production budget or worldwide gross. 
 
 2. Have a zero worldwide gross *(A zero worldwide gross is probably an incorrect value)*. 
  
-```{r}
-#| eval: false
-negative_profit <- c()
-count <- 0
-for (i in 1:length(movies)) {
-  pb <- movies[[i]]$`Production Budget`
-  wg <- movies[[i]]$`Worldwide Gross`
-  if (!(is.null(pb) | is.null(wg))) {
-    if (pb > wg & wg > 0) {
-      count <- count + 1
-    }
-  }
-}
-print(paste("Number of movies with negative profit =", count))
-```
 
-Solve this task without using a `for` loop. Use the `lapply()` function.
 
-```{r}
-#| eval: false
-profit <- lapply(movies, function(x) x$`Worldwide Gross`-x$`Production Budget`)
-positive_wg <- lapply(movies, function(x) x$`Worldwide Gross` > 0)
-sum(profit < 0 & positive_wg > 0, na.rm = TRUE)
-```
+
+
+
+
