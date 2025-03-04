@@ -8,9 +8,12 @@ editor_options:
   chunk_output_type: console
 ---
 
+```{r, echo=FALSE, out.width="50%", fig.align="center"}
+knitr::include_graphics("images/functions.png")
+```
+
+
 ## Functions in R
-
-
 
 Functions in R are used to **encapsulate reusable code**. R provides a wide range of **built-in functions** for mathematical operations, statistics, and data manipulation, and users can also define their own functions.
 

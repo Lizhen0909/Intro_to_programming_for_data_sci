@@ -8,6 +8,12 @@ editor_options:
   chunk_output_type: console
 ---
 
+
+
+```{r, echo=FALSE, out.width="50%", fig.align="center"}
+knitr::include_graphics("images/r-basics.png")
+```
+
 ## Comments
 
 Comments in R start with the `#` symbol. Everything after `#` on a line is ignored by R.
@@ -40,50 +46,22 @@ R has several built-in data types that are crucial for data analysis and computa
 
 The data type of a variable/constant in R can be identified using the built-in functions `class()` or `typeof()`. For example, the following variables and their values demonstrate different data types:
 
-Numeric data in R consists of **double (default)** and **integer** types.
+### Numeric Data
+
+In R, **numeric data** consists of two types:
+
+* **Double (default)** – Represents floating-point numbers with decimal precision.  
+* **Integer** – Represents whole numbers, defined explicitly using the `L` suffix.
 
 ```{r}
-# Double (default numeric type)
-class(10.5)
+x <- 10      # Default: Double
+y <- 10L     # Explicit Integer
+
+typeof(x)    # "double"
+typeof(y)    # "integer"
 ```
 
-```{r}
-# Integer (use L suffix)
-class(10L) 
-```
-
-
-```{r}
-class(4)
-```
-
-```{r}
-typeof(4)
-```
-
-```{r}
-class(4.4)
-```
-
-```{r}
-typeof(4.4)
-```
-
-```{r}
-class(4L)
-```
-
-```{r}
-typeof(4L)
-```
-
-```{r}
-class(TRUE)
-```
-
-```{r}
-typeof(FALSE)
-```
+### Character Data
 
 R Strings can be created by assigning character values to a variable. These strings can be further concatenated by using various functions and methods to form a big string. 
 
@@ -105,6 +83,30 @@ cat ("String 4 is : ", str4)
 
 R Strings are always stored as double-quoted values. A double-quoted string can contain single quotes within it. 
 Single-quoted strings can’t contain single quotes. Similarly, double quotes can’t be surrounded by double quotes.
+
+### Logical Data
+
+In R, **logical data** consists of values that represent **Boolean (TRUE/FALSE) conditions**.  
+Logical values are used in conditional statements, indexing, and logical operations.
+
+### Logical Values in R
+
+R has **three logical values**:
+- `TRUE` (can be written as `T`)
+- `FALSE` (can be written as `F`)
+- `NA` (Logical missing value)
+
+```{r}
+x <- TRUE
+y <- FALSE
+z <- NA  # Missing logical value
+```
+
+```{r}
+typeof(x)
+typeof(y)
+typeof(z)
+```
 
 ## Variables
 
@@ -144,7 +146,7 @@ x = 10  # Works, but `<-` is preferred
 Sometimes a value may have a datatype that is not suitable for using it. For example, consider the variable called `annual_income` in the code below:
 
 ```{r}
-annual_income = "80000"
+annual_income <- "80000"
 ```
 
 Suppose we wish to divide `annual_income` by 12 to get the monthly income. We cannot use the variable `annual_income` directly as its datatype is a string and not a number. Thus, numerical operations cannot be performed on the variable `annual_income`.
@@ -152,8 +154,8 @@ Suppose we wish to divide `annual_income` by 12 to get the monthly income. We ca
 We’ll need to convert annual_income to an integer. For that we will use the R’s in-built as.integer() function:
 
 ```{r}
-annual_income = as.integer(annual_income)
-monthly_income = annual_income/12
+annual_income <- as.integer(annual_income)
+monthly_income <- annual_income/12
 print(paste0("monthly income = ", monthly_income))
 ```
 
@@ -194,7 +196,7 @@ as.logical(-30.1)
 Sometimes, conversion of a value may not be possible. For example, it is not possible to convert the variable greeting defined below to a number:
 
 ```{r}
-greeting = "hello"
+greeting <- "hello"
 as.numeric(greeting)
 ```
 
@@ -216,6 +218,43 @@ The following table summarizes how to convert between **Numeric**, **Character**
 | **Logical → Character** | `as.character(x)`   | `as.character(FALSE) → "FALSE"` | Converts logical values to strings    | Not applicable (always succeeds)            |
 
 **Note:** Always verify conversions using `class()` or `typeof()` to ensure expected results.
+
+## `typeof()` vs. `class()` in R
+
+In R, `typeof()` and `class()` are used to determine **different aspects of an object's type**:
+
+- **`typeof()`**: Returns the **low-level storage mode** of an object.
+- **`class()`**: Returns the **high-level classification** of an object.
+
+
+```{r}
+x <- 10L   # Integer value
+typeof(x)  # "integer"
+class(x)   # "integer"
+
+y <- c(1, 2, 3)  # Numeric vector
+typeof(y)  # "double"
+class(y)   # "numeric"
+```
+
+### Key Differences:
+
+| Function  | Description | Example Output |
+|-----------|------------|----------------|
+| `typeof()` | Shows how data is stored in memory | `"double"`, `"integer"`, `"character"` |
+| `class()` | Shows the high-level classification (for objects) | `"numeric"`, `"factor"`, `"data.frame"` |
+
+### Common Data Types in R
+
+| Data Type  | `typeof()` Output | `class()` Output | Example |
+|------------|------------------|------------------|---------|
+| **Numeric**  | `"double"` | `"numeric"` | `x <- 3.14` |
+| **Integer**  | `"integer"` | `"integer"` | `x <- 10L` |
+| **Character** | `"character"` | `"character"` | `x <- "hello"` |
+| **Logical**  | `"logical"` | `"logical"` | `x <- TRUE` |
+| **Factor**   | `"integer"` | `"factor"` | `x <- factor(c("A", "B"))` |
+| **Data Frame** | `"list"` | `"data.frame"` | `x <- data.frame(a = 1:3, b = c("A", "B", "C"))` |
+
 
 ## Displaying information
 

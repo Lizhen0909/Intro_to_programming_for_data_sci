@@ -8,6 +8,10 @@ editor_options:
   chunk_output_type: console
 ---
 
+```{r, echo=FALSE, out.width="50%", fig.align="center"}
+knitr::include_graphics("images/Control-Structures-in-R-Programming.jpg")
+```
+
 ## Code Blocks: R vs. Python
 
 Different programming languages define code blocks differently:
