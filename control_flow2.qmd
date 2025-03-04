@@ -8,7 +8,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-```{r, echo=FALSE, out.width="50%", fig.align="center"}
+```{r, echo=FALSE, out.width="50%", fig.align="left"}
 knitr::include_graphics("images/functions.png")
 ```
 
