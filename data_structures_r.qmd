@@ -460,7 +460,10 @@ for (i in 1:nrow(df)) {
 
 ### Exercise 1
 
-Recall the earlier example where we computed year's in which the increase in GDP per capita was more than 10%. Let us use matrices to solve the problem. We'll also compare the time it takes using a matrix with the time it takes using `for` loops.
+Recall the earlier example where we computed year's in which the increase in GDP per capita was more than 10%. 
+
+####
+Let us use matrices to solve the problem. We'll also compare the time it takes using a matrix with the time it takes using `for` loops.
 
 ```{r}
 
@@ -497,65 +500,79 @@ time.taken <- end.time - start.time
 time.taken
 ```
 
-Observe that matrices reduce the execution time of the code as computations are performed simultaneously, in contrast to a `for` loop where computations are performed one at a time.
+Observe that matrices reduce the execution time of the code as computations are performed using vectorization, in contrast to a `for` loop where computations are performed one at a time.
 
-Sometimes, the computations on rows / columns of a matrix are not straighforward and we may need to use the `apply()` function to apply a function on each row / column of a matrix.
 
-**Example:** Find the maximum GDP per capita of the US in each of the 5 year periods starting from 1961-1965, and upto 2015-2020.
+####
+Determine the highest GDP per capita in the United States for each five-year period from 1961-1965 to 2015-2020.
+
+**Hint:** 
+
+* First, create a matrix where each row represents a five-year period of GDP per capita. 
+* Then, use the `apply()` function to find the maximum GDP per capita within each period
 
 ```{r}
 GDP_5year <- matrix(G[-c(1, length(G))], 12, 5, byrow = TRUE)
 GDP_max_5year <- apply(GDP_5year, 1, max)
 ```
 
-In the above code, we applied the in-built function `max` on all the rows. Sometimes, an in-built function may not be available for the computations to be performed. In such as case, we can write our own user-defined function within the `apply()` function. See the example below.
+In the above code, we applied the built-in function `max` to each row (5-year period). 
 
-**Example:** Find the range (max-min) of GDP per capita of the US in each of the 5 year periods starting from 1961-1965, and upto 2015-2020.
+####
+Identify the highest GDP per capita in the United States across all the five-year periods defined in the previous question. 
+Additionally, determine the specific five-year period and the exact year in which this maximum GDP per capita occurred.
 
 ```{r}
-GDP_5year <- matrix(G[-c(1, length(G))], 12, 5, byrow = TRUE)
-GDP_range_5year <- apply(GDP_5year, 1, function(x) max(x) - min(x))
-GDP_range_5year
+# Define start year
+start_year <- 1961
+
+# Generate period labels
+year_intervals <- seq(start_year, start_year + (nrow(GDP_5year) - 1) * 5, by = 5)
+period_labels <- paste(year_intervals, year_intervals + 4, sep = "-")
+
+# Assign row names
+rownames(GDP_5year) <- period_labels
+
+# Find the maximum GDP across all 5-year periods
+max_gdp_overall <- max(GDP_5year)
+
+# Find the row and column index of the maximum value
+max_position <- which(GDP_5year == max_gdp_overall, arr.ind = TRUE)
+
+# Extract the corresponding 5-year period
+max_period <- rownames(GDP_5year)[max_position[1]]
+
+# Compute the exact year within the period
+max_year_within_period <- start_year + (max_position[1] - 1) * 5 + (max_position[2] - 1)
+
+# Print results
+print(paste("Maximum GDP per capita:", max_gdp_overall))
+print(paste("Occurred in period:", max_period))
+print(paste("Occurred in year:", max_year_within_period))
 ```
 
-In the code above we applied a user-defined function on each row of the matrix. However, if the function has multiple lines, it may be inconvenient to write the function within the `apply()` function. In that case, we can define the function outside the `apply()` function.
+If an built-in function is not available for the computations to be performed, we can write our own user-defined function within the `apply()` function
 
-**Example:** Find the five year periods  starting from 1961-1965, and upto 2016-2020, during which the GDP per capita decreased as compared to the previous year.
+####
+
+Identify the five-year periods which the GDP per capita experienced a continuous decline each year, indicating a period of financial crisis or economic degradation
 
 
 ```{r}
-GDP_inc <- function (GDP_5yr) {
-  dec <- 0
-  for (i in 1:4) {
-    if(GDP_5yr[i+1] < GDP_5yr[i]) dec <- 1
-  }
-  return(dec)
-}
+# Identify periods where GDP decreases year by year
+decreasing_periods <- apply(GDP_5year, 1, function(row) all(diff(row) < 0))
 
-GDP_5year_mat <- matrix(G[-c(1,length(G))], 12, 5, byrow = TRUE)
-years_inc_dec <- apply(GDP_5year_mat, 1, GDP_inc)
-five_year_periods <- seq(1960, 2015, 5)
-print("Five year periods in which the GDP per capita decreased are those starting from the years:")
-print(five_year_periods[years_inc_dec == 1] + 1)
+# Extract period names where GDP is continuously decreasing
+decreasing_period_names <- rownames(GDP_5year)[decreasing_periods]
+
+# Print the periods of financial decline
+print(decreasing_period_names)
 ```
 
 The 5 year periods during which the GDP per capita decreased as compared to the previous year are 2006-2010, and 2016-2020.
 
+
 ### Exercise 2
-
-Find the 5 year period in which the difference of the maximum GDP per capita and the minimum GDP per capita as a percentage of the minimum GDP per capita was the highest.
-
-**Solution:**
-
-```{r}
-five_year_periods[which.max(apply(GDP_5year_mat, 1, function(x) (max(x) - min(x)) / min(x)))] + 1
-```
-
-```{r}
-print("During 1976-1980 the difference of the maximum GDP per capita and the minimum GDP per capita as a percentage of the minimum GDP per capita was the highest.")
-```
-
-### Exercise 3
 
 The object `country_names` is an atomic vector consisting of country names. The object `coordinates_capital_cities` is a matrix consisting of the latitude-longitude pair of the capital city of the respective country. The order of countries in `country_names` is the same as the order in which their capital city coordinates (latitude-longitude) appear in the matrix `coordinates_capital_cities`.
 
@@ -632,14 +649,22 @@ Top 10 countries with capitals closest to Washington DC are the following:
 
 ```{r}
 #| eval: false
-country_names[sorted[3:12, 1]]
+
+#Exclude rows where the country is "United States" or "US Minor Outlying Islands"
+filtered_sorted <- sorted[!(country_names[sorted[, 1]] %in% c("United States", "US Minor Outlying Islands")), ]
+
+# Get the top 10 closest countries (after exclusions)
+top_10_countries <- country_names[filtered_sorted[1:10, 1]]
+
+# Print the result
+print(top_10_countries)
 ```
 
 The coordinates of the top 10 capital cities closest to Washington DC are:
 
 ```{r}
 #| eval: false
-coordinates_capital_cities[sorted[3:12, 1],]
+coordinates_capital_cities[top_10_countries]
 ```
 
 
@@ -655,7 +680,7 @@ for (i in 1:9) {
 ```
 
 
-### Exercise 4
+### Exercise 3
 
 Download the dataset *movies.json*. Execute the following code to read the data into the object `movies`:
 
@@ -700,7 +725,7 @@ for (i in 1:length(movies)) {
 print(paste("Number of movies with negative profit =", count))
 ```
 
-Solve practice exercise 5 without using a `for` loop. Use the `lapply()` function.
+Solve this task without using a `for` loop. Use the `lapply()` function.
 
 ```{r}
 #| eval: false
