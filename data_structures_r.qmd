@@ -89,6 +89,36 @@ Row and columns of the matrix can be sliced using the `:` operator. Suppose we w
 mat[1:2, 2:3]
 ```
 
+### Working with `rownames()` and `colnames()`
+
+In R, row names (`rownames()`) and column names (`colnames()`) allow you to label and reference rows and columns in  matrices and  data frames efficiently.
+
+```{r}
+# Create a matrix
+mat <- matrix(1:9, nrow = 3, byrow = TRUE)
+
+# Assign row names
+rownames(mat) <- c("Row1", "Row2", "Row3")
+
+# Assign column names
+colnames(mat) <- c("Col1", "Col2", "Col3")
+
+# Print matrix
+print(mat)
+```
+
+Getting and Modifying Names
+
+```{r}
+rownames(mat)  # Get row names
+colnames(mat)  # Get column names
+
+rownames(mat) <- c("A", "B", "C")  # Modify row names
+colnames(mat) <- c("X", "Y", "Z")  # Modify column names
+
+print(mat)
+```
+
 ### Adding and Removing
 
 -   use `cbind()` to add a column of correct length
@@ -394,8 +424,6 @@ print(mean_results)
 
 ```
 
-
-
 ## Data Frames (2D, Heterogeneous)
 
 A data frame is a table-like structure where each column is a vector. Unlike matrices, columns can have different types.
@@ -409,6 +437,18 @@ df <- data.frame(Name=c("Alice", "Bob", "Charlie"),
 
 print(df)
 ```
+
+### Common functions
+
+| Function      | Purpose                                      |
+|--------------|----------------------------------------------|
+| `nrow(df)`   | Number of rows                              |
+| `ncol(df)`   | Number of columns                           |
+| `dim(df)`    | Returns (rows, columns) as a vector        |
+| `length(df)` | Number of columns (since a data frame is a list of columns) |
+| `rownames(df)` | Returns row names                        |
+| `colnames(df)` | Returns column names                     |
+
 
 ### Accessing Data Frame Elements
 
