@@ -448,6 +448,55 @@ print(df)
 | `length(df)` | Number of columns (since a data frame is a list of columns) |
 | `rownames(df)` | Returns row names                        |
 | `colnames(df)` | Returns column names                     |
+| `str(df)`    | Displays the structure of the data frame, including column types and values |
+| `head(df)`   | Returns the first six rows of the data frame |
+
+### Missing values
+
+#### Using `is.na()`
+
+```{r}
+# Sample data frame with missing values
+df_missing <- data.frame(Name = c("Alice", "Bob", "Charlie"),
+                 Age = c(25, NA, 35),
+                 Score = c(90, 85, NA))
+
+# Check for missing values (returns TRUE/FALSE matrix)
+is.na(df_missing)
+```
+
+`is.na(df)` returns a matrix where TRUE indicates a missing value.
+
+#### Count the number of total missing values
+
+```{r}
+sum(is.na(df))
+```
+Counts all `NA` values in the entire data frame.
+
+#### Count missing values by column
+
+```{r}
+colSums(is.na(df))
+```
+
+#### Find Rows Containing NA Values
+
+```{r}
+df[!complete.cases(df), ]
+```
+
+Common functions on missing values
+
+| Function                    | Purpose |
+|-----------------------------|----------------------------------------------|
+| `is.na(df)`                 | Returns a matrix of `TRUE/FALSE` for missing values |
+| `sum(is.na(df))`            | Counts the total number of missing values |
+| `colSums(is.na(df))`        | Counts missing values per column |
+| `df[!complete.cases(df), ]` | Shows only rows that contain missing values |
+| `any(is.na(df))`            | Returns `TRUE` if any missing values exist |
+| `mean(is.na(df))`           | Returns the proportion of missing values |
+
 
 
 ### Accessing Data Frame Elements
