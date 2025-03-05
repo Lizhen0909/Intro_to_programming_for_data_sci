@@ -594,7 +594,6 @@ The 5 year periods during which the GDP per capita decreased as compared to the 
 
 ### Exercise 2
 
-The object `country_names` is an atomic vector consisting of country names. The object `coordinates_capital_cities` is a matrix consisting of the latitude-longitude pair of the capital city of the respective country. The order of countries in `country_names` is the same as the order in which their capital city coordinates (latitude-longitude) appear in the matrix `coordinates_capital_cities`.
 
 ```{r}
 #| echo: false
@@ -605,6 +604,8 @@ setwd("C:\\Users\\akl0407\\Desktop\\STAT303-1\\Quarto Book\\Intro_to_programming
 Download the file *capital_cities.csv* from [here](https://nuwildcat-my.sharepoint.com/:f:/g/personal/lsi8012_ads_northwestern_edu/EjpAlBWJO_dMlF7uFVGKQHQBX0rLvo8UycJBHC2dUTEeyw
 ). Make sure the file is in your current working directory. Execute the following code to obtain the objects `coordinates_capital_cities` and `country_names`. 
 
+The object `country_names` is an atomic vector consisting of country names. The object `coordinates_capital_cities` is a matrix consisting of the latitude-longitude pair of the capital city of the respective country. The order of countries in `country_names` is the same as the order in which their capital city coordinates (latitude-longitude) appear in the matrix `coordinates_capital_cities`.
+
 ```{r}
 #| eval: false
 capital_cities <- read.csv('capital_cities.csv')
@@ -612,8 +613,11 @@ coordinates_capital_cities <- as.matrix(capital_cities[,c(3, 4)])
 country_names <- capital_cities[,1]
 ```
 
-#### Country with capital closest to DC
-Print the name and coordinates of the country with the capital city closest to the US capital - Washington DC. 
+#### Top 10 countries closest to DC
+
+1. Print the names of the countries of the top 10 capital cities closest to the US capital - Washington DC. 
+
+2. Create and print a matrix containing the coordinates of the top 10 capital cities closest to Washington DC.
 
 Note that:
 
@@ -632,13 +636,6 @@ Note that:
 4. Use the `apply()` function on the matrix obtained above to find the Euclidean distance of Washington DC from the rest of the capital cities. 
 
 5. Using the distances obtained above, find the country that has the closest capital to DC (Euclidean distance > 0).
-
-
-#### Top 10 countries closest to DC
-
-1. Print the names of the countries of the top 10 capital cities closest to the US capital - Washington DC. 
-
-2. Create and print a matrix containing the coordinates of the top 10 capital cities closest to Washington DC.
 
 
 ```{r}
