@@ -5120,7 +5120,8 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#creating-data-frames" id="toc-creating-data-frames" class="nav-link" data-scroll-target="#creating-data-frames"><span class="header-section-number">12.4.1</span> Creating data Frames</a></li>
   <li><a href="#accessing-data-frame-elements" id="toc-accessing-data-frame-elements" class="nav-link" data-scroll-target="#accessing-data-frame-elements"><span class="header-section-number">12.4.2</span> Accessing Data Frame Elements</a></li>
-  <li><a href="#iterating-1" id="toc-iterating-1" class="nav-link" data-scroll-target="#iterating-1"><span class="header-section-number">12.4.3</span> Iterating</a></li>
+  <li><a href="#using-logical-operators-for-data-frame-subsetting" id="toc-using-logical-operators-for-data-frame-subsetting" class="nav-link" data-scroll-target="#using-logical-operators-for-data-frame-subsetting"><span class="header-section-number">12.4.3</span> Using Logical Operators for Data Frame Subsetting</a></li>
+  <li><a href="#iterating-1" id="toc-iterating-1" class="nav-link" data-scroll-target="#iterating-1"><span class="header-section-number">12.4.4</span> Iterating</a></li>
   </ul></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">12.5</span> Summary</a></li>
   <li><a href="#practice-exericises" id="toc-practice-exericises" class="nav-link" data-scroll-target="#practice-exericises"><span class="header-section-number">12.6</span> Practice exericises</a>
@@ -5451,7 +5452,7 @@ new_row    5    5    5</code></pre>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>time.taken <span class="ot">&lt;-</span> end.time <span class="sc">-</span> start.time</span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>time.taken</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 0.003796816 secs</code></pre>
+<pre><code>Time difference of 0.003693104 secs</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -5464,7 +5465,7 @@ new_row    5    5    5</code></pre>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>time.taken <span class="ot">&lt;-</span> end.time <span class="sc">-</span> start.time</span>
 <span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>time.taken</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 0.001351833 secs</code></pre>
+<pre><code>Time difference of 0.001274109 secs</code></pre>
 </div>
 </div>
 <p>Observe that the <code>apply()</code> function takes much lesser time to sum up all the rows of the matrix as compared to the <code>for</code> loop.</p>
@@ -5700,13 +5701,94 @@ $c
 </div>
 </div>
 </section>
-<section id="iterating-1" class="level3" data-number="12.4.3">
-<h3 data-number="12.4.3" class="anchored" data-anchor-id="iterating-1"><span class="header-section-number">12.4.3</span> Iterating</h3>
+<section id="using-logical-operators-for-data-frame-subsetting" class="level3" data-number="12.4.3">
+<h3 data-number="12.4.3" class="anchored" data-anchor-id="using-logical-operators-for-data-frame-subsetting"><span class="header-section-number">12.4.3</span> Using Logical Operators for Data Frame Subsetting</h3>
+<section id="using-logical-operators" class="level4" data-number="12.4.3.1">
+<h4 data-number="12.4.3.1" class="anchored" data-anchor-id="using-logical-operators"><span class="header-section-number">12.4.3.1</span> Using Logical Operators (<code>[ ]</code>)</h4>
+<p>You can filter rows based on conditions using comparison operators (<code>==</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>!=</code>):</p>
+<p>Filter rows where age is greater than 25</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Iterate over rows</span></span>
-<span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(df)) {</span>
-<span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Row"</span>, i, <span class="st">":"</span>, df[i, ]))</span>
-<span id="cb98-4"><a href="#cb98-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>filtered_df <span class="ot">&lt;-</span> df[df<span class="sc">$</span>Score <span class="sc">==</span> <span class="dv">90</span>, ]</span>
+<span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(filtered_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Name Age Score
+1 Alice  25    90</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a>filtered_df <span class="ot">&lt;-</span> df[df<span class="sc">$</span>Age <span class="sc">&gt;</span> <span class="dv">25</span>, ]</span>
+<span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(filtered_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     Name Age Score
+2     Bob  30    85
+3 Charlie  35    88</code></pre>
+</div>
+</div>
+<ul>
+<li><code>df$Age &gt; 25</code> creates a logical vector (<code>FALSE</code>, <code>TRUE</code>, <code>TRUE</code>).</li>
+<li><code>df[df$Age &gt; 25, ]</code> selects rows where <code>Age</code> is greater than 25.</li>
+<li>Uses <code>==</code> to filter rows where <code>Score</code> is exactly 90.</li>
+</ul>
+</section>
+<section id="using-subset-function" class="level4" data-number="12.4.3.2">
+<h4 data-number="12.4.3.2" class="anchored" data-anchor-id="using-subset-function"><span class="header-section-number">12.4.3.2</span> Using <code>subset()</code> function</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a>filtered_df <span class="ot">&lt;-</span> <span class="fu">subset</span>(df, Age <span class="sc">&gt;</span> <span class="dv">25</span>)</span>
+<span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(filtered_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     Name Age Score
+2     Bob  30    85
+3 Charlie  35    88</code></pre>
+</div>
+</div>
+</section>
+<section id="filter-using-multiple-conditions" class="level4" data-number="12.4.3.3">
+<h4 data-number="12.4.3.3" class="anchored" data-anchor-id="filter-using-multiple-conditions"><span class="header-section-number">12.4.3.3</span> Filter using multiple conditions</h4>
+<p>You can combine multiple conditions with <code>&amp;</code> (AND) and <code>|</code> (OR):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a>filtered_df <span class="ot">&lt;-</span> df[df<span class="sc">$</span>Age <span class="sc">&gt;</span> <span class="dv">25</span> <span class="sc">&amp;</span> df<span class="sc">$</span>Score <span class="sc">&gt;</span> <span class="dv">85</span>, ]</span>
+<span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(filtered_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     Name Age Score
+3 Charlie  35    88</code></pre>
+</div>
+</div>
+<p>Using <code>subset()</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a>filtered_df <span class="ot">&lt;-</span> <span class="fu">subset</span>(df, Age <span class="sc">&gt;</span> <span class="dv">28</span> <span class="sc">&amp;</span> Score <span class="sc">&gt;</span> <span class="dv">85</span>)</span>
+<span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(filtered_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     Name Age Score
+3 Charlie  35    88</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a>filtered_df <span class="ot">&lt;-</span> df[df<span class="sc">$</span>Age <span class="sc">&lt;</span> <span class="dv">30</span> <span class="sc">|</span> df<span class="sc">$</span>Score <span class="sc">&gt;</span> <span class="dv">85</span>, ]</span>
+<span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(filtered_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     Name Age Score
+1   Alice  25    90
+3 Charlie  35    88</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter and select only the "Name" and "Score" columns</span></span>
+<span id="cb110-2"><a href="#cb110-2" aria-hidden="true" tabindex="-1"></a>filtered_df <span class="ot">&lt;-</span> <span class="fu">subset</span>(df, Age <span class="sc">&gt;</span> <span class="dv">28</span> <span class="sc">&amp;</span> Score <span class="sc">&gt;</span> <span class="dv">85</span>, <span class="at">select =</span> <span class="fu">c</span>(Name, Score))</span>
+<span id="cb110-3"><a href="#cb110-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(filtered_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     Name Score
+3 Charlie    88</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="iterating-1" class="level3" data-number="12.4.4">
+<h3 data-number="12.4.4" class="anchored" data-anchor-id="iterating-1"><span class="header-section-number">12.4.4</span> Iterating</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb112"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Iterate over rows</span></span>
+<span id="cb112-2"><a href="#cb112-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(df)) {</span>
+<span id="cb112-3"><a href="#cb112-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Row"</span>, i, <span class="st">":"</span>, df[i, ]))</span>
+<span id="cb112-4"><a href="#cb112-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Row 1 : Alice" "Row 1 : 25"    "Row 1 : 90"   
 [1] "Row 2 : Bob" "Row 2 : 30"  "Row 2 : 85" 
@@ -5714,10 +5796,10 @@ $c
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (col <span class="cf">in</span> <span class="fu">names</span>(df)) {</span>
-<span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Column:"</span>, col))</span>
-<span id="cb100-3"><a href="#cb100-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(df[[col]])  <span class="co"># Access column by name</span></span>
-<span id="cb100-4"><a href="#cb100-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (col <span class="cf">in</span> <span class="fu">names</span>(df)) {</span>
+<span id="cb114-2"><a href="#cb114-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Column:"</span>, col))</span>
+<span id="cb114-3"><a href="#cb114-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(df[[col]])  <span class="co"># Access column by name</span></span>
+<span id="cb114-4"><a href="#cb114-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Column: Name"
 [1] "Alice"   "Bob"     "Charlie"
@@ -5728,11 +5810,11 @@ $c
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(df)) {</span>
-<span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(df)) {</span>
-<span id="cb102-3"><a href="#cb102-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Element at ["</span>, i, <span class="st">","</span>, j, <span class="st">"]:"</span>, df[i, j]))</span>
-<span id="cb102-4"><a href="#cb102-4" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb102-5"><a href="#cb102-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(df)) {</span>
+<span id="cb116-2"><a href="#cb116-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(df)) {</span>
+<span id="cb116-3"><a href="#cb116-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Element at ["</span>, i, <span class="st">","</span>, j, <span class="st">"]:"</span>, df[i, j]))</span>
+<span id="cb116-4"><a href="#cb116-4" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb116-5"><a href="#cb116-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Element at [ 1 , 1 ]: Alice"
 [1] "Element at [ 1 , 2 ]: 25"
@@ -5795,46 +5877,46 @@ $c
 <h4 data-number="12.6.1.1" class="anchored" data-anchor-id="section"><span class="header-section-number">12.6.1.1</span> </h4>
 <p>Let us use matrices to solve the problem. We’ll also compare the time it takes using a matrix with the time it takes using <code>for</code> loops.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a>G <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">3007</span>, <span class="dv">3067</span>, <span class="dv">3244</span>, <span class="dv">3375</span>,<span class="dv">3574</span>, <span class="dv">3828</span>, <span class="dv">4146</span>, <span class="dv">4336</span>, <span class="dv">4696</span>, <span class="dv">5032</span>,<span class="dv">5234</span>,<span class="dv">5609</span>,<span class="dv">6094</span>,<span class="dv">6726</span>,<span class="dv">7226</span>,<span class="dv">7801</span>,<span class="dv">8592</span>,<span class="dv">9453</span>,<span class="dv">10565</span>,<span class="dv">11674</span>,<span class="dv">12575</span>,<span class="dv">13976</span>,<span class="dv">14434</span>,<span class="dv">15544</span>,<span class="dv">17121</span>,<span class="dv">18237</span>,<span class="dv">19071</span>,<span class="dv">20039</span>,<span class="dv">21417</span>,<span class="dv">22857</span>,<span class="dv">23889</span>,<span class="dv">24342</span>,<span class="dv">25419</span>,<span class="dv">26387</span>,<span class="dv">27695</span>,<span class="dv">28691</span>,<span class="dv">29968</span>,<span class="dv">31459</span>,<span class="dv">32854</span>,<span class="dv">34515</span>,<span class="dv">36330</span>,<span class="dv">37134</span>,<span class="dv">37998</span>,<span class="dv">39490</span>,<span class="dv">41725</span>,<span class="dv">44123</span>,<span class="dv">46302</span>,<span class="dv">48050</span>,<span class="dv">48570</span>,<span class="dv">47195</span>,<span class="dv">48651</span>,<span class="dv">50066</span>,<span class="dv">51784</span>,<span class="dv">53291</span>,<span class="dv">55124</span>,<span class="dv">56763</span>,<span class="dv">57867</span>,<span class="dv">59915</span>,<span class="dv">62805</span>,<span class="dv">65095</span>,<span class="dv">63028</span>,<span class="dv">69288</span>)</span>
-<span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb104-3"><a href="#cb104-3" aria-hidden="true" tabindex="-1"></a>start.time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
-<span id="cb104-4"><a href="#cb104-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb104-5"><a href="#cb104-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Let the first column of the matrix be the GDP of all the years except 1960, and the second column be the GDP of all the years except 2021.</span></span>
-<span id="cb104-6"><a href="#cb104-6" aria-hidden="true" tabindex="-1"></a>GDP_mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(G[<span class="sc">-</span><span class="dv">1</span>], G[<span class="sc">-</span><span class="fu">length</span>(G)]), <span class="fu">length</span>(G) <span class="sc">-</span> <span class="dv">1</span>, <span class="dv">2</span>)</span>
-<span id="cb104-7"><a href="#cb104-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb104-8"><a href="#cb104-8" aria-hidden="true" tabindex="-1"></a><span class="co">#The percent increase in GDP can be computed by performing computations using the 2 columns of the matrix</span></span>
-<span id="cb104-9"><a href="#cb104-9" aria-hidden="true" tabindex="-1"></a>inc <span class="ot">&lt;-</span> (GDP_mat[,<span class="dv">1</span>] <span class="sc">-</span> GDP_mat[,<span class="dv">2</span>]) <span class="sc">/</span> GDP_mat[,<span class="dv">2</span>]</span>
-<span id="cb104-10"><a href="#cb104-10" aria-hidden="true" tabindex="-1"></a>years <span class="ot">&lt;-</span> <span class="dv">1961</span><span class="sc">:</span><span class="dv">2021</span></span>
-<span id="cb104-11"><a href="#cb104-11" aria-hidden="true" tabindex="-1"></a>years <span class="ot">&lt;-</span> years[inc <span class="sc">&gt;</span> <span class="fl">0.1</span>]</span>
-<span id="cb104-12"><a href="#cb104-12" aria-hidden="true" tabindex="-1"></a>years</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb118"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a>G <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">3007</span>, <span class="dv">3067</span>, <span class="dv">3244</span>, <span class="dv">3375</span>,<span class="dv">3574</span>, <span class="dv">3828</span>, <span class="dv">4146</span>, <span class="dv">4336</span>, <span class="dv">4696</span>, <span class="dv">5032</span>,<span class="dv">5234</span>,<span class="dv">5609</span>,<span class="dv">6094</span>,<span class="dv">6726</span>,<span class="dv">7226</span>,<span class="dv">7801</span>,<span class="dv">8592</span>,<span class="dv">9453</span>,<span class="dv">10565</span>,<span class="dv">11674</span>,<span class="dv">12575</span>,<span class="dv">13976</span>,<span class="dv">14434</span>,<span class="dv">15544</span>,<span class="dv">17121</span>,<span class="dv">18237</span>,<span class="dv">19071</span>,<span class="dv">20039</span>,<span class="dv">21417</span>,<span class="dv">22857</span>,<span class="dv">23889</span>,<span class="dv">24342</span>,<span class="dv">25419</span>,<span class="dv">26387</span>,<span class="dv">27695</span>,<span class="dv">28691</span>,<span class="dv">29968</span>,<span class="dv">31459</span>,<span class="dv">32854</span>,<span class="dv">34515</span>,<span class="dv">36330</span>,<span class="dv">37134</span>,<span class="dv">37998</span>,<span class="dv">39490</span>,<span class="dv">41725</span>,<span class="dv">44123</span>,<span class="dv">46302</span>,<span class="dv">48050</span>,<span class="dv">48570</span>,<span class="dv">47195</span>,<span class="dv">48651</span>,<span class="dv">50066</span>,<span class="dv">51784</span>,<span class="dv">53291</span>,<span class="dv">55124</span>,<span class="dv">56763</span>,<span class="dv">57867</span>,<span class="dv">59915</span>,<span class="dv">62805</span>,<span class="dv">65095</span>,<span class="dv">63028</span>,<span class="dv">69288</span>)</span>
+<span id="cb118-2"><a href="#cb118-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb118-3"><a href="#cb118-3" aria-hidden="true" tabindex="-1"></a>start.time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb118-4"><a href="#cb118-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb118-5"><a href="#cb118-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Let the first column of the matrix be the GDP of all the years except 1960, and the second column be the GDP of all the years except 2021.</span></span>
+<span id="cb118-6"><a href="#cb118-6" aria-hidden="true" tabindex="-1"></a>GDP_mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(G[<span class="sc">-</span><span class="dv">1</span>], G[<span class="sc">-</span><span class="fu">length</span>(G)]), <span class="fu">length</span>(G) <span class="sc">-</span> <span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb118-7"><a href="#cb118-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb118-8"><a href="#cb118-8" aria-hidden="true" tabindex="-1"></a><span class="co">#The percent increase in GDP can be computed by performing computations using the 2 columns of the matrix</span></span>
+<span id="cb118-9"><a href="#cb118-9" aria-hidden="true" tabindex="-1"></a>inc <span class="ot">&lt;-</span> (GDP_mat[,<span class="dv">1</span>] <span class="sc">-</span> GDP_mat[,<span class="dv">2</span>]) <span class="sc">/</span> GDP_mat[,<span class="dv">2</span>]</span>
+<span id="cb118-10"><a href="#cb118-10" aria-hidden="true" tabindex="-1"></a>years <span class="ot">&lt;-</span> <span class="dv">1961</span><span class="sc">:</span><span class="dv">2021</span></span>
+<span id="cb118-11"><a href="#cb118-11" aria-hidden="true" tabindex="-1"></a>years <span class="ot">&lt;-</span> years[inc <span class="sc">&gt;</span> <span class="fl">0.1</span>]</span>
+<span id="cb118-12"><a href="#cb118-12" aria-hidden="true" tabindex="-1"></a>years</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1973 1976 1977 1978 1979 1981 1984</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a>end.time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
-<span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a>time.taken <span class="ot">&lt;-</span> end.time <span class="sc">-</span> start.time</span>
-<span id="cb106-3"><a href="#cb106-3" aria-hidden="true" tabindex="-1"></a>time.taken</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb120"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a>end.time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb120-2"><a href="#cb120-2" aria-hidden="true" tabindex="-1"></a>time.taken <span class="ot">&lt;-</span> end.time <span class="sc">-</span> start.time</span>
+<span id="cb120-3"><a href="#cb120-3" aria-hidden="true" tabindex="-1"></a>time.taken</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 0.002279997 secs</code></pre>
+<pre><code>Time difference of 0.002463818 secs</code></pre>
 </div>
 </div>
 <p>Without matrices, the time taken to perform the same computation is measured with the code below.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a>start.time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
-<span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a>years <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
-<span id="cb108-3"><a href="#cb108-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(<span class="fu">length</span>(G) <span class="sc">-</span> <span class="dv">1</span>)) {</span>
-<span id="cb108-4"><a href="#cb108-4" aria-hidden="true" tabindex="-1"></a>  diff <span class="ot">=</span> (G[i<span class="sc">+</span><span class="dv">1</span>] <span class="sc">-</span> G[i]) <span class="sc">/</span> G[i]</span>
-<span id="cb108-5"><a href="#cb108-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (diff <span class="sc">&gt;</span> <span class="fl">0.1</span>) years <span class="ot">&lt;-</span> <span class="fu">c</span>(years, <span class="dv">1960</span> <span class="sc">+</span> i)</span>
-<span id="cb108-6"><a href="#cb108-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb108-7"><a href="#cb108-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(years)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb122"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a>start.time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb122-2"><a href="#cb122-2" aria-hidden="true" tabindex="-1"></a>years <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb122-3"><a href="#cb122-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(<span class="fu">length</span>(G) <span class="sc">-</span> <span class="dv">1</span>)) {</span>
+<span id="cb122-4"><a href="#cb122-4" aria-hidden="true" tabindex="-1"></a>  diff <span class="ot">=</span> (G[i<span class="sc">+</span><span class="dv">1</span>] <span class="sc">-</span> G[i]) <span class="sc">/</span> G[i]</span>
+<span id="cb122-5"><a href="#cb122-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (diff <span class="sc">&gt;</span> <span class="fl">0.1</span>) years <span class="ot">&lt;-</span> <span class="fu">c</span>(years, <span class="dv">1960</span> <span class="sc">+</span> i)</span>
+<span id="cb122-6"><a href="#cb122-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb122-7"><a href="#cb122-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(years)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1973 1976 1977 1978 1979 1981 1984</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="co">#print(proc.time()[3]-start_time)</span></span>
-<span id="cb110-2"><a href="#cb110-2" aria-hidden="true" tabindex="-1"></a>end.time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
-<span id="cb110-3"><a href="#cb110-3" aria-hidden="true" tabindex="-1"></a>time.taken <span class="ot">&lt;-</span> end.time <span class="sc">-</span> start.time</span>
-<span id="cb110-4"><a href="#cb110-4" aria-hidden="true" tabindex="-1"></a>time.taken</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb124"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="co">#print(proc.time()[3]-start_time)</span></span>
+<span id="cb124-2"><a href="#cb124-2" aria-hidden="true" tabindex="-1"></a>end.time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb124-3"><a href="#cb124-3" aria-hidden="true" tabindex="-1"></a>time.taken <span class="ot">&lt;-</span> end.time <span class="sc">-</span> start.time</span>
+<span id="cb124-4"><a href="#cb124-4" aria-hidden="true" tabindex="-1"></a>time.taken</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 0.00536108 secs</code></pre>
+<pre><code>Time difference of 0.005029917 secs</code></pre>
 </div>
 </div>
 <p>Observe that matrices reduce the execution time of the code as computations are performed using vectorization, in contrast to a <code>for</code> loop where computations are performed one at a time.</p>
@@ -5848,8 +5930,8 @@ $c
 <li>Then, use the <code>apply()</code> function to find the maximum GDP per capita within each period</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb112"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a>GDP_5year <span class="ot">&lt;-</span> <span class="fu">matrix</span>(G[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="fu">length</span>(G))], <span class="dv">12</span>, <span class="dv">5</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb112-2"><a href="#cb112-2" aria-hidden="true" tabindex="-1"></a>GDP_max_5year <span class="ot">&lt;-</span> <span class="fu">apply</span>(GDP_5year, <span class="dv">1</span>, max)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb126"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a>GDP_5year <span class="ot">&lt;-</span> <span class="fu">matrix</span>(G[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="fu">length</span>(G))], <span class="dv">12</span>, <span class="dv">5</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb126-2"><a href="#cb126-2" aria-hidden="true" tabindex="-1"></a>GDP_max_5year <span class="ot">&lt;-</span> <span class="fu">apply</span>(GDP_5year, <span class="dv">1</span>, max)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In the above code, we applied the built-in function <code>max</code> to each row (5-year period).</p>
 </section>
@@ -5857,38 +5939,38 @@ $c
 <h4 data-number="12.6.1.3" class="anchored" data-anchor-id="section-2"><span class="header-section-number">12.6.1.3</span> </h4>
 <p>Identify the highest GDP per capita in the United States across all the five-year periods defined in the previous question. Additionally, determine the specific five-year period and the exact year in which this maximum GDP per capita occurred.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb113"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define start year</span></span>
-<span id="cb113-2"><a href="#cb113-2" aria-hidden="true" tabindex="-1"></a>start_year <span class="ot">&lt;-</span> <span class="dv">1961</span></span>
-<span id="cb113-3"><a href="#cb113-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb113-4"><a href="#cb113-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate period labels</span></span>
-<span id="cb113-5"><a href="#cb113-5" aria-hidden="true" tabindex="-1"></a>year_intervals <span class="ot">&lt;-</span> <span class="fu">seq</span>(start_year, start_year <span class="sc">+</span> (<span class="fu">nrow</span>(GDP_5year) <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">*</span> <span class="dv">5</span>, <span class="at">by =</span> <span class="dv">5</span>)</span>
-<span id="cb113-6"><a href="#cb113-6" aria-hidden="true" tabindex="-1"></a>period_labels <span class="ot">&lt;-</span> <span class="fu">paste</span>(year_intervals, year_intervals <span class="sc">+</span> <span class="dv">4</span>, <span class="at">sep =</span> <span class="st">"-"</span>)</span>
-<span id="cb113-7"><a href="#cb113-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb113-8"><a href="#cb113-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign row names</span></span>
-<span id="cb113-9"><a href="#cb113-9" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(GDP_5year) <span class="ot">&lt;-</span> period_labels</span>
-<span id="cb113-10"><a href="#cb113-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb113-11"><a href="#cb113-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the maximum GDP across all 5-year periods</span></span>
-<span id="cb113-12"><a href="#cb113-12" aria-hidden="true" tabindex="-1"></a>max_gdp_overall <span class="ot">&lt;-</span> <span class="fu">max</span>(GDP_5year)</span>
-<span id="cb113-13"><a href="#cb113-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb113-14"><a href="#cb113-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the row and column index of the maximum value</span></span>
-<span id="cb113-15"><a href="#cb113-15" aria-hidden="true" tabindex="-1"></a>max_position <span class="ot">&lt;-</span> <span class="fu">which</span>(GDP_5year <span class="sc">==</span> max_gdp_overall, <span class="at">arr.ind =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb113-16"><a href="#cb113-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb113-17"><a href="#cb113-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the corresponding 5-year period</span></span>
-<span id="cb113-18"><a href="#cb113-18" aria-hidden="true" tabindex="-1"></a>max_period <span class="ot">&lt;-</span> <span class="fu">rownames</span>(GDP_5year)[max_position[<span class="dv">1</span>]]</span>
-<span id="cb113-19"><a href="#cb113-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb113-20"><a href="#cb113-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the exact year within the period</span></span>
-<span id="cb113-21"><a href="#cb113-21" aria-hidden="true" tabindex="-1"></a>max_year_within_period <span class="ot">&lt;-</span> start_year <span class="sc">+</span> (max_position[<span class="dv">1</span>] <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">*</span> <span class="dv">5</span> <span class="sc">+</span> (max_position[<span class="dv">2</span>] <span class="sc">-</span> <span class="dv">1</span>)</span>
-<span id="cb113-22"><a href="#cb113-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb113-23"><a href="#cb113-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Print results</span></span>
-<span id="cb113-24"><a href="#cb113-24" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Maximum GDP per capita:"</span>, max_gdp_overall))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb127"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb127-1"><a href="#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define start year</span></span>
+<span id="cb127-2"><a href="#cb127-2" aria-hidden="true" tabindex="-1"></a>start_year <span class="ot">&lt;-</span> <span class="dv">1961</span></span>
+<span id="cb127-3"><a href="#cb127-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb127-4"><a href="#cb127-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate period labels</span></span>
+<span id="cb127-5"><a href="#cb127-5" aria-hidden="true" tabindex="-1"></a>year_intervals <span class="ot">&lt;-</span> <span class="fu">seq</span>(start_year, start_year <span class="sc">+</span> (<span class="fu">nrow</span>(GDP_5year) <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">*</span> <span class="dv">5</span>, <span class="at">by =</span> <span class="dv">5</span>)</span>
+<span id="cb127-6"><a href="#cb127-6" aria-hidden="true" tabindex="-1"></a>period_labels <span class="ot">&lt;-</span> <span class="fu">paste</span>(year_intervals, year_intervals <span class="sc">+</span> <span class="dv">4</span>, <span class="at">sep =</span> <span class="st">"-"</span>)</span>
+<span id="cb127-7"><a href="#cb127-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb127-8"><a href="#cb127-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign row names</span></span>
+<span id="cb127-9"><a href="#cb127-9" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(GDP_5year) <span class="ot">&lt;-</span> period_labels</span>
+<span id="cb127-10"><a href="#cb127-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb127-11"><a href="#cb127-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the maximum GDP across all 5-year periods</span></span>
+<span id="cb127-12"><a href="#cb127-12" aria-hidden="true" tabindex="-1"></a>max_gdp_overall <span class="ot">&lt;-</span> <span class="fu">max</span>(GDP_5year)</span>
+<span id="cb127-13"><a href="#cb127-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb127-14"><a href="#cb127-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the row and column index of the maximum value</span></span>
+<span id="cb127-15"><a href="#cb127-15" aria-hidden="true" tabindex="-1"></a>max_position <span class="ot">&lt;-</span> <span class="fu">which</span>(GDP_5year <span class="sc">==</span> max_gdp_overall, <span class="at">arr.ind =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb127-16"><a href="#cb127-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb127-17"><a href="#cb127-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the corresponding 5-year period</span></span>
+<span id="cb127-18"><a href="#cb127-18" aria-hidden="true" tabindex="-1"></a>max_period <span class="ot">&lt;-</span> <span class="fu">rownames</span>(GDP_5year)[max_position[<span class="dv">1</span>]]</span>
+<span id="cb127-19"><a href="#cb127-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb127-20"><a href="#cb127-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the exact year within the period</span></span>
+<span id="cb127-21"><a href="#cb127-21" aria-hidden="true" tabindex="-1"></a>max_year_within_period <span class="ot">&lt;-</span> start_year <span class="sc">+</span> (max_position[<span class="dv">1</span>] <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">*</span> <span class="dv">5</span> <span class="sc">+</span> (max_position[<span class="dv">2</span>] <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb127-22"><a href="#cb127-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb127-23"><a href="#cb127-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Print results</span></span>
+<span id="cb127-24"><a href="#cb127-24" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Maximum GDP per capita:"</span>, max_gdp_overall))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Maximum GDP per capita: 65095"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb115"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Occurred in period:"</span>, max_period))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb129"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Occurred in period:"</span>, max_period))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Occurred in period: 2016-2020"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb117"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Occurred in year:"</span>, max_year_within_period))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb131"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb131-1"><a href="#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Occurred in year:"</span>, max_year_within_period))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Occurred in year: 2019"</code></pre>
 </div>
@@ -5899,33 +5981,33 @@ $c
 <h4 data-number="12.6.1.4" class="anchored" data-anchor-id="section-3"><span class="header-section-number">12.6.1.4</span> </h4>
 <p>Identify the five-year periods which the GDP per capita experienced a continuous decline each year, indicating a period of financial crisis or economic degradation</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb119"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a function to check if all values in a row are decreasing</span></span>
-<span id="cb119-2"><a href="#cb119-2" aria-hidden="true" tabindex="-1"></a>is_decreasing <span class="ot">&lt;-</span> <span class="cf">function</span>(row) {</span>
-<span id="cb119-3"><a href="#cb119-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">all</span>(<span class="fu">diff</span>(row) <span class="sc">&lt;</span> <span class="dv">0</span>))</span>
-<span id="cb119-4"><a href="#cb119-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb119-5"><a href="#cb119-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-6"><a href="#cb119-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify periods where GDP decreases year by year</span></span>
-<span id="cb119-7"><a href="#cb119-7" aria-hidden="true" tabindex="-1"></a>decreasing_periods <span class="ot">&lt;-</span> <span class="fu">apply</span>(GDP_5year, <span class="dv">1</span>, is_decreasing)</span>
-<span id="cb119-8"><a href="#cb119-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-9"><a href="#cb119-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract period names where GDP is continuously decreasing</span></span>
-<span id="cb119-10"><a href="#cb119-10" aria-hidden="true" tabindex="-1"></a>decreasing_period_names <span class="ot">&lt;-</span> <span class="fu">rownames</span>(GDP_5year)[decreasing_periods]</span>
-<span id="cb119-11"><a href="#cb119-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb119-12"><a href="#cb119-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the periods of financial decline</span></span>
-<span id="cb119-13"><a href="#cb119-13" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(decreasing_period_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb133"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a function to check if all values in a row are decreasing</span></span>
+<span id="cb133-2"><a href="#cb133-2" aria-hidden="true" tabindex="-1"></a>is_decreasing <span class="ot">&lt;-</span> <span class="cf">function</span>(row) {</span>
+<span id="cb133-3"><a href="#cb133-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">all</span>(<span class="fu">diff</span>(row) <span class="sc">&lt;</span> <span class="dv">0</span>))</span>
+<span id="cb133-4"><a href="#cb133-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb133-5"><a href="#cb133-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb133-6"><a href="#cb133-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify periods where GDP decreases year by year</span></span>
+<span id="cb133-7"><a href="#cb133-7" aria-hidden="true" tabindex="-1"></a>decreasing_periods <span class="ot">&lt;-</span> <span class="fu">apply</span>(GDP_5year, <span class="dv">1</span>, is_decreasing)</span>
+<span id="cb133-8"><a href="#cb133-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb133-9"><a href="#cb133-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract period names where GDP is continuously decreasing</span></span>
+<span id="cb133-10"><a href="#cb133-10" aria-hidden="true" tabindex="-1"></a>decreasing_period_names <span class="ot">&lt;-</span> <span class="fu">rownames</span>(GDP_5year)[decreasing_periods]</span>
+<span id="cb133-11"><a href="#cb133-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb133-12"><a href="#cb133-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the periods of financial decline</span></span>
+<span id="cb133-13"><a href="#cb133-13" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(decreasing_period_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>character(0)</code></pre>
 </div>
 </div>
 <p>Instead of defining a named function, you can also use an anonymous function directly within the <code>apply()</code> function for a more concise approach</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb121"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply a user-defined function to check for decreasing GDP in each period</span></span>
-<span id="cb121-2"><a href="#cb121-2" aria-hidden="true" tabindex="-1"></a>decreasing_periods <span class="ot">&lt;-</span> <span class="fu">apply</span>(GDP_5year, <span class="dv">1</span>, <span class="cf">function</span>(row) <span class="fu">all</span>(<span class="fu">diff</span>(row) <span class="sc">&lt;</span> <span class="dv">0</span>))</span>
-<span id="cb121-3"><a href="#cb121-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb121-4"><a href="#cb121-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the period names where GDP decreased every year</span></span>
-<span id="cb121-5"><a href="#cb121-5" aria-hidden="true" tabindex="-1"></a>decreasing_period_names <span class="ot">&lt;-</span> <span class="fu">rownames</span>(GDP_5year)[decreasing_periods]</span>
-<span id="cb121-6"><a href="#cb121-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb121-7"><a href="#cb121-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the periods of financial decline</span></span>
-<span id="cb121-8"><a href="#cb121-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(decreasing_period_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb135"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply a user-defined function to check for decreasing GDP in each period</span></span>
+<span id="cb135-2"><a href="#cb135-2" aria-hidden="true" tabindex="-1"></a>decreasing_periods <span class="ot">&lt;-</span> <span class="fu">apply</span>(GDP_5year, <span class="dv">1</span>, <span class="cf">function</span>(row) <span class="fu">all</span>(<span class="fu">diff</span>(row) <span class="sc">&lt;</span> <span class="dv">0</span>))</span>
+<span id="cb135-3"><a href="#cb135-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb135-4"><a href="#cb135-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the period names where GDP decreased every year</span></span>
+<span id="cb135-5"><a href="#cb135-5" aria-hidden="true" tabindex="-1"></a>decreasing_period_names <span class="ot">&lt;-</span> <span class="fu">rownames</span>(GDP_5year)[decreasing_periods]</span>
+<span id="cb135-6"><a href="#cb135-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb135-7"><a href="#cb135-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the periods of financial decline</span></span>
+<span id="cb135-8"><a href="#cb135-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(decreasing_period_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>character(0)</code></pre>
 </div>
@@ -5938,9 +6020,9 @@ $c
 <p>Download the file <em>capital_cities.csv</em> from <a href="https://nuwildcat-my.sharepoint.com/:f:/g/personal/lsi8012_ads_northwestern_edu/EjpAlBWJO_dMlF7uFVGKQHQBX0rLvo8UycJBHC2dUTEeyw">here</a>. Make sure the file is in your current working directory. Execute the following code to obtain the objects <code>coordinates_capital_cities</code> and <code>country_names</code>.</p>
 <p>The object <code>country_names</code> is an atomic vector consisting of country names. The object <code>coordinates_capital_cities</code> is a matrix consisting of the latitude-longitude pair of the capital city of the respective country. The order of countries in <code>country_names</code> is the same as the order in which their capital city coordinates (latitude-longitude) appear in the matrix <code>coordinates_capital_cities</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb123"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a>capital_cities <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'capital_cities.csv'</span>)</span>
-<span id="cb123-2"><a href="#cb123-2" aria-hidden="true" tabindex="-1"></a>coordinates_capital_cities <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(capital_cities[,<span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>)])</span>
-<span id="cb123-3"><a href="#cb123-3" aria-hidden="true" tabindex="-1"></a>country_names <span class="ot">&lt;-</span> capital_cities[,<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb137"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a>capital_cities <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'capital_cities.csv'</span>)</span>
+<span id="cb137-2"><a href="#cb137-2" aria-hidden="true" tabindex="-1"></a>coordinates_capital_cities <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(capital_cities[,<span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>)])</span>
+<span id="cb137-3"><a href="#cb137-3" aria-hidden="true" tabindex="-1"></a>country_names <span class="ot">&lt;-</span> capital_cities[,<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="top-10-countries-closest-to-dc" class="level4" data-number="12.6.2.1">
 <h4 data-number="12.6.2.1" class="anchored" data-anchor-id="top-10-countries-closest-to-dc"><span class="header-section-number">12.6.2.1</span> Top 10 countries closest to DC</h4>
@@ -5963,40 +6045,40 @@ $c
 <li><p>Using the distances obtained above, find the country that has the closest capital to DC (Euclidean distance &gt; 0).</p></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb124"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the index of the US capital (Washington, D.C.)</span></span>
-<span id="cb124-2"><a href="#cb124-2" aria-hidden="true" tabindex="-1"></a>US_index <span class="ot">=</span> <span class="fu">which</span>(country_names <span class="sc">==</span> <span class="st">'United States'</span>)</span>
-<span id="cb124-3"><a href="#cb124-3" aria-hidden="true" tabindex="-1"></a>dc_coord <span class="ot">&lt;-</span> coordinates_capital_cities[US_index,]</span>
-<span id="cb124-4"><a href="#cb124-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb124-5"><a href="#cb124-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute Euclidean distances to Washington, D.C.</span></span>
-<span id="cb124-6"><a href="#cb124-6" aria-hidden="true" tabindex="-1"></a>distances_to_DC <span class="ot">&lt;-</span> <span class="fu">apply</span>(coordinates_capital_cities, <span class="dv">1</span>, </span>
-<span id="cb124-7"><a href="#cb124-7" aria-hidden="true" tabindex="-1"></a>                  <span class="cf">function</span>(city_coord) <span class="fu">sqrt</span>(<span class="fu">sum</span>((city_coord <span class="sc">-</span> dc_coord)<span class="sc">**</span><span class="dv">2</span>)))</span>
-<span id="cb124-8"><a href="#cb124-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb124-9"><a href="#cb124-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a matrix with country index and distance                  </span></span>
-<span id="cb124-10"><a href="#cb124-10" aria-hidden="true" tabindex="-1"></a>num_of_countries <span class="ot">&lt;-</span> <span class="fu">length</span>(country_names)</span>
-<span id="cb124-11"><a href="#cb124-11" aria-hidden="true" tabindex="-1"></a>distances_to_DC_matrix <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="dv">1</span><span class="sc">:</span>num_of_countries, distances_to_DC)</span>
-<span id="cb124-12"><a href="#cb124-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb124-13"><a href="#cb124-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Exclude records where the distance is exactly 0</span></span>
-<span id="cb124-14"><a href="#cb124-14" aria-hidden="true" tabindex="-1"></a>distances_to_DC_matrix <span class="ot">&lt;-</span> distances_to_DC_matrix[distances_to_DC_matrix[, <span class="dv">2</span>] <span class="sc">&gt;</span> <span class="dv">0</span>, ]</span>
-<span id="cb124-15"><a href="#cb124-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb124-16"><a href="#cb124-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort by distance</span></span>
-<span id="cb124-17"><a href="#cb124-17" aria-hidden="true" tabindex="-1"></a>sorted <span class="ot">&lt;-</span> distances_to_DC_matrix[<span class="fu">order</span>(distances_to_DC_matrix[,<span class="dv">2</span>]),]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb138"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the index of the US capital (Washington, D.C.)</span></span>
+<span id="cb138-2"><a href="#cb138-2" aria-hidden="true" tabindex="-1"></a>US_index <span class="ot">=</span> <span class="fu">which</span>(country_names <span class="sc">==</span> <span class="st">'United States'</span>)</span>
+<span id="cb138-3"><a href="#cb138-3" aria-hidden="true" tabindex="-1"></a>dc_coord <span class="ot">&lt;-</span> coordinates_capital_cities[US_index,]</span>
+<span id="cb138-4"><a href="#cb138-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb138-5"><a href="#cb138-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute Euclidean distances to Washington, D.C.</span></span>
+<span id="cb138-6"><a href="#cb138-6" aria-hidden="true" tabindex="-1"></a>distances_to_DC <span class="ot">&lt;-</span> <span class="fu">apply</span>(coordinates_capital_cities, <span class="dv">1</span>, </span>
+<span id="cb138-7"><a href="#cb138-7" aria-hidden="true" tabindex="-1"></a>                  <span class="cf">function</span>(city_coord) <span class="fu">sqrt</span>(<span class="fu">sum</span>((city_coord <span class="sc">-</span> dc_coord)<span class="sc">**</span><span class="dv">2</span>)))</span>
+<span id="cb138-8"><a href="#cb138-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb138-9"><a href="#cb138-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a matrix with country index and distance                  </span></span>
+<span id="cb138-10"><a href="#cb138-10" aria-hidden="true" tabindex="-1"></a>num_of_countries <span class="ot">&lt;-</span> <span class="fu">length</span>(country_names)</span>
+<span id="cb138-11"><a href="#cb138-11" aria-hidden="true" tabindex="-1"></a>distances_to_DC_matrix <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="dv">1</span><span class="sc">:</span>num_of_countries, distances_to_DC)</span>
+<span id="cb138-12"><a href="#cb138-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb138-13"><a href="#cb138-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Exclude records where the distance is exactly 0</span></span>
+<span id="cb138-14"><a href="#cb138-14" aria-hidden="true" tabindex="-1"></a>distances_to_DC_matrix <span class="ot">&lt;-</span> distances_to_DC_matrix[distances_to_DC_matrix[, <span class="dv">2</span>] <span class="sc">&gt;</span> <span class="dv">0</span>, ]</span>
+<span id="cb138-15"><a href="#cb138-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb138-16"><a href="#cb138-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort by distance</span></span>
+<span id="cb138-17"><a href="#cb138-17" aria-hidden="true" tabindex="-1"></a>sorted <span class="ot">&lt;-</span> distances_to_DC_matrix[<span class="fu">order</span>(distances_to_DC_matrix[,<span class="dv">2</span>]),]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Top 10 countries with capitals closest to Washington DC are the following:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb125"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a href="#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the top 10 closest countries (after exclusions)</span></span>
-<span id="cb125-2"><a href="#cb125-2" aria-hidden="true" tabindex="-1"></a>top_10_countries <span class="ot">&lt;-</span> sorted[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span>]</span>
-<span id="cb125-3"><a href="#cb125-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb125-4"><a href="#cb125-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the country name</span></span>
-<span id="cb125-5"><a href="#cb125-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(country_names[sorted[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb139"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb139-1"><a href="#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the top 10 closest countries (after exclusions)</span></span>
+<span id="cb139-2"><a href="#cb139-2" aria-hidden="true" tabindex="-1"></a>top_10_countries <span class="ot">&lt;-</span> sorted[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span>]</span>
+<span id="cb139-3"><a href="#cb139-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb139-4"><a href="#cb139-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the country name</span></span>
+<span id="cb139-5"><a href="#cb139-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(country_names[sorted[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You can also use the following code to exclude the U.S. records</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb126"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Exclude rows where the country is "United States" or "US Minor Outlying Islands"</span></span>
-<span id="cb126-2"><a href="#cb126-2" aria-hidden="true" tabindex="-1"></a>filtered_sorted <span class="ot">&lt;-</span> sorted[<span class="sc">!</span>(country_names[sorted[, <span class="dv">1</span>]] <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"United States"</span>, <span class="st">"US Minor Outlying Islands"</span>)), ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb140"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb140-1"><a href="#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Exclude rows where the country is "United States" or "US Minor Outlying Islands"</span></span>
+<span id="cb140-2"><a href="#cb140-2" aria-hidden="true" tabindex="-1"></a>filtered_sorted <span class="ot">&lt;-</span> sorted[<span class="sc">!</span>(country_names[sorted[, <span class="dv">1</span>]] <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"United States"</span>, <span class="st">"US Minor Outlying Islands"</span>)), ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The coordinates of the top 10 capital cities closest to Washington DC are:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb127"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb127-1"><a href="#cb127-1" aria-hidden="true" tabindex="-1"></a>coordinates_capital_cities[top_10_countries, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb141"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a>coordinates_capital_cities[top_10_countries, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="use-data.frame-to-solve-the-above-task" class="level4" data-number="12.6.2.2">
@@ -6007,13 +6089,13 @@ $c
 <h3 data-number="12.6.3" class="anchored" data-anchor-id="exercise-3"><span class="header-section-number">12.6.3</span> Exercise 3</h3>
 <p>Download the dataset <em>movies.csv</em>. Execute the following code to read the data into the object <code>movies</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb128"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a>movies <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"movies.csv"</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb142"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb142-1"><a href="#cb142-1" aria-hidden="true" tabindex="-1"></a>movies <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"movies.csv"</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="section-4" class="level4" data-number="12.6.3.1">
 <h4 data-number="12.6.3.1" class="anchored" data-anchor-id="section-4"><span class="header-section-number">12.6.3.1</span> </h4>
 <p>What is the datatype of the object <code>movies</code>?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb129"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(movies)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb143"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb143-1"><a href="#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(movies)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The datatype of the object <code>movies</code> is list.</p>
 </section>

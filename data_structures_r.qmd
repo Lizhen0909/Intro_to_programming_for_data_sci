@@ -419,6 +419,62 @@ df[ , "Age"]  # Age column
 df[1:2, c("Name", "Score")]  # Subset
 ```
 
+### Using Logical Operators for Data Frame Subsetting
+
+#### Using Logical Operators (`[ ]`)
+
+You can filter rows based on conditions using comparison operators (`==`, `>`, `<`, `>=`, `<=`, `!=`):
+
+Filter rows where age is greater than 25
+
+```{r}
+filtered_df <- df[df$Score == 90, ]
+print(filtered_df)
+```
+
+```{r}
+filtered_df <- df[df$Age > 25, ]
+print(filtered_df)
+```
+
+*  `df$Age > 25` creates a logical vector (`FALSE`, `TRUE`, `TRUE`).
+*  `df[df$Age > 25, ]` selects rows where `Age` is greater than 25.
+*  Uses `==` to filter rows where `Score` is exactly 90.
+
+#### Using `subset()` function
+
+```{r}
+filtered_df <- subset(df, Age > 25)
+print(filtered_df)
+```
+
+#### Filter using multiple conditions
+You can combine multiple conditions with `&` (AND) and `|` (OR):
+
+```{r}
+filtered_df <- df[df$Age > 25 & df$Score > 85, ]
+print(filtered_df)
+```
+
+Using `subset()`
+```{r}
+filtered_df <- subset(df, Age > 28 & Score > 85)
+print(filtered_df)
+```
+
+
+
+```{r}
+filtered_df <- df[df$Age < 30 | df$Score > 85, ]
+print(filtered_df)
+```
+
+```{r}
+# Filter and select only the "Name" and "Score" columns
+filtered_df <- subset(df, Age > 28 & Score > 85, select = c(Name, Score))
+print(filtered_df)
+```
+
 
 ### Iterating
 
