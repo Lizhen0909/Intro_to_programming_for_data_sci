@@ -5500,7 +5500,7 @@ C 49 64 81</code></pre>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>time.taken <span class="ot">&lt;-</span> end.time <span class="sc">-</span> start.time</span>
 <span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>time.taken</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 0.003185987 secs</code></pre>
+<pre><code>Time difference of 0.003278017 secs</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -5514,7 +5514,7 @@ C 49 64 81</code></pre>
 <span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>time.taken <span class="ot">&lt;-</span> end.time <span class="sc">-</span> start.time</span>
 <span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>time.taken</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 0.001235008 secs</code></pre>
+<pre><code>Time difference of 0.001270056 secs</code></pre>
 </div>
 </div>
 <p>Observe that the <code>apply()</code> function takes much lesser time to sum up all the rows of the matrix as compared to the <code>for</code> loop.</p>
@@ -6085,7 +6085,7 @@ $c
 <span id="cb136-2"><a href="#cb136-2" aria-hidden="true" tabindex="-1"></a>time.taken <span class="ot">&lt;-</span> end.time <span class="sc">-</span> start.time</span>
 <span id="cb136-3"><a href="#cb136-3" aria-hidden="true" tabindex="-1"></a>time.taken</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 0.002635956 secs</code></pre>
+<pre><code>Time difference of 0.002262115 secs</code></pre>
 </div>
 </div>
 <p>Without matrices, the time taken to perform the same computation is measured with the code below.</p>
@@ -6105,7 +6105,7 @@ $c
 <span id="cb140-3"><a href="#cb140-3" aria-hidden="true" tabindex="-1"></a>time.taken <span class="ot">&lt;-</span> end.time <span class="sc">-</span> start.time</span>
 <span id="cb140-4"><a href="#cb140-4" aria-hidden="true" tabindex="-1"></a>time.taken</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 0.006002903 secs</code></pre>
+<pre><code>Time difference of 0.005182028 secs</code></pre>
 </div>
 </div>
 <p>Observe that matrices reduce the execution time of the code as computations are performed using vectorization, in contrast to a <code>for</code> loop where computations are performed one at a time.</p>
