@@ -305,7 +305,7 @@ Check if a value is missing (ie: NA):
 
 -   `is.na(val)`
 
-
+## changes 
 ## Lists  (1D, Heterogeneous)
 
 Atomic vectors and matrices are quite useful in R. However, a constraint with them is that they can only contain objects of the same datatype. For example, an atomic vector can contain all numeric objects, all character objects, or all logical objects, but not a mixture of multiple types of objects. Thus, there arises a need for a `list` data structure that can store objects of multiple datatypes.
