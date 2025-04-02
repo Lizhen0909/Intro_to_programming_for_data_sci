@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Variables, expressions and statements – Introduction to programming for data science</title>
+<title>3&nbsp; Variables, expressions and statements – Introduction to programming for data science</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./Control flow.html" rel="next">
-<link href="./venv_setup.html" rel="prev">
+<link href="./file_path.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -147,7 +147,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Variable_expressions_statements.html">Python</a></li><li class="breadcrumb-item"><a href="./Variable_expressions_statements.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Variables, expressions and statements</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Variable_expressions_statements.html">Python</a></li><li class="breadcrumb-item"><a href="./Variable_expressions_statements.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Variables, expressions and statements</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -196,6 +196,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Setting up your environment with VS Code</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./file_path.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Setting File Paths and Understanding the Current Working Directory</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -210,37 +216,37 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Variable_expressions_statements.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Variables, expressions and statements</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Variables, expressions and statements</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Control flow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Control flow tools</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Control flow tools</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./functions2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data_structures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data structures</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data structures</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./python_iterable.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Python Iterables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Python Iterables</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./classes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Object-Oriented Programming</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Object-Oriented Programming</span></span></a>
   </div>
 </li>
       </ul>
@@ -257,31 +263,31 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Variable_expressions_statements-R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">R: Basics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">R: Basics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./control_flow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">R: Control flow tools</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">R: Control flow tools</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./control_flow2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">R: Functions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">R: Functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./robjects.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">R: Atomic vectors</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">R: Atomic vectors</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data_structures_r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">R: Data structures</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">R: Data structures</span></span></a>
   </div>
 </li>
       </ul>
@@ -349,58 +355,58 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#commenting-code" id="toc-commenting-code" class="nav-link active" data-scroll-target="#commenting-code"><span class="header-section-number">2.1</span> Commenting code</a>
+  <li><a href="#commenting-code" id="toc-commenting-code" class="nav-link active" data-scroll-target="#commenting-code"><span class="header-section-number">3.1</span> Commenting code</a>
   <ul class="collapse">
-  <li><a href="#practice-exercise-1" id="toc-practice-exercise-1" class="nav-link" data-scroll-target="#practice-exercise-1"><span class="header-section-number">2.1.1</span> Practice exercise 1</a></li>
+  <li><a href="#practice-exercise-1" id="toc-practice-exercise-1" class="nav-link" data-scroll-target="#practice-exercise-1"><span class="header-section-number">3.1.1</span> Practice exercise 1</a></li>
   </ul></li>
-  <li><a href="#print-function-in-python" id="toc-print-function-in-python" class="nav-link" data-scroll-target="#print-function-in-python"><span class="header-section-number">2.2</span> <code>print()</code> function in python</a>
+  <li><a href="#print-function-in-python" id="toc-print-function-in-python" class="nav-link" data-scroll-target="#print-function-in-python"><span class="header-section-number">3.2</span> <code>print()</code> function in python</a>
   <ul class="collapse">
-  <li><a href="#basic-examples" id="toc-basic-examples" class="nav-link" data-scroll-target="#basic-examples"><span class="header-section-number">2.2.1</span> Basic Examples</a></li>
-  <li><a href="#concatenating-strings-and-variablesexpressions-in-print-function" id="toc-concatenating-strings-and-variablesexpressions-in-print-function" class="nav-link" data-scroll-target="#concatenating-strings-and-variablesexpressions-in-print-function"><span class="header-section-number">2.2.2</span> concatenating strings and variables/expressions in <code>print()</code> function</a></li>
-  <li><a href="#customizing-output-formatting" id="toc-customizing-output-formatting" class="nav-link" data-scroll-target="#customizing-output-formatting"><span class="header-section-number">2.2.3</span> Customizing output formatting</a></li>
-  <li><a href="#practice-exercise-2" id="toc-practice-exercise-2" class="nav-link" data-scroll-target="#practice-exercise-2"><span class="header-section-number">2.2.4</span> Practice exercise 2</a></li>
+  <li><a href="#basic-examples" id="toc-basic-examples" class="nav-link" data-scroll-target="#basic-examples"><span class="header-section-number">3.2.1</span> Basic Examples</a></li>
+  <li><a href="#concatenating-strings-and-variablesexpressions-in-print-function" id="toc-concatenating-strings-and-variablesexpressions-in-print-function" class="nav-link" data-scroll-target="#concatenating-strings-and-variablesexpressions-in-print-function"><span class="header-section-number">3.2.2</span> concatenating strings and variables/expressions in <code>print()</code> function</a></li>
+  <li><a href="#customizing-output-formatting" id="toc-customizing-output-formatting" class="nav-link" data-scroll-target="#customizing-output-formatting"><span class="header-section-number">3.2.3</span> Customizing output formatting</a></li>
+  <li><a href="#practice-exercise-2" id="toc-practice-exercise-2" class="nav-link" data-scroll-target="#practice-exercise-2"><span class="header-section-number">3.2.4</span> Practice exercise 2</a></li>
   </ul></li>
-  <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types"><span class="header-section-number">2.3</span> Data types</a>
+  <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types"><span class="header-section-number">3.3</span> Data types</a>
   <ul class="collapse">
-  <li><a href="#primitive-data-types" id="toc-primitive-data-types" class="nav-link" data-scroll-target="#primitive-data-types"><span class="header-section-number">2.3.1</span> Primitive Data Types</a></li>
-  <li><a href="#practice-exercise-3" id="toc-practice-exercise-3" class="nav-link" data-scroll-target="#practice-exercise-3"><span class="header-section-number">2.3.2</span> Practice exercise 3</a></li>
-  <li><a href="#commonly-used-built-in-methods-associated-with-each-data-type" id="toc-commonly-used-built-in-methods-associated-with-each-data-type" class="nav-link" data-scroll-target="#commonly-used-built-in-methods-associated-with-each-data-type"><span class="header-section-number">2.3.3</span> Commonly Used Built-in methods associated with each data type</a></li>
+  <li><a href="#primitive-data-types" id="toc-primitive-data-types" class="nav-link" data-scroll-target="#primitive-data-types"><span class="header-section-number">3.3.1</span> Primitive Data Types</a></li>
+  <li><a href="#practice-exercise-3" id="toc-practice-exercise-3" class="nav-link" data-scroll-target="#practice-exercise-3"><span class="header-section-number">3.3.2</span> Practice exercise 3</a></li>
+  <li><a href="#commonly-used-built-in-methods-associated-with-each-data-type" id="toc-commonly-used-built-in-methods-associated-with-each-data-type" class="nav-link" data-scroll-target="#commonly-used-built-in-methods-associated-with-each-data-type"><span class="header-section-number">3.3.3</span> Commonly Used Built-in methods associated with each data type</a></li>
   </ul></li>
-  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables"><span class="header-section-number">2.4</span> Variables</a>
+  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables"><span class="header-section-number">3.4</span> Variables</a>
   <ul class="collapse">
-  <li><a href="#variable-declaration" id="toc-variable-declaration" class="nav-link" data-scroll-target="#variable-declaration"><span class="header-section-number">2.4.1</span> Variable Declaration:</a></li>
-  <li><a href="#dynamic-typing" id="toc-dynamic-typing" class="nav-link" data-scroll-target="#dynamic-typing"><span class="header-section-number">2.4.2</span> <strong>Dynamic Typing</strong>:</a></li>
-  <li><a href="#variable-naming-rules" id="toc-variable-naming-rules" class="nav-link" data-scroll-target="#variable-naming-rules"><span class="header-section-number">2.4.3</span> <strong>Variable Naming Rules</strong>:</a></li>
-  <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices"><span class="header-section-number">2.4.4</span> <strong>Best Practices</strong>:</a></li>
-  <li><a href="#checking-variable-types" id="toc-checking-variable-types" class="nav-link" data-scroll-target="#checking-variable-types"><span class="header-section-number">2.4.5</span> Checking Variable Types</a></li>
-  <li><a href="#practice-exercise-4" id="toc-practice-exercise-4" class="nav-link" data-scroll-target="#practice-exercise-4"><span class="header-section-number">2.4.6</span> Practice exercise 4</a></li>
+  <li><a href="#variable-declaration" id="toc-variable-declaration" class="nav-link" data-scroll-target="#variable-declaration"><span class="header-section-number">3.4.1</span> Variable Declaration:</a></li>
+  <li><a href="#dynamic-typing" id="toc-dynamic-typing" class="nav-link" data-scroll-target="#dynamic-typing"><span class="header-section-number">3.4.2</span> <strong>Dynamic Typing</strong>:</a></li>
+  <li><a href="#variable-naming-rules" id="toc-variable-naming-rules" class="nav-link" data-scroll-target="#variable-naming-rules"><span class="header-section-number">3.4.3</span> <strong>Variable Naming Rules</strong>:</a></li>
+  <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices"><span class="header-section-number">3.4.4</span> <strong>Best Practices</strong>:</a></li>
+  <li><a href="#checking-variable-types" id="toc-checking-variable-types" class="nav-link" data-scroll-target="#checking-variable-types"><span class="header-section-number">3.4.5</span> Checking Variable Types</a></li>
+  <li><a href="#practice-exercise-4" id="toc-practice-exercise-4" class="nav-link" data-scroll-target="#practice-exercise-4"><span class="header-section-number">3.4.6</span> Practice exercise 4</a></li>
   </ul></li>
-  <li><a href="#assignment-statements" id="toc-assignment-statements" class="nav-link" data-scroll-target="#assignment-statements"><span class="header-section-number">2.5</span> Assignment statements</a></li>
-  <li><a href="#expressions" id="toc-expressions" class="nav-link" data-scroll-target="#expressions"><span class="header-section-number">2.6</span> Expressions</a>
+  <li><a href="#assignment-statements" id="toc-assignment-statements" class="nav-link" data-scroll-target="#assignment-statements"><span class="header-section-number">3.5</span> Assignment statements</a></li>
+  <li><a href="#expressions" id="toc-expressions" class="nav-link" data-scroll-target="#expressions"><span class="header-section-number">3.6</span> Expressions</a>
   <ul class="collapse">
-  <li><a href="#mathematical-operations-and-their-operators-in-python" id="toc-mathematical-operations-and-their-operators-in-python" class="nav-link" data-scroll-target="#mathematical-operations-and-their-operators-in-python"><span class="header-section-number">2.6.1</span> Mathematical Operations and Their Operators in Python</a></li>
-  <li><a href="#operator-precedence-in-python" id="toc-operator-precedence-in-python" class="nav-link" data-scroll-target="#operator-precedence-in-python"><span class="header-section-number">2.6.2</span> Operator Precedence in Python</a></li>
-  <li><a href="#practice-exercise-5" id="toc-practice-exercise-5" class="nav-link" data-scroll-target="#practice-exercise-5"><span class="header-section-number">2.6.3</span> Practice exercise 5</a></li>
+  <li><a href="#mathematical-operations-and-their-operators-in-python" id="toc-mathematical-operations-and-their-operators-in-python" class="nav-link" data-scroll-target="#mathematical-operations-and-their-operators-in-python"><span class="header-section-number">3.6.1</span> Mathematical Operations and Their Operators in Python</a></li>
+  <li><a href="#operator-precedence-in-python" id="toc-operator-precedence-in-python" class="nav-link" data-scroll-target="#operator-precedence-in-python"><span class="header-section-number">3.6.2</span> Operator Precedence in Python</a></li>
+  <li><a href="#practice-exercise-5" id="toc-practice-exercise-5" class="nav-link" data-scroll-target="#practice-exercise-5"><span class="header-section-number">3.6.3</span> Practice exercise 5</a></li>
   </ul></li>
-  <li><a href="#user-input" id="toc-user-input" class="nav-link" data-scroll-target="#user-input"><span class="header-section-number">2.7</span> User input</a>
+  <li><a href="#user-input" id="toc-user-input" class="nav-link" data-scroll-target="#user-input"><span class="header-section-number">3.7</span> User input</a>
   <ul class="collapse">
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">2.7.1</span> Examples</a></li>
-  <li><a href="#practice-exercise-6" id="toc-practice-exercise-6" class="nav-link" data-scroll-target="#practice-exercise-6"><span class="header-section-number">2.7.2</span> Practice exercise 6</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">3.7.1</span> Examples</a></li>
+  <li><a href="#practice-exercise-6" id="toc-practice-exercise-6" class="nav-link" data-scroll-target="#practice-exercise-6"><span class="header-section-number">3.7.2</span> Practice exercise 6</a></li>
   </ul></li>
-  <li><a href="#converting-data-types-in-python" id="toc-converting-data-types-in-python" class="nav-link" data-scroll-target="#converting-data-types-in-python"><span class="header-section-number">2.8</span> Converting data types in Python</a>
+  <li><a href="#converting-data-types-in-python" id="toc-converting-data-types-in-python" class="nav-link" data-scroll-target="#converting-data-types-in-python"><span class="header-section-number">3.8</span> Converting data types in Python</a>
   <ul class="collapse">
-  <li><a href="#why-convert-data-types-in-python" id="toc-why-convert-data-types-in-python" class="nav-link" data-scroll-target="#why-convert-data-types-in-python"><span class="header-section-number">2.8.1</span> Why Convert Data Types in Python?</a></li>
-  <li><a href="#how-to-convert-data-types-in-python" id="toc-how-to-convert-data-types-in-python" class="nav-link" data-scroll-target="#how-to-convert-data-types-in-python"><span class="header-section-number">2.8.2</span> How to Convert Data Types in Python</a></li>
+  <li><a href="#why-convert-data-types-in-python" id="toc-why-convert-data-types-in-python" class="nav-link" data-scroll-target="#why-convert-data-types-in-python"><span class="header-section-number">3.8.1</span> Why Convert Data Types in Python?</a></li>
+  <li><a href="#how-to-convert-data-types-in-python" id="toc-how-to-convert-data-types-in-python" class="nav-link" data-scroll-target="#how-to-convert-data-types-in-python"><span class="header-section-number">3.8.2</span> How to Convert Data Types in Python</a></li>
   </ul></li>
-  <li><a href="#errors-and-exceptions" id="toc-errors-and-exceptions" class="nav-link" data-scroll-target="#errors-and-exceptions"><span class="header-section-number">2.9</span> Errors and Exceptions</a>
+  <li><a href="#errors-and-exceptions" id="toc-errors-and-exceptions" class="nav-link" data-scroll-target="#errors-and-exceptions"><span class="header-section-number">3.9</span> Errors and Exceptions</a>
   <ul class="collapse">
-  <li><a href="#syntax-errors" id="toc-syntax-errors" class="nav-link" data-scroll-target="#syntax-errors"><span class="header-section-number">2.9.1</span> Syntax errors</a></li>
-  <li><a href="#exceptions" id="toc-exceptions" class="nav-link" data-scroll-target="#exceptions"><span class="header-section-number">2.9.2</span> Exceptions</a></li>
-  <li><a href="#exception-handling" id="toc-exception-handling" class="nav-link" data-scroll-target="#exception-handling"><span class="header-section-number">2.9.3</span> Exception Handling</a></li>
-  <li><a href="#practice-exercise-7" id="toc-practice-exercise-7" class="nav-link" data-scroll-target="#practice-exercise-7"><span class="header-section-number">2.9.4</span> Practice exercise 7</a></li>
-  <li><a href="#practice-exercise-8" id="toc-practice-exercise-8" class="nav-link" data-scroll-target="#practice-exercise-8"><span class="header-section-number">2.9.5</span> Practice exercise 8</a></li>
-  <li><a href="#semantic-errors-bugs" id="toc-semantic-errors-bugs" class="nav-link" data-scroll-target="#semantic-errors-bugs"><span class="header-section-number">2.9.6</span> Semantic errors (bugs)</a></li>
-  <li><a href="#practice-exercise-9" id="toc-practice-exercise-9" class="nav-link" data-scroll-target="#practice-exercise-9"><span class="header-section-number">2.9.7</span> Practice exercise 9</a></li>
+  <li><a href="#syntax-errors" id="toc-syntax-errors" class="nav-link" data-scroll-target="#syntax-errors"><span class="header-section-number">3.9.1</span> Syntax errors</a></li>
+  <li><a href="#exceptions" id="toc-exceptions" class="nav-link" data-scroll-target="#exceptions"><span class="header-section-number">3.9.2</span> Exceptions</a></li>
+  <li><a href="#exception-handling" id="toc-exception-handling" class="nav-link" data-scroll-target="#exception-handling"><span class="header-section-number">3.9.3</span> Exception Handling</a></li>
+  <li><a href="#practice-exercise-7" id="toc-practice-exercise-7" class="nav-link" data-scroll-target="#practice-exercise-7"><span class="header-section-number">3.9.4</span> Practice exercise 7</a></li>
+  <li><a href="#practice-exercise-8" id="toc-practice-exercise-8" class="nav-link" data-scroll-target="#practice-exercise-8"><span class="header-section-number">3.9.5</span> Practice exercise 8</a></li>
+  <li><a href="#semantic-errors-bugs" id="toc-semantic-errors-bugs" class="nav-link" data-scroll-target="#semantic-errors-bugs"><span class="header-section-number">3.9.6</span> Semantic errors (bugs)</a></li>
+  <li><a href="#practice-exercise-9" id="toc-practice-exercise-9" class="nav-link" data-scroll-target="#practice-exercise-9"><span class="header-section-number">3.9.7</span> Practice exercise 9</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -408,9 +414,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Variable_expressions_statements.html">Python</a></li><li class="breadcrumb-item"><a href="./Variable_expressions_statements.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Variables, expressions and statements</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Variable_expressions_statements.html">Python</a></li><li class="breadcrumb-item"><a href="./Variable_expressions_statements.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Variables, expressions and statements</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Variables, expressions and statements</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Variables, expressions and statements</span></h1>
 </div>
 
 
@@ -432,8 +438,8 @@ window.Quarto = {
 <img src="datatypes.png" width="700" height="300">
 </div>
 </div>
-<section id="commenting-code" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="commenting-code"><span class="header-section-number">2.1</span> Commenting code</h2>
+<section id="commenting-code" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="commenting-code"><span class="header-section-number">3.1</span> Commenting code</h2>
 <p>The <code>#</code> symbol can be used to comment the code. Anything after the <code>#</code> sign is ignored by python. Commenting a code may have several purposes, such as:</p>
 <ul>
 <li><p>Describe what is going to happen in a sequence of code</p></li>
@@ -448,8 +454,8 @@ window.Quarto = {
 <pre><code>Total lecture hours of STAT201= 25.0</code></pre>
 </div>
 </div>
-<section id="practice-exercise-1" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="practice-exercise-1"><span class="header-section-number">2.1.1</span> Practice exercise 1</h3>
+<section id="practice-exercise-1" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="practice-exercise-1"><span class="header-section-number">3.1.1</span> Practice exercise 1</h3>
 <p>Which of the following lines is a comment:</p>
 <ol type="1">
 <li><p>#this is a comment</p></li>
@@ -458,11 +464,11 @@ window.Quarto = {
 </ol>
 </section>
 </section>
-<section id="print-function-in-python" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="print-function-in-python"><span class="header-section-number">2.2</span> <code>print()</code> function in python</h2>
+<section id="print-function-in-python" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="print-function-in-python"><span class="header-section-number">3.2</span> <code>print()</code> function in python</h2>
 <p>The <code>print()</code> function is a fundamental tool for displaying information.</p>
-<section id="basic-examples" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="basic-examples"><span class="header-section-number">2.2.1</span> Basic Examples</h3>
+<section id="basic-examples" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="basic-examples"><span class="header-section-number">3.2.1</span> Basic Examples</h3>
 <div id="6442790f" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Printing a simple string</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, World!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -485,14 +491,14 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="concatenating-strings-and-variablesexpressions-in-print-function" class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" data-anchor-id="concatenating-strings-and-variablesexpressions-in-print-function"><span class="header-section-number">2.2.2</span> concatenating strings and variables/expressions in <code>print()</code> function</h3>
-<section id="using-f-strings-formatted-string-literals" class="level4" data-number="2.2.2.1">
-<h4 data-number="2.2.2.1" class="anchored" data-anchor-id="using-f-strings-formatted-string-literals"><span class="header-section-number">2.2.2.1</span> Using f-Strings (Formatted String Literals)</h4>
+<section id="concatenating-strings-and-variablesexpressions-in-print-function" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="concatenating-strings-and-variablesexpressions-in-print-function"><span class="header-section-number">3.2.2</span> concatenating strings and variables/expressions in <code>print()</code> function</h3>
+<section id="using-f-strings-formatted-string-literals" class="level4" data-number="3.2.2.1">
+<h4 data-number="3.2.2.1" class="anchored" data-anchor-id="using-f-strings-formatted-string-literals"><span class="header-section-number">3.2.2.1</span> Using f-Strings (Formatted String Literals)</h4>
 <p><strong>f-strings</strong> provide a concise way to embed expressions inside strings. Introduced in Python 3.6, they improve readability and efficiency.</p>
 </section>
-<section id="syntax" class="level4" data-number="2.2.2.2">
-<h4 data-number="2.2.2.2" class="anchored" data-anchor-id="syntax"><span class="header-section-number">2.2.2.2</span> <strong>Syntax</strong></h4>
+<section id="syntax" class="level4" data-number="3.2.2.2">
+<h4 data-number="3.2.2.2" class="anchored" data-anchor-id="syntax"><span class="header-section-number">3.2.2.2</span> <strong>Syntax</strong></h4>
 <ul>
 <li>Use <code>f</code> or <code>F</code> before the string.</li>
 <li>Embed variables or expressions in <code>{}</code>.</li>
@@ -530,8 +536,8 @@ Pi rounded to 2 decimal places is 3.</code></pre>
 </div>
 </div>
 </section>
-<section id="using-str.format-method" class="level4" data-number="2.2.2.3">
-<h4 data-number="2.2.2.3" class="anchored" data-anchor-id="using-str.format-method"><span class="header-section-number">2.2.2.3</span> Using <code>str.format()</code> Method</h4>
+<section id="using-str.format-method" class="level4" data-number="3.2.2.3">
+<h4 data-number="3.2.2.3" class="anchored" data-anchor-id="using-str.format-method"><span class="header-section-number">3.2.2.3</span> Using <code>str.format()</code> Method</h4>
 <p>The <code>str.format()</code> method allows you to format strings by placing placeholders <code>{}</code> in the string and replacing them with variables or values.</p>
 <p><code>"Your text here {}".format(variable_or_expression)</code></p>
 <div id="1f4cde6d" class="cell" data-execution_count="14">
@@ -557,11 +563,11 @@ Pi rounded to 2 decimal places is 3.</code></pre>
 </div>
 </section>
 </section>
-<section id="customizing-output-formatting" class="level3" data-number="2.2.3">
-<h3 data-number="2.2.3" class="anchored" data-anchor-id="customizing-output-formatting"><span class="header-section-number">2.2.3</span> Customizing output formatting</h3>
+<section id="customizing-output-formatting" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="customizing-output-formatting"><span class="header-section-number">3.2.3</span> Customizing output formatting</h3>
 <p>The <code>print()</code> function in Python is highly customizable. By default, it adds a newline character (<code>\n</code>) at the end of each output and separates multiple arguments with a space (<code></code>). However, these default behaviors can be changed using the <code>end</code> and <code>sep</code> parameters.</p>
-<section id="default-behavior-of-print" class="level4" data-number="2.2.3.1">
-<h4 data-number="2.2.3.1" class="anchored" data-anchor-id="default-behavior-of-print"><span class="header-section-number">2.2.3.1</span> Default Behavior of <code>print()</code></h4>
+<section id="default-behavior-of-print" class="level4" data-number="3.2.3.1">
+<h4 data-number="3.2.3.1" class="anchored" data-anchor-id="default-behavior-of-print"><span class="header-section-number">3.2.3.1</span> Default Behavior of <code>print()</code></h4>
 <p>When you call <code>print()</code> multiple times, each statement starts on a new line:</p>
 <div id="9af4e567" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello"</span>)</span>
@@ -572,8 +578,8 @@ World</code></pre>
 </div>
 </div>
 </section>
-<section id="changing-the-end-parameter" class="level4" data-number="2.2.3.2">
-<h4 data-number="2.2.3.2" class="anchored" data-anchor-id="changing-the-end-parameter"><span class="header-section-number">2.2.3.2</span> Changing the <code>end</code> Parameter</h4>
+<section id="changing-the-end-parameter" class="level4" data-number="3.2.3.2">
+<h4 data-number="3.2.3.2" class="anchored" data-anchor-id="changing-the-end-parameter"><span class="header-section-number">3.2.3.2</span> Changing the <code>end</code> Parameter</h4>
 <p>To avoid automatic line breaks and control what is appended at the end of the output, use the <code>end</code> parameter.</p>
 <div id="cd79ff73" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello"</span>, end<span class="op">=</span><span class="st">" "</span>)</span>
@@ -597,8 +603,8 @@ World</code></pre>
 </div>
 </div>
 </section>
-<section id="changing-the-sep-parameter" class="level4" data-number="2.2.3.3">
-<h4 data-number="2.2.3.3" class="anchored" data-anchor-id="changing-the-sep-parameter"><span class="header-section-number">2.2.3.3</span> Changing the <code>sep</code> Parameter</h4>
+<section id="changing-the-sep-parameter" class="level4" data-number="3.2.3.3">
+<h4 data-number="3.2.3.3" class="anchored" data-anchor-id="changing-the-sep-parameter"><span class="header-section-number">3.2.3.3</span> Changing the <code>sep</code> Parameter</h4>
 <p>When printing multiple arguments, the default separator between them is a space. You can change this behavior using the <code>sep</code> parameter.</p>
 <div id="d36e37cc" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>, sep<span class="op">=</span><span class="st">", "</span>)</span>
@@ -622,8 +628,8 @@ c++</code></pre>
 </div>
 </div>
 </section>
-<section id="combining-end-and-sep" class="level4" data-number="2.2.3.4">
-<h4 data-number="2.2.3.4" class="anchored" data-anchor-id="combining-end-and-sep"><span class="header-section-number">2.2.3.4</span> Combining <code>end</code> and <code>sep</code></h4>
+<section id="combining-end-and-sep" class="level4" data-number="3.2.3.4">
+<h4 data-number="3.2.3.4" class="anchored" data-anchor-id="combining-end-and-sep"><span class="header-section-number">3.2.3.4</span> Combining <code>end</code> and <code>sep</code></h4>
 <p>Both <code>end</code> and <code>sep</code> can be used together for more control:</p>
 <div id="257bb4b4" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"1"</span>, <span class="st">"2"</span>, <span class="st">"3"</span>, sep<span class="op">=</span><span class="st">"-"</span>, end<span class="op">=</span><span class="st">"."</span>)</span>
@@ -633,8 +639,8 @@ c++</code></pre>
 </div>
 </div>
 </section>
-<section id="takeaway" class="level4" data-number="2.2.3.5">
-<h4 data-number="2.2.3.5" class="anchored" data-anchor-id="takeaway"><span class="header-section-number">2.2.3.5</span> Takeaway:</h4>
+<section id="takeaway" class="level4" data-number="3.2.3.5">
+<h4 data-number="3.2.3.5" class="anchored" data-anchor-id="takeaway"><span class="header-section-number">3.2.3.5</span> Takeaway:</h4>
 <ul>
 <li>The <code>end</code> parameter changes what is appended at the end of the output (default: <code>\n</code>).</li>
 <li>The <code>sep</code> parameter modifies how multiple arguments are separated (default: space).</li>
@@ -642,8 +648,8 @@ c++</code></pre>
 </ul>
 </section>
 </section>
-<section id="practice-exercise-2" class="level3" data-number="2.2.4">
-<h3 data-number="2.2.4" class="anchored" data-anchor-id="practice-exercise-2"><span class="header-section-number">2.2.4</span> Practice exercise 2</h3>
+<section id="practice-exercise-2" class="level3" data-number="3.2.4">
+<h3 data-number="3.2.4" class="anchored" data-anchor-id="practice-exercise-2"><span class="header-section-number">3.2.4</span> Practice exercise 2</h3>
 <p>Use the <code>print()</code> function to:</p>
 <ul>
 <li>Display your name, age, and favorite hobby.</li>
@@ -652,11 +658,11 @@ c++</code></pre>
 </ul>
 </section>
 </section>
-<section id="data-types" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="data-types"><span class="header-section-number">2.3</span> Data types</h2>
+<section id="data-types" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="data-types"><span class="header-section-number">3.3</span> Data types</h2>
 <p>Python provides several built-in data types for storing different kinds of information in variables. These data types can be broadly categorized into primitive data types and collection (containers) data types as shown at the beginning of this chapter. While collection data types will be covered in Chapter 5, this chapter focuses on primitive data types, which are used to represent a single value.</p>
-<section id="primitive-data-types" class="level3" data-number="2.3.1">
-<h3 data-number="2.3.1" class="anchored" data-anchor-id="primitive-data-types"><span class="header-section-number">2.3.1</span> Primitive Data Types</h3>
+<section id="primitive-data-types" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="primitive-data-types"><span class="header-section-number">3.3.1</span> Primitive Data Types</h3>
 <p>They represent a single value. In Python, primitive data types include:</p>
 <ul>
 <li><strong>Integer (<code>int</code>)</strong>: Whole numbers (e.g., <code>10</code>, <code>-3</code>).</li>
@@ -691,8 +697,8 @@ c++</code></pre>
 </div>
 </div>
 </section>
-<section id="practice-exercise-3" class="level3" data-number="2.3.2">
-<h3 data-number="2.3.2" class="anchored" data-anchor-id="practice-exercise-3"><span class="header-section-number">2.3.2</span> Practice exercise 3</h3>
+<section id="practice-exercise-3" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="practice-exercise-3"><span class="header-section-number">3.3.2</span> Practice exercise 3</h3>
 <p>What is the datatype of the following objects?</p>
 <ol type="1">
 <li><p>‘This is False’</p></li>
@@ -702,10 +708,10 @@ c++</code></pre>
 <li><p>False</p></li>
 </ol>
 </section>
-<section id="commonly-used-built-in-methods-associated-with-each-data-type" class="level3" data-number="2.3.3">
-<h3 data-number="2.3.3" class="anchored" data-anchor-id="commonly-used-built-in-methods-associated-with-each-data-type"><span class="header-section-number">2.3.3</span> Commonly Used Built-in methods associated with each data type</h3>
-<section id="strings" class="level4" data-number="2.3.3.1">
-<h4 data-number="2.3.3.1" class="anchored" data-anchor-id="strings"><span class="header-section-number">2.3.3.1</span> Strings</h4>
+<section id="commonly-used-built-in-methods-associated-with-each-data-type" class="level3" data-number="3.3.3">
+<h3 data-number="3.3.3" class="anchored" data-anchor-id="commonly-used-built-in-methods-associated-with-each-data-type"><span class="header-section-number">3.3.3</span> Commonly Used Built-in methods associated with each data type</h3>
+<section id="strings" class="level4" data-number="3.3.3.1">
+<h4 data-number="3.3.3.1" class="anchored" data-anchor-id="strings"><span class="header-section-number">3.3.3.1</span> Strings</h4>
 <p>Strings are sequences of characters and are immutable in Python.</p>
 <p>Below are Commonly used Methods for strings:</p>
 <ul>
@@ -775,8 +781,8 @@ is the string alphanumeric? False</code></pre>
 </div>
 </div>
 </section>
-<section id="single-quotes-and-double-quotes-to-define-strings" class="level4" data-number="2.3.3.2">
-<h4 data-number="2.3.3.2" class="anchored" data-anchor-id="single-quotes-and-double-quotes-to-define-strings"><span class="header-section-number">2.3.3.2</span> Single quotes <code>'</code> and double quotes <code>"</code> to define strings</h4>
+<section id="single-quotes-and-double-quotes-to-define-strings" class="level4" data-number="3.3.3.2">
+<h4 data-number="3.3.3.2" class="anchored" data-anchor-id="single-quotes-and-double-quotes-to-define-strings"><span class="header-section-number">3.3.3.2</span> Single quotes <code>'</code> and double quotes <code>"</code> to define strings</h4>
 <p>in Python, you can use either single quotes (<code>'</code>) or double quotes (<code>"</code>) to define strings. Both are functionally equivalent, and you can choose based on preference or readability. Here’s an example:</p>
 <div id="6791015f" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using single quotes</span></span>
@@ -885,8 +891,8 @@ I'm learning Python as a beginner programmer.</code></pre>
 </div>
 </div>
 </section>
-<section id="integers" class="level4" data-number="2.3.3.3">
-<h4 data-number="2.3.3.3" class="anchored" data-anchor-id="integers"><span class="header-section-number">2.3.3.3</span> Integers</h4>
+<section id="integers" class="level4" data-number="3.3.3.3">
+<h4 data-number="3.3.3.3" class="anchored" data-anchor-id="integers"><span class="header-section-number">3.3.3.3</span> Integers</h4>
 <p>Integers are whole numbers, either positive or negative.</p>
 <p>Commonly used Methods:</p>
 <div id="32efb569" class="cell" data-execution_count="5">
@@ -926,8 +932,8 @@ is the number an integer? True</code></pre>
 </div>
 </div>
 </section>
-<section id="floats" class="level4" data-number="2.3.3.4">
-<h4 data-number="2.3.3.4" class="anchored" data-anchor-id="floats"><span class="header-section-number">2.3.3.4</span> Floats</h4>
+<section id="floats" class="level4" data-number="3.3.3.4">
+<h4 data-number="3.3.3.4" class="anchored" data-anchor-id="floats"><span class="header-section-number">3.3.3.4</span> Floats</h4>
 <p>Floats represent real numbers and are used for decimal or fractional values.</p>
 <p>Commonly Used Methods:</p>
 <div id="eab357ed" class="cell" data-execution_count="6">
@@ -957,8 +963,8 @@ is the number a float? True</code></pre>
 </div>
 </div>
 </section>
-<section id="booleans" class="level4" data-number="2.3.3.5">
-<h4 data-number="2.3.3.5" class="anchored" data-anchor-id="booleans"><span class="header-section-number">2.3.3.5</span> Booleans</h4>
+<section id="booleans" class="level4" data-number="3.3.3.5">
+<h4 data-number="3.3.3.5" class="anchored" data-anchor-id="booleans"><span class="header-section-number">3.3.3.5</span> Booleans</h4>
 <p>Booleans represent logical values <code>True</code> or <code>False</code>.</p>
 <p>Commonly Used Methods:</p>
 <div id="8f3edb07" class="cell" data-execution_count="7">
@@ -985,11 +991,11 @@ the negation of the boolean is False</code></pre>
 </section>
 </section>
 </section>
-<section id="variables" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="variables"><span class="header-section-number">2.4</span> Variables</h2>
+<section id="variables" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="variables"><span class="header-section-number">3.4</span> Variables</h2>
 <p>A <strong>variable</strong> is a container for storing data values. Variables in Python are <strong>dynamically typed</strong>, meaning you don’t need to specify their type when declaring them.</p>
-<section id="variable-declaration" class="level3" data-number="2.4.1">
-<h3 data-number="2.4.1" class="anchored" data-anchor-id="variable-declaration"><span class="header-section-number">2.4.1</span> Variable Declaration:</h3>
+<section id="variable-declaration" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="variable-declaration"><span class="header-section-number">3.4.1</span> Variable Declaration:</h3>
 <ul>
 <li>You can create a variable by assigning a value to it using the <code>=</code> operator.</li>
 </ul>
@@ -1001,8 +1007,8 @@ the negation of the boolean is False</code></pre>
 <span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>is_active <span class="op">=</span> <span class="va">True</span> <span class="co"># Boolean</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="dynamic-typing" class="level3" data-number="2.4.2">
-<h3 data-number="2.4.2" class="anchored" data-anchor-id="dynamic-typing"><span class="header-section-number">2.4.2</span> <strong>Dynamic Typing</strong>:</h3>
+<section id="dynamic-typing" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="dynamic-typing"><span class="header-section-number">3.4.2</span> <strong>Dynamic Typing</strong>:</h3>
 <ul>
 <li>The type of a variable is determined by the value assigned to it.</li>
 </ul>
@@ -1012,8 +1018,8 @@ the negation of the boolean is False</code></pre>
 <span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x <span class="co"># y is also an integer</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="variable-naming-rules" class="level3" data-number="2.4.3">
-<h3 data-number="2.4.3" class="anchored" data-anchor-id="variable-naming-rules"><span class="header-section-number">2.4.3</span> <strong>Variable Naming Rules</strong>:</h3>
+<section id="variable-naming-rules" class="level3" data-number="3.4.3">
+<h3 data-number="3.4.3" class="anchored" data-anchor-id="variable-naming-rules"><span class="header-section-number">3.4.3</span> <strong>Variable Naming Rules</strong>:</h3>
 <ul>
 <li>Names must start with a letter (a-z, A-Z) or an underscore (_).</li>
 <li>Names can only contain letters, numbers (0-9), and underscores.</li>
@@ -1029,8 +1035,8 @@ the negation of the boolean is False</code></pre>
 </div>
 </div>
 </section>
-<section id="best-practices" class="level3" data-number="2.4.4">
-<h3 data-number="2.4.4" class="anchored" data-anchor-id="best-practices"><span class="header-section-number">2.4.4</span> <strong>Best Practices</strong>:</h3>
+<section id="best-practices" class="level3" data-number="3.4.4">
+<h3 data-number="3.4.4" class="anchored" data-anchor-id="best-practices"><span class="header-section-number">3.4.4</span> <strong>Best Practices</strong>:</h3>
 <p><a href="https://peps.python.org/pep-0008/">Python style guide</a>: Please refer to the python style guide for best coding practices, such as naming variables, using spaces, tabs, and styling the different components of your code.</p>
 <p>For example:</p>
 <div id="3b6b85bd" class="cell">
@@ -1042,8 +1048,8 @@ the negation of the boolean is False</code></pre>
 <span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>user_age <span class="op">=</span> <span class="dv">25</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="checking-variable-types" class="level3" data-number="2.4.5">
-<h3 data-number="2.4.5" class="anchored" data-anchor-id="checking-variable-types"><span class="header-section-number">2.4.5</span> Checking Variable Types</h3>
+<section id="checking-variable-types" class="level3" data-number="3.4.5">
+<h3 data-number="3.4.5" class="anchored" data-anchor-id="checking-variable-types"><span class="header-section-number">3.4.5</span> Checking Variable Types</h3>
 <p>You can use the <code>type()</code> function to check the type of a variable.</p>
 <div id="96d75687" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
@@ -1057,8 +1063,8 @@ the negation of the boolean is False</code></pre>
 </div>
 </div>
 </section>
-<section id="practice-exercise-4" class="level3" data-number="2.4.6">
-<h3 data-number="2.4.6" class="anchored" data-anchor-id="practice-exercise-4"><span class="header-section-number">2.4.6</span> Practice exercise 4</h3>
+<section id="practice-exercise-4" class="level3" data-number="3.4.6">
+<h3 data-number="3.4.6" class="anchored" data-anchor-id="practice-exercise-4"><span class="header-section-number">3.4.6</span> Practice exercise 4</h3>
 <p>Which of the following variable names are valid?</p>
 <ol type="1">
 <li><p>var.name</p></li>
@@ -1075,8 +1081,8 @@ the negation of the boolean is False</code></pre>
 </ol>
 </section>
 </section>
-<section id="assignment-statements" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="assignment-statements"><span class="header-section-number">2.5</span> Assignment statements</h2>
+<section id="assignment-statements" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="assignment-statements"><span class="header-section-number">3.5</span> Assignment statements</h2>
 <p>Values are assigned to variables with the assignment statement (=). An assignment statement may have a constant or an expression on the right hand side of the (=) sign, and a variable name on the left hand side.</p>
 <p>For example, the code lines below are assignment statements</p>
 <div id="1517b979" class="cell" data-execution_count="69">
@@ -1084,10 +1090,10 @@ the negation of the boolean is False</code></pre>
 <span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>var <span class="op">=</span> var <span class="op">+</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="expressions" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="expressions"><span class="header-section-number">2.6</span> Expressions</h2>
-<section id="mathematical-operations-and-their-operators-in-python" class="level3" data-number="2.6.1">
-<h3 data-number="2.6.1" class="anchored" data-anchor-id="mathematical-operations-and-their-operators-in-python"><span class="header-section-number">2.6.1</span> Mathematical Operations and Their Operators in Python</h3>
+<section id="expressions" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="expressions"><span class="header-section-number">3.6</span> Expressions</h2>
+<section id="mathematical-operations-and-their-operators-in-python" class="level3" data-number="3.6.1">
+<h3 data-number="3.6.1" class="anchored" data-anchor-id="mathematical-operations-and-their-operators-in-python"><span class="header-section-number">3.6.1</span> Mathematical Operations and Their Operators in Python</h3>
 <p>Python provides the following operators for performing mathematical operations:</p>
 <ol type="1">
 <li><strong>Exponentiation (<code>**</code>)</strong>: Raises a number to the power of another.
@@ -1116,8 +1122,8 @@ the negation of the boolean is False</code></pre>
 </ul></li>
 </ol>
 </section>
-<section id="operator-precedence-in-python" class="level3" data-number="2.6.2">
-<h3 data-number="2.6.2" class="anchored" data-anchor-id="operator-precedence-in-python"><span class="header-section-number">2.6.2</span> Operator Precedence in Python</h3>
+<section id="operator-precedence-in-python" class="level3" data-number="3.6.2">
+<h3 data-number="3.6.2" class="anchored" data-anchor-id="operator-precedence-in-python"><span class="header-section-number">3.6.2</span> Operator Precedence in Python</h3>
 <p>The operators listed above are in <strong>decreasing order of precedence</strong>, meaning:</p>
 <ol type="1">
 <li><strong>Exponentiation (<code>**</code>)</strong> is evaluated first.</li>
@@ -1126,8 +1132,8 @@ the negation of the boolean is False</code></pre>
 <li><strong>Division (<code>/</code>)</strong>, if present, has the same precedence as multiplication.</li>
 <li><strong>Addition (<code>+</code>)</strong> and <strong>Subtraction (<code>-</code>)</strong> are evaluated last, from left to right.</li>
 </ol>
-<section id="example-precedence-in-action" class="level4" data-number="2.6.2.1">
-<h4 data-number="2.6.2.1" class="anchored" data-anchor-id="example-precedence-in-action"><span class="header-section-number">2.6.2.1</span> Example: Precedence in Action</h4>
+<section id="example-precedence-in-action" class="level4" data-number="3.6.2.1">
+<h4 data-number="3.6.2.1" class="anchored" data-anchor-id="example-precedence-in-action"><span class="header-section-number">3.6.2.1</span> Example: Precedence in Action</h4>
 <p>Consider the expression: <code>2 + 3 % 4 * 2</code></p>
 <p>To evaluate this, Python follows the precedence rules:</p>
 <ol type="1">
@@ -1155,8 +1161,8 @@ the negation of the boolean is False</code></pre>
 </div>
 <p>Thus, the result of the expression <code>2 + 3 % 4 * 2</code> is <code>8</code>.</p>
 </section>
-<section id="key-takeaways" class="level4" data-number="2.6.2.2">
-<h4 data-number="2.6.2.2" class="anchored" data-anchor-id="key-takeaways"><span class="header-section-number">2.6.2.2</span> Key Takeaways</h4>
+<section id="key-takeaways" class="level4" data-number="3.6.2.2">
+<h4 data-number="3.6.2.2" class="anchored" data-anchor-id="key-takeaways"><span class="header-section-number">3.6.2.2</span> Key Takeaways</h4>
 <ul>
 <li>Precedence determines the order in which operations are performed in an expression.</li>
 <li>Parentheses <code>()</code> can be used to override the default precedence and control the order of evaluation.</li>
@@ -1170,8 +1176,8 @@ the negation of the boolean is False</code></pre>
 </div>
 </section>
 </section>
-<section id="practice-exercise-5" class="level3" data-number="2.6.3">
-<h3 data-number="2.6.3" class="anchored" data-anchor-id="practice-exercise-5"><span class="header-section-number">2.6.3</span> Practice exercise 5</h3>
+<section id="practice-exercise-5" class="level3" data-number="3.6.3">
+<h3 data-number="3.6.3" class="anchored" data-anchor-id="practice-exercise-5"><span class="header-section-number">3.6.3</span> Practice exercise 5</h3>
 <p>Which of the following statements is an assignment statement:</p>
 <ol type="1">
 <li><p>x = 5</p></li>
@@ -1185,24 +1191,24 @@ the negation of the boolean is False</code></pre>
 </div>
 </section>
 </section>
-<section id="user-input" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="user-input"><span class="header-section-number">2.7</span> User input</h2>
+<section id="user-input" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="user-input"><span class="header-section-number">3.7</span> User input</h2>
 <p>Python’s in-built <code>input()</code> function is used to take input from the user during program execution. It reads a line of text entered by the user and returns it as a <strong>string</strong>.</p>
 <div id="c73f3e3f" class="cell">
 <div class="sourceCode cell-code" id="cb79"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="co"># suppose we wish the user to onput their age:</span></span>
 <span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter your age:"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The entered value is stored in the variable <code>age</code> and can be used for computation.</p>
-<section id="key-point" class="level4" data-number="2.7.0.1">
-<h4 data-number="2.7.0.1" class="anchored" data-anchor-id="key-point"><span class="header-section-number">2.7.0.1</span> <strong>Key Point</strong></h4>
+<section id="key-point" class="level4" data-number="3.7.0.1">
+<h4 data-number="3.7.0.1" class="anchored" data-anchor-id="key-point"><span class="header-section-number">3.7.0.1</span> <strong>Key Point</strong></h4>
 <ul>
 <li>The <code>input()</code> is always returned as a string, even if the user enters a number.</li>
 <li>You can convert the input to other types (e.g., <code>int</code>, <code>float</code>) using type conversion functions.</li>
 <li>The program execution pauses until the user provides input.</li>
 </ul>
 </section>
-<section id="examples" class="level3" data-number="2.7.1">
-<h3 data-number="2.7.1" class="anchored" data-anchor-id="examples"><span class="header-section-number">2.7.1</span> Examples</h3>
+<section id="examples" class="level3" data-number="3.7.1">
+<h3 data-number="3.7.1" class="anchored" data-anchor-id="examples"><span class="header-section-number">3.7.1</span> Examples</h3>
 <div id="ae396e17" class="cell">
 <div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># basic input</span></span>
 <span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter your name: "</span>)</span>
@@ -1225,15 +1231,15 @@ the negation of the boolean is False</code></pre>
 <span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The area of the circle is </span><span class="sc">{</span>area<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="practice-exercise-6" class="level3" data-number="2.7.2">
-<h3 data-number="2.7.2" class="anchored" data-anchor-id="practice-exercise-6"><span class="header-section-number">2.7.2</span> Practice exercise 6</h3>
+<section id="practice-exercise-6" class="level3" data-number="3.7.2">
+<h3 data-number="3.7.2" class="anchored" data-anchor-id="practice-exercise-6"><span class="header-section-number">3.7.2</span> Practice exercise 6</h3>
 <p>Ask the user to input their year of birth, and print their age.</p>
 </section>
 </section>
-<section id="converting-data-types-in-python" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="converting-data-types-in-python"><span class="header-section-number">2.8</span> Converting data types in Python</h2>
-<section id="why-convert-data-types-in-python" class="level3" data-number="2.8.1">
-<h3 data-number="2.8.1" class="anchored" data-anchor-id="why-convert-data-types-in-python"><span class="header-section-number">2.8.1</span> Why Convert Data Types in Python?</h3>
+<section id="converting-data-types-in-python" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="converting-data-types-in-python"><span class="header-section-number">3.8</span> Converting data types in Python</h2>
+<section id="why-convert-data-types-in-python" class="level3" data-number="3.8.1">
+<h3 data-number="3.8.1" class="anchored" data-anchor-id="why-convert-data-types-in-python"><span class="header-section-number">3.8.1</span> Why Convert Data Types in Python?</h3>
 <p>Data type conversion is essential in Python for several reasons:</p>
 <ul>
 <li><p><strong>Compatibility</strong>: Some operations or functions require specific data types to work correctly.</p>
@@ -1277,8 +1283,8 @@ the negation of the boolean is False</code></pre>
 </div>
 </div>
 </section>
-<section id="how-to-convert-data-types-in-python" class="level3" data-number="2.8.2">
-<h3 data-number="2.8.2" class="anchored" data-anchor-id="how-to-convert-data-types-in-python"><span class="header-section-number">2.8.2</span> How to Convert Data Types in Python</h3>
+<section id="how-to-convert-data-types-in-python" class="level3" data-number="3.8.2">
+<h3 data-number="3.8.2" class="anchored" data-anchor-id="how-to-convert-data-types-in-python"><span class="header-section-number">3.8.2</span> How to Convert Data Types in Python</h3>
 <p>Python provides several built-in functions for type conversion.</p>
 <p>Common Conversion Functions:</p>
 <table class="caption-top table">
@@ -1338,11 +1344,11 @@ the negation of the boolean is False</code></pre>
 </div>
 </section>
 </section>
-<section id="errors-and-exceptions" class="level2" data-number="2.9">
-<h2 data-number="2.9" class="anchored" data-anchor-id="errors-and-exceptions"><span class="header-section-number">2.9</span> Errors and Exceptions</h2>
+<section id="errors-and-exceptions" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="errors-and-exceptions"><span class="header-section-number">3.9</span> Errors and Exceptions</h2>
 <p>Errors and Exceptions are common while writing and executing Python code.</p>
-<section id="syntax-errors" class="level3" data-number="2.9.1">
-<h3 data-number="2.9.1" class="anchored" data-anchor-id="syntax-errors"><span class="header-section-number">2.9.1</span> Syntax errors</h3>
+<section id="syntax-errors" class="level3" data-number="3.9.1">
+<h3 data-number="3.9.1" class="anchored" data-anchor-id="syntax-errors"><span class="header-section-number">3.9.1</span> Syntax errors</h3>
 <p>Syntax errors occur if the code is written in a way that it does not comply with the rules / standards / laws of the language (python in this case). It occur when the Python parser encounters invalid syntax.</p>
 <p>For example, suppose a values is assigned to a variable as follows:</p>
 <div id="604b30cb" class="cell">
@@ -1355,8 +1361,8 @@ the negation of the boolean is False</code></pre>
 </div>
 <p>Solution: Fix the syntax issue by ensuring correct punctuation or structure.</p>
 </section>
-<section id="exceptions" class="level3" data-number="2.9.2">
-<h3 data-number="2.9.2" class="anchored" data-anchor-id="exceptions"><span class="header-section-number">2.9.2</span> Exceptions</h3>
+<section id="exceptions" class="level3" data-number="3.9.2">
+<h3 data-number="3.9.2" class="anchored" data-anchor-id="exceptions"><span class="header-section-number">3.9.2</span> Exceptions</h3>
 <p>Even if a statement or expression is syntactically correct, it may cause an error when an attempt is made to execute it. Errors detected during execution are called exceptions and are not unconditionally fatal:</p>
 <p>Exceptions come in different types, and the type is printed as part of the message: below are the common ones:</p>
 <ul>
@@ -1420,8 +1426,8 @@ Cell <span class="ansi-green-fg ansi-bold">In[27], line 1</span>
 </div>
 </div>
 </section>
-<section id="exception-handling" class="level3" data-number="2.9.3">
-<h3 data-number="2.9.3" class="anchored" data-anchor-id="exception-handling"><span class="header-section-number">2.9.3</span> Exception Handling</h3>
+<section id="exception-handling" class="level3" data-number="3.9.3">
+<h3 data-number="3.9.3" class="anchored" data-anchor-id="exception-handling"><span class="header-section-number">3.9.3</span> Exception Handling</h3>
 <p>When an error occurs, or exception as we call it, Python will normally stop and generate an error message.</p>
 <p>If we suspect that some lines of code may produce an error, we can put them in a <code>try</code> block, and if an error does occur, we can use the <code>except</code> block to instead execute an alternative piece of code. This way the program will not stop if an error occurs within the <code>try</code> block, and instead will be directed to execute the code within the <code>except</code> block.</p>
 <p>These exceptions can be handled Using the Try-Except Blocks</p>
@@ -1451,8 +1457,8 @@ This will always execute.</code></pre>
 </div>
 </div>
 </section>
-<section id="practice-exercise-7" class="level3" data-number="2.9.4">
-<h3 data-number="2.9.4" class="anchored" data-anchor-id="practice-exercise-7"><span class="header-section-number">2.9.4</span> Practice exercise 7</h3>
+<section id="practice-exercise-7" class="level3" data-number="3.9.4">
+<h3 data-number="3.9.4" class="anchored" data-anchor-id="practice-exercise-7"><span class="header-section-number">3.9.4</span> Practice exercise 7</h3>
 <p>Suppose we wish to compute tax using the income and the tax rate. Identify the type of error from amongst syntax error, semantic error and run-time error in the following pieces of code.</p>
 <div id="bb87a313" class="cell">
 <div class="sourceCode cell-code" id="cb106"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a>income <span class="op">=</span> <span class="dv">2000</span></span>
@@ -1470,8 +1476,8 @@ This will always execute.</code></pre>
 <span id="cb108-3"><a href="#cb108-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"tax on"</span>, income, <span class="st">"is:"</span>, tax)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="practice-exercise-8" class="level3" data-number="2.9.5">
-<h3 data-number="2.9.5" class="anchored" data-anchor-id="practice-exercise-8"><span class="header-section-number">2.9.5</span> Practice exercise 8</h3>
+<section id="practice-exercise-8" class="level3" data-number="3.9.5">
+<h3 data-number="3.9.5" class="anchored" data-anchor-id="practice-exercise-8"><span class="header-section-number">3.9.5</span> Practice exercise 8</h3>
 <p>Input an integer from the user. If the user inputs a valid integer, print whether it is a multiple of 3. However, if the user does not input a valid integer, print a message saying that the input is invalid.</p>
 <div id="fc0619aa" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb109"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a>num <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter an integer:"</span>)</span>
@@ -1495,12 +1501,12 @@ This will always execute.</code></pre>
 </div>
 </div>
 </section>
-<section id="semantic-errors-bugs" class="level3" data-number="2.9.6">
-<h3 data-number="2.9.6" class="anchored" data-anchor-id="semantic-errors-bugs"><span class="header-section-number">2.9.6</span> Semantic errors (bugs)</h3>
+<section id="semantic-errors-bugs" class="level3" data-number="3.9.6">
+<h3 data-number="3.9.6" class="anchored" data-anchor-id="semantic-errors-bugs"><span class="header-section-number">3.9.6</span> Semantic errors (bugs)</h3>
 <p>Semantic errors occur when the code executes without an error being indicated by the compiler. However, it does not work as inteded by the user. For example, consider the following code of mutiplying the number 6 by 3: x = ‘6’ x * 3 If it was intended to multiply the number 6, then the variable <code>x</code> should have been defined as <code>x=6</code> so that <code>x</code> has a value of type <code>integer</code>. However, in the above code <code>6</code> is a <code>string</code> type value. When a <code>string</code> is multiplied by an integer, say <em>n</em>, it concatenates with itself <em>n</em> times.</p>
 </section>
-<section id="practice-exercise-9" class="level3" data-number="2.9.7">
-<h3 data-number="2.9.7" class="anchored" data-anchor-id="practice-exercise-9"><span class="header-section-number">2.9.7</span> Practice exercise 9</h3>
+<section id="practice-exercise-9" class="level3" data-number="3.9.7">
+<h3 data-number="3.9.7" class="anchored" data-anchor-id="practice-exercise-9"><span class="header-section-number">3.9.7</span> Practice exercise 9</h3>
 <p>The formula for computing final amount if one is earning compund interest is given by: <span class="math display">\[A = P\bigg(1+\frac{r}{n}\bigg)^{nt},\]</span></p>
 <p>where:<br>
 P = Principal amount (initial investment),<br>
@@ -1934,13 +1940,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./venv_setup.html" class="pagination-link" aria-label="Setting up your environment with VS Code">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Setting up your environment with VS Code</span></span>
+      <a href="./file_path.html" class="pagination-link" aria-label="Setting File Paths and Understanding the Current Working Directory">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Setting File Paths and Understanding the Current Working Directory</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./Control flow.html" class="pagination-link" aria-label="Control flow tools">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Control flow tools</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Control flow tools</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

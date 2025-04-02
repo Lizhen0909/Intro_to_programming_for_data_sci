@@ -19,6 +19,7 @@ book:
     - part: "Getting started: Coding environment"
       chapters:
         - venv_setup.ipynb
+        - file_path.ipynb
     - part: "Python"
       chapters:
         #- Introduction to Jupyter Notebooks and programming in python.ipynb
