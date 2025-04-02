@@ -5,7 +5,7 @@ project:
 
 book:
   title: "Introduction to programming for data science"
-  subtitle: "STAT 201 Winter 2025"
+  subtitle: "STAT 201 Spring 2025"
   author: "Lizhen Shi"
 
   
@@ -38,12 +38,12 @@ book:
         - data_structures_r.qmd
         #- recursion.qmd
   appendices: 
-    - template_A01_WI25.ipynb
-    - template_A02_WI25.ipynb
-    - template_A03_WI25.ipynb
-    - template_A04_WI25.ipynb
-    - template_A05_WI25.qmd
-    - template_A06_WI25.qmd
+    #- template_A01_WI25.ipynb
+    #- template_A02_WI25.ipynb
+    #- template_A03_WI25.ipynb
+    #- template_A04_WI25.ipynb
+    #- template_A05_WI25.qmd
+    #- template_A06_WI25.qmd
     - Datasets.ipynb
 
 bibliography: references.bib
