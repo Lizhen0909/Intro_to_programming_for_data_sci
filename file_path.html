@@ -482,7 +482,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We will discuss how to specify file paths in Python for loading and saving data, with an emphasis on <strong>absolute</strong> and <strong>relative</strong> paths. File paths are crucial when working with files in Python, such as reading datasets and writing results to files.</p>
 <section id="methods-to-specify-file-path-in-windows" class="level3" data-number="2.4.1">
 <h3 data-number="2.4.1" class="anchored" data-anchor-id="methods-to-specify-file-path-in-windows"><span class="header-section-number">2.4.1</span> Methods to Specify file path in Windows</h3>
-<p>Windows uses backslashes (<code>\</code>) to separate directories in file paths. However, in Python, the backslash is an escape character, so you need to either: * Escape backslashes by using a double backslash (<code>\\</code>), or * Use raw strings by prefixing the path with <code>r</code>.</p>
+<p>Windows uses backslashes (<code>\</code>) to separate directories in file paths. However, in Python, the backslash is an escape character, so you need to either:</p>
+<ul>
+<li>Escape backslashes by using a double backslash (<code>\\</code>), or</li>
+<li>Use raw strings by prefixing the path with <code>r</code>.</li>
+</ul>
 <section id="method-1-using-escaped-backslashes" class="level4" data-number="2.4.1.1">
 <h4 data-number="2.4.1.1" class="anchored" data-anchor-id="method-1-using-escaped-backslashes"><span class="header-section-number">2.4.1.1</span> Method 1: <strong>Using escaped backslashes</strong></h4>
 <div id="cell-19" class="cell" data-execution_count="6">
@@ -626,7 +630,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 <li><strong>Create your first notebook for quiz and generate html for your submission</strong>
 <ol type="1">
-<li>Create a new notebook named <code>quiz2.ipynb</code> inside the <code>quizzes</code> folder.</li>
+<li>Create a new notebook named <code>quiz2.ipynb</code> inside the <code>quizzes</code> folder. Copy the header below and make sure to paste it into a raw cell.</li>
 <li>Download the <code>filtered_movies.json</code> file from the <a href="https://nuwildcat-my.sharepoint.com/:f:/g/personal/lsi8012_ads_northwestern_edu/EjpAlBWJO_dMlF7uFVGKQHQBX0rLvo8UycJBHC2dUTEeyw?e=Zj6Pde">textbook dataset shared folder</a></li>
 <li>Add a heading to the top of the notebook: <code>## Reading Data From a File</code><br>
 </li>
@@ -640,6 +644,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Submit it to the quiz2</li>
 </ol></li>
 </ol>
+<div id="cell-41" class="cell" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this is the header, copy the content between the """ """</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">title: "Lecture 2: File path"</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">format: </span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-title: Contents</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: show</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">    self-contained: true</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">jupyter: python3</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>'\n---\ntitle: "Lecture 2: File path"\nformat: \n  html:\n    toc: true\n    toc-title: Contents\n    code-fold: show\n    self-contained: true\njupyter: python3\n---\n'</code></pre>
+</div>
+</div>
 <pre><code>import json
 with open("Datasets/filtered_movies.json", encoding="utf8") as file:
     movie_data=json.load(file)
