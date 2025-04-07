@@ -16,7 +16,7 @@ book:
     
   chapters:
     - index.qmd
-    - part: "Getting started: Coding environment"
+    - part: "Getting Started"
       chapters:
         - venv_setup.ipynb
         - file_path.ipynb
