@@ -356,7 +356,9 @@ window.Quarto = {
   </ul></li>
   <li><a href="#working-with-strings-in-loops" id="toc-working-with-strings-in-loops" class="nav-link" data-scroll-target="#working-with-strings-in-loops"><span class="header-section-number">4.6</span> Working with Strings in Loops</a>
   <ul class="collapse">
-  <li><a href="#practice-exercise-6" id="toc-practice-exercise-6" class="nav-link" data-scroll-target="#practice-exercise-6"><span class="header-section-number">4.6.1</span> Practice exercise 6</a></li>
+  <li><a href="#in-the-previous-chapter-we-covered" id="toc-in-the-previous-chapter-we-covered" class="nav-link" data-scroll-target="#in-the-previous-chapter-we-covered"><span class="header-section-number">4.6.1</span> In the previous chapter, we covered:</a></li>
+  <li><a href="#string-indexing-slicing" id="toc-string-indexing-slicing" class="nav-link" data-scroll-target="#string-indexing-slicing"><span class="header-section-number">4.6.2</span> String Indexing &amp; Slicing</a></li>
+  <li><a href="#practice-exercise-6" id="toc-practice-exercise-6" class="nav-link" data-scroll-target="#practice-exercise-6"><span class="header-section-number">4.6.3</span> Practice exercise 6</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1089,7 +1091,45 @@ Processing 4</code></pre>
 </section>
 <section id="working-with-strings-in-loops" class="level2" data-number="4.6">
 <h2 data-number="4.6" class="anchored" data-anchor-id="working-with-strings-in-loops"><span class="header-section-number">4.6</span> Working with Strings in Loops</h2>
-<p>Strings in Python are sequences of characters. You can use loops to iterate over strings and perform various operations on each character or a subset of the string.</p>
+<p><strong>Strings are a fundamental data type in Python and are used extensively in almost every program.</strong><br>
+Mastering string operations is essential for effective programming, especially in tasks such as data cleaning, text processing, and user interaction.</p>
+<section id="in-the-previous-chapter-we-covered" class="level3" data-number="4.6.1">
+<h3 data-number="4.6.1" class="anchored" data-anchor-id="in-the-previous-chapter-we-covered"><span class="header-section-number">4.6.1</span> In the previous chapter, we covered:</h3>
+<ul>
+<li><p><strong>String Creation</strong></p>
+<ul>
+<li>Use single quotes (<code>' '</code>) or double quotes (<code>" "</code>) to define strings.</li>
+<li>Use triple quotes (<code>''' '''</code> or <code>""" """</code>) for multi-line strings.</li>
+</ul></li>
+<li><p><strong>Basic String Operations</strong></p>
+<ul>
+<li><strong>Concatenation</strong>: Combine strings using the <code>+</code> operator.</li>
+<li><strong>Repetition</strong>: Repeat strings using the <code>*</code> operator.</li>
+</ul></li>
+<li><p><strong>Common String Methods</strong></p></li>
+<li><p><strong>String Formatting</strong></p></li>
+</ul>
+</section>
+<section id="string-indexing-slicing" class="level3" data-number="4.6.2">
+<h3 data-number="4.6.2" class="anchored" data-anchor-id="string-indexing-slicing"><span class="header-section-number">4.6.2</span> String Indexing &amp; Slicing</h3>
+<p>Here, we will explore how to access and manipulate specific parts of a string using indexing and slicing techniques.</p>
+<div id="d5f83526" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="4">
+<img src="images/positive_negative_index.jpg" width="500" height="300">
+</div>
+</div>
+<p>Python strings support both <strong>positive indexing</strong> and <strong>negative indexing</strong> to access individual characters.</p>
+<section id="positive-indexing" class="level4" data-number="4.6.2.1">
+<h4 data-number="4.6.2.1" class="anchored" data-anchor-id="positive-indexing"><span class="header-section-number">4.6.2.1</span> ✅ Positive Indexing</h4>
+<ul>
+<li>Indexing starts from <code>0</code> and moves forward from the beginning of the string.</li>
+</ul>
+</section>
+<section id="negative-indexing" class="level4" data-number="4.6.2.2">
+<h4 data-number="4.6.2.2" class="anchored" data-anchor-id="negative-indexing"><span class="header-section-number">4.6.2.2</span> ✅ Negative Indexing</h4>
+<ul>
+<li>Indexing starts from <code>-1</code> and moves backward from the end of the string.</li>
+</ul>
 <p>Consider the following string:</p>
 <div id="9acdd414" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">"She sells sea shells on the sea shore"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1119,7 +1159,9 @@ Processing 4</code></pre>
 <pre><code>S h e   s e l l s   s e a   s h e l l s   o n   t h e   s e a   s h o r e </code></pre>
 </div>
 </div>
-<p><strong>Slicing a string:</strong></p>
+</section>
+<section id="string-slicing" class="level4" data-number="4.6.2.3">
+<h4 data-number="4.6.2.3" class="anchored" data-anchor-id="string-slicing"><span class="header-section-number">4.6.2.3</span> String Slicing</h4>
 <p>A part of the string can be sliced by passing the starting index (say <code>start</code>) and the stopping index (say <code>stop</code>) as <code>start</code>:<code>stop</code> to the index operator []. This is called slicing a string. For a string <code>S</code>, the characters starting from the index <code>start</code> upto the index <code>stop</code>, but not including <code>stop</code>, can be sliced as <code>S[start:stop]</code>.</p>
 <p>For example, the slice of the string <code>sentence</code> from index <code>4</code> to index <code>9</code>, but not including <code>9</code> is:</p>
 <div id="e2abe450" class="cell" data-execution_count="4">
@@ -1156,8 +1198,10 @@ Processing 4</code></pre>
 <pre><code>2</code></pre>
 </div>
 </div>
-<section id="practice-exercise-6" class="level3" data-number="4.6.1">
-<h3 data-number="4.6.1" class="anchored" data-anchor-id="practice-exercise-6"><span class="header-section-number">4.6.1</span> Practice exercise 6</h3>
+</section>
+</section>
+<section id="practice-exercise-6" class="level3" data-number="4.6.3">
+<h3 data-number="4.6.3" class="anchored" data-anchor-id="practice-exercise-6"><span class="header-section-number">4.6.3</span> Practice exercise 6</h3>
 <p>Checking for a Substring</p>
 <p>Write a program that asks the user to input a string, and print the number of “<em>the</em>”s in the string.</p>
 <div id="d6000790" class="cell" data-execution_count="40">
