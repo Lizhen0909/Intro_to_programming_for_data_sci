@@ -416,7 +416,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="understanding-classes-in-python" class="level3" data-number="8.1.2">
 <h3 data-number="8.1.2" class="anchored" data-anchor-id="understanding-classes-in-python"><span class="header-section-number">8.1.2</span> Understanding Classes in Python</h3>
 <p>A <strong>class</strong> is a blueprint for creating objects. It defines the <strong>attributes</strong> (characteristics) and <strong>methods</strong> (behaviors) that its objects will have.</p>
-<p>For example, consider a <code>Cat</code> class: - <strong>Attributes</strong>: Characteristics shared by all cats, such as <code>breed</code>, <code>fur_color</code>, and <code>age</code>. - <strong>Methods</strong>: Actions that a cat can perform, such as <code>meow()</code>, <code>run()</code>, or <code>sleep()</code>.</p>
+<p>For example, consider a <code>Cat</code> class:</p>
+<ul>
+<li><strong>Attributes</strong>: Characteristics shared by all cats, such as <code>breed</code>, <code>fur_color</code>, and <code>age</code>.</li>
+<li><strong>Methods</strong>: Actions that a cat can perform, such as <code>meow()</code>, <code>run()</code>, or <code>sleep()</code>.</li>
+</ul>
 <p>For more details, refer to the official Python documentation on <a href="https://docs.python.org/3/tutorial/classes.html">classes</a>.</p>
 </section>
 <section id="creating-your-own-classes" class="level3" data-number="8.1.3">
@@ -724,9 +728,12 @@ Is 'wrongpassword' correct? False</code></pre>
 </section>
 <section id="class-constructors" class="level2" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="class-constructors"><span class="header-section-number">8.3</span> Class Constructors</h2>
-<p>A <strong>constructor</strong> is a special method in a class that is <strong>automatically called</strong> when an object is created.<br>
-- In Python, the constructor method is named <code>__init__()</code>.<br>
-- It <strong>initializes object attributes</strong> when an instance is created.</p>
+<p>A <strong>constructor</strong> is a special method in a class that is <strong>automatically called</strong> when an object is created.</p>
+<ul>
+<li>In Python, the constructor method is named <code>__init__()</code>.<br>
+</li>
+<li>It <strong>initializes object attributes</strong> when an instance is created.</li>
+</ul>
 <div id="ae386b34" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Car:</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand, color, speed<span class="op">=</span><span class="dv">0</span>):</span>
