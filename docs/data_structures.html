@@ -2100,22 +2100,22 @@ if (typeof version == 'undefined') {
 <section id="practice-exercise-4" class="level3" data-number="6.2.9">
 <h3 data-number="6.2.9" class="anchored" data-anchor-id="practice-exercise-4"><span class="header-section-number">6.2.9</span> Practice exercise 4</h3>
 <p>USA’s GDP per capita from 1960 to 2021 is given by the tuple T in the code cell below. The values are arranged in ascending order of the year, i.e., the first value is for 1960, the second value is for 1961, and so on. Print the years in which the GDP per capita of the US increased by more than 10%.</p>
-<div id="3d8f5cd1" class="cell" data-execution_count="13">
+<div id="3d8f5cd1" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb98"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> (<span class="dv">3007</span>, <span class="dv">3067</span>, <span class="dv">3244</span>, <span class="dv">3375</span>,<span class="dv">3574</span>, <span class="dv">3828</span>, <span class="dv">4146</span>, <span class="dv">4336</span>, <span class="dv">4696</span>, <span class="dv">5032</span>,<span class="dv">5234</span>,<span class="dv">5609</span>,<span class="dv">6094</span>,<span class="dv">6726</span>,<span class="dv">7226</span>,<span class="dv">7801</span>,<span class="dv">8592</span>,<span class="dv">9453</span>,<span class="dv">10565</span>,<span class="dv">11674</span>,<span class="dv">12575</span>,<span class="dv">13976</span>,<span class="dv">14434</span>,<span class="dv">15544</span>,<span class="dv">17121</span>,<span class="dv">18237</span>,<span class="dv">19071</span>,<span class="dv">20039</span>,<span class="dv">21417</span>,<span class="dv">22857</span>,<span class="dv">23889</span>,<span class="dv">24342</span>,<span class="dv">25419</span>,<span class="dv">26387</span>,<span class="dv">27695</span>,<span class="dv">28691</span>,<span class="dv">29968</span>,<span class="dv">31459</span>,<span class="dv">32854</span>,<span class="dv">34515</span>,<span class="dv">36330</span>,<span class="dv">37134</span>,<span class="dv">37998</span>,<span class="dv">39490</span>,<span class="dv">41725</span>,<span class="dv">44123</span>,<span class="dv">46302</span>,<span class="dv">48050</span>,<span class="dv">48570</span>,<span class="dv">47195</span>,<span class="dv">48651</span>,<span class="dv">50066</span>,<span class="dv">51784</span>,<span class="dv">53291</span>,<span class="dv">55124</span>,<span class="dv">56763</span>,<span class="dv">57867</span>,<span class="dv">59915</span>,<span class="dv">62805</span>,<span class="dv">65095</span>,<span class="dv">63028</span>,<span class="dv">69288</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="b0aaa7b3" class="cell" data-execution_count="14">
+<div id="b0aaa7b3" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb99"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="co">#print the years in which the GDP percapital increased by more than 10%</span></span>
 <span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(T)):</span>
 <span id="cb99-3"><a href="#cb99-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> T[i] <span class="op">&gt;</span> <span class="fl">1.1</span> <span class="op">*</span> T[i <span class="op">-</span> <span class="dv">1</span>]:</span>
-<span id="cb99-4"><a href="#cb99-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Year </span><span class="sc">{</span>i <span class="op">+</span> <span class="dv">2007</span><span class="sc">}</span><span class="ss">: GDP per capita increased by more than 10%"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb99-4"><a href="#cb99-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Year </span><span class="sc">{</span>i <span class="op">+</span> <span class="dv">1960</span><span class="sc">}</span><span class="ss">: GDP per capita increased by more than 10%"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Year 2020: GDP per capita increased by more than 10%
-Year 2023: GDP per capita increased by more than 10%
-Year 2024: GDP per capita increased by more than 10%
-Year 2025: GDP per capita increased by more than 10%
-Year 2026: GDP per capita increased by more than 10%
-Year 2028: GDP per capita increased by more than 10%
-Year 2031: GDP per capita increased by more than 10%</code></pre>
+<pre><code>Year 1973: GDP per capita increased by more than 10%
+Year 1976: GDP per capita increased by more than 10%
+Year 1977: GDP per capita increased by more than 10%
+Year 1978: GDP per capita increased by more than 10%
+Year 1979: GDP per capita increased by more than 10%
+Year 1981: GDP per capita increased by more than 10%
+Year 1984: GDP per capita increased by more than 10%</code></pre>
 </div>
 </div>
 <ul>
