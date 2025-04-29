@@ -884,6 +884,17 @@ Charlie scored 95</code></pre>
 <div class="sourceCode" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Write a <code>for</code> loop to print each element.</p></li>
 </ul></li>
+</ol>
+<div id="cell-56" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>]</span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> num <span class="kw">in</span> numbers:</span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(num, end<span class="op">=</span><span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>10 20 30 40 50 </code></pre>
+</div>
+</div>
+<ol start="2" type="1">
 <li><strong>Using <code>iter()</code> and <code>next()</code>:</strong>
 <ul>
 <li>Obtain an iterator from the list using <code>iter()</code>.</li>
@@ -893,6 +904,21 @@ Charlie scored 95</code></pre>
 </ol>
 <p><em>Hint:</em><br>
 Remember that calling <code>next()</code> on an exhausted iterator raises a <code>StopIteration</code> exception.</p>
+<div id="cell-58" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an iterator from the list</span></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>it <span class="op">=</span> <span class="bu">iter</span>(numbers)</span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Use while loop and next() to print each element</span></span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a>        value <span class="op">=</span> <span class="bu">next</span>(it)</span>
+<span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(value, end<span class="op">=</span><span class="st">" "</span>)</span>
+<span id="cb63-9"><a href="#cb63-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">StopIteration</span>:</span>
+<span id="cb63-10"><a href="#cb63-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>10 20 30 40 50 </code></pre>
+</div>
+</div>
 </section>
 <section id="exercise-2-combining-iterables-with-zip" class="level3" data-number="7.6.2">
 <h3 data-number="7.6.2" class="anchored" data-anchor-id="exercise-2-combining-iterables-with-zip"><span class="header-section-number">7.6.2</span> Exercise 2: Combining Iterables with <code>zip()</code></h3>
@@ -900,11 +926,27 @@ Remember that calling <code>next()</code> on an exhausted iterator raises a <cod
 <li><strong>Zipping Two Lists:</strong>
 <ul>
 <li><p>Given the lists:</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>list1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>list2 <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>list1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>list2 <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Use the <code>zip()</code> function to combine these lists.</p></li>
 <li><p>Convert the result into a list and print it.</p></li>
 </ul></li>
+</ol>
+<div id="cell-60" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>list1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>list2 <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>]</span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Zip the two lists</span></span>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a>zipped <span class="op">=</span> <span class="bu">zip</span>(list1, list2)</span>
+<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to a list and print</span></span>
+<span id="cb66-8"><a href="#cb66-8" aria-hidden="true" tabindex="-1"></a>zipped_list <span class="op">=</span> <span class="bu">list</span>(zipped)</span>
+<span id="cb66-9"><a href="#cb66-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(zipped_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[(1, 'a'), (2, 'b'), (3, 'c')]</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
 <li><strong>Iterating Over the Zipped Object:</strong>
 <ul>
 <li>Iterate over the zipped object using a <code>for</code> loop and print each tuple.</li>
@@ -912,6 +954,15 @@ Remember that calling <code>next()</code> on an exhausted iterator raises a <cod
 </ol>
 <p><em>Note:</em><br>
 The <code>zip()</code> function returns an iterator, so converting it to a list will reveal its elements.</p>
+<div id="cell-62" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> pair <span class="kw">in</span> zipped_list:</span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(pair)  <span class="co"># Accessing elements of the tuple directly</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(1, 'a')
+(2, 'b')
+(3, 'c')</code></pre>
+</div>
+</div>
 </section>
 <section id="exercise-3-unzipping-a-list-of-tuples" class="level3" data-number="7.6.3">
 <h3 data-number="7.6.3" class="anchored" data-anchor-id="exercise-3-unzipping-a-list-of-tuples"><span class="header-section-number">7.6.3</span> Exercise 3: Unzipping a List of Tuples</h3>
@@ -919,7 +970,7 @@ The <code>zip()</code> function returns an iterator, so converting it to a list 
 <li><strong>Given Data:</strong>
 <ul>
 <li><p>You have a list of tuples:</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>pairs <span class="op">=</span> [(<span class="st">'apple'</span>, <span class="dv">1</span>), (<span class="st">'banana'</span>, <span class="dv">2</span>), (<span class="st">'cherry'</span>, <span class="dv">3</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>pairs <span class="op">=</span> [(<span class="st">'apple'</span>, <span class="dv">1</span>), (<span class="st">'banana'</span>, <span class="dv">2</span>), (<span class="st">'cherry'</span>, <span class="dv">3</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul></li>
 <li><strong>Unzipping:</strong>
 <ul>
@@ -933,6 +984,20 @@ The <code>zip()</code> function returns an iterator, so converting it to a list 
 </ol>
 <p><em>Hint:</em><br>
 Use the syntax <code>names, numbers = zip(*pairs)</code>.</p>
+<div id="cell-64" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>pairs <span class="op">=</span> [(<span class="st">'apple'</span>, <span class="dv">1</span>), (<span class="st">'banana'</span>, <span class="dv">2</span>), (<span class="st">'cherry'</span>, <span class="dv">3</span>)]</span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Unzip the list of tuples</span></span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a>names, numbers <span class="op">=</span> <span class="bu">zip</span>(<span class="op">*</span>pairs)</span>
+<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the results</span></span>
+<span id="cb71-7"><a href="#cb71-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Names:"</span>, names)</span>
+<span id="cb71-8"><a href="#cb71-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Numbers:"</span>, numbers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Names: ('apple', 'banana', 'cherry')
+Numbers: (1, 2, 3)</code></pre>
+</div>
+</div>
 </section>
 <section id="exercise-4-using-built-in-functions-on-iterables" class="level3" data-number="7.6.4">
 <h3 data-number="7.6.4" class="anchored" data-anchor-id="exercise-4-using-built-in-functions-on-iterables"><span class="header-section-number">7.6.4</span> Exercise 4: Using Built-in Functions on Iterables</h3>
@@ -940,7 +1005,7 @@ Use the syntax <code>names, numbers = zip(*pairs)</code>.</p>
 <li><strong>Numeric List Operations:</strong>
 <ul>
 <li><p>Create a list:</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">1</span>, <span class="dv">9</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">1</span>, <span class="dv">9</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul></li>
 <li><strong>Apply Built-in Functions:</strong>
 <ul>
@@ -950,6 +1015,24 @@ Use the syntax <code>names, numbers = zip(*pairs)</code>.</p>
 </ol>
 <p><em>Note:</em><br>
 These functions require the elements of the iterable to be of compatible types (e.g., all numbers).</p>
+<div id="cell-66" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">1</span>, <span class="dv">9</span>]</span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply built-in functions</span></span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a>minimum <span class="op">=</span> <span class="bu">min</span>(numbers)</span>
+<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a>maximum <span class="op">=</span> <span class="bu">max</span>(numbers)</span>
+<span id="cb74-6"><a href="#cb74-6" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="bu">sum</span>(numbers)</span>
+<span id="cb74-7"><a href="#cb74-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-8"><a href="#cb74-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the results</span></span>
+<span id="cb74-9"><a href="#cb74-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Minimum:"</span>, minimum)</span>
+<span id="cb74-10"><a href="#cb74-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Maximum:"</span>, maximum)</span>
+<span id="cb74-11"><a href="#cb74-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sum:"</span>, total)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Minimum: 1
+Maximum: 9
+Sum: 26</code></pre>
+</div>
+</div>
 
 
 </section>
