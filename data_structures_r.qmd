@@ -613,7 +613,6 @@ Please use matrices to solve the same problem. Also we will time the execution t
 * The percent increase in GDP can be computed by performing computations using the 2 columns of the matrix
 
 ```{r}
-#| echo: false
 G = c(3007, 3067, 3244, 3375,3574, 3828, 4146, 4336, 4696, 5032,5234,5609,6094,6726,7226,7801,8592,9453,10565,11674,12575,13976,14434,15544,17121,18237,19071,20039,21417,22857,23889,24342,25419,26387,27695,28691,29968,31459,32854,34515,36330,37134,37998,39490,41725,44123,46302,48050,48570,47195,48651,50066,51784,53291,55124,56763,57867,59915,62805,65095,63028,69288)
 
 start.time <- Sys.time()
@@ -634,7 +633,6 @@ time.taken
 Without matrices, the time taken to perform the same computation is  measured with the code below.
 
 ```{r}
-#| echo: false
 start.time <- Sys.time()
 years <- c()
 for (i in 1:(length(G) - 1)) {
@@ -660,7 +658,6 @@ Determine the highest GDP per capita in the United States for each five-year per
 * Then, use the `apply()` function to find the maximum GDP per capita within each period
 
 ```{r}
-#| echo: false
 GDP_5year <- matrix(G[-c(1, length(G))], 12, 5, byrow = TRUE)
 GDP_max_5year <- apply(GDP_5year, 1, max)
 ```
@@ -672,7 +669,6 @@ Identify the highest GDP per capita in the United States across all the five-yea
 Additionally, determine the specific five-year period and the exact year in which this maximum GDP per capita occurred.
 
 ```{r}
-#| echo: false
 # Define start year
 start_year <- 1961
 
@@ -709,7 +705,6 @@ Identify the five-year periods which the GDP per capita experienced a continuous
 
 
 ```{r}
-#| echo: false
 
 # Define a function to check if all values in a row are decreasing
 is_decreasing <- function(row) {
@@ -731,7 +726,6 @@ print(decreasing_period_names)
 Instead of defining a named function, you can also use an anonymous function directly within the `apply()` function for a more concise approach
 
 ```{r}
-#| echo: false
 # Apply a user-defined function to check for decreasing GDP in each period
 decreasing_periods <- apply(GDP_5year, 1, function(row) all(diff(row) < 0))
 
@@ -749,7 +743,6 @@ print(decreasing_period_names)
 
 
 ```{r}
-#| echo: false
 #| eval: false
 setwd("C:\\Users\\akl0407\\Desktop\\STAT303-1\\Quarto Book\\Intro_to_programming_for_data_sci\\Datasets")
 ```
@@ -760,7 +753,6 @@ Download the file *capital_cities.csv* from [here](https://nuwildcat-my.sharepoi
 The object `country_names` is an atomic vector consisting of country names. The object `coordinates_capital_cities` is a matrix consisting of the latitude-longitude pair of the capital city of the respective country. The order of countries in `country_names` is the same as the order in which their capital city coordinates (latitude-longitude) appear in the matrix `coordinates_capital_cities`.
 
 ```{r}
-#| echo: false
 #| eval: false
 capital_cities <- read.csv('capital_cities.csv')
 coordinates_capital_cities <- as.matrix(capital_cities[,c(3, 4)])
@@ -793,7 +785,6 @@ Note that:
 
 
 ```{r}
-#| echo: false
 #| eval: false
 
 # Find the index of the US capital (Washington, D.C.)
@@ -818,7 +809,6 @@ sorted <- distances_to_DC_matrix[order(distances_to_DC_matrix[,2]),]
 Top 10 countries with capitals closest to Washington DC are the following:
 
 ```{r}
-#| echo: false
 #| eval: false
 
 # Get the top 10 closest countries (after exclusions)
@@ -833,7 +823,6 @@ You can also use the following code to exclude the U.S. records
 
 
 ```{r}
-#| echo: false
 #| eval: false
 
 #Exclude rows where the country is "United States" or "US Minor Outlying Islands"
@@ -844,7 +833,6 @@ filtered_sorted <- sorted[!(country_names[sorted[, 1]] %in% c("United States", "
 The coordinates of the top 10 capital cities closest to Washington DC are:
 
 ```{r}
-#| echo: false
 #| eval: false
 coordinates_capital_cities[top_10_countries, ]
 ```
@@ -855,12 +843,11 @@ coordinates_capital_cities[top_10_countries, ]
 
 ### Exercise 3
 
-Download the dataset *movies.csv*. Execute the following code to read the data into the object `movies`:
+Download the dataset *movie_ratings_orig.csv*. Execute the following code to read the data into the object `movies`:
 
 ```{r}
 #| eval: false
-
-movies <- read.csv("movies.csv", stringsAsFactors = FALSE)
+movies <- read.csv("movie_ratings_orig.csv", stringsAsFactors = FALSE)
 ```
 
 #### 
@@ -883,7 +870,22 @@ Ignore the movies that:
 2. Have a zero worldwide gross *(A zero worldwide gross is probably an incorrect value)*. 
  
 
+```{r}
+#| eval: false
+# Filter the dataset to exclude rows with missing or zero values in budget or gross
+filtered_movies <- subset(
+  movies,
+  !is.na(Production.Budget) &
+  !is.na(Worldwide.Gross) &
+  Worldwide.Gross != 0
+)
 
+# Count movies with negative profit (budget > gross)
+negative_profit_count <- sum(filtered_movies$Production.Budget > filtered_movies$Worldwide.Gross)
+
+# Print the result
+negative_profit_count
+```
 
 
 

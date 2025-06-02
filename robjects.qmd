@@ -544,6 +544,12 @@ print(years)
 
 You need to solve this problem without using a `for` loop.
 
+```{r}
+diff_gdp <- (G[-1] - G[-length(G)]) /G[-length(G)] *100
+diff_gdp [diff_gdp > 10]
+which (diff_gdp>10) +1959
+```
+
 ####
 Find the year with the highest GDP per capita growth (percentage-wise).
 
@@ -564,15 +570,28 @@ Remove the elements that are not integers - such as ‘probably never’, ‘30+
 
 Hint: Use `is.na()` to detect missing values.
 
+```{r}
+exp_marriage_age_cleaned <- exp_marriage_age[!is.na (as.integer (exp_marriage_age))]
+exp_marriage_age_cleaned <- as.integer (exp_marriage_age_cleaned)
+exp_marriage_age_cleaned
+```
+
+
+
 
 #### Capping unreasonably high values
 Cap the values greater than 80 to 80, in the clean vector obtained above. What is the mean age when people expect to marry in the new vector?
 
-
+```{r}
+exp_marriage_age_cleaned [exp_marriage_age_cleaned > 80] <- 80
+mean (exp_marriage_age_cleaned)
+```
 
 #### People marrying at 30 or more
 
-
+```{r}
+length (exp_marriage_age_cleaned [exp_marriage_age_cleaned >= 30])/length(exp_marriage_age_cleaned) *100
+```
 
 ### Exercise 3
 
@@ -600,6 +619,16 @@ Hints:
 
 - Define a function to **reverse a word**. You may need `strsplit()` to split the word into individual characters and `paste()` to concatenate them back into a word.
 - Use `sapply()` to apply a function to each element of an **atomic vector**.  
+
+```{r}
+reverse_word <- function (s){
+  paste (rev(strsplit (s, "")[[1]]), collapse = "")
+}
+reversed_words_vec <- sapply (words_vec, reverse_word)
+
+is_palindrome <- words_vec == reversed_words_vec
+sum (is_palindrome)
+```
 
 #### Understanding `collapse` vs. `sep` in `paste()` in R {-}
 
